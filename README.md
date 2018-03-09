@@ -4,8 +4,8 @@ There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both
 
 ## What You Need
 * **sql-murder-mystery.db**: This SQLite database file contains all the data that you will be working with.
-* **prompt**: Depending on your experience level with SQL, find the prompt in either the prompt_experienced file or the prompt_beginner file.
-* **cheatsheet**: This is a crash course on SQL concepts and commands.
+* **prompt**: Depending on your experience level with SQL, find the prompt in either the [prompt_experienced](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_experienced.pdf) file or the [prompt_beginner](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_beginner.pdf) file.
+* **[cheatsheet](https://github.com/NUKnightLab/sql-mysteries/blob/master/cheatsheet.pdf)**: This is a crash course on SQL concepts and commands.
 * **a SQLite environment of your choice**: For beginners, we recommend using the [SQLiteStudio](https://sqlitestudio.pl/index.rvt "SQLiteStudio"), which is a good graphical interface to use to inspect your data and write queries.
 
 ## Getting Started
@@ -16,9 +16,11 @@ There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both
 ## Checking the Solution
 Write the following queries in your SQL environment to check whether you've found the right murderer:
 
-`INSERT INTO solution VALUES (1, "Insert the name of the person you found here");`
+```SQL
+INSERT INTO solution VALUES (1, "Insert the name of the person you found here");
 
-`SELECT value FROM solution;`
+SELECT value FROM solution;
+```
 
 
 ## Authors
