@@ -8,6 +8,8 @@ There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both
 * **[reference](https://github.com/NUKnightLab/sql-mysteries/blob/master/reference.pdf)**: This is a crash course on SQL concepts and commands.
 * **a SQLite environment of your choice**: For beginners, we recommend using [SQLiteStudio](https://sqlitestudio.pl/index.rvt), which is a good graphical interface to use to inspect your data and write queries.
 
+**NEW:** If you don't want to install anything, you can query [a web-based version of the database](https://sql-murder-mystery.datasette.io/sql-murder-mystery) published by [Simon Willison](https://simonwillison.net/) using his awesome [Datasette](https://datasette.readthedocs.io/) tool. If you do that, just download the  [beginner](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_beginner.pdf) or [experienced](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_experienced.pdf) prompt file and get started.
+
 ## Getting Started
 * **For SQL beginners**: start with the reference, read the [prompt_beginner](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_beginner.pdf) file, then get started by [installing SQLiteStudio and loading the db file](https://github.com/NUKnightLab/sql-mysteries/blob/master/sqlite_studio.pdf). If you get stuck at any point, feel free to refer back to the reference, or file a [GitHub issue](https://github.com/NUKnightLab/sql-mysteries/issues) so we can know where our instructions need to be improved.
 
