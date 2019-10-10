@@ -1,0 +1,2 @@
+jupyterlab==1.1.4
+ipython-sql==0.3.9

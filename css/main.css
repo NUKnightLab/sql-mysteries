@@ -1,0 +1,131 @@
+
+/* datatable */
+.datatable {
+    border: solid 1px grey;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+.datatable thead, td {
+    padding: 5px;
+    border: solid 1px grey;
+}
+
+.datatable thead {
+    background: lightgrey;
+    font-weight: bold;
+}
+
+
+/* sql quiz component */
+sql-quiz .sqlQuizHomeDiv {
+    margin: 1em 0em;
+    background: #f9f9f9;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: 200;
+}
+
+sql-quiz .sqlQuizTitle {
+    font-weight: 700;
+}
+
+sql-quiz .sqlQuizDescription {
+}
+
+sql-quiz .sqlQuizInputArea {
+    line-height: 130%;
+    min-width: 100%;
+}
+sql-quiz .sqlQuizInputArea .sqlOption {
+    min-width: 100%;
+    margin: 0.5em 0em;
+}
+
+sql-quiz input[type=checkbox] {
+  transform: scale(1.5);
+  float: left;
+}
+
+sql-quiz .sqlOption .optionText {
+    display: table;
+}
+
+sql-quiz .sqlOption .hintSpan {
+    /*when revealed, display: table-row;*/
+    display: none;
+    color: blue;
+    font-weight: 200;
+}
+
+sql-quiz .sqlQuizInputArea input {
+    margin-right: 1em;
+    background: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+sql-quiz .sqlQuizOutputArea .returnOkay {
+    margin-top: 0.5em;
+}
+
+/* sql exercise component */
+sql-exercise .sqlExHomeDiv{
+    margin: 1em 0em;
+    font-family: Roboto, sans-serif;
+    background: #f9f9f9;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+sql-exercise .sqlExQuestion {
+    font-weight: 700;
+}
+
+sql-exercise .sqlExComment {
+    font-weight: 200;
+}
+
+sql-exercise form {
+    display: block;
+}
+
+sql-exercise .sqlExInputArea {
+    line-height: 130%;
+    min-width: 100%;
+}
+
+sql-exercise .sqlExOutputArea {
+    max-width: 52rem;
+    overflow: auto;
+    background: #f9f9f9;
+}
+
+sql-exercise .sqlExOutputArea .returnOkay {
+    margin-top: 0.5em;
+}
+
+sql-exercise .sqlExOutputArea .returnError {
+    margin-top: 0.5em;
+    color: red;
+}
+
+sql-exercise .CodeMirror {
+    margin: 0.5em 0em;
+}
+
+sql-exercise .sqlExInputArea input {
+    margin-right: 1em;
+    background: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+#experienced-schema {
+    display: none;
+}
+
+#experienced-schema.show {
+    display: block;
+}
