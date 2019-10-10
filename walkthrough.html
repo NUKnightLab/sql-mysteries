@@ -223,7 +223,7 @@ FROM person;"></sql-exercise>
               </ul>
             </p>
 
-            <h4 id="sql-keywords">SQL Keywords and Wildcards</h4>
+            <h4 id="sql-keywords">SQL Keywords</h4>
             <p>
               SQL keywords are used to specify actions in your queries. SQL keywords are not case sensitive, but we suggest using all caps for SQL keywords so that you can easily set them apart from the rest of the query. Some frequently used keywords are:
             </p>
@@ -248,7 +248,7 @@ FROM person;"></sql-exercise>
               data-comment="Note that you need to use single straight quotes (') around literal text so the database can tell it apart from table and column names. After you run it, try again with Yessenia Fossen, Ted Denfip or Davina Gangwer." 
               data-default-text="SELECT * FROM person WHERE name = 'Kinsey Erickson'"></sql-exercise>
 
-            <p>The ​AND​ keyword is used to string together multiple filtering criteria so that the filtered results meet each and every one of the criterion.</p>
+            <p>The ​AND​ keyword is used to string together multiple filtering criteria so that the filtered results meet each and every one of the criteria. (There's also an OR keyword, which returns rows that match any of the criteria.)</p>
 
             <sql-exercise 
               data-question="This query only returns reports about a specific type of crime in a specific city." 
@@ -260,8 +260,46 @@ AND city = 'Chicago';"
 WHERE type = 'murder' 
 AND city = 'SQL City';"></sql-exercise>
 
-          <p>If you haven't found the right crime scene report yet, click "show solution" above, and replace the contents of the box with just the revealed command. If you figured out the query that shows the single crime scene report instead of a few for the same city and type, then congratulations and disregard the word "incorrect".  You'll know if you got it!
+          <p>If you haven't found the right crime scene report yet, click "show solution" above, and replace the contents of the box with just the revealed command. (Leave out the initial <code>/*</code>) If you figured out the query that shows the single crime scene report instead of a few for the same city and type, then congratulations and disregard the word "incorrect".  You'll know if you got it!
           </p>
+
+          <h4 id='wildcards'>Wildcards and other functions for partial matches</h4>
+
+          <p>Sometimes you only know part of the information you need. SQL can handle that. Special symbols that represent unknown characters are called "wildcards," and SQL supports two. The most common is the <code>%</code> wildcard.</p>
+          <p>When you place a <code>%</code> wildcard in a query string, the SQL system will return results that match the rest of the string exactly, and have anything (or nothing) where the wildcard is. For example, <code>'Ca%a'</code> matches <code>Canada</code> and <code>California</code>.</p>
+          <p>The other, less commonly used wildcard, is <code>_</code>. This one means 'match the rest of the text, as long as there's exactly one character in exactly the position of the <code>_</code>, no matter what it is.  So, <code>'B_b'</code> would match <code>'Bob'</code> and <code>'Bub'</code> but not <code>'Babe'</code> or <code>'Bb'</code>.</p>
+          <p><strong>Important:</strong> When using wildcards, you don't use the <code>=</code> symbol; instead, you use <code>LIKE</code>.
+          </p>
+
+            <sql-exercise 
+              data-question="Try out some wildcards." 
+              data-comment="Once you run this command, try variations like 'Irvin_' and 'I%e' -- and then explore some more." 
+              data-default-text="SELECT DISTINCT city 
+FROM crime_scene_report 
+WHERE city LIKE 'I%';"></sql-exercise>
+
+          <p>SQL also supports numeric comparisons like <code>&lt;</code> (less than) and <code>&gt;</code> (greater than). You can also use the keywords <code>BETWEEN</code> and <code>AND</code> -- and all of those work with words as well as numbers.
+          
+          </p>
+
+          
+          <sql-exercise 
+              data-question="Try out some comparison operators." 
+              data-comment="" 
+              data-default-text="SELECT DISTINCT city 
+FROM crime_scene_report 
+WHERE city BETWEEN 'W%' AND 'Z%';"></sql-exercise>
+
+          <p>We've mentioned that SQL commands are not case-sensitive, but <code>WHERE</code> querie values for <code>=</code> and <code>LIKE</code> are.  Sometimes you don't know how the text is stored in the database. SQL provides a couple of functions which can smooth that out for you.  They're called <code>UPPER()</code> and <code>LOWER()</code>, and you can probably figure out what they do, especially if you explore in the box below.</p>
+
+          <sql-exercise 
+              data-question="Try out UPPER() and LOWER()." 
+              data-comment="" 
+              data-default-text="SELECT DISTINCT city 
+FROM crime_scene_report 
+WHERE LOWER(city) ='sql city';"></sql-exercise>
+
+
           </div>
         </div>
 
@@ -316,10 +354,121 @@ AND city = 'SQL City';"></sql-exercise>
           </p>
             <sql-exercise 
               data-question="Run this query to see how to control sort order." 
-              data-comment="After you've run it, change ASC to DESC, or take that part out completely. Try sorting on other columns." 
+              data-comment="After you've run it, change ASC to DESC, or take that part out completely to see how the results differ. Try sorting on other columns." 
               data-default-text="SELECT * FROM drivers_license ORDER BY age ASC LIMIT 10"
 ></sql-exercise>
           
+            <p>By now, you know enough SQL to identify the two witnesses. Give it a try!</p> 
+            <sql-exercise 
+              data-question="Write a query that identifies the first witness." 
+              data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'" 
+              data-default-text="
+
+
+"             data-solution="SELECT * FROM person 
+WHERE address_street_name = 'Northwestern Dr' 
+ORDER BY address_number DESC LIMIT 1;"
+
+></sql-exercise>
+
+            <sql-exercise 
+              data-question="Write a query that identifies the second witness." 
+              data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'" 
+              data-default-text="
+
+
+"             data-solution="SELECT * FROM person 
+WHERE name like '%Annabel%'
+AND address_street_name = 'Franklin Ave';"
+
+></sql-exercise>
+
+          </div>
+        </div>
+
+        <div id="joins" class="grid">
+          <div class="grid-item">
+          <h2>Making connections</h2>
+
+          <h3>Joining tables</h3>
+          <p>Until now, we’ve been asking questions that can be answered by considering data from only a single table. But what if we need to ask more complex questions that simultaneously require data from two different tables? That’s where ​JOIN​ comes in.</p>
+
+          <p>More experienced SQL folks use a few different kinds of JOIN -- you may hear about INNER, OUTER, LEFT and RIGHT joins.  Here, we'll just talk about the most common kind of JOIN, the INNER JOIN. Since it's common, you can leave out INNER in your SQL commands.</p>
+
+          <p>
+          The most common way to join tables is using primary key and foreign key columns. Refer back to the Entity Relationship Diagram (ERD) above if you don't remember what those are, or to see the key relationships between tables in our database.  You can do joins on any columns, but the key columns are optimized for fast results.  It is probably easier to show how joins work with our interactive SQL system than to write them.
+          </p>
+
+          <sql-exercise 
+              data-question="Run this query to identify the biggest annual earners in our database. (Again, trust us, the SSNs are all made up.)" 
+              data-comment="Try editing the query to return more data, or to find people with different incomes. Try joining other tables together. You can use * in between SELECT and FROM here like with any other query, so try that too." 
+              data-default-text="SELECT person.name, income.annual_income 
+FROM income 
+JOIN person 
+  ON income.ssn = person.ssn 
+WHERE annual_income > 450000"></sql-exercise>  
+
+          <p>Sometimes you want to connect more than one table. SQL lets you join as many tables in a query as you like.</p>
+
+          <sql-exercise 
+              data-question="Let's see if big earners have other characteristics in common." 
+              data-comment="This example shows how to join more than one table. It also, incidentally, shows how you can use 'aliases' for the various tables in your query so that you don't have to type as much. Finally, it shows how you can change how a column name shows up in the results, which can be handy." 
+              data-default-text="SELECT name, annual_income as income, 
+gender, eye_color as eyes, hair_color as hair
+FROM income i
+JOIN person p
+  ON i.ssn = p.ssn 
+JOIN drivers_license dl
+  ON p.license_id = dl.id
+WHERE annual_income > 450000"></sql-exercise>
+
+
+          <p>Now that you know how to join tables, you should be able to find the interview transcripts for the two witnesses you identified before. Give it a try!</p>
+
+<sql-exercise 
+              data-question="Write a query that shows the interview transcripts for our two subjects." 
+              data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'. The official solution does it in one query, but you don't have to. Technically you don't even need to use a JOIN to get the transcripts, but give it a try." 
+              data-default-text="
+
+
+"             data-solution="SELECT person.name, interview.transcript
+FROM person JOIN interview
+ON person.id = interview.person_id
+WHERE person.id = 14887 OR person.id = 16371;"
+
+></sql-exercise>
+          </div>
+        </div>
+
+                
+
+        <div id="go-get-em" class="grid">
+          <div class="grid-item">
+            <h3>Go Get 'em!</h3>
+            <p>
+            Now you know enough SQL to solve the mystery. You'll need to read the ERD and make some reasonable assumptions, but there's no other syntax that you need! 
+            </p>
+            <sql-exercise 
+              data-question="Find the murderer!" 
+              data-comment="It will take more than one query to find the killer, but you can just keep editing this box, keeping notes on your results along the way. When you think you know the answer, go to the next section." 
+              data-default-text="
+
+
+"></sql-exercise>
+
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="grid-item">
+            <h3>Check your solution</h3>
+            <sql-exercise 
+              data-question="Use your knowledge of the database schema and SQL commands to find out who committed the murder." 
+              data-comment="When you think you know the answer, go to the next section." 
+              data-default-text="INSERT INTO solution VALUES (1, 'Insert the name of the person you found here');
+
+SELECT value FROM solution;"></sql-exercise>
+
           </div>
         </div>
 
