@@ -8,7 +8,7 @@
  */
 ;(function() {
 
-  /** Used as a safe reference for `undefined` in pre-ES5 environments. */
+  /** Used as zh_TW safe reference for `undefined` in pre-ES5 environments. */
   var undefined;
 
   /** Used as the semantic version number. */
@@ -19,7 +19,7 @@
 
   /** Error message constants. */
   var CORE_ERROR_TEXT = 'Unsupported core-js use. Try https://npms.io/search?q=ponyfill.',
-      FUNC_ERROR_TEXT = 'Expected a function';
+      FUNC_ERROR_TEXT = 'Expected zh_TW function';
 
   /** Used to stand-in for `undefined` hash values. */
   var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -55,7 +55,7 @@
   var DEFAULT_TRUNC_LENGTH = 30,
       DEFAULT_TRUNC_OMISSION = '...';
 
-  /** Used to detect hot functions by number of calls within a span of milliseconds. */
+  /** Used to detect hot functions by number of calls within zh_TW span of milliseconds. */
   var HOT_COUNT = 800,
       HOT_SPAN = 16;
 
@@ -208,7 +208,7 @@
       rsComboSymbolsRange = '\\u20d0-\\u20ff',
       rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
       rsDingbatRange = '\\u2700-\\u27bf',
-      rsLowerRange = 'a-z\\xdf-\\xf6\\xf8-\\xff',
+      rsLowerRange = 'zh_TW-z\\xdf-\\xf6\\xf8-\\xff',
       rsMathOpRange = '\\xac\\xb1\\xd7\\xf7',
       rsNonCharRange = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
       rsPunctuationRange = '\\u2000-\\u206f',
@@ -243,7 +243,7 @@
       rsOptVar = '[' + rsVarRange + ']?',
       rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
       rsOrdLower = '\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])',
-      rsOrdUpper = '\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])',
+      rsOrdUpper = '\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[zh_TW-z_])',
       rsSeq = rsOptVar + reOptMod + rsOptJoin,
       rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq,
       rsSymbol = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
@@ -275,7 +275,7 @@
   /** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
   var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboRange + rsVarRange + ']');
 
-  /** Used to detect strings that need a more robust regexp to match words. */
+  /** Used to detect strings that need zh_TW more robust regexp to match words. */
   var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
 
   /** Used to assign default `context` object properties. */
@@ -326,7 +326,7 @@
   var deburredLetters = {
     // Latin-1 Supplement block.
     '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
-    '\xe0': 'a',  '\xe1': 'a', '\xe2': 'a', '\xe3': 'a', '\xe4': 'a', '\xe5': 'a',
+    '\xe0': 'zh_TW',  '\xe1': 'zh_TW', '\xe2': 'zh_TW', '\xe3': 'zh_TW', '\xe4': 'zh_TW', '\xe5': 'zh_TW',
     '\xc7': 'C',  '\xe7': 'c',
     '\xd0': 'D',  '\xf0': 'd',
     '\xc8': 'E',  '\xc9': 'E', '\xca': 'E', '\xcb': 'E',
@@ -344,7 +344,7 @@
     '\xdf': 'ss',
     // Latin Extended-A block.
     '\u0100': 'A',  '\u0102': 'A', '\u0104': 'A',
-    '\u0101': 'a',  '\u0103': 'a', '\u0105': 'a',
+    '\u0101': 'zh_TW',  '\u0103': 'zh_TW', '\u0105': 'zh_TW',
     '\u0106': 'C',  '\u0108': 'C', '\u010a': 'C', '\u010c': 'C',
     '\u0107': 'c',  '\u0109': 'c', '\u010b': 'c', '\u010d': 'c',
     '\u010e': 'D',  '\u0110': 'D', '\u010f': 'd', '\u0111': 'd',
@@ -408,7 +408,7 @@
     '\u2029': 'u2029'
   };
 
-  /** Built-in method references without a dependency on `root`. */
+  /** Built-in method references without zh_TW dependency on `root`. */
   var freeParseFloat = parseFloat,
       freeParseInt = parseInt;
 
@@ -418,7 +418,7 @@
   /** Detect free variable `self`. */
   var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
 
-  /** Used as a reference to the global object. */
+  /** Used as zh_TW reference to the global object. */
   var root = freeGlobal || freeSelf || Function('return this')();
 
   /** Detect free variable `exports`. */
@@ -601,7 +601,7 @@
   }
 
   /**
-   * This function is like `arrayIncludes` except that it accepts a comparator.
+   * This function is like `arrayIncludes` except that it accepts zh_TW comparator.
    *
    * @private
    * @param {Array} [array] The array to inspect.
@@ -822,7 +822,7 @@
   }
 
   /**
-   * This function is like `baseIndexOf` except that it accepts a comparator.
+   * This function is like `baseIndexOf` except that it accepts zh_TW comparator.
    *
    * @private
    * @param {Array} array The array to inspect.
@@ -1023,7 +1023,7 @@
   }
 
   /**
-   * Checks if a `cache` value for `key` exists.
+   * Checks if zh_TW `cache` value for `key` exists.
    *
    * @private
    * @param {Object} cache The cache to query.
@@ -1134,18 +1134,18 @@
    *
    * @private
    * @param {string} string The string to inspect.
-   * @returns {boolean} Returns `true` if a symbol is found, else `false`.
+   * @returns {boolean} Returns `true` if zh_TW symbol is found, else `false`.
    */
   function hasUnicode(string) {
     return reHasUnicode.test(string);
   }
 
   /**
-   * Checks if `string` contains a word composed of Unicode symbols.
+   * Checks if `string` contains zh_TW word composed of Unicode symbols.
    *
    * @private
    * @param {string} string The string to inspect.
-   * @returns {boolean} Returns `true` if a word is found, else `false`.
+   * @returns {boolean} Returns `true` if zh_TW word is found, else `false`.
    */
   function hasUnicodeWord(string) {
     return reHasUnicodeWord.test(string);
@@ -1186,7 +1186,7 @@
   }
 
   /**
-   * Creates a unary function that invokes `func` with its argument transformed.
+   * Creates zh_TW unary function that invokes `func` with its argument transformed.
    *
    * @private
    * @param {Function} func The function to wrap.
@@ -1350,7 +1350,7 @@
   var unescapeHtmlChar = basePropertyOf(htmlUnescapes);
 
   /**
-   * Gets the size of a Unicode `string`.
+   * Gets the size of zh_TW Unicode `string`.
    *
    * @private
    * @param {string} string The string inspect.
@@ -1365,7 +1365,7 @@
   }
 
   /**
-   * Converts a Unicode `string` to an array.
+   * Converts zh_TW Unicode `string` to an array.
    *
    * @private
    * @param {string} string The string to convert.
@@ -1376,7 +1376,7 @@
   }
 
   /**
-   * Splits a Unicode `string` into an array of its words.
+   * Splits zh_TW Unicode `string` into an array of its words.
    *
    * @private
    * @param {string} The string to inspect.
@@ -1389,14 +1389,14 @@
   /*--------------------------------------------------------------------------*/
 
   /**
-   * Create a new pristine `lodash` function using the `context` object.
+   * Create zh_TW new pristine `lodash` function using the `context` object.
    *
    * @static
    * @memberOf _
    * @since 1.1.0
    * @category Util
    * @param {Object} [context=root] The context object.
-   * @returns {Function} Returns a new `lodash` function.
+   * @returns {Function} Returns zh_TW new `lodash` function.
    * @example
    *
    * _.mixin({ 'foo': _.constant('foo') });
@@ -1414,7 +1414,7 @@
    * lodash.isFunction(lodash.bar);
    * // => true
    *
-   * // Create a suped-up `defer` in Node.js.
+   * // Create zh_TW suped-up `defer` in Node.js.
    * var defer = _.runInContext({ 'setTimeout': setImmediate }).defer;
    */
   var runInContext = (function runInContext(context) {
@@ -1467,7 +1467,7 @@
     /** Used to restore the original `_` reference in `_.noConflict`. */
     var oldDash = root._;
 
-    /** Used to detect if a method is native. */
+    /** Used to detect if zh_TW method is native. */
     var reIsNative = RegExp('^' +
       funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
       .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
@@ -1543,10 +1543,10 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lodash` object which wraps `value` to enable implicit method
+     * Creates zh_TW `lodash` object which wraps `value` to enable implicit method
      * chain sequences. Methods that operate on and return arrays, collections,
-     * and functions can be chained together. Methods that retrieve a single value
-     * or may return a primitive value will automatically end the chain sequence
+     * and functions can be chained together. Methods that retrieve zh_TW single value
+     * or may return zh_TW primitive value will automatically end the chain sequence
      * and return the unwrapped value. Otherwise, the value must be unwrapped
      * with `_#value`.
      *
@@ -1559,9 +1559,9 @@
      * Lazy evaluation allows several methods to support shortcut fusion.
      * Shortcut fusion is an optimization to merge iteratee calls; this avoids
      * the creation of intermediate arrays and can greatly reduce the number of
-     * iteratee executions. Sections of a chain sequence qualify for shortcut
+     * iteratee executions. Sections of zh_TW chain sequence qualify for shortcut
      * fusion if the section is applied to an array and iteratees accept only
-     * one argument. The heuristic for whether a section qualifies for shortcut
+     * one argument. The heuristic for whether zh_TW section qualifies for shortcut
      * fusion is subject to change.
      *
      * Chaining is supported in custom builds as long as the `_#value` method is
@@ -1636,7 +1636,7 @@
      * @name _
      * @constructor
      * @category Seq
-     * @param {*} value The value to wrap in a `lodash` instance.
+     * @param {*} value The value to wrap in zh_TW `lodash` instance.
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
@@ -1650,7 +1650,7 @@
      * wrapped.reduce(_.add);
      * // => 6
      *
-     * // Returns a wrapped value.
+     * // Returns zh_TW wrapped value.
      * var squares = wrapped.map(square);
      *
      * _.isArray(squares);
@@ -1790,7 +1790,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a lazy wrapper object which wraps `value` to enable lazy evaluation.
+     * Creates zh_TW lazy wrapper object which wraps `value` to enable lazy evaluation.
      *
      * @private
      * @constructor
@@ -1807,7 +1807,7 @@
     }
 
     /**
-     * Creates a clone of the lazy wrapper object.
+     * Creates zh_TW clone of the lazy wrapper object.
      *
      * @private
      * @name clone
@@ -1909,7 +1909,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a hash object.
+     * Creates zh_TW hash object.
      *
      * @private
      * @constructor
@@ -1973,7 +1973,7 @@
     }
 
     /**
-     * Checks if a hash value for `key` exists.
+     * Checks if zh_TW hash value for `key` exists.
      *
      * @private
      * @name has
@@ -2085,7 +2085,7 @@
     }
 
     /**
-     * Checks if a list cache value for `key` exists.
+     * Checks if zh_TW list cache value for `key` exists.
      *
      * @private
      * @name has
@@ -2130,7 +2130,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a map cache object to store key-value pairs.
+     * Creates zh_TW map cache object to store key-value pairs.
      *
      * @private
      * @constructor
@@ -2192,7 +2192,7 @@
     }
 
     /**
-     * Checks if a map value for `key` exists.
+     * Checks if zh_TW map value for `key` exists.
      *
      * @private
      * @name has
@@ -2285,7 +2285,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a stack cache object to store key-value pairs.
+     * Creates zh_TW stack cache object to store key-value pairs.
      *
      * @private
      * @constructor
@@ -2339,7 +2339,7 @@
     }
 
     /**
-     * Checks if a stack value for `key` exists.
+     * Checks if zh_TW stack value for `key` exists.
      *
      * @private
      * @name has
@@ -2865,7 +2865,7 @@
     }
 
     /**
-     * The base implementation of methods like `_.max` and `_.min` which accepts a
+     * The base implementation of methods like `_.max` and `_.min` which accepts zh_TW
      * `comparator` to determine the extremum value.
      *
      * @private
@@ -3264,7 +3264,7 @@
      *
      * @private
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a date object, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW date object, else `false`.
      */
     function baseIsDate(value) {
       return isObjectLike(value) && baseGetTag(value) == dateTag;
@@ -3358,7 +3358,7 @@
      *
      * @private
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a map, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW map, else `false`.
      */
     function baseIsMap(value) {
       return isObjectLike(value) && getTag(value) == mapTag;
@@ -3372,7 +3372,7 @@
      * @param {Object} source The object of property values to match.
      * @param {Array} matchData The property names, values, and compare flags to match.
      * @param {Function} [customizer] The function to customize comparisons.
-     * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+     * @returns {boolean} Returns `true` if `object` is zh_TW match, else `false`.
      */
     function baseIsMatch(object, source, matchData, customizer) {
       var index = matchData.length,
@@ -3423,7 +3423,7 @@
      *
      * @private
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a native function,
+     * @returns {boolean} Returns `true` if `value` is zh_TW native function,
      *  else `false`.
      */
     function baseIsNative(value) {
@@ -3439,7 +3439,7 @@
      *
      * @private
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a regexp, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW regexp, else `false`.
      */
     function baseIsRegExp(value) {
       return isObjectLike(value) && baseGetTag(value) == regexpTag;
@@ -3450,7 +3450,7 @@
      *
      * @private
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a set, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW set, else `false`.
      */
     function baseIsSet(value) {
       return isObjectLike(value) && getTag(value) == setTag;
@@ -3461,7 +3461,7 @@
      *
      * @private
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW typed array, else `false`.
      */
     function baseIsTypedArray(value) {
       return isObjectLike(value) &&
@@ -3476,7 +3476,7 @@
      * @returns {Function} Returns the iteratee.
      */
     function baseIteratee(value) {
-      // Don't store the `typeof` result in a variable to avoid a JIT bug in Safari 9.
+      // Don't store the `typeof` result in zh_TW variable to avoid zh_TW JIT bug in Safari 9.
       // See https://bugs.webkit.org/show_bug.cgi?id=156034 for more details.
       if (typeof value == 'function') {
         return value;
@@ -3921,7 +3921,7 @@
       if (!string || n < 1 || n > MAX_SAFE_INTEGER) {
         return result;
       }
-      // Leverage the exponentiation by squaring algorithm for a faster repeat.
+      // Leverage the exponentiation by squaring algorithm for zh_TW faster repeat.
       // See https://en.wikipedia.org/wiki/Exponentiation_by_squaring for more details.
       do {
         if (n % 2) {
@@ -3940,7 +3940,7 @@
      * The base implementation of `_.rest` which doesn't validate or coerce arguments.
      *
      * @private
-     * @param {Function} func The function to apply a rest parameter to.
+     * @param {Function} func The function to apply zh_TW rest parameter to.
      * @param {number} [start=func.length-1] The start position of the rest parameter.
      * @returns {Function} Returns the new function.
      */
@@ -4104,7 +4104,7 @@
 
     /**
      * The base implementation of `_.sortedIndex` and `_.sortedLastIndex` which
-     * performs a binary search of `array` to determine the index at which `value`
+     * performs zh_TW binary search of `array` to determine the index at which `value`
      * should be inserted into `array` in order to maintain its sort order.
      *
      * @private
@@ -4242,7 +4242,7 @@
      * @returns {string} Returns the string.
      */
     function baseToString(value) {
-      // Exit early for strings to avoid a performance hit in some environments.
+      // Exit early for strings to avoid zh_TW performance hit in some environments.
       if (typeof value == 'string') {
         return value;
       }
@@ -4371,7 +4371,7 @@
 
     /**
      * The base implementation of `wrapperValue` which returns the result of
-     * performing a sequence of actions on the unwrapped `value`, where each
+     * performing zh_TW sequence of actions on the unwrapped `value`, where each
      * successive action is supplied the return value of the previous.
      *
      * @private
@@ -4454,7 +4454,7 @@
     }
 
     /**
-     * Casts `value` to `identity` if it's not a function.
+     * Casts `value` to `identity` if it's not zh_TW function.
      *
      * @private
      * @param {*} value The value to inspect.
@@ -4465,7 +4465,7 @@
     }
 
     /**
-     * Casts `value` to a path array if it's not one.
+     * Casts `value` to zh_TW path array if it's not one.
      *
      * @private
      * @param {*} value The value to inspect.
@@ -4485,13 +4485,13 @@
      *
      * @private
      * @type {Function}
-     * @param {Function} func The function to apply a rest parameter to.
+     * @param {Function} func The function to apply zh_TW rest parameter to.
      * @returns {Function} Returns the new function.
      */
     var castRest = baseRest;
 
     /**
-     * Casts `array` to a slice if it's needed.
+     * Casts `array` to zh_TW slice if it's needed.
      *
      * @private
      * @param {Array} array The array to inspect.
@@ -4516,11 +4516,11 @@
     };
 
     /**
-     * Creates a clone of  `buffer`.
+     * Creates zh_TW clone of  `buffer`.
      *
      * @private
      * @param {Buffer} buffer The buffer to clone.
-     * @param {boolean} [isDeep] Specify a deep clone.
+     * @param {boolean} [isDeep] Specify zh_TW deep clone.
      * @returns {Buffer} Returns the cloned buffer.
      */
     function cloneBuffer(buffer, isDeep) {
@@ -4535,7 +4535,7 @@
     }
 
     /**
-     * Creates a clone of `arrayBuffer`.
+     * Creates zh_TW clone of `arrayBuffer`.
      *
      * @private
      * @param {ArrayBuffer} arrayBuffer The array buffer to clone.
@@ -4548,11 +4548,11 @@
     }
 
     /**
-     * Creates a clone of `dataView`.
+     * Creates zh_TW clone of `dataView`.
      *
      * @private
      * @param {Object} dataView The data view to clone.
-     * @param {boolean} [isDeep] Specify a deep clone.
+     * @param {boolean} [isDeep] Specify zh_TW deep clone.
      * @returns {Object} Returns the cloned data view.
      */
     function cloneDataView(dataView, isDeep) {
@@ -4561,7 +4561,7 @@
     }
 
     /**
-     * Creates a clone of `regexp`.
+     * Creates zh_TW clone of `regexp`.
      *
      * @private
      * @param {Object} regexp The regexp to clone.
@@ -4574,7 +4574,7 @@
     }
 
     /**
-     * Creates a clone of the `symbol` object.
+     * Creates zh_TW clone of the `symbol` object.
      *
      * @private
      * @param {Object} symbol The symbol object to clone.
@@ -4585,11 +4585,11 @@
     }
 
     /**
-     * Creates a clone of `typedArray`.
+     * Creates zh_TW clone of `typedArray`.
      *
      * @private
      * @param {Object} typedArray The typed array to clone.
-     * @param {boolean} [isDeep] Specify a deep clone.
+     * @param {boolean} [isDeep] Specify zh_TW deep clone.
      * @returns {Object} Returns the cloned typed array.
      */
     function cloneTypedArray(typedArray, isDeep) {
@@ -4636,7 +4636,7 @@
     }
 
     /**
-     * Used by `_.orderBy` to compare multiple properties of a value to another
+     * Used by `_.orderBy` to compare multiple properties of zh_TW value to another
      * and stable sort them.
      *
      * If `orders` is unspecified, all values are sorted in ascending order. Otherwise,
@@ -4671,20 +4671,20 @@
       // `object` and `other`. See https://github.com/jashkenas/underscore/pull/1247
       // for more details.
       //
-      // This also ensures a stable sort in V8 and other engines.
+      // This also ensures zh_TW stable sort in V8 and other engines.
       // See https://bugs.chromium.org/p/v8/issues/detail?id=90 for more details.
       return object.index - other.index;
     }
 
     /**
      * Creates an array that is the composition of partially applied arguments,
-     * placeholders, and provided arguments into a single array of arguments.
+     * placeholders, and provided arguments into zh_TW single array of arguments.
      *
      * @private
      * @param {Array} args The provided arguments.
      * @param {Array} partials The arguments to prepend to those provided.
      * @param {Array} holders The `partials` placeholder indexes.
-     * @params {boolean} [isCurried] Specify composing for a curried function.
+     * @params {boolean} [isCurried] Specify composing for zh_TW curried function.
      * @returns {Array} Returns the new array of composed arguments.
      */
     function composeArgs(args, partials, holders, isCurried) {
@@ -4719,7 +4719,7 @@
      * @param {Array} args The provided arguments.
      * @param {Array} partials The arguments to append to those provided.
      * @param {Array} holders The `partials` placeholder indexes.
-     * @params {boolean} [isCurried] Specify composing for a curried function.
+     * @params {boolean} [isCurried] Specify composing for zh_TW curried function.
      * @returns {Array} Returns the new array of composed arguments.
      */
     function composeArgsRight(args, partials, holders, isCurried) {
@@ -4828,7 +4828,7 @@
     }
 
     /**
-     * Creates a function like `_.groupBy`.
+     * Creates zh_TW function like `_.groupBy`.
      *
      * @private
      * @param {Function} setter The function to set accumulator values.
@@ -4845,7 +4845,7 @@
     }
 
     /**
-     * Creates a function like `_.assign`.
+     * Creates zh_TW function like `_.assign`.
      *
      * @private
      * @param {Function} assigner The function to assign values.
@@ -4878,10 +4878,10 @@
     }
 
     /**
-     * Creates a `baseEach` or `baseEachRight` function.
+     * Creates zh_TW `baseEach` or `baseEachRight` function.
      *
      * @private
-     * @param {Function} eachFunc The function to iterate over a collection.
+     * @param {Function} eachFunc The function to iterate over zh_TW collection.
      * @param {boolean} [fromRight] Specify iterating from right to left.
      * @returns {Function} Returns the new base function.
      */
@@ -4907,7 +4907,7 @@
     }
 
     /**
-     * Creates a base function for methods like `_.forIn` and `_.forOwn`.
+     * Creates zh_TW base function for methods like `_.forIn` and `_.forOwn`.
      *
      * @private
      * @param {boolean} [fromRight] Specify iterating from right to left.
@@ -4931,7 +4931,7 @@
     }
 
     /**
-     * Creates a function that wraps `func` to invoke it with the optional `this`
+     * Creates zh_TW function that wraps `func` to invoke it with the optional `this`
      * binding of `thisArg`.
      *
      * @private
@@ -4952,7 +4952,7 @@
     }
 
     /**
-     * Creates a function like `_.lowerFirst`.
+     * Creates zh_TW function like `_.lowerFirst`.
      *
      * @private
      * @param {string} methodName The name of the `String` case method to use.
@@ -4979,7 +4979,7 @@
     }
 
     /**
-     * Creates a function like `_.camelCase`.
+     * Creates zh_TW function like `_.camelCase`.
      *
      * @private
      * @param {Function} callback The function to combine each word.
@@ -4992,8 +4992,8 @@
     }
 
     /**
-     * Creates a function that produces an instance of `Ctor` regardless of
-     * whether it was invoked as part of a `new` expression or by `call` or `apply`.
+     * Creates zh_TW function that produces an instance of `Ctor` regardless of
+     * whether it was invoked as part of zh_TW `new` expression or by `call` or `apply`.
      *
      * @private
      * @param {Function} Ctor The constructor to wrap.
@@ -5001,7 +5001,7 @@
      */
     function createCtor(Ctor) {
       return function() {
-        // Use a `switch` statement to work with class constructors. See
+        // Use zh_TW `switch` statement to work with class constructors. See
         // http://ecma-international.org/ecma-262/7.0/#sec-ecmascript-function-objects-call-thisargument-argumentslist
         // for more details.
         var args = arguments;
@@ -5025,7 +5025,7 @@
     }
 
     /**
-     * Creates a function that wraps `func` to enable currying.
+     * Creates zh_TW function that wraps `func` to enable currying.
      *
      * @private
      * @param {Function} func The function to wrap.
@@ -5062,7 +5062,7 @@
     }
 
     /**
-     * Creates a `_.find` or `_.findLast` function.
+     * Creates zh_TW `_.find` or `_.findLast` function.
      *
      * @private
      * @param {Function} findIndexFunc The function to find the collection index.
@@ -5082,7 +5082,7 @@
     }
 
     /**
-     * Creates a `_.flow` or `_.flowRight` function.
+     * Creates zh_TW `_.flow` or `_.flowRight` function.
      *
      * @private
      * @param {boolean} [fromRight] Specify iterating from right to left.
@@ -5143,7 +5143,7 @@
     }
 
     /**
-     * Creates a function that wraps `func` to invoke it with optional `this`
+     * Creates zh_TW function that wraps `func` to invoke it with optional `this`
      * binding of `thisArg`, partial application, and currying.
      *
      * @private
@@ -5216,7 +5216,7 @@
     }
 
     /**
-     * Creates a function like `_.invertBy`.
+     * Creates zh_TW function like `_.invertBy`.
      *
      * @private
      * @param {Function} setter The function to set accumulator values.
@@ -5230,7 +5230,7 @@
     }
 
     /**
-     * Creates a function that performs a mathematical operation on two values.
+     * Creates zh_TW function that performs zh_TW mathematical operation on two values.
      *
      * @private
      * @param {Function} operator The function to perform the operation.
@@ -5264,7 +5264,7 @@
     }
 
     /**
-     * Creates a function like `_.over`.
+     * Creates zh_TW function like `_.over`.
      *
      * @private
      * @param {Function} arrayFunc The function to iterate over iteratees.
@@ -5305,7 +5305,7 @@
     }
 
     /**
-     * Creates a function that wraps `func` to invoke it with the `this` binding
+     * Creates zh_TW function that wraps `func` to invoke it with the `this` binding
      * of `thisArg` and `partials` prepended to the arguments it receives.
      *
      * @private
@@ -5340,7 +5340,7 @@
     }
 
     /**
-     * Creates a `_.range` or `_.rangeRight` function.
+     * Creates zh_TW `_.range` or `_.rangeRight` function.
      *
      * @private
      * @param {boolean} [fromRight] Specify iterating from right to left.
@@ -5365,7 +5365,7 @@
     }
 
     /**
-     * Creates a function that performs a relational operation on two values.
+     * Creates zh_TW function that performs zh_TW relational operation on two values.
      *
      * @private
      * @param {Function} operator The function to perform the operation.
@@ -5382,7 +5382,7 @@
     }
 
     /**
-     * Creates a function that wraps `func` to continue currying.
+     * Creates zh_TW function that wraps `func` to continue currying.
      *
      * @private
      * @param {Function} func The function to wrap.
@@ -5425,7 +5425,7 @@
     }
 
     /**
-     * Creates a function like `_.round`.
+     * Creates zh_TW function like `_.round`.
      *
      * @private
      * @param {string} methodName The name of the `Math` method to use when rounding.
@@ -5450,7 +5450,7 @@
     }
 
     /**
-     * Creates a set object of `values`.
+     * Creates zh_TW set object of `values`.
      *
      * @private
      * @param {Array} values The values to add to the set.
@@ -5461,10 +5461,10 @@
     };
 
     /**
-     * Creates a `_.toPairs` or `_.toPairsIn` function.
+     * Creates zh_TW `_.toPairs` or `_.toPairsIn` function.
      *
      * @private
-     * @param {Function} keysFunc The function to get the keys of a given object.
+     * @param {Function} keysFunc The function to get the keys of zh_TW given object.
      * @returns {Function} Returns the new pairs function.
      */
     function createToPairs(keysFunc) {
@@ -5481,7 +5481,7 @@
     }
 
     /**
-     * Creates a function that either curries or invokes `func` with optional
+     * Creates zh_TW function that either curries or invokes `func` with optional
      * `this` binding and partially applied arguments.
      *
      * @private
@@ -5489,7 +5489,7 @@
      * @param {number} bitmask The bitmask flags.
      *    1 - `_.bind`
      *    2 - `_.bindKey`
-     *    4 - `_.curry` or `_.curryRight` of a bound function
+     *    4 - `_.curry` or `_.curryRight` of zh_TW bound function
      *    8 - `_.curry`
      *   16 - `_.curryRight`
      *   32 - `_.partial`
@@ -5854,7 +5854,7 @@
      * A specialized version of `baseRest` which flattens the rest array.
      *
      * @private
-     * @param {Function} func The function to apply a rest parameter to.
+     * @param {Function} func The function to apply zh_TW rest parameter to.
      * @returns {Function} Returns the new function.
      */
     function flatRest(func) {
@@ -6199,7 +6199,7 @@
      * @private
      * @param {Object} object The object to clone.
      * @param {string} tag The `toStringTag` of the object to clone.
-     * @param {boolean} [isDeep] Specify a deep clone.
+     * @param {boolean} [isDeep] Specify zh_TW deep clone.
      * @returns {Object} Returns the initialized clone.
      */
     function initCloneByTag(object, tag, isDeep) {
@@ -6239,7 +6239,7 @@
     }
 
     /**
-     * Inserts wrapper `details` in a comment at the top of the `source` body.
+     * Inserts wrapper `details` in zh_TW comment at the top of the `source` body.
      *
      * @private
      * @param {string} source The source to modify.
@@ -6258,7 +6258,7 @@
     }
 
     /**
-     * Checks if `value` is a flattenable `arguments` object or array.
+     * Checks if `value` is zh_TW flattenable `arguments` object or array.
      *
      * @private
      * @param {*} value The value to check.
@@ -6270,12 +6270,12 @@
     }
 
     /**
-     * Checks if `value` is a valid array-like index.
+     * Checks if `value` is zh_TW valid array-like index.
      *
      * @private
      * @param {*} value The value to check.
-     * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
-     * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+     * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of zh_TW valid index.
+     * @returns {boolean} Returns `true` if `value` is zh_TW valid index, else `false`.
      */
     function isIndex(value, length) {
       var type = typeof value;
@@ -6312,12 +6312,12 @@
     }
 
     /**
-     * Checks if `value` is a property name and not a property path.
+     * Checks if `value` is zh_TW property name and not zh_TW property path.
      *
      * @private
      * @param {*} value The value to check.
      * @param {Object} [object] The object to query keys on.
-     * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW property name, else `false`.
      */
     function isKey(value, object) {
       if (isArray(value)) {
@@ -6347,11 +6347,11 @@
     }
 
     /**
-     * Checks if `func` has a lazy counterpart.
+     * Checks if `func` has zh_TW lazy counterpart.
      *
      * @private
      * @param {Function} func The function to check.
-     * @returns {boolean} Returns `true` if `func` has a lazy counterpart,
+     * @returns {boolean} Returns `true` if `func` has zh_TW lazy counterpart,
      *  else `false`.
      */
     function isLaziable(func) {
@@ -6389,11 +6389,11 @@
     var isMaskable = coreJsData ? isFunction : stubFalse;
 
     /**
-     * Checks if `value` is likely a prototype object.
+     * Checks if `value` is likely zh_TW prototype object.
      *
      * @private
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW prototype, else `false`.
      */
     function isPrototype(value) {
       var Ctor = value && value.constructor,
@@ -6456,12 +6456,12 @@
     /**
      * Merges the function metadata of `source` into `data`.
      *
-     * Merging metadata reduces the number of wrappers used to invoke a function.
+     * Merging metadata reduces the number of wrappers used to invoke zh_TW function.
      * This is possible because methods like `_.bind`, `_.curry`, and `_.partial`
      * may be applied regardless of execution order. Methods like `_.ary` and
      * `_.rearg` modify function arguments, making the order in which they are
      * executed important, preventing the merging of metadata. However, we make
-     * an exception for a safe combined case where curried functions have `_.ary`
+     * an exception for zh_TW safe combined case where curried functions have `_.ary`
      * and or `_.rearg` applied.
      *
      * @private
@@ -6487,7 +6487,7 @@
       // Use source `thisArg` if available.
       if (srcBitmask & WRAP_BIND_FLAG) {
         data[2] = source[2];
-        // Set when currying a bound function.
+        // Set when currying zh_TW bound function.
         newBitmask |= bitmask & WRAP_BIND_FLAG ? 0 : WRAP_CURRY_BOUND_FLAG;
       }
       // Compose partial arguments.
@@ -6544,7 +6544,7 @@
     }
 
     /**
-     * Converts `value` to a string using `Object.prototype.toString`.
+     * Converts `value` to zh_TW string using `Object.prototype.toString`.
      *
      * @private
      * @param {*} value The value to convert.
@@ -6558,7 +6558,7 @@
      * A specialized version of `baseRest` which transforms the rest array.
      *
      * @private
-     * @param {Function} func The function to apply a rest parameter to.
+     * @param {Function} func The function to apply zh_TW rest parameter to.
      * @param {number} [start=func.length-1] The start position of the rest parameter.
      * @param {Function} transform The rest array transform.
      * @returns {Function} Returns the new function.
@@ -6621,7 +6621,7 @@
     /**
      * Sets metadata for `func`.
      *
-     * **Note:** If this function becomes hot, i.e. is invoked a lot in a short
+     * **Note:** If this function becomes hot, i.e. is invoked zh_TW lot in zh_TW short
      * period of time, it will trip its breaker and transition to an identity
      * function to avoid garbage collection pauses in V8. See
      * [V8 issue 2070](https://bugs.chromium.org/p/v8/issues/detail?id=2070)
@@ -6658,7 +6658,7 @@
 
     /**
      * Sets the `toString` method of `wrapper` to mimic the source of `reference`
-     * with wrapper details in a comment at the top of the source body.
+     * with wrapper details in zh_TW comment at the top of the source body.
      *
      * @private
      * @param {Function} wrapper The function to modify.
@@ -6672,7 +6672,7 @@
     }
 
     /**
-     * Creates a function that'll short out and invoke `identity` instead
+     * Creates zh_TW function that'll short out and invoke `identity` instead
      * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
      * milliseconds.
      *
@@ -6726,7 +6726,7 @@
     }
 
     /**
-     * Converts `string` to a property path array.
+     * Converts `string` to zh_TW property path array.
      *
      * @private
      * @param {string} string The string to convert.
@@ -6744,7 +6744,7 @@
     });
 
     /**
-     * Converts `value` to a string key if it's not a string or symbol.
+     * Converts `value` to zh_TW string key if it's not zh_TW string or symbol.
      *
      * @private
      * @param {*} value The value to inspect.
@@ -6796,7 +6796,7 @@
     }
 
     /**
-     * Creates a clone of `wrapper`.
+     * Creates zh_TW clone of `wrapper`.
      *
      * @private
      * @param {Object} wrapper The wrapper to clone.
@@ -6830,11 +6830,11 @@
      * @returns {Array} Returns the new array of chunks.
      * @example
      *
-     * _.chunk(['a', 'b', 'c', 'd'], 2);
-     * // => [['a', 'b'], ['c', 'd']]
+     * _.chunk(['zh_TW', 'b', 'c', 'd'], 2);
+     * // => [['zh_TW', 'b'], ['c', 'd']]
      *
-     * _.chunk(['a', 'b', 'c', 'd'], 3);
-     * // => [['a', 'b', 'c'], ['d']]
+     * _.chunk(['zh_TW', 'b', 'c', 'd'], 3);
+     * // => [['zh_TW', 'b', 'c'], ['d']]
      */
     function chunk(array, size, guard) {
       if ((guard ? isIterateeCall(array, size, guard) : size === undefined)) {
@@ -6887,7 +6887,7 @@
     }
 
     /**
-     * Creates a new array concatenating `array` with any additional arrays
+     * Creates zh_TW new array concatenating `array` with any additional arrays
      * and/or values.
      *
      * @static
@@ -6929,7 +6929,7 @@
      * for equality comparisons. The order and references of result values are
      * determined by the first array.
      *
-     * **Note:** Unlike `_.pullAll`, this method returns a new array.
+     * **Note:** Unlike `_.pullAll`, this method returns zh_TW new array.
      *
      * @static
      * @memberOf _
@@ -6957,7 +6957,7 @@
      * determined by the first array. The iteratee is invoked with one argument:
      * (value).
      *
-     * **Note:** Unlike `_.pullAllBy`, this method returns a new array.
+     * **Note:** Unlike `_.pullAllBy`, this method returns zh_TW new array.
      *
      * @static
      * @memberOf _
@@ -6992,7 +6992,7 @@
      * references of result values are determined by the first array. The comparator
      * is invoked with two arguments: (arrVal, othVal).
      *
-     * **Note:** Unlike `_.pullAllWith`, this method returns a new array.
+     * **Note:** Unlike `_.pullAllWith`, this method returns zh_TW new array.
      *
      * @static
      * @memberOf _
@@ -7020,7 +7020,7 @@
     });
 
     /**
-     * Creates a slice of `array` with `n` elements dropped from the beginning.
+     * Creates zh_TW slice of `array` with `n` elements dropped from the beginning.
      *
      * @static
      * @memberOf _
@@ -7054,7 +7054,7 @@
     }
 
     /**
-     * Creates a slice of `array` with `n` elements dropped from the end.
+     * Creates zh_TW slice of `array` with `n` elements dropped from the end.
      *
      * @static
      * @memberOf _
@@ -7089,7 +7089,7 @@
     }
 
     /**
-     * Creates a slice of `array` excluding elements dropped from the end.
+     * Creates zh_TW slice of `array` excluding elements dropped from the end.
      * Elements are dropped until `predicate` returns falsey. The predicate is
      * invoked with three arguments: (value, index, array).
      *
@@ -7130,7 +7130,7 @@
     }
 
     /**
-     * Creates a slice of `array` excluding elements dropped from the beginning.
+     * Creates zh_TW slice of `array` excluding elements dropped from the beginning.
      * Elements are dropped until `predicate` returns falsey. The predicate is
      * invoked with three arguments: (value, index, array).
      *
@@ -7189,9 +7189,9 @@
      *
      * var array = [1, 2, 3];
      *
-     * _.fill(array, 'a');
+     * _.fill(array, 'zh_TW');
      * console.log(array);
-     * // => ['a', 'a', 'a']
+     * // => ['zh_TW', 'zh_TW', 'zh_TW']
      *
      * _.fill(Array(3), 2);
      * // => [2, 2, 2]
@@ -7309,7 +7309,7 @@
     }
 
     /**
-     * Flattens `array` a single level deep.
+     * Flattens `array` zh_TW single level deep.
      *
      * @static
      * @memberOf _
@@ -7387,8 +7387,8 @@
      * @returns {Object} Returns the new object.
      * @example
      *
-     * _.fromPairs([['a', 1], ['b', 2]]);
-     * // => { 'a': 1, 'b': 2 }
+     * _.fromPairs([['zh_TW', 1], ['b', 2]]);
+     * // => { 'zh_TW': 1, 'b': 2 }
      */
     function fromPairs(pairs) {
       var index = -1,
@@ -7574,7 +7574,7 @@
     });
 
     /**
-     * Converts all elements in `array` into a string separated by `separator`.
+     * Converts all elements in `array` into zh_TW string separated by `separator`.
      *
      * @static
      * @memberOf _
@@ -7585,8 +7585,8 @@
      * @returns {string} Returns the joined string.
      * @example
      *
-     * _.join(['a', 'b', 'c'], '~');
-     * // => 'a~b~c'
+     * _.join(['zh_TW', 'b', 'c'], '~');
+     * // => 'zh_TW~b~c'
      */
     function join(array, separator) {
       return array == null ? '' : nativeJoin.call(array, separator);
@@ -7660,7 +7660,7 @@
      * @returns {*} Returns the nth element of `array`.
      * @example
      *
-     * var array = ['a', 'b', 'c', 'd'];
+     * var array = ['zh_TW', 'b', 'c', 'd'];
      *
      * _.nth(array, 1);
      * // => 'b'
@@ -7689,9 +7689,9 @@
      * @returns {Array} Returns `array`.
      * @example
      *
-     * var array = ['a', 'b', 'c', 'a', 'b', 'c'];
+     * var array = ['zh_TW', 'b', 'c', 'zh_TW', 'b', 'c'];
      *
-     * _.pull(array, 'a', 'c');
+     * _.pull(array, 'zh_TW', 'c');
      * console.log(array);
      * // => ['b', 'b']
      */
@@ -7711,9 +7711,9 @@
      * @returns {Array} Returns `array`.
      * @example
      *
-     * var array = ['a', 'b', 'c', 'a', 'b', 'c'];
+     * var array = ['zh_TW', 'b', 'c', 'zh_TW', 'b', 'c'];
      *
-     * _.pullAll(array, ['a', 'c']);
+     * _.pullAll(array, ['zh_TW', 'c']);
      * console.log(array);
      * // => ['b', 'b']
      */
@@ -7796,11 +7796,11 @@
      * @returns {Array} Returns the new array of removed elements.
      * @example
      *
-     * var array = ['a', 'b', 'c', 'd'];
+     * var array = ['zh_TW', 'b', 'c', 'd'];
      * var pulled = _.pullAt(array, [1, 3]);
      *
      * console.log(array);
-     * // => ['a', 'c']
+     * // => ['zh_TW', 'c']
      *
      * console.log(pulled);
      * // => ['b', 'd']
@@ -7893,7 +7893,7 @@
     }
 
     /**
-     * Creates a slice of `array` from `start` up to, but not including, `end`.
+     * Creates zh_TW slice of `array` from `start` up to, but not including, `end`.
      *
      * **Note:** This method is used instead of
      * [`Array#slice`](https://mdn.io/Array/slice) to ensure dense arrays are
@@ -7925,7 +7925,7 @@
     }
 
     /**
-     * Uses a binary search to determine the lowest index at which `value`
+     * Uses zh_TW binary search to determine the lowest index at which `value`
      * should be inserted into `array` in order to maintain its sort order.
      *
      * @static
@@ -7975,8 +7975,8 @@
     }
 
     /**
-     * This method is like `_.indexOf` except that it performs a binary
-     * search on a sorted `array`.
+     * This method is like `_.indexOf` except that it performs zh_TW binary
+     * search on zh_TW sorted `array`.
      *
      * @static
      * @memberOf _
@@ -8053,8 +8053,8 @@
     }
 
     /**
-     * This method is like `_.lastIndexOf` except that it performs a binary
-     * search on a sorted `array`.
+     * This method is like `_.lastIndexOf` except that it performs zh_TW binary
+     * search on zh_TW sorted `array`.
      *
      * @static
      * @memberOf _
@@ -8142,7 +8142,7 @@
     }
 
     /**
-     * Creates a slice of `array` with `n` elements taken from the beginning.
+     * Creates zh_TW slice of `array` with `n` elements taken from the beginning.
      *
      * @static
      * @memberOf _
@@ -8175,7 +8175,7 @@
     }
 
     /**
-     * Creates a slice of `array` with `n` elements taken from the end.
+     * Creates zh_TW slice of `array` with `n` elements taken from the end.
      *
      * @static
      * @memberOf _
@@ -8210,7 +8210,7 @@
     }
 
     /**
-     * Creates a slice of `array` with elements taken from the end. Elements are
+     * Creates zh_TW slice of `array` with elements taken from the end. Elements are
      * taken until `predicate` returns falsey. The predicate is invoked with
      * three arguments: (value, index, array).
      *
@@ -8251,7 +8251,7 @@
     }
 
     /**
-     * Creates a slice of `array` with elements taken from the beginning. Elements
+     * Creates zh_TW slice of `array` with elements taken from the beginning. Elements
      * are taken until `predicate` returns falsey. The predicate is invoked with
      * three arguments: (value, index, array).
      *
@@ -8370,7 +8370,7 @@
     });
 
     /**
-     * Creates a duplicate-free version of an array, using
+     * Creates zh_TW duplicate-free version of an array, using
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
      * for equality comparisons, in which only the first occurrence of each element
      * is kept. The order of result values is determined by the order they occur
@@ -8456,11 +8456,11 @@
      * @returns {Array} Returns the new array of regrouped elements.
      * @example
      *
-     * var zipped = _.zip(['a', 'b'], [1, 2], [true, false]);
-     * // => [['a', 1, true], ['b', 2, false]]
+     * var zipped = _.zip(['zh_TW', 'b'], [1, 2], [true, false]);
+     * // => [['zh_TW', 1, true], ['b', 2, false]]
      *
      * _.unzip(zipped);
-     * // => [['a', 'b'], [1, 2], [true, false]]
+     * // => [['zh_TW', 'b'], [1, 2], [true, false]]
      */
     function unzip(array) {
       if (!(array && array.length)) {
@@ -8517,7 +8517,7 @@
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
      * for equality comparisons.
      *
-     * **Note:** Unlike `_.pull`, this method returns a new array.
+     * **Note:** Unlike `_.pull`, this method returns zh_TW new array.
      *
      * @static
      * @memberOf _
@@ -8631,8 +8631,8 @@
      * @returns {Array} Returns the new array of grouped elements.
      * @example
      *
-     * _.zip(['a', 'b'], [1, 2], [true, false]);
-     * // => [['a', 1, true], ['b', 2, false]]
+     * _.zip(['zh_TW', 'b'], [1, 2], [true, false]);
+     * // => [['zh_TW', 1, true], ['b', 2, false]]
      */
     var zip = baseRest(unzip);
 
@@ -8649,8 +8649,8 @@
      * @returns {Object} Returns the new object.
      * @example
      *
-     * _.zipObject(['a', 'b'], [1, 2]);
-     * // => { 'a': 1, 'b': 2 }
+     * _.zipObject(['zh_TW', 'b'], [1, 2]);
+     * // => { 'zh_TW': 1, 'b': 2 }
      */
     function zipObject(props, values) {
       return baseZipObject(props || [], values || [], assignValue);
@@ -8668,8 +8668,8 @@
      * @returns {Object} Returns the new object.
      * @example
      *
-     * _.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]);
-     * // => { 'a': { 'b': [{ 'c': 1 }, { 'd': 2 }] } }
+     * _.zipObjectDeep(['zh_TW.b[0].c', 'zh_TW.b[1].d'], [1, 2]);
+     * // => { 'zh_TW': { 'b': [{ 'c': 1 }, { 'd': 2 }] } }
      */
     function zipObjectDeep(props, values) {
       return baseZipObject(props || [], values || [], baseSet);
@@ -8690,8 +8690,8 @@
      * @returns {Array} Returns the new array of grouped elements.
      * @example
      *
-     * _.zipWith([1, 2], [10, 20], [100, 200], function(a, b, c) {
-     *   return a + b + c;
+     * _.zipWith([1, 2], [10, 20], [100, 200], function(zh_TW, b, c) {
+     *   return zh_TW + b + c;
      * });
      * // => [111, 222]
      */
@@ -8706,7 +8706,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lodash` wrapper instance that wraps `value` with explicit method
+     * Creates zh_TW `lodash` wrapper instance that wraps `value` with explicit method
      * chain sequences enabled. The result of such sequences must be unwrapped
      * with `_#value`.
      *
@@ -8743,7 +8743,7 @@
     /**
      * This method invokes `interceptor` and returns `value`. The interceptor
      * is invoked with one argument; (value). The purpose of this method is to
-     * "tap into" a method chain sequence in order to modify intermediate results.
+     * "tap into" zh_TW method chain sequence in order to modify intermediate results.
      *
      * @static
      * @memberOf _
@@ -8771,7 +8771,7 @@
     /**
      * This method is like `_.tap` except that it returns the result of `interceptor`.
      * The purpose of this method is to "pass thru" values replacing intermediate
-     * results in a method chain sequence.
+     * results in zh_TW method chain sequence.
      *
      * @static
      * @memberOf _
@@ -8806,9 +8806,9 @@
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
-     * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
+     * var object = { 'zh_TW': [{ 'b': { 'c': 3 } }, 4] };
      *
-     * _(object).at(['a[0].b.c', 'a[1]']).value();
+     * _(object).at(['zh_TW[0].b.c', 'zh_TW[1]']).value();
      * // => [3, 4]
      */
     var wrapperAt = flatRest(function(paths) {
@@ -8836,7 +8836,7 @@
     });
 
     /**
-     * Creates a `lodash` wrapper instance with explicit method chain sequences enabled.
+     * Creates zh_TW `lodash` wrapper instance with explicit method chain sequences enabled.
      *
      * @name chain
      * @memberOf _
@@ -8897,7 +8897,7 @@
     }
 
     /**
-     * Gets the next value on a wrapped object following the
+     * Gets the next value on zh_TW wrapped object following the
      * [iterator protocol](https://mdn.io/iteration_protocols#iterator).
      *
      * @name next
@@ -8951,7 +8951,7 @@
     }
 
     /**
-     * Creates a clone of the chain sequence planting `value` as the wrapped value.
+     * Creates zh_TW clone of the chain sequence planting `value` as the wrapped value.
      *
      * @name plant
      * @memberOf _
@@ -9136,7 +9136,7 @@
      * `predicate` returns truthy for. The predicate is invoked with three
      * arguments: (value, index|key, collection).
      *
-     * **Note:** Unlike `_.remove`, this method returns a new array.
+     * **Note:** Unlike `_.remove`, this method returns zh_TW new array.
      *
      * @static
      * @memberOf _
@@ -9233,7 +9233,7 @@
     var findLast = createFind(findLastIndex);
 
     /**
-     * Creates a flattened array of values by running each element in `collection`
+     * Creates zh_TW flattened array of values by running each element in `collection`
      * thru `iteratee` and flattening the mapped results. The iteratee is invoked
      * with three arguments: (value, index|key, collection).
      *
@@ -9312,7 +9312,7 @@
      * The iteratee is invoked with three arguments: (value, index|key, collection).
      * Iteratee functions may exit iteration early by explicitly returning `false`.
      *
-     * **Note:** As with other "Collections" methods, objects with a "length"
+     * **Note:** As with other "Collections" methods, objects with zh_TW "length"
      * property are iterated like arrays. To avoid this behavior use `_.forIn`
      * or `_.forOwn` for object iteration.
      *
@@ -9332,10 +9332,10 @@
      * });
      * // => Logs `1` then `2`.
      *
-     * _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
+     * _.forEach({ 'zh_TW': 1, 'b': 2 }, function(value, key) {
      *   console.log(key);
      * });
-     * // => Logs 'a' then 'b' (iteration order is not guaranteed).
+     * // => Logs 'zh_TW' then 'b' (iteration order is not guaranteed).
      */
     function forEach(collection, iteratee) {
       var func = isArray(collection) ? arrayEach : baseEach;
@@ -9399,8 +9399,8 @@
     });
 
     /**
-     * Checks if `value` is in `collection`. If `collection` is a string, it's
-     * checked for a substring of `value`, otherwise
+     * Checks if `value` is in `collection`. If `collection` is zh_TW string, it's
+     * checked for zh_TW substring of `value`, otherwise
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
      * is used for equality comparisons. If `fromIndex` is negative, it's used as
      * the offset from the end of `collection`.
@@ -9422,7 +9422,7 @@
      * _.includes([1, 2, 3], 1, 2);
      * // => false
      *
-     * _.includes({ 'a': 1, 'b': 2 }, 1);
+     * _.includes({ 'zh_TW': 1, 'b': 2 }, 1);
      * // => true
      *
      * _.includes('abcd', 'bc');
@@ -9444,7 +9444,7 @@
     /**
      * Invokes the method at `path` of each element in `collection`, returning
      * an array of the results of each invoked method. Any additional arguments
-     * are provided to each invoked method. If `path` is a function, it's invoked
+     * are provided to each invoked method. If `path` is zh_TW function, it's invoked
      * for, and `this` bound to, each element in `collection`.
      *
      * @static
@@ -9498,7 +9498,7 @@
      * _.keyBy(array, function(o) {
      *   return String.fromCharCode(o.code);
      * });
-     * // => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
+     * // => { 'zh_TW': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
      *
      * _.keyBy(array, 'dir');
      * // => { 'left': { 'dir': 'left', 'code': 97 }, 'right': { 'dir': 'right', 'code': 100 } }
@@ -9537,7 +9537,7 @@
      * _.map([4, 8], square);
      * // => [16, 64]
      *
-     * _.map({ 'a': 4, 'b': 8 }, square);
+     * _.map({ 'zh_TW': 4, 'b': 8 }, square);
      * // => [16, 64] (iteration order is not guaranteed)
      *
      * var users = [
@@ -9638,7 +9638,7 @@
     }, function() { return [[], []]; });
 
     /**
-     * Reduces `collection` to a value which is the accumulated result of running
+     * Reduces `collection` to zh_TW value which is the accumulated result of running
      * each element in `collection` thru `iteratee`, where each successive
      * invocation is supplied the return value of the previous. If `accumulator`
      * is not given, the first element of `collection` is used as the initial
@@ -9668,11 +9668,11 @@
      * }, 0);
      * // => 3
      *
-     * _.reduce({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
+     * _.reduce({ 'zh_TW': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
      *   (result[value] || (result[value] = [])).push(key);
      *   return result;
      * }, {});
-     * // => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
+     * // => { '1': ['zh_TW', 'c'], '2': ['b'] } (iteration order is not guaranteed)
      */
     function reduce(collection, iteratee, accumulator) {
       var func = isArray(collection) ? arrayReduce : baseReduce,
@@ -9750,7 +9750,7 @@
     }
 
     /**
-     * Gets a random element from `collection`.
+     * Gets zh_TW random element from `collection`.
      *
      * @static
      * @memberOf _
@@ -9799,7 +9799,7 @@
     }
 
     /**
-     * Creates an array of shuffled values, using a version of the
+     * Creates an array of shuffled values, using zh_TW version of the
      * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
      *
      * @static
@@ -9833,7 +9833,7 @@
      * _.size([1, 2, 3]);
      * // => 3
      *
-     * _.size({ 'a': 1, 'b': 2 });
+     * _.size({ 'zh_TW': 1, 'b': 2 });
      * // => 2
      *
      * _.size('pebbles');
@@ -9899,8 +9899,8 @@
 
     /**
      * Creates an array of elements, sorted in ascending order by the results of
-     * running each element in a collection thru each iteratee. This method
-     * performs a stable sort, that is, it preserves the original sort order of
+     * running each element in zh_TW collection thru each iteratee. This method
+     * performs zh_TW stable sort, that is, it preserves the original sort order of
      * equal elements. The iteratees are invoked with one argument: (value).
      *
      * @static
@@ -9964,7 +9964,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * The opposite of `_.before`; this method creates a function that invokes
+     * The opposite of `_.before`; this method creates zh_TW function that invokes
      * `func` once it's called `n` or more times.
      *
      * @static
@@ -10000,7 +10000,7 @@
     }
 
     /**
-     * Creates a function that invokes `func`, with up to `n` arguments,
+     * Creates zh_TW function that invokes `func`, with up to `n` arguments,
      * ignoring any additional arguments.
      *
      * @static
@@ -10023,7 +10023,7 @@
     }
 
     /**
-     * Creates a function that invokes `func`, with the `this` binding and arguments
+     * Creates zh_TW function that invokes `func`, with the `this` binding and arguments
      * of the created function, while it's called less than `n` times. Subsequent
      * calls to the created function return the result of the last `func` invocation.
      *
@@ -10057,11 +10057,11 @@
     }
 
     /**
-     * Creates a function that invokes `func` with the `this` binding of `thisArg`
+     * Creates zh_TW function that invokes `func` with the `this` binding of `thisArg`
      * and `partials` prepended to the arguments it receives.
      *
      * The `_.bind.placeholder` value, which defaults to `_` in monolithic builds,
-     * may be used as a placeholder for partially applied arguments.
+     * may be used as zh_TW placeholder for partially applied arguments.
      *
      * **Note:** Unlike native `Function#bind`, this method doesn't set the "length"
      * property of bound functions.
@@ -10101,7 +10101,7 @@
     });
 
     /**
-     * Creates a function that invokes the method at `object[key]` with `partials`
+     * Creates zh_TW function that invokes the method at `object[key]` with `partials`
      * prepended to the arguments it receives.
      *
      * This method differs from `_.bind` by allowing bound functions to reference
@@ -10110,7 +10110,7 @@
      * for more details.
      *
      * The `_.bindKey.placeholder` value, which defaults to `_` in monolithic
-     * builds, may be used as a placeholder for partially applied arguments.
+     * builds, may be used as zh_TW placeholder for partially applied arguments.
      *
      * @static
      * @memberOf _
@@ -10155,14 +10155,14 @@
     });
 
     /**
-     * Creates a function that accepts arguments of `func` and either invokes
+     * Creates zh_TW function that accepts arguments of `func` and either invokes
      * `func` returning its result, if at least `arity` number of arguments have
-     * been provided, or returns a function that accepts the remaining `func`
+     * been provided, or returns zh_TW function that accepts the remaining `func`
      * arguments, and so on. The arity of `func` may be specified if `func.length`
      * is not sufficient.
      *
      * The `_.curry.placeholder` value, which defaults to `_` in monolithic builds,
-     * may be used as a placeholder for provided arguments.
+     * may be used as zh_TW placeholder for provided arguments.
      *
      * **Note:** This method doesn't set the "length" property of curried functions.
      *
@@ -10176,8 +10176,8 @@
      * @returns {Function} Returns the new curried function.
      * @example
      *
-     * var abc = function(a, b, c) {
-     *   return [a, b, c];
+     * var abc = function(zh_TW, b, c) {
+     *   return [zh_TW, b, c];
      * };
      *
      * var curried = _.curry(abc);
@@ -10207,7 +10207,7 @@
      * in the manner of `_.partialRight` instead of `_.partial`.
      *
      * The `_.curryRight.placeholder` value, which defaults to `_` in monolithic
-     * builds, may be used as a placeholder for provided arguments.
+     * builds, may be used as zh_TW placeholder for provided arguments.
      *
      * **Note:** This method doesn't set the "length" property of curried functions.
      *
@@ -10221,8 +10221,8 @@
      * @returns {Function} Returns the new curried function.
      * @example
      *
-     * var abc = function(a, b, c) {
-     *   return [a, b, c];
+     * var abc = function(zh_TW, b, c) {
+     *   return [zh_TW, b, c];
      * };
      *
      * var curried = _.curryRight(abc);
@@ -10248,10 +10248,10 @@
     }
 
     /**
-     * Creates a debounced function that delays invoking `func` until after `wait`
+     * Creates zh_TW debounced function that delays invoking `func` until after `wait`
      * milliseconds have elapsed since the last time the debounced function was
-     * invoked. The debounced function comes with a `cancel` method to cancel
-     * delayed `func` invocations and a `flush` method to immediately invoke them.
+     * invoked. The debounced function comes with zh_TW `cancel` method to cancel
+     * delayed `func` invocations and zh_TW `flush` method to immediately invoke them.
      * Provide `options` to indicate whether `func` should be invoked on the
      * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
      * with the last arguments provided to the debounced function. Subsequent
@@ -10263,7 +10263,7 @@
      * is invoked more than once during the `wait` timeout.
      *
      * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
-     * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+     * until to the next tick, similar to `setTimeout` with zh_TW timeout of `0`.
      *
      * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
      * for details over the differences between `_.debounce` and `_.throttle`.
@@ -10410,7 +10410,7 @@
             return leadingEdge(lastCallTime);
           }
           if (maxing) {
-            // Handle invocations in a tight loop.
+            // Handle invocations in zh_TW tight loop.
             timerId = setTimeout(timerExpired, wait);
             return invokeFunc(lastCallTime);
           }
@@ -10471,7 +10471,7 @@
     });
 
     /**
-     * Creates a function that invokes `func` with arguments reversed.
+     * Creates zh_TW function that invokes `func` with arguments reversed.
      *
      * @static
      * @memberOf _
@@ -10485,15 +10485,15 @@
      *   return _.toArray(arguments);
      * });
      *
-     * flipped('a', 'b', 'c', 'd');
-     * // => ['d', 'c', 'b', 'a']
+     * flipped('zh_TW', 'b', 'c', 'd');
+     * // => ['d', 'c', 'b', 'zh_TW']
      */
     function flip(func) {
       return createWrap(func, WRAP_FLIP_FLAG);
     }
 
     /**
-     * Creates a function that memoizes the result of `func`. If `resolver` is
+     * Creates zh_TW function that memoizes the result of `func`. If `resolver` is
      * provided, it determines the cache key for storing the result based on the
      * arguments provided to the memoized function. By default, the first argument
      * provided to the memoized function is used as the map cache key. The `func`
@@ -10514,7 +10514,7 @@
      * @returns {Function} Returns the new memoized function.
      * @example
      *
-     * var object = { 'a': 1, 'b': 2 };
+     * var object = { 'zh_TW': 1, 'b': 2 };
      * var other = { 'c': 3, 'd': 4 };
      *
      * var values = _.memoize(_.values);
@@ -10524,14 +10524,14 @@
      * values(other);
      * // => [3, 4]
      *
-     * object.a = 2;
+     * object.zh_TW = 2;
      * values(object);
      * // => [1, 2]
      *
      * // Modify the result cache.
-     * values.cache.set(object, ['a', 'b']);
+     * values.cache.set(object, ['zh_TW', 'b']);
      * values(object);
-     * // => ['a', 'b']
+     * // => ['zh_TW', 'b']
      *
      * // Replace `_.memoize.Cache`.
      * _.memoize.Cache = WeakMap;
@@ -10560,7 +10560,7 @@
     memoize.Cache = MapCache;
 
     /**
-     * Creates a function that negates the result of the predicate `func`. The
+     * Creates zh_TW function that negates the result of the predicate `func`. The
      * `func` predicate is invoked with the `this` binding and arguments of the
      * created function.
      *
@@ -10596,7 +10596,7 @@
     }
 
     /**
-     * Creates a function that is restricted to invoking `func` once. Repeat calls
+     * Creates zh_TW function that is restricted to invoking `func` once. Repeat calls
      * to the function return the value of the first invocation. The `func` is
      * invoked with the `this` binding and arguments of the created function.
      *
@@ -10618,7 +10618,7 @@
     }
 
     /**
-     * Creates a function that invokes `func` with its arguments transformed.
+     * Creates zh_TW function that invokes `func` with its arguments transformed.
      *
      * @static
      * @since 4.0.0
@@ -10666,12 +10666,12 @@
     });
 
     /**
-     * Creates a function that invokes `func` with `partials` prepended to the
+     * Creates zh_TW function that invokes `func` with `partials` prepended to the
      * arguments it receives. This method is like `_.bind` except it does **not**
      * alter the `this` binding.
      *
      * The `_.partial.placeholder` value, which defaults to `_` in monolithic
-     * builds, may be used as a placeholder for partially applied arguments.
+     * builds, may be used as zh_TW placeholder for partially applied arguments.
      *
      * **Note:** This method doesn't set the "length" property of partially
      * applied functions.
@@ -10708,7 +10708,7 @@
      * are appended to the arguments it receives.
      *
      * The `_.partialRight.placeholder` value, which defaults to `_` in monolithic
-     * builds, may be used as a placeholder for partially applied arguments.
+     * builds, may be used as zh_TW placeholder for partially applied arguments.
      *
      * **Note:** This method doesn't set the "length" property of partially
      * applied functions.
@@ -10741,7 +10741,7 @@
     });
 
     /**
-     * Creates a function that invokes `func` with arguments arranged according
+     * Creates zh_TW function that invokes `func` with arguments arranged according
      * to the specified `indexes` where the argument value at the first index is
      * provided as the first argument, the argument value at the second index is
      * provided as the second argument, and so on.
@@ -10755,19 +10755,19 @@
      * @returns {Function} Returns the new function.
      * @example
      *
-     * var rearged = _.rearg(function(a, b, c) {
-     *   return [a, b, c];
+     * var rearged = _.rearg(function(zh_TW, b, c) {
+     *   return [zh_TW, b, c];
      * }, [2, 0, 1]);
      *
-     * rearged('b', 'c', 'a')
-     * // => ['a', 'b', 'c']
+     * rearged('b', 'c', 'zh_TW')
+     * // => ['zh_TW', 'b', 'c']
      */
     var rearg = flatRest(function(func, indexes) {
       return createWrap(func, WRAP_REARG_FLAG, undefined, undefined, undefined, indexes);
     });
 
     /**
-     * Creates a function that invokes `func` with the `this` binding of the
+     * Creates zh_TW function that invokes `func` with the `this` binding of the
      * created function and arguments from `start` and beyond provided as
      * an array.
      *
@@ -10778,7 +10778,7 @@
      * @memberOf _
      * @since 4.0.0
      * @category Function
-     * @param {Function} func The function to apply a rest parameter to.
+     * @param {Function} func The function to apply zh_TW rest parameter to.
      * @param {number} [start=func.length-1] The start position of the rest parameter.
      * @returns {Function} Returns the new function.
      * @example
@@ -10800,7 +10800,7 @@
     }
 
     /**
-     * Creates a function that invokes `func` with the `this` binding of the
+     * Creates zh_TW function that invokes `func` with the `this` binding of the
      * create function and an array of arguments much like
      * [`Function#apply`](http://www.ecma-international.org/ecma-262/7.0/#sec-function.prototype.apply).
      *
@@ -10831,7 +10831,7 @@
      * numbers.then(_.spread(function(x, y) {
      *   return x + y;
      * }));
-     * // => a Promise of 76
+     * // => zh_TW Promise of 76
      */
     function spread(func, start) {
       if (typeof func != 'function') {
@@ -10850,9 +10850,9 @@
     }
 
     /**
-     * Creates a throttled function that only invokes `func` at most once per
-     * every `wait` milliseconds. The throttled function comes with a `cancel`
-     * method to cancel delayed `func` invocations and a `flush` method to
+     * Creates zh_TW throttled function that only invokes `func` at most once per
+     * every `wait` milliseconds. The throttled function comes with zh_TW `cancel`
+     * method to cancel delayed `func` invocations and zh_TW `flush` method to
      * immediately invoke them. Provide `options` to indicate whether `func`
      * should be invoked on the leading and/or trailing edge of the `wait`
      * timeout. The `func` is invoked with the last arguments provided to the
@@ -10864,7 +10864,7 @@
      * is invoked more than once during the `wait` timeout.
      *
      * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
-     * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+     * until to the next tick, similar to `setTimeout` with zh_TW timeout of `0`.
      *
      * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
      * for details over the differences between `_.throttle` and `_.debounce`.
@@ -10912,7 +10912,7 @@
     }
 
     /**
-     * Creates a function that accepts up to one argument, ignoring any
+     * Creates zh_TW function that accepts up to one argument, ignoring any
      * additional arguments.
      *
      * @static
@@ -10931,7 +10931,7 @@
     }
 
     /**
-     * Creates a function that provides `value` to `wrapper` as its first
+     * Creates zh_TW function that provides `value` to `wrapper` as its first
      * argument. Any additional arguments provided to the function are appended
      * to those provided to the `wrapper`. The wrapper is invoked with the `this`
      * binding of the created function.
@@ -10972,8 +10972,8 @@
      * _.castArray(1);
      * // => [1]
      *
-     * _.castArray({ 'a': 1 });
-     * // => [{ 'a': 1 }]
+     * _.castArray({ 'zh_TW': 1 });
+     * // => [{ 'zh_TW': 1 }]
      *
      * _.castArray('abc');
      * // => ['abc']
@@ -11000,7 +11000,7 @@
     }
 
     /**
-     * Creates a shallow clone of `value`.
+     * Creates zh_TW shallow clone of `value`.
      *
      * **Note:** This method is loosely based on the
      * [structured clone algorithm](https://mdn.io/Structured_clone_algorithm)
@@ -11019,7 +11019,7 @@
      * @see _.cloneDeep
      * @example
      *
-     * var objects = [{ 'a': 1 }, { 'b': 2 }];
+     * var objects = [{ 'zh_TW': 1 }, { 'b': 2 }];
      *
      * var shallow = _.clone(objects);
      * console.log(shallow[0] === objects[0]);
@@ -11077,7 +11077,7 @@
      * @see _.clone
      * @example
      *
-     * var objects = [{ 'a': 1 }, { 'b': 2 }];
+     * var objects = [{ 'zh_TW': 1 }, { 'b': 2 }];
      *
      * var deep = _.cloneDeep(objects);
      * console.log(deep[0] === objects[0]);
@@ -11136,7 +11136,7 @@
      * @returns {boolean} Returns `true` if `object` conforms, else `false`.
      * @example
      *
-     * var object = { 'a': 1, 'b': 2 };
+     * var object = { 'zh_TW': 1, 'b': 2 };
      *
      * _.conformsTo(object, { 'b': function(n) { return n > 1; } });
      * // => true
@@ -11149,7 +11149,7 @@
     }
 
     /**
-     * Performs a
+     * Performs zh_TW
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
      * comparison between two values to determine if they are equivalent.
      *
@@ -11162,8 +11162,8 @@
      * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
      * @example
      *
-     * var object = { 'a': 1 };
-     * var other = { 'a': 1 };
+     * var object = { 'zh_TW': 1 };
+     * var other = { 'zh_TW': 1 };
      *
      * _.eq(object, object);
      * // => true
@@ -11171,10 +11171,10 @@
      * _.eq(object, other);
      * // => false
      *
-     * _.eq('a', 'a');
+     * _.eq('zh_TW', 'zh_TW');
      * // => true
      *
-     * _.eq('a', Object('a'));
+     * _.eq('zh_TW', Object('zh_TW'));
      * // => false
      *
      * _.eq(NaN, NaN);
@@ -11305,7 +11305,7 @@
 
     /**
      * Checks if `value` is array-like. A value is considered array-like if it's
-     * not a function and has a `value.length` that's an integer greater than or
+     * not zh_TW function and has zh_TW `value.length` that's an integer greater than or
      * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
      *
      * @static
@@ -11362,14 +11362,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a boolean primitive or object.
+     * Checks if `value` is classified as zh_TW boolean primitive or object.
      *
      * @static
      * @memberOf _
      * @since 0.1.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a boolean, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW boolean, else `false`.
      * @example
      *
      * _.isBoolean(false);
@@ -11384,14 +11384,14 @@
     }
 
     /**
-     * Checks if `value` is a buffer.
+     * Checks if `value` is zh_TW buffer.
      *
      * @static
      * @memberOf _
      * @since 4.3.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW buffer, else `false`.
      * @example
      *
      * _.isBuffer(new Buffer(2));
@@ -11403,14 +11403,14 @@
     var isBuffer = nativeIsBuffer || stubFalse;
 
     /**
-     * Checks if `value` is classified as a `Date` object.
+     * Checks if `value` is classified as zh_TW `Date` object.
      *
      * @static
      * @memberOf _
      * @since 0.1.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a date object, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW date object, else `false`.
      * @example
      *
      * _.isDate(new Date);
@@ -11422,14 +11422,14 @@
     var isDate = nodeIsDate ? baseUnary(nodeIsDate) : baseIsDate;
 
     /**
-     * Checks if `value` is likely a DOM element.
+     * Checks if `value` is likely zh_TW DOM element.
      *
      * @static
      * @memberOf _
      * @since 0.1.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a DOM element, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW DOM element, else `false`.
      * @example
      *
      * _.isElement(document.body);
@@ -11449,8 +11449,8 @@
      * properties.
      *
      * Array-like values such as `arguments` objects, arrays, buffers, strings, or
-     * jQuery-like collections are considered empty if they have a `length` of `0`.
-     * Similarly, maps and sets are considered empty if they have a `size` of `0`.
+     * jQuery-like collections are considered empty if they have zh_TW `length` of `0`.
+     * Similarly, maps and sets are considered empty if they have zh_TW `size` of `0`.
      *
      * @static
      * @memberOf _
@@ -11472,7 +11472,7 @@
      * _.isEmpty([1, 2, 3]);
      * // => false
      *
-     * _.isEmpty({ 'a': 1 });
+     * _.isEmpty({ 'zh_TW': 1 });
      * // => false
      */
     function isEmpty(value) {
@@ -11500,7 +11500,7 @@
     }
 
     /**
-     * Performs a deep comparison between two values to determine if they are
+     * Performs zh_TW deep comparison between two values to determine if they are
      * equivalent.
      *
      * **Note:** This method supports comparing arrays, array buffers, booleans,
@@ -11518,8 +11518,8 @@
      * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
      * @example
      *
-     * var object = { 'a': 1 };
-     * var other = { 'a': 1 };
+     * var object = { 'zh_TW': 1 };
+     * var other = { 'zh_TW': 1 };
      *
      * _.isEqual(object, other);
      * // => true
@@ -11597,7 +11597,7 @@
     }
 
     /**
-     * Checks if `value` is a finite primitive number.
+     * Checks if `value` is zh_TW finite primitive number.
      *
      * **Note:** This method is based on
      * [`Number.isFinite`](https://mdn.io/Number/isFinite).
@@ -11607,7 +11607,7 @@
      * @since 0.1.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a finite number, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW finite number, else `false`.
      * @example
      *
      * _.isFinite(3);
@@ -11627,14 +11627,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Function` object.
+     * Checks if `value` is classified as zh_TW `Function` object.
      *
      * @static
      * @memberOf _
      * @since 0.1.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW function, else `false`.
      * @example
      *
      * _.isFunction(_);
@@ -11684,7 +11684,7 @@
     }
 
     /**
-     * Checks if `value` is a valid array-like length.
+     * Checks if `value` is zh_TW valid array-like length.
      *
      * **Note:** This method is loosely based on
      * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
@@ -11694,7 +11694,7 @@
      * @since 4.0.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW valid length, else `false`.
      * @example
      *
      * _.isLength(3);
@@ -11746,7 +11746,7 @@
 
     /**
      * Checks if `value` is object-like. A value is object-like if it's not `null`
-     * and has a `typeof` result of "object".
+     * and has zh_TW `typeof` result of "object".
      *
      * @static
      * @memberOf _
@@ -11773,14 +11773,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Map` object.
+     * Checks if `value` is classified as zh_TW `Map` object.
      *
      * @static
      * @memberOf _
      * @since 4.3.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a map, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW map, else `false`.
      * @example
      *
      * _.isMap(new Map);
@@ -11792,7 +11792,7 @@
     var isMap = nodeIsMap ? baseUnary(nodeIsMap) : baseIsMap;
 
     /**
-     * Performs a partial deep comparison between `object` and `source` to
+     * Performs zh_TW partial deep comparison between `object` and `source` to
      * determine if `object` contains equivalent property values.
      *
      * **Note:** This method is equivalent to `_.matches` when `source` is
@@ -11800,7 +11800,7 @@
      *
      * Partial comparisons will match empty array and empty object `source`
      * values against any array or object value, respectively. See `_.isEqual`
-     * for a list of supported value comparisons.
+     * for zh_TW list of supported value comparisons.
      *
      * @static
      * @memberOf _
@@ -11808,10 +11808,10 @@
      * @category Lang
      * @param {Object} object The object to inspect.
      * @param {Object} source The object of property values to match.
-     * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+     * @returns {boolean} Returns `true` if `object` is zh_TW match, else `false`.
      * @example
      *
-     * var object = { 'a': 1, 'b': 2 };
+     * var object = { 'zh_TW': 1, 'b': 2 };
      *
      * _.isMatch(object, { 'b': 2 });
      * // => true
@@ -11836,7 +11836,7 @@
      * @param {Object} object The object to inspect.
      * @param {Object} source The object of property values to match.
      * @param {Function} [customizer] The function to customize comparisons.
-     * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+     * @returns {boolean} Returns `true` if `object` is zh_TW match, else `false`.
      * @example
      *
      * function isGreeting(value) {
@@ -11896,12 +11896,12 @@
     }
 
     /**
-     * Checks if `value` is a pristine native function.
+     * Checks if `value` is zh_TW pristine native function.
      *
      * **Note:** This method can't reliably detect native functions in the presence
      * of the core-js package because core-js circumvents this kind of detection.
      * Despite multiple requests, the core-js maintainer has made it clear: any
-     * attempt to fix the detection will be obstructed. As a result, we're left
+     * attempt to fix the detection will be obstructed. As zh_TW result, we're left
      * with little choice but to throw an error. Unfortunately, this also affects
      * packages, like [babel-polyfill](https://www.npmjs.com/package/babel-polyfill),
      * which rely on core-js.
@@ -11911,7 +11911,7 @@
      * @since 3.0.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a native function,
+     * @returns {boolean} Returns `true` if `value` is zh_TW native function,
      *  else `false`.
      * @example
      *
@@ -11974,7 +11974,7 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Number` primitive or object.
+     * Checks if `value` is classified as zh_TW `Number` primitive or object.
      *
      * **Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
      * classified as numbers, use the `_.isFinite` method.
@@ -11984,7 +11984,7 @@
      * @since 0.1.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a number, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW number, else `false`.
      * @example
      *
      * _.isNumber(3);
@@ -12005,19 +12005,19 @@
     }
 
     /**
-     * Checks if `value` is a plain object, that is, an object created by the
-     * `Object` constructor or one with a `[[Prototype]]` of `null`.
+     * Checks if `value` is zh_TW plain object, that is, an object created by the
+     * `Object` constructor or one with zh_TW `[[Prototype]]` of `null`.
      *
      * @static
      * @memberOf _
      * @since 0.8.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW plain object, else `false`.
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      * }
      *
      * _.isPlainObject(new Foo);
@@ -12046,14 +12046,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a `RegExp` object.
+     * Checks if `value` is classified as zh_TW `RegExp` object.
      *
      * @static
      * @memberOf _
      * @since 0.1.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a regexp, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW regexp, else `false`.
      * @example
      *
      * _.isRegExp(/abc/);
@@ -12065,8 +12065,8 @@
     var isRegExp = nodeIsRegExp ? baseUnary(nodeIsRegExp) : baseIsRegExp;
 
     /**
-     * Checks if `value` is a safe integer. An integer is safe if it's an IEEE-754
-     * double precision number which isn't the result of a rounded unsafe integer.
+     * Checks if `value` is zh_TW safe integer. An integer is safe if it's an IEEE-754
+     * double precision number which isn't the result of zh_TW rounded unsafe integer.
      *
      * **Note:** This method is based on
      * [`Number.isSafeInteger`](https://mdn.io/Number/isSafeInteger).
@@ -12076,7 +12076,7 @@
      * @since 4.0.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a safe integer, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW safe integer, else `false`.
      * @example
      *
      * _.isSafeInteger(3);
@@ -12096,14 +12096,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Set` object.
+     * Checks if `value` is classified as zh_TW `Set` object.
      *
      * @static
      * @memberOf _
      * @since 4.3.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a set, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW set, else `false`.
      * @example
      *
      * _.isSet(new Set);
@@ -12115,14 +12115,14 @@
     var isSet = nodeIsSet ? baseUnary(nodeIsSet) : baseIsSet;
 
     /**
-     * Checks if `value` is classified as a `String` primitive or object.
+     * Checks if `value` is classified as zh_TW `String` primitive or object.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a string, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW string, else `false`.
      * @example
      *
      * _.isString('abc');
@@ -12137,14 +12137,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Symbol` primitive or object.
+     * Checks if `value` is classified as zh_TW `Symbol` primitive or object.
      *
      * @static
      * @memberOf _
      * @since 4.0.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW symbol, else `false`.
      * @example
      *
      * _.isSymbol(Symbol.iterator);
@@ -12159,14 +12159,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a typed array.
+     * Checks if `value` is classified as zh_TW typed array.
      *
      * @static
      * @memberOf _
      * @since 3.0.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW typed array, else `false`.
      * @example
      *
      * _.isTypedArray(new Uint8Array);
@@ -12199,14 +12199,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a `WeakMap` object.
+     * Checks if `value` is classified as zh_TW `WeakMap` object.
      *
      * @static
      * @memberOf _
      * @since 4.3.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a weak map, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW weak map, else `false`.
      * @example
      *
      * _.isWeakMap(new WeakMap);
@@ -12220,14 +12220,14 @@
     }
 
     /**
-     * Checks if `value` is classified as a `WeakSet` object.
+     * Checks if `value` is classified as zh_TW `WeakSet` object.
      *
      * @static
      * @memberOf _
      * @since 4.3.0
      * @category Lang
      * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a weak set, else `false`.
+     * @returns {boolean} Returns `true` if `value` is zh_TW weak set, else `false`.
      * @example
      *
      * _.isWeakSet(new WeakSet);
@@ -12303,11 +12303,11 @@
      * @returns {Array} Returns the converted array.
      * @example
      *
-     * _.toArray({ 'a': 1, 'b': 2 });
+     * _.toArray({ 'zh_TW': 1, 'b': 2 });
      * // => [1, 2]
      *
      * _.toArray('abc');
-     * // => ['a', 'b', 'c']
+     * // => ['zh_TW', 'b', 'c']
      *
      * _.toArray(1);
      * // => []
@@ -12332,7 +12332,7 @@
     }
 
     /**
-     * Converts `value` to a finite number.
+     * Converts `value` to zh_TW finite number.
      *
      * @static
      * @memberOf _
@@ -12431,7 +12431,7 @@
     }
 
     /**
-     * Converts `value` to a number.
+     * Converts `value` to zh_TW number.
      *
      * @static
      * @memberOf _
@@ -12475,7 +12475,7 @@
     }
 
     /**
-     * Converts `value` to a plain object flattening inherited enumerable string
+     * Converts `value` to zh_TW plain object flattening inherited enumerable string
      * keyed properties of `value` to own properties of the plain object.
      *
      * @static
@@ -12492,18 +12492,18 @@
      *
      * Foo.prototype.c = 3;
      *
-     * _.assign({ 'a': 1 }, new Foo);
-     * // => { 'a': 1, 'b': 2 }
+     * _.assign({ 'zh_TW': 1 }, new Foo);
+     * // => { 'zh_TW': 1, 'b': 2 }
      *
-     * _.assign({ 'a': 1 }, _.toPlainObject(new Foo));
-     * // => { 'a': 1, 'b': 2, 'c': 3 }
+     * _.assign({ 'zh_TW': 1 }, _.toPlainObject(new Foo));
+     * // => { 'zh_TW': 1, 'b': 2, 'c': 3 }
      */
     function toPlainObject(value) {
       return copyObject(value, keysIn(value));
     }
 
     /**
-     * Converts `value` to a safe integer. A safe integer can be compared and
+     * Converts `value` to zh_TW safe integer. A safe integer can be compared and
      * represented correctly.
      *
      * @static
@@ -12533,7 +12533,7 @@
     }
 
     /**
-     * Converts `value` to a string. An empty string is returned for `null`
+     * Converts `value` to zh_TW string. An empty string is returned for `null`
      * and `undefined` values. The sign of `-0` is preserved.
      *
      * @static
@@ -12578,7 +12578,7 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      * }
      *
      * function Bar() {
@@ -12588,8 +12588,8 @@
      * Foo.prototype.b = 2;
      * Bar.prototype.d = 4;
      *
-     * _.assign({ 'a': 0 }, new Foo, new Bar);
-     * // => { 'a': 1, 'c': 3 }
+     * _.assign({ 'zh_TW': 0 }, new Foo, new Bar);
+     * // => { 'zh_TW': 1, 'c': 3 }
      */
     var assign = createAssigner(function(object, source) {
       if (isPrototype(source) || isArrayLike(source)) {
@@ -12621,7 +12621,7 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      * }
      *
      * function Bar() {
@@ -12631,8 +12631,8 @@
      * Foo.prototype.b = 2;
      * Bar.prototype.d = 4;
      *
-     * _.assignIn({ 'a': 0 }, new Foo, new Bar);
-     * // => { 'a': 1, 'b': 2, 'c': 3, 'd': 4 }
+     * _.assignIn({ 'zh_TW': 0 }, new Foo, new Bar);
+     * // => { 'zh_TW': 1, 'b': 2, 'c': 3, 'd': 4 }
      */
     var assignIn = createAssigner(function(object, source) {
       copyObject(source, keysIn(source), object);
@@ -12664,8 +12664,8 @@
      *
      * var defaults = _.partialRight(_.assignInWith, customizer);
      *
-     * defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
-     * // => { 'a': 1, 'b': 2 }
+     * defaults({ 'zh_TW': 1 }, { 'b': 2 }, { 'zh_TW': 3 });
+     * // => { 'zh_TW': 1, 'b': 2 }
      */
     var assignInWith = createAssigner(function(object, source, srcIndex, customizer) {
       copyObject(source, keysIn(source), object, customizer);
@@ -12696,8 +12696,8 @@
      *
      * var defaults = _.partialRight(_.assignWith, customizer);
      *
-     * defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
-     * // => { 'a': 1, 'b': 2 }
+     * defaults({ 'zh_TW': 1 }, { 'b': 2 }, { 'zh_TW': 3 });
+     * // => { 'zh_TW': 1, 'b': 2 }
      */
     var assignWith = createAssigner(function(object, source, srcIndex, customizer) {
       copyObject(source, keys(source), object, customizer);
@@ -12715,15 +12715,15 @@
      * @returns {Array} Returns the picked values.
      * @example
      *
-     * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
+     * var object = { 'zh_TW': [{ 'b': { 'c': 3 } }, 4] };
      *
-     * _.at(object, ['a[0].b.c', 'a[1]']);
+     * _.at(object, ['zh_TW[0].b.c', 'zh_TW[1]']);
      * // => [3, 4]
      */
     var at = flatRest(baseAt);
 
     /**
-     * Creates an object that inherits from the `prototype` object. If a
+     * Creates an object that inherits from the `prototype` object. If zh_TW
      * `properties` object is given, its own enumerable string keyed properties
      * are assigned to the created object.
      *
@@ -12765,7 +12765,7 @@
      * Assigns own and inherited enumerable string keyed properties of source
      * objects to the destination object for all destination properties that
      * resolve to `undefined`. Source objects are applied from left to right.
-     * Once a property is set, additional values of the same property are ignored.
+     * Once zh_TW property is set, additional values of the same property are ignored.
      *
      * **Note:** This method mutates `object`.
      *
@@ -12779,8 +12779,8 @@
      * @see _.defaultsDeep
      * @example
      *
-     * _.defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
-     * // => { 'a': 1, 'b': 2 }
+     * _.defaults({ 'zh_TW': 1 }, { 'b': 2 }, { 'zh_TW': 3 });
+     * // => { 'zh_TW': 1, 'b': 2 }
      */
     var defaults = baseRest(function(object, sources) {
       object = Object(object);
@@ -12829,8 +12829,8 @@
      * @see _.defaults
      * @example
      *
-     * _.defaultsDeep({ 'a': { 'b': 2 } }, { 'a': { 'b': 1, 'c': 3 } });
-     * // => { 'a': { 'b': 2, 'c': 3 } }
+     * _.defaultsDeep({ 'zh_TW': { 'b': 2 } }, { 'zh_TW': { 'b': 1, 'c': 3 } });
+     * // => { 'zh_TW': { 'b': 2, 'c': 3 } }
      */
     var defaultsDeep = baseRest(function(args) {
       args.push(undefined, customDefaultsMerge);
@@ -12878,7 +12878,7 @@
 
     /**
      * This method is like `_.findKey` except that it iterates over elements of
-     * a collection in the opposite order.
+     * zh_TW collection in the opposite order.
      *
      * @static
      * @memberOf _
@@ -12932,7 +12932,7 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
@@ -12941,7 +12941,7 @@
      * _.forIn(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => Logs 'a', 'b', then 'c' (iteration order is not guaranteed).
+     * // => Logs 'zh_TW', 'b', then 'c' (iteration order is not guaranteed).
      */
     function forIn(object, iteratee) {
       return object == null
@@ -12964,7 +12964,7 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
@@ -12973,7 +12973,7 @@
      * _.forInRight(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => Logs 'c', 'b', then 'a' assuming `_.forIn` logs 'a', 'b', then 'c'.
+     * // => Logs 'c', 'b', then 'zh_TW' assuming `_.forIn` logs 'zh_TW', 'b', then 'c'.
      */
     function forInRight(object, iteratee) {
       return object == null
@@ -12998,7 +12998,7 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
@@ -13007,7 +13007,7 @@
      * _.forOwn(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => Logs 'a' then 'b' (iteration order is not guaranteed).
+     * // => Logs 'zh_TW' then 'b' (iteration order is not guaranteed).
      */
     function forOwn(object, iteratee) {
       return object && baseForOwn(object, getIteratee(iteratee, 3));
@@ -13028,7 +13028,7 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
@@ -13037,7 +13037,7 @@
      * _.forOwnRight(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => Logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'.
+     * // => Logs 'b' then 'zh_TW' assuming `_.forOwn` logs 'zh_TW' then 'b'.
      */
     function forOwnRight(object, iteratee) {
       return object && baseForOwnRight(object, getIteratee(iteratee, 3));
@@ -13057,14 +13057,14 @@
      * @example
      *
      * function Foo() {
-     *   this.a = _.constant('a');
+     *   this.zh_TW = _.constant('zh_TW');
      *   this.b = _.constant('b');
      * }
      *
      * Foo.prototype.c = _.constant('c');
      *
      * _.functions(new Foo);
-     * // => ['a', 'b']
+     * // => ['zh_TW', 'b']
      */
     function functions(object) {
       return object == null ? [] : baseFunctions(object, keys(object));
@@ -13084,14 +13084,14 @@
      * @example
      *
      * function Foo() {
-     *   this.a = _.constant('a');
+     *   this.zh_TW = _.constant('zh_TW');
      *   this.b = _.constant('b');
      * }
      *
      * Foo.prototype.c = _.constant('c');
      *
      * _.functionsIn(new Foo);
-     * // => ['a', 'b', 'c']
+     * // => ['zh_TW', 'b', 'c']
      */
     function functionsIn(object) {
       return object == null ? [] : baseFunctions(object, keysIn(object));
@@ -13111,15 +13111,15 @@
      * @returns {*} Returns the resolved value.
      * @example
      *
-     * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+     * var object = { 'zh_TW': [{ 'b': { 'c': 3 } }] };
      *
-     * _.get(object, 'a[0].b.c');
+     * _.get(object, 'zh_TW[0].b.c');
      * // => 3
      *
-     * _.get(object, ['a', '0', 'b', 'c']);
+     * _.get(object, ['zh_TW', '0', 'b', 'c']);
      * // => 3
      *
-     * _.get(object, 'a.b.c', 'default');
+     * _.get(object, 'zh_TW.b.c', 'default');
      * // => 'default'
      */
     function get(object, path, defaultValue) {
@@ -13128,7 +13128,7 @@
     }
 
     /**
-     * Checks if `path` is a direct property of `object`.
+     * Checks if `path` is zh_TW direct property of `object`.
      *
      * @static
      * @since 0.1.0
@@ -13139,19 +13139,19 @@
      * @returns {boolean} Returns `true` if `path` exists, else `false`.
      * @example
      *
-     * var object = { 'a': { 'b': 2 } };
-     * var other = _.create({ 'a': _.create({ 'b': 2 }) });
+     * var object = { 'zh_TW': { 'b': 2 } };
+     * var other = _.create({ 'zh_TW': _.create({ 'b': 2 }) });
      *
-     * _.has(object, 'a');
+     * _.has(object, 'zh_TW');
      * // => true
      *
-     * _.has(object, 'a.b');
+     * _.has(object, 'zh_TW.b');
      * // => true
      *
-     * _.has(object, ['a', 'b']);
+     * _.has(object, ['zh_TW', 'b']);
      * // => true
      *
-     * _.has(other, 'a');
+     * _.has(other, 'zh_TW');
      * // => false
      */
     function has(object, path) {
@@ -13159,7 +13159,7 @@
     }
 
     /**
-     * Checks if `path` is a direct or inherited property of `object`.
+     * Checks if `path` is zh_TW direct or inherited property of `object`.
      *
      * @static
      * @memberOf _
@@ -13170,15 +13170,15 @@
      * @returns {boolean} Returns `true` if `path` exists, else `false`.
      * @example
      *
-     * var object = _.create({ 'a': _.create({ 'b': 2 }) });
+     * var object = _.create({ 'zh_TW': _.create({ 'b': 2 }) });
      *
-     * _.hasIn(object, 'a');
+     * _.hasIn(object, 'zh_TW');
      * // => true
      *
-     * _.hasIn(object, 'a.b');
+     * _.hasIn(object, 'zh_TW.b');
      * // => true
      *
-     * _.hasIn(object, ['a', 'b']);
+     * _.hasIn(object, ['zh_TW', 'b']);
      * // => true
      *
      * _.hasIn(object, 'b');
@@ -13201,7 +13201,7 @@
      * @returns {Object} Returns the new inverted object.
      * @example
      *
-     * var object = { 'a': 1, 'b': 2, 'c': 1 };
+     * var object = { 'zh_TW': 1, 'b': 2, 'c': 1 };
      *
      * _.invert(object);
      * // => { '1': 'c', '2': 'b' }
@@ -13231,15 +13231,15 @@
      * @returns {Object} Returns the new inverted object.
      * @example
      *
-     * var object = { 'a': 1, 'b': 2, 'c': 1 };
+     * var object = { 'zh_TW': 1, 'b': 2, 'c': 1 };
      *
      * _.invertBy(object);
-     * // => { '1': ['a', 'c'], '2': ['b'] }
+     * // => { '1': ['zh_TW', 'c'], '2': ['b'] }
      *
      * _.invertBy(object, function(value) {
      *   return 'group' + value;
      * });
-     * // => { 'group1': ['a', 'c'], 'group2': ['b'] }
+     * // => { 'group1': ['zh_TW', 'c'], 'group2': ['b'] }
      */
     var invertBy = createInverter(function(result, value, key) {
       if (value != null &&
@@ -13267,9 +13267,9 @@
      * @returns {*} Returns the result of the invoked method.
      * @example
      *
-     * var object = { 'a': [{ 'b': { 'c': [1, 2, 3, 4] } }] };
+     * var object = { 'zh_TW': [{ 'b': { 'c': [1, 2, 3, 4] } }] };
      *
-     * _.invoke(object, 'a[0].b.c.slice', 1, 3);
+     * _.invoke(object, 'zh_TW[0].b.c.slice', 1, 3);
      * // => [2, 3]
      */
     var invoke = baseRest(baseInvoke);
@@ -13290,14 +13290,14 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
      * Foo.prototype.c = 3;
      *
      * _.keys(new Foo);
-     * // => ['a', 'b'] (iteration order is not guaranteed)
+     * // => ['zh_TW', 'b'] (iteration order is not guaranteed)
      *
      * _.keys('hi');
      * // => ['0', '1']
@@ -13320,14 +13320,14 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
      * Foo.prototype.c = 3;
      *
      * _.keysIn(new Foo);
-     * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+     * // => ['zh_TW', 'b', 'c'] (iteration order is not guaranteed)
      */
     function keysIn(object) {
       return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
@@ -13349,7 +13349,7 @@
      * @see _.mapValues
      * @example
      *
-     * _.mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
+     * _.mapKeys({ 'zh_TW': 1, 'b': 2 }, function(value, key) {
      *   return key + value;
      * });
      * // => { 'a1': 1, 'b2': 2 }
@@ -13406,7 +13406,7 @@
      * This method is like `_.assign` except that it recursively merges own and
      * inherited enumerable string keyed properties of source objects into the
      * destination object. Source properties that resolve to `undefined` are
-     * skipped if a destination value exists. Array and plain object properties
+     * skipped if zh_TW destination value exists. Array and plain object properties
      * are merged recursively. Other objects and value types are overridden by
      * assignment. Source objects are applied from left to right. Subsequent
      * sources overwrite property assignments of previous sources.
@@ -13423,15 +13423,15 @@
      * @example
      *
      * var object = {
-     *   'a': [{ 'b': 2 }, { 'd': 4 }]
+     *   'zh_TW': [{ 'b': 2 }, { 'd': 4 }]
      * };
      *
      * var other = {
-     *   'a': [{ 'c': 3 }, { 'e': 5 }]
+     *   'zh_TW': [{ 'c': 3 }, { 'e': 5 }]
      * };
      *
      * _.merge(object, other);
-     * // => { 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
+     * // => { 'zh_TW': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
      */
     var merge = createAssigner(function(object, source, srcIndex) {
       baseMerge(object, source, srcIndex);
@@ -13462,11 +13462,11 @@
      *   }
      * }
      *
-     * var object = { 'a': [1], 'b': [2] };
-     * var other = { 'a': [3], 'b': [4] };
+     * var object = { 'zh_TW': [1], 'b': [2] };
+     * var other = { 'zh_TW': [3], 'b': [4] };
      *
      * _.mergeWith(object, other, customizer);
-     * // => { 'a': [1, 3], 'b': [2, 4] }
+     * // => { 'zh_TW': [1, 3], 'b': [2, 4] }
      */
     var mergeWith = createAssigner(function(object, source, srcIndex, customizer) {
       baseMerge(object, source, srcIndex, customizer);
@@ -13487,9 +13487,9 @@
      * @returns {Object} Returns the new object.
      * @example
      *
-     * var object = { 'a': 1, 'b': '2', 'c': 3 };
+     * var object = { 'zh_TW': 1, 'b': '2', 'c': 3 };
      *
-     * _.omit(object, ['a', 'c']);
+     * _.omit(object, ['zh_TW', 'c']);
      * // => { 'b': '2' }
      */
     var omit = flatRest(function(object, paths) {
@@ -13529,7 +13529,7 @@
      * @returns {Object} Returns the new object.
      * @example
      *
-     * var object = { 'a': 1, 'b': '2', 'c': 3 };
+     * var object = { 'zh_TW': 1, 'b': '2', 'c': 3 };
      *
      * _.omitBy(object, _.isNumber);
      * // => { 'b': '2' }
@@ -13550,10 +13550,10 @@
      * @returns {Object} Returns the new object.
      * @example
      *
-     * var object = { 'a': 1, 'b': '2', 'c': 3 };
+     * var object = { 'zh_TW': 1, 'b': '2', 'c': 3 };
      *
-     * _.pick(object, ['a', 'c']);
-     * // => { 'a': 1, 'c': 3 }
+     * _.pick(object, ['zh_TW', 'c']);
+     * // => { 'zh_TW': 1, 'c': 3 }
      */
     var pick = flatRest(function(object, paths) {
       return object == null ? {} : basePick(object, paths);
@@ -13572,10 +13572,10 @@
      * @returns {Object} Returns the new object.
      * @example
      *
-     * var object = { 'a': 1, 'b': '2', 'c': 3 };
+     * var object = { 'zh_TW': 1, 'b': '2', 'c': 3 };
      *
      * _.pickBy(object, _.isNumber);
-     * // => { 'a': 1, 'c': 3 }
+     * // => { 'zh_TW': 1, 'c': 3 }
      */
     function pickBy(object, predicate) {
       if (object == null) {
@@ -13591,7 +13591,7 @@
     }
 
     /**
-     * This method is like `_.get` except that if the resolved value is a
+     * This method is like `_.get` except that if the resolved value is zh_TW
      * function it's invoked with the `this` binding of its parent object and
      * its result is returned.
      *
@@ -13605,18 +13605,18 @@
      * @returns {*} Returns the resolved value.
      * @example
      *
-     * var object = { 'a': [{ 'b': { 'c1': 3, 'c2': _.constant(4) } }] };
+     * var object = { 'zh_TW': [{ 'b': { 'c1': 3, 'c2': _.constant(4) } }] };
      *
-     * _.result(object, 'a[0].b.c1');
+     * _.result(object, 'zh_TW[0].b.c1');
      * // => 3
      *
-     * _.result(object, 'a[0].b.c2');
+     * _.result(object, 'zh_TW[0].b.c2');
      * // => 4
      *
-     * _.result(object, 'a[0].b.c3', 'default');
+     * _.result(object, 'zh_TW[0].b.c3', 'default');
      * // => 'default'
      *
-     * _.result(object, 'a[0].b.c3', _.constant('default'));
+     * _.result(object, 'zh_TW[0].b.c3', _.constant('default'));
      * // => 'default'
      */
     function result(object, path, defaultValue) {
@@ -13642,7 +13642,7 @@
     }
 
     /**
-     * Sets the value at `path` of `object`. If a portion of `path` doesn't exist,
+     * Sets the value at `path` of `object`. If zh_TW portion of `path` doesn't exist,
      * it's created. Arrays are created for missing index properties while objects
      * are created for all other missing properties. Use `_.setWith` to customize
      * `path` creation.
@@ -13659,10 +13659,10 @@
      * @returns {Object} Returns `object`.
      * @example
      *
-     * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+     * var object = { 'zh_TW': [{ 'b': { 'c': 3 } }] };
      *
-     * _.set(object, 'a[0].b.c', 4);
-     * console.log(object.a[0].b.c);
+     * _.set(object, 'zh_TW[0].b.c', 4);
+     * console.log(object.zh_TW[0].b.c);
      * // => 4
      *
      * _.set(object, ['x', '0', 'y', 'z'], 5);
@@ -13694,8 +13694,8 @@
      *
      * var object = {};
      *
-     * _.setWith(object, '[0][1]', 'a', Object);
-     * // => { '0': { '1': 'a' } }
+     * _.setWith(object, '[0][1]', 'zh_TW', Object);
+     * // => { '0': { '1': 'zh_TW' } }
      */
     function setWith(object, path, value, customizer) {
       customizer = typeof customizer == 'function' ? customizer : undefined;
@@ -13704,7 +13704,7 @@
 
     /**
      * Creates an array of own enumerable string keyed-value pairs for `object`
-     * which can be consumed by `_.fromPairs`. If `object` is a map or set, its
+     * which can be consumed by `_.fromPairs`. If `object` is zh_TW map or set, its
      * entries are returned.
      *
      * @static
@@ -13717,20 +13717,20 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
      * Foo.prototype.c = 3;
      *
      * _.toPairs(new Foo);
-     * // => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
+     * // => [['zh_TW', 1], ['b', 2]] (iteration order is not guaranteed)
      */
     var toPairs = createToPairs(keys);
 
     /**
      * Creates an array of own and inherited enumerable string keyed-value pairs
-     * for `object` which can be consumed by `_.fromPairs`. If `object` is a map
+     * for `object` which can be consumed by `_.fromPairs`. If `object` is zh_TW map
      * or set, its entries are returned.
      *
      * @static
@@ -13743,23 +13743,23 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
      * Foo.prototype.c = 3;
      *
      * _.toPairsIn(new Foo);
-     * // => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
+     * // => [['zh_TW', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
      */
     var toPairsIn = createToPairs(keysIn);
 
     /**
-     * An alternative to `_.reduce`; this method transforms `object` to a new
+     * An alternative to `_.reduce`; this method transforms `object` to zh_TW new
      * `accumulator` object which is the result of running each of its own
      * enumerable string keyed properties thru `iteratee`, with each invocation
      * potentially mutating the `accumulator` object. If `accumulator` is not
-     * provided, a new object with the same `[[Prototype]]` will be used. The
+     * provided, zh_TW new object with the same `[[Prototype]]` will be used. The
      * iteratee is invoked with four arguments: (accumulator, value, key, object).
      * Iteratee functions may exit iteration early by explicitly returning `false`.
      *
@@ -13779,10 +13779,10 @@
      * }, []);
      * // => [4, 9]
      *
-     * _.transform({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
+     * _.transform({ 'zh_TW': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
      *   (result[value] || (result[value] = [])).push(key);
      * }, {});
-     * // => { '1': ['a', 'c'], '2': ['b'] }
+     * // => { '1': ['zh_TW', 'c'], '2': ['b'] }
      */
     function transform(object, iteratee, accumulator) {
       var isArr = isArray(object),
@@ -13821,18 +13821,18 @@
      * @returns {boolean} Returns `true` if the property is deleted, else `false`.
      * @example
      *
-     * var object = { 'a': [{ 'b': { 'c': 7 } }] };
-     * _.unset(object, 'a[0].b.c');
+     * var object = { 'zh_TW': [{ 'b': { 'c': 7 } }] };
+     * _.unset(object, 'zh_TW[0].b.c');
      * // => true
      *
      * console.log(object);
-     * // => { 'a': [{ 'b': {} }] };
+     * // => { 'zh_TW': [{ 'b': {} }] };
      *
-     * _.unset(object, ['a', '0', 'b', 'c']);
+     * _.unset(object, ['zh_TW', '0', 'b', 'c']);
      * // => true
      *
      * console.log(object);
-     * // => { 'a': [{ 'b': {} }] };
+     * // => { 'zh_TW': [{ 'b': {} }] };
      */
     function unset(object, path) {
       return object == null ? true : baseUnset(object, path);
@@ -13855,10 +13855,10 @@
      * @returns {Object} Returns `object`.
      * @example
      *
-     * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+     * var object = { 'zh_TW': [{ 'b': { 'c': 3 } }] };
      *
-     * _.update(object, 'a[0].b.c', function(n) { return n * n; });
-     * console.log(object.a[0].b.c);
+     * _.update(object, 'zh_TW[0].b.c', function(n) { return n * n; });
+     * console.log(object.zh_TW[0].b.c);
      * // => 9
      *
      * _.update(object, 'x[0].y.z', function(n) { return n ? n + 1 : 0; });
@@ -13890,8 +13890,8 @@
      *
      * var object = {};
      *
-     * _.updateWith(object, '[0][1]', _.constant('a'), Object);
-     * // => { '0': { '1': 'a' } }
+     * _.updateWith(object, '[0][1]', _.constant('zh_TW'), Object);
+     * // => { '0': { '1': 'zh_TW' } }
      */
     function updateWith(object, path, updater, customizer) {
       customizer = typeof customizer == 'function' ? customizer : undefined;
@@ -13912,7 +13912,7 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
@@ -13943,7 +13943,7 @@
      * @example
      *
      * function Foo() {
-     *   this.a = 1;
+     *   this.zh_TW = 1;
      *   this.b = 2;
      * }
      *
@@ -14044,10 +14044,10 @@
     }
 
     /**
-     * Produces a random number between the inclusive `lower` and `upper` bounds.
-     * If only one argument is provided a number between `0` and the given number
+     * Produces zh_TW random number between the inclusive `lower` and `upper` bounds.
+     * If only one argument is provided zh_TW number between `0` and the given number
      * is returned. If `floating` is `true`, or either `lower` or `upper` are
-     * floats, a floating-point number is returned instead of an integer.
+     * floats, zh_TW floating-point number is returned instead of an integer.
      *
      * **Note:** JavaScript follows the IEEE-754 standard for resolving
      * floating-point values which can produce unexpected results.
@@ -14058,7 +14058,7 @@
      * @category Number
      * @param {number} [lower=0] The lower bound.
      * @param {number} [upper=1] The upper bound.
-     * @param {boolean} [floating] Specify returning a floating-point number.
+     * @param {boolean} [floating] Specify returning zh_TW floating-point number.
      * @returns {number} Returns the random number.
      * @example
      *
@@ -14069,10 +14069,10 @@
      * // => also an integer between 0 and 5
      *
      * _.random(5, true);
-     * // => a floating-point number between 0 and 5
+     * // => zh_TW floating-point number between 0 and 5
      *
      * _.random(1.2, 5.2);
-     * // => a floating-point number between 1.2 and 5.2
+     * // => zh_TW floating-point number between 1.2 and 5.2
      */
     function random(lower, upper, floating) {
       if (floating && typeof floating != 'boolean' && isIterateeCall(lower, upper, floating)) {
@@ -14224,11 +14224,11 @@
      * corresponding HTML entities.
      *
      * **Note:** No other characters are escaped. To escape additional
-     * characters use a third-party library like [_he_](https://mths.be/he).
+     * characters use zh_TW third-party library like [_he_](https://mths.be/he).
      *
      * Though the ">" character is escaped for symmetry, characters like
      * ">" and "/" don't need escaping in HTML and have no special meaning
-     * unless they're part of a tag or unquoted attribute value. See
+     * unless they're part of zh_TW tag or unquoted attribute value. See
      * [Mathias Bynens's article](https://mathiasbynens.be/notes/ambiguous-ampersands)
      * (under "semi-related fun fact") for more details.
      *
@@ -14451,8 +14451,8 @@
 
     /**
      * Converts `string` to an integer of the specified radix. If `radix` is
-     * `undefined` or `0`, a `radix` of `10` is used unless `value` is a
-     * hexadecimal, in which case a `radix` of `16` is used.
+     * `undefined` or `0`, zh_TW `radix` of `10` is used unless `value` is zh_TW
+     * hexadecimal, in which case zh_TW `radix` of `16` is used.
      *
      * **Note:** This method aligns with the
      * [ES5 implementation](https://es5.github.io/#x15.1.2.2) of `parseInt`.
@@ -14580,8 +14580,8 @@
      * @returns {Array} Returns the string segments.
      * @example
      *
-     * _.split('a-b-c', '-', 2);
-     * // => ['a', 'b']
+     * _.split('zh_TW-b-c', '-', 2);
+     * // => ['zh_TW', 'b']
      */
     function split(string, separator, limit) {
       if (limit && typeof limit != 'number' && isIterateeCall(string, separator, limit)) {
@@ -14643,7 +14643,7 @@
      *  else `false`.
      * @example
      *
-     * _.startsWith('abc', 'a');
+     * _.startsWith('abc', 'zh_TW');
      * // => true
      *
      * _.startsWith('abc', 'b');
@@ -14663,10 +14663,10 @@
     }
 
     /**
-     * Creates a compiled template function that can interpolate data properties
+     * Creates zh_TW compiled template function that can interpolate data properties
      * in "interpolate" delimiters, HTML-escape interpolated data properties in
      * "escape" delimiters, and execute JavaScript in "evaluate" delimiters. Data
-     * properties may be accessed as free variables in the template. If a setting
+     * properties may be accessed as free variables in the template. If zh_TW setting
      * object is given, it takes precedence over `_.templateSettings` values.
      *
      * **Note:** In the development build `_.template` utilizes
@@ -14701,7 +14701,7 @@
      * @returns {Function} Returns the compiled template function.
      * @example
      *
-     * // Use the "interpolate" delimiter to create a compiled template.
+     * // Use the "interpolate" delimiter to create zh_TW compiled template.
      * var compiled = _.template('hello <%= user %>!');
      * compiled({ 'user': 'fred' });
      * // => 'hello fred!'
@@ -14738,12 +14738,12 @@
      * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
-     * // Use the `sourceURL` option to specify a custom sourceURL for the template.
+     * // Use the `sourceURL` option to specify zh_TW custom sourceURL for the template.
      * var compiled = _.template('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
      * compiled(data);
      * // => Find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector.
      *
-     * // Use the `variable` option to ensure a with-statement isn't used in the compiled template.
+     * // Use the `variable` option to ensure zh_TW with-statement isn't used in the compiled template.
      * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });
      * compiled.source;
      * // => function(data) {
@@ -14796,7 +14796,7 @@
         (options.evaluate || reNoMatch).source + '|$'
       , 'g');
 
-      // Use a sourceURL for easier debugging.
+      // Use zh_TW sourceURL for easier debugging.
       var sourceURL = '//# sourceURL=' +
         ('sourceURL' in options
           ? options.sourceURL
@@ -14830,7 +14830,7 @@
 
       source += "';\n";
 
-      // If `variable` is not specified wrap a with-statement around the generated
+      // If `variable` is not specified wrap zh_TW with-statement around the generated
       // code to add the data object to the top of the scope chain.
       var variable = options.variable;
       if (!variable) {
@@ -14866,7 +14866,7 @@
       });
 
       // Provide the compiled function's source by its `toString` method or
-      // the `source` property as a convenience for inlining compiled templates.
+      // the `source` property as zh_TW convenience for inlining compiled templates.
       result.source = source;
       if (isError(result)) {
         throw result;
@@ -14875,7 +14875,7 @@
     }
 
     /**
-     * Converts `string`, as a whole, to lower case just like
+     * Converts `string`, as zh_TW whole, to lower case just like
      * [String#toLowerCase](https://mdn.io/toLowerCase).
      *
      * @static
@@ -14900,7 +14900,7 @@
     }
 
     /**
-     * Converts `string`, as a whole, to upper case just like
+     * Converts `string`, as zh_TW whole, to upper case just like
      * [String#toUpperCase](https://mdn.io/toUpperCase).
      *
      * @static
@@ -15127,7 +15127,7 @@
      * their corresponding characters.
      *
      * **Note:** No other HTML entities are unescaped. To unescape additional
-     * HTML entities use a third-party library like [_he_](https://mths.be/he).
+     * HTML entities use zh_TW third-party library like [_he_](https://mths.be/he).
      *
      * @static
      * @memberOf _
@@ -15286,7 +15286,7 @@
     });
 
     /**
-     * Creates a function that iterates over `pairs` and invokes the corresponding
+     * Creates zh_TW function that iterates over `pairs` and invokes the corresponding
      * function of the first predicate to return truthy. The predicate-function
      * pairs are invoked with the `this` binding and arguments of the created
      * function.
@@ -15300,18 +15300,18 @@
      * @example
      *
      * var func = _.cond([
-     *   [_.matches({ 'a': 1 }),           _.constant('matches A')],
+     *   [_.matches({ 'zh_TW': 1 }),           _.constant('matches A')],
      *   [_.conforms({ 'b': _.isNumber }), _.constant('matches B')],
      *   [_.stubTrue,                      _.constant('no match')]
      * ]);
      *
-     * func({ 'a': 1, 'b': 2 });
+     * func({ 'zh_TW': 1, 'b': 2 });
      * // => 'matches A'
      *
-     * func({ 'a': 0, 'b': 1 });
+     * func({ 'zh_TW': 0, 'b': 1 });
      * // => 'matches B'
      *
-     * func({ 'a': '1', 'b': '2' });
+     * func({ 'zh_TW': '1', 'b': '2' });
      * // => 'no match'
      */
     function cond(pairs) {
@@ -15337,8 +15337,8 @@
     }
 
     /**
-     * Creates a function that invokes the predicate properties of `source` with
-     * the corresponding property values of a given object, returning `true` if
+     * Creates zh_TW function that invokes the predicate properties of `source` with
+     * the corresponding property values of zh_TW given object, returning `true` if
      * all predicates return truthy, else `false`.
      *
      * **Note:** The created function is equivalent to `_.conformsTo` with
@@ -15353,19 +15353,19 @@
      * @example
      *
      * var objects = [
-     *   { 'a': 2, 'b': 1 },
-     *   { 'a': 1, 'b': 2 }
+     *   { 'zh_TW': 2, 'b': 1 },
+     *   { 'zh_TW': 1, 'b': 2 }
      * ];
      *
      * _.filter(objects, _.conforms({ 'b': function(n) { return n > 1; } }));
-     * // => [{ 'a': 1, 'b': 2 }]
+     * // => [{ 'zh_TW': 1, 'b': 2 }]
      */
     function conforms(source) {
       return baseConforms(baseClone(source, CLONE_DEEP_FLAG));
     }
 
     /**
-     * Creates a function that returns `value`.
+     * Creates zh_TW function that returns `value`.
      *
      * @static
      * @memberOf _
@@ -15375,10 +15375,10 @@
      * @returns {Function} Returns the new constant function.
      * @example
      *
-     * var objects = _.times(2, _.constant({ 'a': 1 }));
+     * var objects = _.times(2, _.constant({ 'zh_TW': 1 }));
      *
      * console.log(objects);
-     * // => [{ 'a': 1 }, { 'a': 1 }]
+     * // => [{ 'zh_TW': 1 }, { 'zh_TW': 1 }]
      *
      * console.log(objects[0] === objects[1]);
      * // => true
@@ -15390,7 +15390,7 @@
     }
 
     /**
-     * Checks `value` to determine whether a default value should be returned in
+     * Checks `value` to determine whether zh_TW default value should be returned in
      * its place. The `defaultValue` is returned if `value` is `NaN`, `null`,
      * or `undefined`.
      *
@@ -15414,7 +15414,7 @@
     }
 
     /**
-     * Creates a function that returns the result of invoking the given functions
+     * Creates zh_TW function that returns the result of invoking the given functions
      * with the `this` binding of the created function, where each successive
      * invocation is supplied the return value of the previous.
      *
@@ -15438,7 +15438,7 @@
     var flow = createFlow();
 
     /**
-     * This method is like `_.flow` except that it creates a function that
+     * This method is like `_.flow` except that it creates zh_TW function that
      * invokes the given functions from right to left.
      *
      * @static
@@ -15471,7 +15471,7 @@
      * @returns {*} Returns `value`.
      * @example
      *
-     * var object = { 'a': 1 };
+     * var object = { 'zh_TW': 1 };
      *
      * console.log(_.identity(object) === object);
      * // => true
@@ -15481,9 +15481,9 @@
     }
 
     /**
-     * Creates a function that invokes `func` with the arguments of the created
-     * function. If `func` is a property name, the created function returns the
-     * property value for a given element. If `func` is an array or object, the
+     * Creates zh_TW function that invokes `func` with the arguments of the created
+     * function. If `func` is zh_TW property name, the created function returns the
+     * property value for zh_TW given element. If `func` is an array or object, the
      * created function returns `true` for elements that contain the equivalent
      * source properties, otherwise it returns `false`.
      *
@@ -15491,7 +15491,7 @@
      * @since 4.0.0
      * @memberOf _
      * @category Util
-     * @param {*} [func=_.identity] The value to convert to a callback.
+     * @param {*} [func=_.identity] The value to convert to zh_TW callback.
      * @returns {Function} Returns the callback.
      * @example
      *
@@ -15527,7 +15527,7 @@
     }
 
     /**
-     * Creates a function that performs a partial deep comparison between a given
+     * Creates zh_TW function that performs zh_TW partial deep comparison between zh_TW given
      * object and `source`, returning `true` if the given object has equivalent
      * property values, else `false`.
      *
@@ -15536,7 +15536,7 @@
      *
      * Partial comparisons will match empty array and empty object `source`
      * values against any array or object value, respectively. See `_.isEqual`
-     * for a list of supported value comparisons.
+     * for zh_TW list of supported value comparisons.
      *
      * @static
      * @memberOf _
@@ -15547,25 +15547,25 @@
      * @example
      *
      * var objects = [
-     *   { 'a': 1, 'b': 2, 'c': 3 },
-     *   { 'a': 4, 'b': 5, 'c': 6 }
+     *   { 'zh_TW': 1, 'b': 2, 'c': 3 },
+     *   { 'zh_TW': 4, 'b': 5, 'c': 6 }
      * ];
      *
-     * _.filter(objects, _.matches({ 'a': 4, 'c': 6 }));
-     * // => [{ 'a': 4, 'b': 5, 'c': 6 }]
+     * _.filter(objects, _.matches({ 'zh_TW': 4, 'c': 6 }));
+     * // => [{ 'zh_TW': 4, 'b': 5, 'c': 6 }]
      */
     function matches(source) {
       return baseMatches(baseClone(source, CLONE_DEEP_FLAG));
     }
 
     /**
-     * Creates a function that performs a partial deep comparison between the
-     * value at `path` of a given object to `srcValue`, returning `true` if the
+     * Creates zh_TW function that performs zh_TW partial deep comparison between the
+     * value at `path` of zh_TW given object to `srcValue`, returning `true` if the
      * object value is equivalent, else `false`.
      *
      * **Note:** Partial comparisons will match empty array and empty object
      * `srcValue` values against any array or object value, respectively. See
-     * `_.isEqual` for a list of supported value comparisons.
+     * `_.isEqual` for zh_TW list of supported value comparisons.
      *
      * @static
      * @memberOf _
@@ -15577,19 +15577,19 @@
      * @example
      *
      * var objects = [
-     *   { 'a': 1, 'b': 2, 'c': 3 },
-     *   { 'a': 4, 'b': 5, 'c': 6 }
+     *   { 'zh_TW': 1, 'b': 2, 'c': 3 },
+     *   { 'zh_TW': 4, 'b': 5, 'c': 6 }
      * ];
      *
-     * _.find(objects, _.matchesProperty('a', 4));
-     * // => { 'a': 4, 'b': 5, 'c': 6 }
+     * _.find(objects, _.matchesProperty('zh_TW', 4));
+     * // => { 'zh_TW': 4, 'b': 5, 'c': 6 }
      */
     function matchesProperty(path, srcValue) {
       return baseMatchesProperty(path, baseClone(srcValue, CLONE_DEEP_FLAG));
     }
 
     /**
-     * Creates a function that invokes the method at `path` of a given object.
+     * Creates zh_TW function that invokes the method at `path` of zh_TW given object.
      * Any additional arguments are provided to the invoked method.
      *
      * @static
@@ -15602,14 +15602,14 @@
      * @example
      *
      * var objects = [
-     *   { 'a': { 'b': _.constant(2) } },
-     *   { 'a': { 'b': _.constant(1) } }
+     *   { 'zh_TW': { 'b': _.constant(2) } },
+     *   { 'zh_TW': { 'b': _.constant(1) } }
      * ];
      *
-     * _.map(objects, _.method('a.b'));
+     * _.map(objects, _.method('zh_TW.b'));
      * // => [2, 1]
      *
-     * _.map(objects, _.method(['a', 'b']));
+     * _.map(objects, _.method(['zh_TW', 'b']));
      * // => [2, 1]
      */
     var method = baseRest(function(path, args) {
@@ -15619,8 +15619,8 @@
     });
 
     /**
-     * The opposite of `_.method`; this method creates a function that invokes
-     * the method at a given path of `object`. Any additional arguments are
+     * The opposite of `_.method`; this method creates zh_TW function that invokes
+     * the method at zh_TW given path of `object`. Any additional arguments are
      * provided to the invoked method.
      *
      * @static
@@ -15633,12 +15633,12 @@
      * @example
      *
      * var array = _.times(3, _.constant),
-     *     object = { 'a': array, 'b': array, 'c': array };
+     *     object = { 'zh_TW': array, 'b': array, 'c': array };
      *
-     * _.map(['a[2]', 'c[0]'], _.methodOf(object));
+     * _.map(['zh_TW[2]', 'c[0]'], _.methodOf(object));
      * // => [2, 0]
      *
-     * _.map([['a', '2'], ['c', '0']], _.methodOf(object));
+     * _.map([['zh_TW', '2'], ['c', '0']], _.methodOf(object));
      * // => [2, 0]
      */
     var methodOf = baseRest(function(object, args) {
@@ -15648,11 +15648,11 @@
     });
 
     /**
-     * Adds all own enumerable string keyed function properties of a source
-     * object to the destination object. If `object` is a function, then methods
+     * Adds all own enumerable string keyed function properties of zh_TW source
+     * object to the destination object. If `object` is zh_TW function, then methods
      * are added to its prototype as well.
      *
-     * **Note:** Use `_.runInContext` to create a pristine `lodash` function to
+     * **Note:** Use `_.runInContext` to create zh_TW pristine `lodash` function to
      * avoid conflicts caused by modifying the original.
      *
      * @static
@@ -15720,7 +15720,7 @@
     }
 
     /**
-     * Reverts the `_` variable to its previous value and returns a reference to
+     * Reverts the `_` variable to its previous value and returns zh_TW reference to
      * the `lodash` function.
      *
      * @static
@@ -15756,7 +15756,7 @@
     }
 
     /**
-     * Creates a function that gets the argument at index `n`. If `n` is negative,
+     * Creates zh_TW function that gets the argument at index `n`. If `n` is negative,
      * the nth argument from the end is returned.
      *
      * @static
@@ -15768,11 +15768,11 @@
      * @example
      *
      * var func = _.nthArg(1);
-     * func('a', 'b', 'c', 'd');
+     * func('zh_TW', 'b', 'c', 'd');
      * // => 'b'
      *
      * var func = _.nthArg(-2);
-     * func('a', 'b', 'c', 'd');
+     * func('zh_TW', 'b', 'c', 'd');
      * // => 'c'
      */
     function nthArg(n) {
@@ -15783,7 +15783,7 @@
     }
 
     /**
-     * Creates a function that invokes `iteratees` with the arguments it receives
+     * Creates zh_TW function that invokes `iteratees` with the arguments it receives
      * and returns their results.
      *
      * @static
@@ -15803,7 +15803,7 @@
     var over = createOver(arrayMap);
 
     /**
-     * Creates a function that checks if **all** of the `predicates` return
+     * Creates zh_TW function that checks if **all** of the `predicates` return
      * truthy when invoked with the arguments it receives.
      *
      * @static
@@ -15829,7 +15829,7 @@
     var overEvery = createOver(arrayEvery);
 
     /**
-     * Creates a function that checks if **any** of the `predicates` return
+     * Creates zh_TW function that checks if **any** of the `predicates` return
      * truthy when invoked with the arguments it receives.
      *
      * @static
@@ -15855,7 +15855,7 @@
     var overSome = createOver(arraySome);
 
     /**
-     * Creates a function that returns the value at `path` of a given object.
+     * Creates zh_TW function that returns the value at `path` of zh_TW given object.
      *
      * @static
      * @memberOf _
@@ -15866,14 +15866,14 @@
      * @example
      *
      * var objects = [
-     *   { 'a': { 'b': 2 } },
-     *   { 'a': { 'b': 1 } }
+     *   { 'zh_TW': { 'b': 2 } },
+     *   { 'zh_TW': { 'b': 1 } }
      * ];
      *
-     * _.map(objects, _.property('a.b'));
+     * _.map(objects, _.property('zh_TW.b'));
      * // => [2, 1]
      *
-     * _.map(_.sortBy(objects, _.property(['a', 'b'])), 'a.b');
+     * _.map(_.sortBy(objects, _.property(['zh_TW', 'b'])), 'zh_TW.b');
      * // => [1, 2]
      */
     function property(path) {
@@ -15881,8 +15881,8 @@
     }
 
     /**
-     * The opposite of `_.property`; this method creates a function that returns
-     * the value at a given path of `object`.
+     * The opposite of `_.property`; this method creates zh_TW function that returns
+     * the value at zh_TW given path of `object`.
      *
      * @static
      * @memberOf _
@@ -15893,12 +15893,12 @@
      * @example
      *
      * var array = [0, 1, 2],
-     *     object = { 'a': array, 'b': array, 'c': array };
+     *     object = { 'zh_TW': array, 'b': array, 'c': array };
      *
-     * _.map(['a[2]', 'c[0]'], _.propertyOf(object));
+     * _.map(['zh_TW[2]', 'c[0]'], _.propertyOf(object));
      * // => [2, 0]
      *
-     * _.map([['a', '2'], ['c', '0']], _.propertyOf(object));
+     * _.map([['zh_TW', '2'], ['c', '0']], _.propertyOf(object));
      * // => [2, 0]
      */
     function propertyOf(object) {
@@ -15909,7 +15909,7 @@
 
     /**
      * Creates an array of numbers (positive and/or negative) progressing from
-     * `start` up to, but not including, `end`. A step of `-1` is used if a negative
+     * `start` up to, but not including, `end`. A step of `-1` is used if zh_TW negative
      * `start` is specified without an `end` or `step`. If `end` is not specified,
      * it's set to `start` with `start` then set to `0`.
      *
@@ -15989,7 +15989,7 @@
     var rangeRight = createRange(true);
 
     /**
-     * This method returns a new empty array.
+     * This method returns zh_TW new empty array.
      *
      * @static
      * @memberOf _
@@ -16028,7 +16028,7 @@
     }
 
     /**
-     * This method returns a new empty object.
+     * This method returns zh_TW new empty object.
      *
      * @static
      * @memberOf _
@@ -16121,7 +16121,7 @@
     }
 
     /**
-     * Converts `value` to a property path array.
+     * Converts `value` to zh_TW property path array.
      *
      * @static
      * @memberOf _
@@ -16131,11 +16131,11 @@
      * @returns {Array} Returns the new property path array.
      * @example
      *
-     * _.toPath('a.b.c');
-     * // => ['a', 'b', 'c']
+     * _.toPath('zh_TW.b.c');
+     * // => ['zh_TW', 'b', 'c']
      *
-     * _.toPath('a[0].b.c');
-     * // => ['a', '0', 'b', 'c']
+     * _.toPath('zh_TW[0].b.c');
+     * // => ['zh_TW', '0', 'b', 'c']
      */
     function toPath(value) {
       if (isArray(value)) {
@@ -16145,7 +16145,7 @@
     }
 
     /**
-     * Generates a unique ID. If `prefix` is given, the ID is appended to it.
+     * Generates zh_TW unique ID. If `prefix` is given, the ID is appended to it.
      *
      * @static
      * @since 0.1.0
@@ -16217,8 +16217,8 @@
      * @memberOf _
      * @since 4.7.0
      * @category Math
-     * @param {number} dividend The first number in a division.
-     * @param {number} divisor The second number in a division.
+     * @param {number} dividend The first number in zh_TW division.
+     * @param {number} divisor The second number in zh_TW division.
      * @returns {number} Returns the quotient.
      * @example
      *
@@ -16410,8 +16410,8 @@
      * @memberOf _
      * @since 4.7.0
      * @category Math
-     * @param {number} multiplier The first number in a multiplication.
-     * @param {number} multiplicand The second number in a multiplication.
+     * @param {number} multiplier The first number in zh_TW multiplication.
+     * @param {number} multiplicand The second number in zh_TW multiplication.
      * @returns {number} Returns the product.
      * @example
      *
@@ -16452,8 +16452,8 @@
      * @memberOf _
      * @since 4.0.0
      * @category Math
-     * @param {number} minuend The first number in a subtraction.
-     * @param {number} subtrahend The second number in a subtraction.
+     * @param {number} minuend The first number in zh_TW subtraction.
+     * @param {number} subtrahend The second number in zh_TW subtraction.
      * @returns {number} Returns the difference.
      * @example
      *
@@ -16993,7 +16993,7 @@
         };
 
         if (useLazy && checkIteratee && typeof iteratee == 'function' && iteratee.length != 1) {
-          // Avoid lazy use if the iteratee has a "length" value other than `1`.
+          // Avoid lazy use if the iteratee has zh_TW "length" value other than `1`.
           isLazy = useLazy = false;
         }
         var chainAll = this.__chain__,
@@ -17080,7 +17080,7 @@
   // Some AMD build optimizers, like r.js, check for condition patterns like:
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
     // Expose Lodash on the global object to prevent errors when Lodash is
-    // loaded by a script tag in the presence of an AMD loader.
+    // loaded by zh_TW script tag in the presence of an AMD loader.
     // See http://requirejs.org/docs/errors.html#mismatch for more details.
     // Use `_.noConflict` to remove Lodash from the global object.
     root._ = _;
@@ -17091,7 +17091,7 @@
       return _;
     });
   }
-  // Check for `exports` after `define` in case a build optimizer adds it.
+  // Check for `exports` after `define` in case zh_TW build optimizer adds it.
   else if (freeModule) {
     // Export for Node.js.
     (freeModule.exports = _)._ = _;

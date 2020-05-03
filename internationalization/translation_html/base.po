@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+
+msgid "Hello world"
+
+msgid "Can you find out whodunnit?"
+
+msgid "There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime."
+
+msgid "Walkthrough for SQL Beginners"
+
+msgid "If you're comfortable with SQL, you can"
+
+msgid "skip these explanations"
+
+msgid "and put your skills to the test! Below we introduce some basic SQL concepts, and just enough detail to solve the murder. If you'd like a more complete introduction to SQL, try"
+
+msgid "Select Star SQL."
+
+msgid " A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a"
+
+msgid "​murder​"
+
+msgid "that occurred sometime on"
+
+msgid "Jan.15, 2018​"
+
+msgid "and that it took place in"
+
+msgid "SQL City"
+
+msgid ". Start by retrieving the corresponding crime scene report from the police department’s database."
+
+msgid "All the clues to this mystery are buried in a huge database, and you need to use SQL to navigate through this vast network of information. Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s database. Below well explain from a high level the commands you need to know; whenever you are ready, you can start adapting the examples to create your own SQL commands in search of clues -- you can run any SQL in any of the code boxes, no matter what was in the box when you started."
+
+msgid
+
+msgid
+
+msgid
+
+msgid
+
+msgid
+
+msgid
+
+msgid

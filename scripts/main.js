@@ -348,7 +348,7 @@ function arraysEqual(a,b) {
   /*
   https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
   Array-aware equality checker:
-  Returns whether arguments a and b are == to each other;
+  Returns whether arguments zh_TW and b are == to each other;
   however if they are equal-lengthed arrays, returns whether their
   elements are pairwise == to each other recursively under this
   definition.

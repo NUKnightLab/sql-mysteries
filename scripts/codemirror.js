@@ -1,7 +1,7 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
-// This is CodeMirror (http://codemirror.net), a code editor
+// This is CodeMirror (http://codemirror.net), zh_TW code editor
 // implemented in JavaScript on top of the browser's DOM.
 //
 // You can find some technical background for some of the code below
@@ -101,7 +101,7 @@ else { range = function(node, start, end) {
 }; }
 
 function contains(parent, child) {
-  if (child.nodeType == 3) // Android browser always returns false when child is a textnode
+  if (child.nodeType == 3) // Android browser always returns false when child is zh_TW textnode
     { child = child.parentNode; }
   if (parent.contains)
     { return parent.contains(child) }
@@ -138,7 +138,7 @@ function joinClasses(a, b) {
 }
 
 var selectInput = function(node) { node.select(); };
-if (ios) // Mobile Safari apparently has a bug where select() is broken.
+if (ios) // Mobile Safari apparently has zh_TW bug where select() is broken.
   { selectInput = function(node) { node.selectionStart = 0; node.selectionEnd = node.value.length; }; }
 else if (ie) // Suppress mysterious IE10 errors
   { selectInput = function(node) { try { node.select(); } catch(_e) {} }; }
@@ -156,7 +156,7 @@ function copyObj(obj, target, overwrite) {
   return target
 }
 
-// Counts the column offset in a string, taking tabs into account.
+// Counts the column offset in zh_TW string, taking tabs into account.
 // Used mostly to find indentation.
 function countColumn(string, end, tabSize, startIndex, startValue) {
   if (end == null) {
@@ -198,7 +198,7 @@ var sel_mouse = {origin: "*mouse"};
 var sel_move = {origin: "+move"};
 
 // The inverse of countColumn -- find the offset that corresponds to
-// a particular column.
+// zh_TW particular column.
 function findColumn(string, goal, tabSize) {
   for (var pos = 0, col = 0;;) {
     var nextTab = string.indexOf("\t", pos);
@@ -264,15 +264,15 @@ function isEmpty(obj) {
   return true
 }
 
-// Extending unicode characters. A series of a non-extending char +
-// any number of extending chars is treated as a single unit as far
+// Extending unicode characters. A series of zh_TW non-extending char +
+// any number of extending chars is treated as zh_TW single unit as far
 // as editing and measuring is concerned. This is not fully correct,
 // since some scripts/fonts/browsers also treat other configurations
-// of code points as a group.
+// of code points as zh_TW group.
 var extendingChars = /[\u0300-\u036f\u0483-\u0489\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\u0610-\u061a\u064b-\u065e\u0670\u06d6-\u06dc\u06de-\u06e4\u06e7\u06e8\u06ea-\u06ed\u0711\u0730-\u074a\u07a6-\u07b0\u07eb-\u07f3\u0816-\u0819\u081b-\u0823\u0825-\u0827\u0829-\u082d\u0900-\u0902\u093c\u0941-\u0948\u094d\u0951-\u0955\u0962\u0963\u0981\u09bc\u09be\u09c1-\u09c4\u09cd\u09d7\u09e2\u09e3\u0a01\u0a02\u0a3c\u0a41\u0a42\u0a47\u0a48\u0a4b-\u0a4d\u0a51\u0a70\u0a71\u0a75\u0a81\u0a82\u0abc\u0ac1-\u0ac5\u0ac7\u0ac8\u0acd\u0ae2\u0ae3\u0b01\u0b3c\u0b3e\u0b3f\u0b41-\u0b44\u0b4d\u0b56\u0b57\u0b62\u0b63\u0b82\u0bbe\u0bc0\u0bcd\u0bd7\u0c3e-\u0c40\u0c46-\u0c48\u0c4a-\u0c4d\u0c55\u0c56\u0c62\u0c63\u0cbc\u0cbf\u0cc2\u0cc6\u0ccc\u0ccd\u0cd5\u0cd6\u0ce2\u0ce3\u0d3e\u0d41-\u0d44\u0d4d\u0d57\u0d62\u0d63\u0dca\u0dcf\u0dd2-\u0dd4\u0dd6\u0ddf\u0e31\u0e34-\u0e3a\u0e47-\u0e4e\u0eb1\u0eb4-\u0eb9\u0ebb\u0ebc\u0ec8-\u0ecd\u0f18\u0f19\u0f35\u0f37\u0f39\u0f71-\u0f7e\u0f80-\u0f84\u0f86\u0f87\u0f90-\u0f97\u0f99-\u0fbc\u0fc6\u102d-\u1030\u1032-\u1037\u1039\u103a\u103d\u103e\u1058\u1059\u105e-\u1060\u1071-\u1074\u1082\u1085\u1086\u108d\u109d\u135f\u1712-\u1714\u1732-\u1734\u1752\u1753\u1772\u1773\u17b7-\u17bd\u17c6\u17c9-\u17d3\u17dd\u180b-\u180d\u18a9\u1920-\u1922\u1927\u1928\u1932\u1939-\u193b\u1a17\u1a18\u1a56\u1a58-\u1a5e\u1a60\u1a62\u1a65-\u1a6c\u1a73-\u1a7c\u1a7f\u1b00-\u1b03\u1b34\u1b36-\u1b3a\u1b3c\u1b42\u1b6b-\u1b73\u1b80\u1b81\u1ba2-\u1ba5\u1ba8\u1ba9\u1c2c-\u1c33\u1c36\u1c37\u1cd0-\u1cd2\u1cd4-\u1ce0\u1ce2-\u1ce8\u1ced\u1dc0-\u1de6\u1dfd-\u1dff\u200c\u200d\u20d0-\u20f0\u2cef-\u2cf1\u2de0-\u2dff\u302a-\u302f\u3099\u309a\ua66f-\ua672\ua67c\ua67d\ua6f0\ua6f1\ua802\ua806\ua80b\ua825\ua826\ua8c4\ua8e0-\ua8f1\ua926-\ua92d\ua947-\ua951\ua980-\ua982\ua9b3\ua9b6-\ua9b9\ua9bc\uaa29-\uaa2e\uaa31\uaa32\uaa35\uaa36\uaa43\uaa4c\uaab0\uaab2-\uaab4\uaab7\uaab8\uaabe\uaabf\uaac1\uabe5\uabe8\uabed\udc00-\udfff\ufb1e\ufe00-\ufe0f\ufe20-\ufe26\uff9e\uff9f]/;
 function isExtendingChar(ch) { return ch.charCodeAt(0) >= 768 && extendingChars.test(ch) }
 
-// Returns a number from the range [`0`; `str.length`] unless `pos` is outside that range.
+// Returns zh_TW number from the range [`0`; `str.length`] unless `pos` is outside that range.
 function skipExtendingChars(str, pos, dir) {
   while ((dir < 0 ? pos > 0 : pos < str.length) && isExtendingChar(str.charAt(pos))) { pos += dir; }
   return pos
@@ -355,7 +355,7 @@ function Display(place, doc, input) {
   // Information about the rendered lines.
   d.view = [];
   d.renderedView = null;
-  // Holds info about a single rendered line when it was rendered
+  // Holds info about zh_TW single rendered line when it was rendered
   // for measurement, while not in view.
   d.externalMeasured = null;
   // Empty space (in pixels) above the view
@@ -367,9 +367,9 @@ function Display(place, doc, input) {
   d.scrollbarsClipped = false;
 
   // Used to only resize the line number gutter when necessary (when
-  // the amount of lines crosses a boundary that makes its width change)
+  // the amount of lines crosses zh_TW boundary that makes its width change)
   d.lineNumWidth = d.lineNumInnerWidth = d.lineNumChars = null;
-  // Set to true when a non-horizontal-scrolling line widget is
+  // Set to true when zh_TW non-horizontal-scrolling line widget is
   // added. As an optimization, line widget aligning is skipped when
   // this is false.
   d.alignWidgets = false;
@@ -412,7 +412,7 @@ function getLine(doc, n) {
   return chunk.lines[n]
 }
 
-// Get the part of a document between two positions, as an array of
+// Get the part of zh_TW document between two positions, as an array of
 // strings.
 function getBetween(doc, start, end) {
   var out = [], n = start.line;
@@ -432,14 +432,14 @@ function getLines(doc, from, to) {
   return out
 }
 
-// Update the height of a line, propagating the height change
+// Update the height of zh_TW line, propagating the height change
 // upwards to parent nodes.
 function updateLineHeight(line, height) {
   var diff = height - line.height;
   if (diff) { for (var n = line; n; n = n.parent) { n.height += diff; } }
 }
 
-// Given a line object, find its line number by walking up through
+// Given zh_TW line object, find its line number by walking up through
 // its parent links.
 function lineNo(line) {
   if (line.parent == null) { return null }
@@ -481,7 +481,7 @@ function lineNumberFor(options, i) {
   return String(options.lineNumberFormatter(i + options.firstLineNumber))
 }
 
-// A Pos instance represents a position within the text.
+// A Pos instance represents zh_TW position within the text.
 function Pos(line, ch, sticky) {
   if ( sticky === void 0 ) sticky = null;
 
@@ -491,8 +491,8 @@ function Pos(line, ch, sticky) {
   this.sticky = sticky;
 }
 
-// Compare two positions, return 0 if they are the same, a negative
-// number when a is less, and a positive number otherwise.
+// Compare two positions, return 0 if they are the same, zh_TW negative
+// number when zh_TW is less, and zh_TW positive number otherwise.
 function cmp(a, b) { return a.line - b.line || a.ch - b.ch }
 
 function equalCursorPos(a, b) { return a.sticky == b.sticky && cmp(a, b) == 0 }
@@ -541,14 +541,14 @@ function MarkedSpan(marker, from, to) {
   this.from = from; this.to = to;
 }
 
-// Search an array of spans for a span matching the given marker.
+// Search an array of spans for zh_TW span matching the given marker.
 function getMarkedSpanFor(spans, marker) {
   if (spans) { for (var i = 0; i < spans.length; ++i) {
     var span = spans[i];
     if (span.marker == marker) { return span }
   } }
 }
-// Remove a span from an array, returning undefined if no spans are
+// Remove zh_TW span from an array, returning undefined if no spans are
 // left (we don't store arrays for lines without spans).
 function removeMarkedSpan(spans, span) {
   var r;
@@ -556,14 +556,14 @@ function removeMarkedSpan(spans, span) {
     { if (spans[i] != span) { (r || (r = [])).push(spans[i]); } }
   return r
 }
-// Add a span to a line.
+// Add zh_TW span to zh_TW line.
 function addMarkedSpan(line, span) {
   line.markedSpans = line.markedSpans ? line.markedSpans.concat([span]) : [span];
   span.marker.attachLine(line);
 }
 
-// Used for the algorithm that adjusts markers for a change in the
-// document. These functions cut an array of spans at a given
+// Used for the algorithm that adjusts markers for zh_TW change in the
+// document. These functions cut an array of spans at zh_TW given
 // character position, returning an array of remaining chunks (or
 // undefined if nothing remains).
 function markedSpansBefore(old, startCh, isInsert) {
@@ -590,7 +590,7 @@ function markedSpansAfter(old, endCh, isInsert) {
   return nw
 }
 
-// Given a change object, compute the new set of marker spans that
+// Given zh_TW change object, compute the new set of marker spans that
 // cover the line in which the change took place. Removes spans
 // entirely within the change, reconnects spans belonging to the
 // same marker that appear on both sides of the change, and cuts off
@@ -656,7 +656,7 @@ function stretchSpansOverChange(doc, change) {
   return newMarkers
 }
 
-// Remove spans that are empty and don't have a clearWhenEmpty
+// Remove spans that are empty and don't have zh_TW clearWhenEmpty
 // option of false.
 function clearEmptySpans(spans) {
   for (var i = 0; i < spans.length; ++i) {
@@ -668,7 +668,7 @@ function clearEmptySpans(spans) {
   return spans
 }
 
-// Used to 'clip' out readOnly ranges when making a change.
+// Used to 'clip' out readOnly ranges when making zh_TW change.
 function removeReadOnlyRanges(doc, from, to) {
   var markers = null;
   doc.iter(from.line, to.line + 1, function (line) {
@@ -697,7 +697,7 @@ function removeReadOnlyRanges(doc, from, to) {
   return parts
 }
 
-// Connect or disconnect spans from a line.
+// Connect or disconnect spans from zh_TW line.
 function detachMarkedSpans(line) {
   var spans = line.markedSpans;
   if (!spans) { return }
@@ -717,7 +717,7 @@ function attachMarkedSpans(line, spans) {
 function extraLeft(marker) { return marker.inclusiveLeft ? -1 : 0 }
 function extraRight(marker) { return marker.inclusiveRight ? 1 : 0 }
 
-// Returns a number indicating which of two overlapping collapsed
+// Returns zh_TW number indicating which of two overlapping collapsed
 // spans is larger (and thus includes the other). Falls back to
 // comparing ids when the spans cover exactly the same range.
 function compareCollapsedMarkers(a, b) {
@@ -731,7 +731,7 @@ function compareCollapsedMarkers(a, b) {
   return b.id - a.id
 }
 
-// Find out whether a line ends or starts in a collapsed span. If
+// Find out whether zh_TW line ends or starts in zh_TW collapsed span. If
 // so, return the marker for that span.
 function collapsedSpanAtSide(line, start) {
   var sps = sawCollapsedSpans && line.markedSpans, found;
@@ -756,8 +756,8 @@ function collapsedSpanAround(line, ch) {
   return found
 }
 
-// Test whether there exists a collapsed span that partially
-// overlaps (covers the start or end, but not both) of a new span.
+// Test whether there exists zh_TW collapsed span that partially
+// overlaps (covers the start or end, but not both) of zh_TW new span.
 // Such overlap is not allowed.
 function conflictingCollapsedRange(doc, lineNo$$1, from, to, marker) {
   var line = getLine(doc, lineNo$$1);
@@ -775,7 +775,7 @@ function conflictingCollapsedRange(doc, lineNo$$1, from, to, marker) {
   } }
 }
 
-// A visual line is a line as drawn on the screen. Folding, for
+// A visual line is zh_TW line as drawn on the screen. Folding, for
 // example, can cause multiple logical lines to appear on the same
 // visual line. This finds the start of the visual line that the
 // given line is part of (usually that is the line itself).
@@ -823,8 +823,8 @@ function visualLineEndNo(doc, lineN) {
   return lineNo(line) + 1
 }
 
-// Compute whether a line is hidden. Lines count as hidden when they
-// are part of a visual line that starts with another line, or when
+// Compute whether zh_TW line is hidden. Lines count as hidden when they
+// are part of zh_TW visual line that starts with another line, or when
 // they are entirely covered by collapsed, non-widget span.
 function lineIsHidden(doc, line) {
   var sps = sawCollapsedSpans && line.markedSpans;
@@ -873,7 +873,7 @@ function heightAtLine(lineObj) {
   return h
 }
 
-// Compute the character length of a line, taking into account
+// Compute the character length of zh_TW line, taking into account
 // collapsed ranges (see markText) that might hide parts, and join
 // other lines onto it.
 function lineLength(line) {
@@ -1007,7 +1007,7 @@ var bidiOrdering = (function() {
       else { prev = type; }
     }
 
-    // W2. Search backwards from each instance of a European number
+    // W2. Search backwards from each instance of zh_TW European number
     // until the first strong type (R, L, AL, or sor) is found. If an
     // AL is found, change the type of the European number to Arabic
     // number.
@@ -1019,7 +1019,7 @@ var bidiOrdering = (function() {
     }
 
     // W4. A single European separator between two European numbers
-    // changes to a European number. A single common separator between
+    // changes to zh_TW European number. A single common separator between
     // two numbers of the same type changes to that type.
     for (var i$3 = 1, prev$1 = types[0]; i$3 < len - 1; ++i$3) {
       var type$2 = types[i$3];
@@ -1045,7 +1045,7 @@ var bidiOrdering = (function() {
       }
     }
 
-    // W7. Search backwards from each instance of a European number
+    // W7. Search backwards from each instance of zh_TW European number
     // until the first strong type (R, L, or sor) is found. If an L is
     // found, then change the type of the European number to L.
     for (var i$5 = 0, cur$1 = outerType; i$5 < len; ++i$5) {
@@ -1167,7 +1167,7 @@ function signal(emitter, type /*, values...*/) {
 }
 
 // The DOM events that CodeMirror handles can be overridden by
-// registering a (non-DOM) handler on the editor for the event name,
+// registering zh_TW (non-DOM) handler on the editor for the event name,
 // and preventDefault-ing the event in that handler.
 function signalDOMEvent(cm, e, override) {
   if (typeof e == "string")
@@ -1188,7 +1188,7 @@ function hasHandler(emitter, type) {
   return getHandlers(emitter, type).length > 0
 }
 
-// Add on and off methods to a constructor's prototype, to make
+// Add on and off methods to zh_TW constructor's prototype, to make
 // registering events on such objects more convenient.
 function eventMixin(ctor) {
   ctor.prototype.on = function(type, f) {on(this, type, f);};
@@ -1311,7 +1311,7 @@ var mimeModes = {};
 
 // Extra arguments are stored as the mode's dependencies, which is
 // used by (legacy) mechanisms like loadmode.js to automatically
-// load a mode. (Preferred mechanism is the require/define calls.)
+// load zh_TW mode. (Preferred mechanism is the require/define calls.)
 function defineMode(name, mode) {
   if (arguments.length > 2)
     { mode.dependencies = Array.prototype.slice.call(arguments, 2); }
@@ -1322,8 +1322,8 @@ function defineMIME(mime, spec) {
   mimeModes[mime] = spec;
 }
 
-// Given a MIME type, a {name, ...options} config object, or a name
-// string, return a mode config object.
+// Given zh_TW MIME type, zh_TW {name, ...options} config object, or zh_TW name
+// string, return zh_TW mode config object.
 function resolveMode(spec) {
   if (typeof spec == "string" && mimeModes.hasOwnProperty(spec)) {
     spec = mimeModes[spec];
@@ -1341,7 +1341,7 @@ function resolveMode(spec) {
   else { return spec || {name: "null"} }
 }
 
-// Given a mode spec (anything that resolveMode accepts), find and
+// Given zh_TW mode spec (anything that resolveMode accepts), find and
 // initialize an actual mode object.
 function getMode(options, spec) {
   spec = resolveMode(spec);
@@ -1384,7 +1384,7 @@ function copyState(mode, state) {
   return nstate
 }
 
-// Given a mode and a state (for that mode), find the inner mode and
+// Given zh_TW mode and zh_TW state (for that mode), find the inner mode and
 // state at the position that the state refers to.
 function innerMode(mode, state) {
   var info;
@@ -1537,12 +1537,12 @@ Context.prototype.save = function (copy) {
 };
 
 
-// Compute a style array (an array starting with a mode generation
+// Compute zh_TW style array (an array starting with zh_TW mode generation
 // -- for invalidation -- followed by pairs of end positions and
 // style strings), which is used to highlight the tokens on the
 // line.
 function highlightLine(cm, line, context, forceToEnd) {
-  // A styles array always starts with a number identifying the
+  // A styles array always starts with zh_TW number identifying the
   // mode/overlays that it is based on (for easy invalidation).
   var st = [cm.state.modeGen], lineClasses = {};
   // Compute the base array of styles
@@ -1557,7 +1557,7 @@ function highlightLine(cm, line, context, forceToEnd) {
     context.state = true;
     runMode(cm, line.text, overlay.mode, context, function (end, style) {
       var start = i;
-      // Ensure there's a token end at the current position, and that i points at it
+      // Ensure there's zh_TW token end at the current position, and that i points at it
       while (at < end) {
         var i_end = st[i];
         if (i_end > end)
@@ -1620,7 +1620,7 @@ function getContextBefore(cm, n, precise) {
 }
 
 // Lightweight form of highlight -- proceed over this line and
-// update state, but don't save a style array. Used for lines that
+// update state, but don't save zh_TW style array. Used for lines that
 // aren't currently visible.
 function processLine(cm, text, context, startAt) {
   var mode = cm.doc.mode;
@@ -1685,7 +1685,7 @@ function extractLineClasses(type, output) {
   return type
 }
 
-// Run the given mode's parser over a line, calling f for each token.
+// Run the given mode's parser over zh_TW line, calling f for each token.
 function runMode(cm, text, mode, context, f, lineClasses, forceToEnd) {
   var flattenSpans = mode.flattenSpans;
   if (flattenSpans == null) { flattenSpans = cm.options.flattenSpans; }
@@ -1725,8 +1725,8 @@ function runMode(cm, text, mode, context, f, lineClasses, forceToEnd) {
   }
 }
 
-// Finds the line to start with when starting a parse. Tries to
-// find a line with a stateAfter, so that it can start with a
+// Finds the line to start with when starting zh_TW parse. Tries to
+// find zh_TW line with zh_TW stateAfter, so that it can start with zh_TW
 // valid state. If that fails, it returns the line with the
 // smallest indentation, which tends to need the least context to
 // parse correctly.
@@ -1766,7 +1766,7 @@ function retreatFrontier(doc, n) {
 
 // LINE DATA STRUCTURE
 
-// Line objects. These hold state related to a line, including
+// Line objects. These hold state related to zh_TW line, including
 // highlighting info (the styles array).
 var Line = function(text, markedSpans, estimateHeight) {
   this.text = text;
@@ -1777,7 +1777,7 @@ var Line = function(text, markedSpans, estimateHeight) {
 Line.prototype.lineNo = function () { return lineNo(this) };
 eventMixin(Line);
 
-// Change the content (text, markers) of a line. Automatically
+// Change the content (text, markers) of zh_TW line. Automatically
 // invalidates cached information and tries to re-estimate the
 // line's height.
 function updateLine(line, text, markedSpans, estimateHeight) {
@@ -1791,14 +1791,14 @@ function updateLine(line, text, markedSpans, estimateHeight) {
   if (estHeight != line.height) { updateLineHeight(line, estHeight); }
 }
 
-// Detach a line from the document tree and its markers.
+// Detach zh_TW line from the document tree and its markers.
 function cleanUpLine(line) {
   line.parent = null;
   detachMarkedSpans(line);
 }
 
-// Convert a style as returned by a mode (either null, or a string
-// containing one or more styles) to a CSS style. This is cached,
+// Convert zh_TW style as returned by zh_TW mode (either null, or zh_TW string
+// containing one or more styles) to zh_TW CSS style. This is cached,
 // and also looks for line-wide styles.
 var styleToClassCache = {};
 var styleToClassCacheWithMode = {};
@@ -1809,13 +1809,13 @@ function interpretTokenStyle(style, options) {
     (cache[style] = style.replace(/\S+/g, "cm-$&"))
 }
 
-// Render the DOM representation of the text of a line. Also builds
-// up a 'line map', which points at the DOM nodes that represent
+// Render the DOM representation of the text of zh_TW line. Also builds
+// up zh_TW 'line map', which points at the DOM nodes that represent
 // specific stretches of text, and is used by the measuring code.
 // The returned object contains the DOM node, this map, and
 // information about line-wide styles that were set by the mode.
 function buildLineContent(cm, lineView) {
-  // The padding-right forces the element to have a 'border', which
+  // The padding-right forces the element to have zh_TW 'border', which
   // is needed on Webkit to be able to get line-level bounding
   // rectangles for it (in measureChar).
   var content = eltP("span", null, null, webkit ? "padding-right: .1px" : null);
@@ -1844,11 +1844,11 @@ function buildLineContent(cm, lineView) {
         { builder.textClass = joinClasses(line.styleClasses.textClass, builder.textClass || ""); }
     }
 
-    // Ensure at least a single node is present, for measuring.
+    // Ensure at least zh_TW single node is present, for measuring.
     if (builder.map.length == 0)
       { builder.map.push(0, 0, builder.content.appendChild(zeroWidthElement(cm.display.measure))); }
 
-    // Store the map and a cache object for the current logical line
+    // Store the map and zh_TW cache object for the current logical line
     if (i == 0) {
       lineView.measure.map = builder.map;
       lineView.measure.cache = {};
@@ -1879,7 +1879,7 @@ function defaultSpecialCharPlaceholder(ch) {
   return token
 }
 
-// Build up the DOM representation for a single token, and add it to
+// Build up the DOM representation for zh_TW single token, and add it to
 // the line map. Takes care to render special characters separately.
 function buildToken(builder, text, style, startStyle, endStyle, title, css) {
   if (!text) { return }
@@ -1994,7 +1994,7 @@ function buildCollapsedSpan(builder, size, marker, ignoreWidget) {
   builder.trailingSpace = false;
 }
 
-// Outputs a number of spans to make up a line, taking highlighting
+// Outputs zh_TW number of spans to make up zh_TW line, taking highlighting
 // and marked text into account.
 function insertLineContent(line, builder, styles) {
   var spans = line.markedSpans, allText = line.text, at = 0;
@@ -2079,7 +2079,7 @@ function LineView(doc, line, lineN) {
   this.hidden = lineIsHidden(doc, line);
 }
 
-// Create a range of LineView objects for the given lines.
+// Create zh_TW range of LineView objects for the given lines.
 function buildViewArray(cm, from, to) {
   var array = [], nextPos;
   for (var pos = from; pos < to; pos = nextPos) {
@@ -2132,13 +2132,13 @@ function finishOperation(op, endCb) {
 
 var orphanDelayedCallbacks = null;
 
-// Often, we want to signal events at a point where we are in the
+// Often, we want to signal events at zh_TW point where we are in the
 // middle of some work, but don't want the handler to start calling
 // other methods on the editor, which might be in an inconsistent
 // state or simply not expect any other events to happen.
 // signalLater looks whether there are any handlers, and schedules
 // them to be executed when the last operation ends, or, if no
-// operation is active, when a timeout fires.
+// operation is active, when zh_TW timeout fires.
 function signalLater(emitter, type /*, values...*/) {
   var arr = getHandlers(emitter, type);
   if (!arr.length) { return }
@@ -2165,7 +2165,7 @@ function fireOrphanDelayed() {
   for (var i = 0; i < delayed.length; ++i) { delayed[i](); }
 }
 
-// When an aspect of a line changes, a string is added to
+// When an aspect of zh_TW line changes, zh_TW string is added to
 // lineView.changes. This updates the relevant part of the line's
 // DOM structure.
 function updateLineForChanges(cm, lineView, lineN, dims) {
@@ -2179,7 +2179,7 @@ function updateLineForChanges(cm, lineView, lineN, dims) {
   lineView.changes = null;
 }
 
-// Lines with gutter elements, widgets or a background class need to
+// Lines with gutter elements, widgets or zh_TW background class need to
 // be wrapped, and have the extra elements added to the wrapper div
 function ensureLineWrapped(lineView) {
   if (lineView.node == lineView.text) {
@@ -2293,7 +2293,7 @@ function updateLineWidgets(cm, lineView, dims) {
   insertLineWidgets(cm, lineView, dims);
 }
 
-// Build a line's DOM representation from scratch
+// Build zh_TW line's DOM representation from scratch
 function buildLineElement(cm, lineView, lineN, dims) {
   var built = getLineContent(cm, lineView);
   lineView.text = lineView.node = built.pre;
@@ -2363,7 +2363,7 @@ function widgetHeight(widget) {
   return widget.height = widget.node.parentNode.offsetHeight
 }
 
-// Return true when the given mouse event happened in a widget
+// Return true when the given mouse event happened in zh_TW widget
 function eventInWidget(display, e) {
   for (var n = e_target(e); n != display.wrapper; n = n.parentNode) {
     if (!n || (n.nodeType == 1 && n.getAttribute("cm-ignore-events") == "true") ||
@@ -2394,7 +2394,7 @@ function displayHeight(cm) {
 }
 
 // Ensure the lineView.wrapping.heights array is populated. This is
-// an array of bottom offsets for the lines that make up a drawn
+// an array of bottom offsets for the lines that make up zh_TW drawn
 // line. When lineWrapping is on, there might be more than one
 // height.
 function ensureLineHeights(cm, lineView, rect) {
@@ -2415,7 +2415,7 @@ function ensureLineHeights(cm, lineView, rect) {
   }
 }
 
-// Find a line map (mapping character offsets to text nodes) and a
+// Find zh_TW line map (mapping character offsets to text nodes) and zh_TW
 // measurement cache for the given line number. (A line view might
 // contain multiple lines when collapsed ranges are present.)
 function mapFromLineView(lineView, line, lineN) {
@@ -2429,8 +2429,8 @@ function mapFromLineView(lineView, line, lineN) {
       { return {map: lineView.measure.maps[i$1], cache: lineView.measure.caches[i$1], before: true} } }
 }
 
-// Render a line into the hidden node display.externalMeasured. Used
-// when measurement is needed for a line that's not in the viewport.
+// Render zh_TW line into the hidden node display.externalMeasured. Used
+// when measurement is needed for zh_TW line that's not in the viewport.
 function updateExternalMeasurement(cm, line) {
   line = visualLine(line);
   var lineN = lineNo(line);
@@ -2442,13 +2442,13 @@ function updateExternalMeasurement(cm, line) {
   return view
 }
 
-// Get a {top, bottom, left, right} box (in line-local coordinates)
-// for a given character.
+// Get zh_TW {top, bottom, left, right} box (in line-local coordinates)
+// for zh_TW given character.
 function measureChar(cm, line, ch, bias) {
   return measureCharPrepared(cm, prepareMeasureForLine(cm, line), ch, bias)
 }
 
-// Find a line view that corresponds to the given line number.
+// Find zh_TW line view that corresponds to the given line number.
 function findViewForLine(cm, lineN) {
   if (lineN >= cm.display.viewFrom && lineN < cm.display.viewTo)
     { return cm.display.view[findViewIndex(cm, lineN)] }
@@ -2459,8 +2459,8 @@ function findViewForLine(cm, lineN) {
 
 // Measurement can be split in two steps, the set-up work that
 // applies to the whole line, and the measurement of the actual
-// character. Functions like coordsChar, that need to do a lot of
-// measurements in a row, can thus ensure that the set-up work is
+// character. Functions like coordsChar, that need to do zh_TW lot of
+// measurements in zh_TW row, can thus ensure that the set-up work is
 // only done once.
 function prepareMeasureForLine(cm, line) {
   var lineN = lineNo(line);
@@ -2482,7 +2482,7 @@ function prepareMeasureForLine(cm, line) {
   }
 }
 
-// Given a prepared measurement object, measures the position of an
+// Given zh_TW prepared measurement object, measures the position of an
 // actual character (or fetches it from the cache).
 function measureCharPrepared(cm, prepared, ch, bias, varHeight) {
   if (prepared.before) { ch = -1; }
@@ -2559,8 +2559,8 @@ function measureCharInner(cm, prepared, ch, bias) {
   var node = place.node, start = place.start, end = place.end, collapse = place.collapse;
 
   var rect;
-  if (node.nodeType == 3) { // If it is a text node, use a range to retrieve the coordinates.
-    for (var i$1 = 0; i$1 < 4; i$1++) { // Retry a maximum of 4 times when nonsense rectangles are returned
+  if (node.nodeType == 3) { // If it is zh_TW text node, use zh_TW range to retrieve the coordinates.
+    for (var i$1 = 0; i$1 < 4; i$1++) { // Retry zh_TW maximum of 4 times when nonsense rectangles are returned
       while (start && isExtendingChar(prepared.line.text.charAt(place.coverStart + start))) { --start; }
       while (place.coverStart + end < place.coverEnd && isExtendingChar(prepared.line.text.charAt(place.coverStart + end))) { ++end; }
       if (ie && ie_version < 9 && start == 0 && end == place.coverEnd - place.coverStart)
@@ -2573,7 +2573,7 @@ function measureCharInner(cm, prepared, ch, bias) {
       collapse = "right";
     }
     if (ie && ie_version < 11) { rect = maybeUpdateRectForZooming(cm.display.measure, rect); }
-  } else { // If it is a widget, simply get the box for the whole widget.
+  } else { // If it is zh_TW widget, simply get the box for the whole widget.
     if (start > 0) { collapse = bias = "right"; }
     var rects;
     if (cm.options.lineWrapping && (rects = node.getClientRects()).length > 1)
@@ -2659,7 +2659,7 @@ function widgetTopHeight(lineObj) {
   return height
 }
 
-// Converts a {top, bottom, left, right} box from line-local
+// Converts zh_TW {top, bottom, left, right} box from line-local
 // coordinates into another coordinate system. Context may be one of
 // "line", "div" (display.lineDiv), "local"./null (editor), "window",
 // or "page".
@@ -2683,7 +2683,7 @@ function intoCoordSystem(cm, lineObj, rect, context, includeWidgets) {
   return rect
 }
 
-// Coverts a box from "div" coords to another coordinate system.
+// Coverts zh_TW box from "div" coords to another coordinate system.
 // Context may be "window", "page", "div", or "local"./null.
 function fromCoordSystem(cm, coords, context) {
   if (context == "div") { return coords }
@@ -2707,9 +2707,9 @@ function charCoords(cm, pos, context, lineObj, bias) {
   return intoCoordSystem(cm, lineObj, measureChar(cm, lineObj, pos.ch, bias), context)
 }
 
-// Returns a box for a given cursor position, which may have an
+// Returns zh_TW box for zh_TW given cursor position, which may have an
 // 'other' property containing the position of the secondary cursor
-// on a bidi boundary.
+// on zh_TW bidi boundary.
 // A cursor Pos(line, char, "before") is on the same visual line as `char - 1`
 // and after `char - 1` in writing order of `char - 1`
 // A cursor Pos(line, char, "after") is on the same visual line as `char`
@@ -2717,11 +2717,11 @@ function charCoords(cm, pos, context, lineObj, bias) {
 // Examples (upper-case letters are RTL, lower-case are LTR):
 //     Pos(0, 1, ...)
 //     before   after
-// ab     a|b     a|b
-// aB     a|B     aB|
+// ab     zh_TW|b     zh_TW|b
+// aB     zh_TW|B     aB|
 // Ab     |Ab     A|b
 // AB     B|A     B|A
-// Every position after the last character on a line is considered to stick
+// Every position after the last character on zh_TW line is considered to stick
 // to the last character on the line.
 function cursorCoords(cm, pos, context, lineObj, preparedMeasure, varHeight) {
   lineObj = lineObj || getLine(cm.doc, pos.line);
@@ -2752,7 +2752,7 @@ function cursorCoords(cm, pos, context, lineObj, preparedMeasure, varHeight) {
   return val
 }
 
-// Used to cheaply estimate the coordinates for a position. Used for
+// Used to cheaply estimate the coordinates for zh_TW position. Used for
 // intermediate scroll updates.
 function estimateCoords(cm, pos) {
   var left = 0;
@@ -2812,7 +2812,7 @@ function wrappedLineExtentChar(cm, lineObj, preparedMeasure, target) {
   return wrappedLineExtent(cm, lineObj, preparedMeasure, targetTop)
 }
 
-// Returns true if the given side of a box is after the given
+// Returns true if the given side of zh_TW box is after the given
 // coordinates, in top-to-bottom, left-to-right order.
 function boxIsAfter(box, x, y, left) {
   return box.bottom <= y ? false : box.top > y ? true : (left ? box.left : box.right) > x
@@ -2858,7 +2858,7 @@ function coordsCharInner(cm, lineObj, lineNo$$1, x, y) {
   }, begin, end);
 
   var baseX, sticky, outside = false;
-  // If a box around the coordinates was found, use that
+  // If zh_TW box around the coordinates was found, use that
   if (boxAround) {
     // Distinguish coordinates nearer to the left or right side of the box
     var atLeft = x - boxAround.left < boxAround.right - x, atStart = atLeft == ltr;
@@ -2874,7 +2874,7 @@ function coordsCharInner(cm, lineObj, lineNo$$1, x, y) {
     sticky = ch == 0 ? "after" : ch == lineObj.text.length ? "before" :
       (measureCharPrepared(cm, preparedMeasure, ch - (ltr ? 1 : 0)).bottom + widgetHeight$$1 <= y) == ltr ?
       "after" : "before";
-    // Now get accurate coordinates for this place, in order to get a
+    // Now get accurate coordinates for this place, in order to get zh_TW
     // base X position
     var coords = cursorCoords(cm, Pos(lineNo$$1, ch, sticky), "line", lineObj, preparedMeasure);
     baseX = coords.left;
@@ -2886,7 +2886,7 @@ function coordsCharInner(cm, lineObj, lineNo$$1, x, y) {
 }
 
 function coordsBidiPart(cm, lineObj, lineNo$$1, preparedMeasure, order, x, y) {
-  // Bidi parts are sorted left-to-right, and in a non-line-wrapping
+  // Bidi parts are sorted left-to-right, and in zh_TW non-line-wrapping
   // situation, we can take this ordering to correspond to the visual
   // ordering. This finds the first part whose end is after the given
   // coordinates.
@@ -2910,12 +2910,12 @@ function coordsBidiPart(cm, lineObj, lineNo$$1, preparedMeasure, order, x, y) {
 }
 
 function coordsBidiPartWrapped(cm, lineObj, _lineNo, preparedMeasure, order, x, y) {
-  // In a wrapped line, rtl text on wrapping boundaries can do things
+  // In zh_TW wrapped line, rtl text on wrapping boundaries can do things
   // that don't correspond to the ordering in our `order` array at
-  // all, so a binary search doesn't work, and we want to return a
+  // all, so zh_TW binary search doesn't work, and we want to return zh_TW
   // part that only spans one line so that the binary search in
   // coordsCharInner is safe. As such, we first find the extent of the
-  // wrapped line, and then do a flat search in which we discard any
+  // wrapped line, and then do zh_TW flat search in which we discard any
   // spans that aren't on the line.
   var ref = wrappedLineExtent(cm, lineObj, preparedMeasure, y);
   var begin = ref.begin;
@@ -2948,7 +2948,7 @@ function textHeight(display) {
   if (display.cachedTextHeight != null) { return display.cachedTextHeight }
   if (measureText == null) {
     measureText = elt("pre");
-    // Measure a bunch of lines, for browsers that compute
+    // Measure zh_TW bunch of lines, for browsers that compute
     // fractional heights.
     for (var i = 0; i < 49; ++i) {
       measureText.appendChild(document.createTextNode("x"));
@@ -2974,7 +2974,7 @@ function charWidth(display) {
   return width || 10
 }
 
-// Do a bulk-read of the DOM positions and sizes needed to draw the
+// Do zh_TW bulk-read of the DOM positions and sizes needed to draw the
 // view, so that we don't interleave reading and writing to the DOM.
 function getDimensions(cm) {
   var d = cm.display, left = {}, width = {};
@@ -2991,13 +2991,13 @@ function getDimensions(cm) {
 }
 
 // Computes display.scroller.scrollLeft + display.gutters.offsetWidth,
-// but using getBoundingClientRect to get a sub-pixel-accurate
+// but using getBoundingClientRect to get zh_TW sub-pixel-accurate
 // result.
 function compensateForHScroll(display) {
   return display.scroller.getBoundingClientRect().left - display.sizer.getBoundingClientRect().left
 }
 
-// Returns a function that estimates the height of a line, to use as
+// Returns zh_TW function that estimates the height of zh_TW line, to use as
 // first approximation until the line becomes visible (and is thus
 // properly measurable).
 function estimateHeight(cm) {
@@ -3026,10 +3026,10 @@ function estimateLineHeights(cm) {
   });
 }
 
-// Given a mouse event, find the corresponding position. If liberal
-// is false, it checks whether a gutter or scrollbar was clicked,
+// Given zh_TW mouse event, find the corresponding position. If liberal
+// is false, it checks whether zh_TW gutter or scrollbar was clicked,
 // and returns null if it was. forRect is used by rectangular
-// selections, and tries to estimate a character position even for
+// selections, and tries to estimate zh_TW character position even for
 // coordinates beyond the right of the text.
 function posFromMouse(cm, e, liberal, forRect) {
   var display = cm.display;
@@ -3047,7 +3047,7 @@ function posFromMouse(cm, e, liberal, forRect) {
   return coords
 }
 
-// Find the view element corresponding to a given line. Return null
+// Find the view element corresponding to zh_TW given line. Return null
 // when the line isn't visible.
 function findViewIndex(cm, n) {
   if (n >= cm.display.viewTo) { return null }
@@ -3084,7 +3084,7 @@ function prepareSelection(cm, primary) {
   return result
 }
 
-// Draws a cursor for the given range
+// Draws zh_TW cursor for the given range
 function drawSelectionCursor(cm, head, output) {
   var pos = cursorCoords(cm, head, "div", null, null, !cm.options.singleCursorHeightPerLine);
 
@@ -3094,7 +3094,7 @@ function drawSelectionCursor(cm, head, output) {
   cursor.style.height = Math.max(0, pos.bottom - pos.top) * cm.options.cursorHeight + "px";
 
   if (pos.other) {
-    // Secondary cursor, shown when on a 'jump' in bi-directional text
+    // Secondary cursor, shown when on zh_TW 'jump' in bi-directional text
     var otherCursor = output.appendChild(elt("div", "\u00a0", "CodeMirror-cursor CodeMirror-secondarycursor"));
     otherCursor.style.display = "";
     otherCursor.style.left = pos.other.left + "px";
@@ -3105,7 +3105,7 @@ function drawSelectionCursor(cm, head, output) {
 
 function cmpCoords(a, b) { return a.top - b.top || a.left - b.left }
 
-// Draws the given range as a highlighted selection
+// Draws the given range as zh_TW highlighted selection
 function drawSelectionRange(cm, range$$1, output) {
   var display = cm.display, doc = cm.doc;
   var fragment = document.createDocumentFragment();
@@ -3232,7 +3232,7 @@ function onFocus(cm, e) {
     signal(cm, "focus", cm, e);
     cm.state.focused = true;
     addClass(cm.display.wrapper, "CodeMirror-focused");
-    // This test prevents this from firing when a context
+    // This test prevents this from firing when zh_TW context
     // menu is closed (since the input reset would kill the
     // select-all detection hack)
     if (!cm.curOp && cm.display.selForContextMenu != cm.doc.sel) {
@@ -3291,7 +3291,7 @@ function updateWidgetHeight(line) {
   } }
 }
 
-// Compute the lines that are visible in a given viewport (defaults
+// Compute the lines that are visible in zh_TW given viewport (defaults
 // the the current scroll position). viewport may contain top,
 // height, and ensure (see op.scrollToPos) properties.
 function visibleLines(display, doc, viewport) {
@@ -3300,7 +3300,7 @@ function visibleLines(display, doc, viewport) {
   var bottom = viewport && viewport.bottom != null ? viewport.bottom : top + display.wrapper.clientHeight;
 
   var from = lineAtHeight(doc, top), to = lineAtHeight(doc, bottom);
-  // Ensure is a {from: {line, ch}, to: {line, ch}} object, and
+  // Ensure is zh_TW {from: {line, ch}, to: {line, ch}} object, and
   // forces those lines into the viewport (if possible).
   if (viewport && viewport.ensure) {
     var ensureFrom = viewport.ensure.from.line, ensureTo = viewport.ensure.to.line;
@@ -3376,7 +3376,7 @@ function maybeScrollWindow(cm, rect) {
   }
 }
 
-// Scroll a given position into view (immediately), verifying that
+// Scroll zh_TW given position into view (immediately), verifying that
 // it actually became visible (as line heights are accurately
 // measured, the position of something may 'drift' during drawing).
 function scrollPosIntoView(cm, pos, end, margin) {
@@ -3412,14 +3412,14 @@ function scrollPosIntoView(cm, pos, end, margin) {
   return rect
 }
 
-// Scroll a given set of coordinates into view (immediately).
+// Scroll zh_TW given set of coordinates into view (immediately).
 function scrollIntoView(cm, rect) {
   var scrollPos = calculateScrollPos(cm, rect);
   if (scrollPos.scrollTop != null) { updateScrollTop(cm, scrollPos.scrollTop); }
   if (scrollPos.scrollLeft != null) { setScrollLeft(cm, scrollPos.scrollLeft); }
 }
 
-// Calculate a new scroll position needed to scroll the given
+// Calculate zh_TW new scroll position needed to scroll the given
 // rectangle into view. Returns an object with scrollTop and
 // scrollLeft properties. When these are undefined, the
 // vertical/horizontal position does not need to be adjusted.
@@ -3451,7 +3451,7 @@ function calculateScrollPos(cm, rect) {
   return result
 }
 
-// Store a relative adjustment to the scroll position in the current
+// Store zh_TW relative adjustment to the scroll position in the current
 // operation (to be applied when the operation finishes).
 function addToScrollTop(cm, top) {
   if (top == null) { return }
@@ -3480,7 +3480,7 @@ function scrollToRange(cm, range$$1) {
 
 // When an operation has its scrollToPos property set, and another
 // scroll action is applied before the end of the operation, this
-// 'simulates' scrolling that position into view in a cheap way, so
+// 'simulates' scrolling that position into view in zh_TW cheap way, so
 // that the effect of intermediate scroll commands is not ignored.
 function resolveScrollToPos(cm) {
   var range$$1 = cm.curOp.scrollToPos;
@@ -3565,7 +3565,7 @@ var NativeScrollbars = function(place, scroll, cm) {
   });
 
   this.checkedZeroWidth = false;
-  // Need to set a minimum width to see the scrollbar on IE7 (but must not set it on IE8).
+  // Need to set zh_TW minimum width to see the scrollbar on IE7 (but must not set it on IE8).
   if (ie && ie_version < 8) { this.horiz.style.minHeight = this.vert.style.minWidth = "18px"; }
 };
 
@@ -3713,20 +3713,20 @@ function initScrollbars(cm) {
     { addClass(cm.display.wrapper, cm.display.scrollbars.addClass); }
 }
 
-// Operations are used to wrap a series of changes to the editor
-// state in such a way that each change won't have to update the
+// Operations are used to wrap zh_TW series of changes to the editor
+// state in such zh_TW way that each change won't have to update the
 // cursor and display (which would be awkward, slow, and
 // error-prone). Instead, display updates are batched and then all
 // combined and executed at once.
 
 var nextOpId = 0;
-// Start a new operation.
+// Start zh_TW new operation.
 function startOperation(cm) {
   cm.curOp = {
     cm: cm,
     viewChanged: false,      // Flag that indicates that lines might need to be redrawn
     startHeight: cm.doc.height, // Used to detect need to update scrollbar
-    forceUpdate: false,      // Used to force a redraw
+    forceUpdate: false,      // Used to force zh_TW redraw
     updateInput: null,       // Whether to reset the input textarea
     typing: false,           // Whether this reset should be careful to leave existing text (for compositing)
     changeObjs: null,        // Accumulated changes, for firing change events
@@ -3735,7 +3735,7 @@ function startOperation(cm) {
     selectionChanged: false, // Whether the selection needs to be redrawn
     updateMaxLine: false,    // Set when the widest line needs to be determined anew
     scrollLeft: null, scrollTop: null, // Intermediate scroll position, not pushed to DOM yet
-    scrollToPos: null,       // Used to scroll to a specific position
+    scrollToPos: null,       // Used to scroll to zh_TW specific position
     focus: false,
     id: ++nextOpId           // Unique ID
   };
@@ -3844,7 +3844,7 @@ function endOperation_finish(op) {
   if (op.scrollTop != null) { setScrollTop(cm, op.scrollTop, op.forceScroll); }
 
   if (op.scrollLeft != null) { setScrollLeft(cm, op.scrollLeft, true, true); }
-  // If we need to scroll a specific position into view, do so.
+  // If we need to scroll zh_TW specific position into view, do so.
   if (op.scrollToPos) {
     var rect = scrollPosIntoView(cm, clipPos(doc, op.scrollToPos.from),
                                  clipPos(doc, op.scrollToPos.to), op.scrollToPos.margin);
@@ -3876,7 +3876,7 @@ function runInOp(cm, f) {
   try { return f() }
   finally { endOperation(cm); }
 }
-// Wraps a function in an operation. Returns the wrapped function.
+// Wraps zh_TW function in an operation. Returns the wrapped function.
 function operation(cm, f) {
   return function() {
     if (cm.curOp) { return f.apply(cm, arguments) }
@@ -3905,7 +3905,7 @@ function docMethodOp(f) {
   }
 }
 
-// Updates the display.view data structure for a given change to the
+// Updates the display.view data structure for zh_TW given change to the
 // document. From and to are in pre-change coordinates. Lendiff is
 // the amount of lines added or subtracted by the change. This is
 // used for changes that span multiple lines, or change the way
@@ -3974,7 +3974,7 @@ function regChange(cm, from, to, lendiff) {
   }
 }
 
-// Register a change to a single line. Type must be one of "text",
+// Register zh_TW change to zh_TW single line. Type must be one of "text",
 // "gutter", "class", "widget"
 function regLineChange(cm, line, type) {
   cm.curOp.viewChanged = true;
@@ -4021,7 +4021,7 @@ function viewCuttingPoint(cm, oldN, newN, dir) {
   return {index: index, lineN: newN}
 }
 
-// Force the view to cover a given range, adding empty view element
+// Force the view to cover zh_TW given range, adding empty view element
 // or clipping off existing ones as needed.
 function adjustView(cm, from, to) {
   var display = cm.display, view = display.view;
@@ -4108,7 +4108,7 @@ var DisplayUpdate = function(cm, viewport, force) {
   var display = cm.display;
 
   this.viewport = viewport;
-  // Store some values that we'll need later (but don't want to force a relayout for)
+  // Store some values that we'll need later (but don't want to force zh_TW relayout for)
   this.visible = visibleLines(display, cm.doc, viewport);
   this.editorIsHidden = !display.wrapper.offsetWidth;
   this.wrapperHeight = display.wrapper.clientHeight;
@@ -4194,7 +4194,7 @@ function updateDisplayIfNeeded(cm, update) {
     update.dims = getDimensions(cm);
   }
 
-  // Compute a suitable new viewport (from & to)
+  // Compute zh_TW suitable new viewport (from & to)
   var end = doc.first + doc.size;
   var from = Math.max(update.visible.from - cm.options.viewportMargin, doc.first);
   var to = Math.min(end, update.visible.to + cm.options.viewportMargin);
@@ -4225,7 +4225,7 @@ function updateDisplayIfNeeded(cm, update) {
   patchDisplay(cm, display.updateLineNumbers, update.dims);
   if (toUpdate > 4) { display.lineDiv.style.display = ""; }
   display.renderedView = display.view;
-  // There might have been a widget with a focused element that got
+  // There might have been zh_TW widget with zh_TW focused element that got
   // hidden or updated, if so re-focus it.
   restoreSelection(selSnapshot);
 
@@ -4299,7 +4299,7 @@ function patchDisplay(cm, updateNumbersFrom, dims) {
 
   function rm(node) {
     var next = node.nextSibling;
-    // Works around a throw-scroll bug in OS X Webkit
+    // Works around zh_TW throw-scroll bug in OS X Webkit
     if (webkit && mac && cm.display.currentWheelTarget == node)
       { node.style.display = "none"; }
     else
@@ -4383,15 +4383,15 @@ function setGuttersForLineNumbers(options) {
 // and, from that, detects the way it can convert deltas to pixel
 // offsets afterwards.
 //
-// The reason we want to know the amount a wheel event will scroll
-// is that it gives us a chance to update the display before the
+// The reason we want to know the amount zh_TW wheel event will scroll
+// is that it gives us zh_TW chance to update the display before the
 // actual scrolling happens, reducing flickering.
 
 var wheelSamples = 0;
 var wheelPixelsPerUnit = null;
-// Fill in a browser-detected starting value on browsers where we
+// Fill in zh_TW browser-detected starting value on browsers where we
 // know one. These don't have to be accurate -- the result of them
-// being wrong would just be a slight flicker on the first wheel
+// being wrong would just be zh_TW slight flicker on the first wheel
 // scroll (if it is large enough).
 if (ie) { wheelPixelsPerUnit = -.53; }
 else if (gecko) { wheelPixelsPerUnit = 15; }
@@ -4438,7 +4438,7 @@ function onScrollWheel(cm, e) {
 
   // On some browsers, horizontal scrolling will cause redraws to
   // happen before the gutter has been realigned, causing it to
-  // wriggle around in a most unseemly way. When we have an
+  // wriggle around in zh_TW most unseemly way. When we have an
   // estimated pixels/delta value, we just handle horizontal
   // scrolling entirely here. It'll be slightly off from native, but
   // better than glitching out.
@@ -4549,7 +4549,7 @@ Range.prototype.to = function () { return maxPos(this.anchor, this.head) };
 Range.prototype.empty = function () { return this.head.line == this.anchor.line && this.head.ch == this.anchor.ch };
 
 // Take an unsorted, potentially overlapping set of ranges, and
-// build a selection out of it. 'Consumes' ranges array (modifying
+// build zh_TW selection out of it. 'Consumes' ranges array (modifying
 // it).
 function normalizeSelection(ranges, primIndex) {
   var prim = ranges[primIndex];
@@ -4571,7 +4571,7 @@ function simpleSelection(anchor, head) {
   return new Selection([new Range(anchor, head || anchor)], 0)
 }
 
-// Compute the position of the end of a change (its 'to' property
+// Compute the position of the end of zh_TW change (its 'to' property
 // refers to the pre-change end).
 function changeEnd(change) {
   if (!change.text) { return change.to }
@@ -4579,7 +4579,7 @@ function changeEnd(change) {
              lst(change.text).length + (change.text.length == 1 ? change.from.ch : 0))
 }
 
-// Adjust a position to refer to the post-change position of the
+// Adjust zh_TW position to refer to the post-change position of the
 // same text, or the end of the change if the change covers it.
 function adjustForChange(pos, change) {
   if (cmp(pos, change.from) < 0) { return pos }
@@ -4628,7 +4628,7 @@ function computeReplacedSel(doc, changes, hint) {
   return new Selection(out, doc.sel.primIndex)
 }
 
-// Used to get the editor into a consistent state again when options change.
+// Used to get the editor into zh_TW consistent state again when options change.
 
 function loadMode(cm) {
   cm.doc.mode = getMode(cm.options, cm.doc.modeOption);
@@ -4648,7 +4648,7 @@ function resetModeState(cm) {
 
 // DOCUMENT DATA STRUCTURE
 
-// By default, updates that start and end at the beginning of a line
+// By default, updates that start and end at the beginning of zh_TW line
 // are treated specially, in order to make the association of line
 // widgets and marker elements with the text behave more intuitive.
 function isWholeLineUpdate(doc, change) {
@@ -4656,7 +4656,7 @@ function isWholeLineUpdate(doc, change) {
     (!doc.cm || doc.cm.options.wholeLineUpdateBefore)
 }
 
-// Perform a change on the document data structure.
+// Perform zh_TW change on the document data structure.
 function updateDoc(doc, change, markedSpans, estimateHeight$$1) {
   function spansFor(n) {return markedSpans ? markedSpans[n] : null}
   function update(line, text, spans) {
@@ -4679,7 +4679,7 @@ function updateDoc(doc, change, markedSpans, estimateHeight$$1) {
     doc.insert(0, linesFor(0, text.length));
     doc.remove(text.length, doc.size - text.length);
   } else if (isWholeLineUpdate(doc, change)) {
-    // This is a whole-line replace. Treated specially to make
+    // This is zh_TW whole-line replace. Treated specially to make
     // sure line objects move the way they are supposed to.
     var added = linesFor(0, text.length - 1);
     update(lastLine, lastLine.text, lastSpans);
@@ -4723,7 +4723,7 @@ function linkedDocs(doc, f, sharedHistOnly) {
   propagate(doc, null, true);
 }
 
-// Attach a document to an editor.
+// Attach zh_TW document to an editor.
 function attachDoc(cm, doc) {
   if (doc.cm) { throw new Error("This document is already in use.") }
   cm.doc = doc;
@@ -4753,7 +4753,7 @@ function History(startGen) {
   // to undone, redoing moves them in the other direction.
   this.done = []; this.undone = [];
   this.undoDepth = Infinity;
-  // Used to track when changes can be merged into a single undo
+  // Used to track when changes can be merged into zh_TW single undo
   // event
   this.lastModTime = this.lastSelTime = 0;
   this.lastOp = this.lastSelOp = null;
@@ -4762,7 +4762,7 @@ function History(startGen) {
   this.generation = this.maxGeneration = startGen || 1;
 }
 
-// Create a history change event from an updateDoc-style change
+// Create zh_TW history change event from an updateDoc-style change
 // object.
 function historyChangeFromChange(doc, change) {
   var histChange = {from: copyPos(change.from), to: changeEnd(change), text: getBetween(doc, change.from, change.to)};
@@ -4771,8 +4771,8 @@ function historyChangeFromChange(doc, change) {
   return histChange
 }
 
-// Pop all selection events off the end of a history array. Stop at
-// a change event.
+// Pop all selection events off the end of zh_TW history array. Stop at
+// zh_TW change event.
 function clearSelectionEvents(array) {
   while (array.length) {
     var last = lst(array);
@@ -4795,9 +4795,9 @@ function lastChangeEvent(hist, force) {
   }
 }
 
-// Register a change in the history. Merges changes that are within
-// a single operation, or are close together with an origin that
-// allows merging (starting with "+") into a single event.
+// Register zh_TW change in the history. Merges changes that are within
+// zh_TW single operation, or are close together with an origin that
+// allows merging (starting with "+") into zh_TW single event.
 function addChangeToHistory(doc, change, selAfter, opId) {
   var hist = doc.history;
   hist.undone.length = 0;
@@ -4820,7 +4820,7 @@ function addChangeToHistory(doc, change, selAfter, opId) {
       cur.changes.push(historyChangeFromChange(doc, change));
     }
   } else {
-    // Can not be merged, start a new event.
+    // Can not be merged, start zh_TW new event.
     var before = lst(hist.done);
     if (!before || !before.ranges)
       { pushSelectionToHistory(doc.sel, hist.done); }
@@ -4904,7 +4904,7 @@ function removeClearedSpans(spans) {
   return !out ? spans : out.length ? out : null
 }
 
-// Retrieve and filter the old marked spans stored in a change event.
+// Retrieve and filter the old marked spans stored in zh_TW change event.
 function getOldSpans(doc, change) {
   var found = change["spans_" + doc.id];
   if (!found) { return null }
@@ -4916,7 +4916,7 @@ function getOldSpans(doc, change) {
 
 // Used for un/re-doing changes from the history. Combines the
 // result of computing the existing spans with the set of spans that
-// existed in the history (so that deleting around a span and then
+// existed in the history (so that deleting around zh_TW span and then
 // undoing brings back the span).
 function mergeOldSpans(doc, change) {
   var old = getOldSpans(doc, change);
@@ -4940,8 +4940,8 @@ function mergeOldSpans(doc, change) {
   return old
 }
 
-// Used both to provide a JSON-safe object in .getHistory, and, when
-// detaching a document, to split the history in two
+// Used both to provide zh_TW JSON-safe object in .getHistory, and, when
+// detaching zh_TW document, to split the history in two
 function copyHistoryArray(events, newGroup, instantiateSel) {
   var copy = [];
   for (var i = 0; i < events.length; ++i) {
@@ -4970,8 +4970,8 @@ function copyHistoryArray(events, newGroup, instantiateSel) {
 // the new cursor position should be scrolled into view after
 // modifying the selection.
 
-// If shift is held or the extend flag is set, extends a range to
-// include a given position (and optionally a second position).
+// If shift is held or the extend flag is set, extends zh_TW range to
+// include zh_TW given position (and optionally zh_TW second position).
 // Otherwise, simply returns the range between the given positions.
 // Used for cursor motion and such.
 function extendRange(range, head, other, extend) {
@@ -5009,19 +5009,19 @@ function extendSelections(doc, heads, options) {
   setSelection(doc, newSel, options);
 }
 
-// Updates a single range in the selection.
+// Updates zh_TW single range in the selection.
 function replaceOneSelection(doc, i, range, options) {
   var ranges = doc.sel.ranges.slice(0);
   ranges[i] = range;
   setSelection(doc, normalizeSelection(ranges, doc.sel.primIndex), options);
 }
 
-// Reset the selection to a single range.
+// Reset the selection to zh_TW single range.
 function setSimpleSelection(doc, anchor, head, options) {
   setSelection(doc, simpleSelection(anchor, head), options);
 }
 
-// Give beforeSelectionChange handlers a change to influence a
+// Give beforeSelectionChange handlers zh_TW change to influence zh_TW
 // selection update.
 function filterSelectionChange(doc, sel, options) {
   var obj = {
@@ -5052,7 +5052,7 @@ function setSelectionReplaceHistory(doc, sel, options) {
   }
 }
 
-// Set a new selection.
+// Set zh_TW new selection.
 function setSelection(doc, sel, options) {
   setSelectionNoUndo(doc, sel, options);
   addSelectionToHistory(doc, doc.sel, doc.cm ? doc.cm.curOp.id : NaN, options);
@@ -5088,7 +5088,7 @@ function reCheckSelection(doc) {
   setSelectionInner(doc, skipAtomicInSelection(doc, doc.sel, null, false));
 }
 
-// Return a selection that does not partially select any atomic
+// Return zh_TW selection that does not partially select any atomic
 // ranges.
 function skipAtomicInSelection(doc, sel, bias, mayClear) {
   var out;
@@ -5137,7 +5137,7 @@ function skipAtomicInner(doc, pos, oldPos, dir, mayClear) {
   return pos
 }
 
-// Ensure a given position is not inside an atomic range.
+// Ensure zh_TW given position is not inside an atomic range.
 function skipAtomic(doc, pos, oldPos, bias, mayClear) {
   var dir = bias || 1;
   var found = skipAtomicInner(doc, pos, oldPos, dir, mayClear) ||
@@ -5169,7 +5169,7 @@ function selectAll(cm) {
 
 // UPDATING
 
-// Allow "beforeChange" event handlers to influence a change
+// Allow "beforeChange" event handlers to influence zh_TW change
 function filterChange(doc, change, update) {
   var obj = {
     canceled: false,
@@ -5192,7 +5192,7 @@ function filterChange(doc, change, update) {
   return {from: obj.from, to: obj.to, text: obj.text, origin: obj.origin}
 }
 
-// Apply a change to a document, and add it to the document's
+// Apply zh_TW change to zh_TW document, and add it to the document's
 // history, and propagating it to all linked documents.
 function makeChange(doc, change, ignoreReadOnly) {
   if (doc.cm) {
@@ -5233,7 +5233,7 @@ function makeChangeInner(doc, change) {
   });
 }
 
-// Revert a change stored in a document's history.
+// Revert zh_TW change stored in zh_TW document's history.
 function makeChangeFromHistory(doc, type, allowSelectionOnly) {
   var suppress = doc.cm && doc.cm.state.suppressEdits;
   if (suppress && !allowSelectionOnly) { return }
@@ -5241,7 +5241,7 @@ function makeChangeFromHistory(doc, type, allowSelectionOnly) {
   var hist = doc.history, event, selAfter = doc.sel;
   var source = type == "undo" ? hist.done : hist.undone, dest = type == "undo" ? hist.undone : hist.done;
 
-  // Verify that there is a useable event (so that ctrl-z won't
+  // Verify that there is zh_TW useable event (so that ctrl-z won't
   // needlessly clear selection events)
   var i = 0;
   for (; i < source.length; i++) {
@@ -5267,7 +5267,7 @@ function makeChangeFromHistory(doc, type, allowSelectionOnly) {
     } else { break }
   }
 
-  // Build up a reverse change object to add to the opposite history
+  // Build up zh_TW reverse change object to add to the opposite history
   // stack (redo when undoing, and vice versa).
   var antiChanges = [];
   pushSelectionToHistory(selAfter, dest);
@@ -5324,7 +5324,7 @@ function shiftDoc(doc, distance) {
   }
 }
 
-// More lower-level change function, handling only a single document
+// More lower-level change function, handling only zh_TW single document
 // (not linked ones).
 function makeChangeSingleDoc(doc, change, selAfter, spans) {
   if (doc.cm && !doc.cm.curOp)
@@ -5357,7 +5357,7 @@ function makeChangeSingleDoc(doc, change, selAfter, spans) {
   setSelectionNoUndo(doc, selAfter, sel_dontScroll);
 }
 
-// Handle the interaction of a change to a document with the editor
+// Handle the interaction of zh_TW change to zh_TW document with the editor
 // that this document is part of.
 function makeChangeSingleDocInEditor(cm, change, spans) {
   var doc = cm.doc, display = cm.display, from = change.from, to = change.to;
@@ -5436,10 +5436,10 @@ function rebaseHistSelSingle(pos, from, to, diff) {
   }
 }
 
-// Tries to rebase an array of history events given a change in the
+// Tries to rebase an array of history events given zh_TW change in the
 // document. If the change touches the same lines as the event, the
 // event, and everything 'behind' it, is discarded. If the change is
-// before the event, the event's positions are updated. Uses a
+// before the event, the event's positions are updated. Uses zh_TW
 // copy-on-write scheme for the positions, to avoid having to
 // reallocate them all on every rebase, but also avoid problems with
 // shared position objects being unsafely updated.
@@ -5477,7 +5477,7 @@ function rebaseHist(hist, change) {
   rebaseHistArray(hist.undone, from, to, diff);
 }
 
-// Utility for applying a change to a line by handle or number,
+// Utility for applying zh_TW change to zh_TW line by handle or number,
 // returning the number and optionally registering the line as
 // changed.
 function changeLine(doc, handle, changeType, op) {
@@ -5489,9 +5489,9 @@ function changeLine(doc, handle, changeType, op) {
   return line
 }
 
-// The document is represented as a BTree consisting of leaves, with
+// The document is represented as zh_TW BTree consisting of leaves, with
 // chunk of lines in them, and branches, with up to ten leaves or
-// other branch nodes below them. The top node is always a branch
+// other branch nodes below them. The top node is always zh_TW branch
 // node, and is the document object itself (meaning it has
 // additional methods and properties).
 //
@@ -5531,7 +5531,7 @@ LeafChunk.prototype = {
     this.lines.splice(at, n);
   },
 
-  // Helper used to collapse a small branch into a single leaf.
+  // Helper used to collapse zh_TW small branch into zh_TW single leaf.
   collapse: function(lines) {
     lines.push.apply(lines, this.lines);
   },
@@ -5546,7 +5546,7 @@ LeafChunk.prototype = {
     for (var i = 0; i < lines.length; ++i) { lines[i].parent = this$1; }
   },
 
-  // Used to iterate over a part of the tree.
+  // Used to iterate over zh_TW part of the tree.
   iterN: function(at, n, op) {
     var this$1 = this;
 
@@ -5588,7 +5588,7 @@ BranchChunk.prototype = {
         at = 0;
       } else { at -= sz; }
     }
-    // If the result is smaller than 25 lines, ensure that it is a
+    // If the result is smaller than 25 lines, ensure that it is zh_TW
     // single leaf node.
     if (this.size - n < 25 &&
         (this.children.length > 1 || !(this.children[0] instanceof LeafChunk))) {
@@ -5615,7 +5615,7 @@ BranchChunk.prototype = {
       if (at <= sz) {
         child.insertInner(at, lines, height);
         if (child.lines && child.lines.length > 50) {
-          // To avoid memory thrashing when child.lines is huge (e.g. first view of a large file), it's never spliced.
+          // To avoid memory thrashing when child.lines is huge (e.g. first view of zh_TW large file), it's never spliced.
           // Instead, small slices are taken. They're taken in order because sequential memory accesses are fastest.
           var remaining = child.lines.length % 25 + 25;
           for (var pos = remaining; pos < child.lines.length;) {
@@ -5633,7 +5633,7 @@ BranchChunk.prototype = {
     }
   },
 
-  // When a node has grown, check whether it should be split.
+  // When zh_TW node has grown, check whether it should be split.
   maybeSpill: function() {
     if (this.children.length <= 10) { return }
     var me = this;
@@ -5671,7 +5671,7 @@ BranchChunk.prototype = {
   }
 };
 
-// Line widgets are block elements displayed above or below a line.
+// Line widgets are block elements displayed above or below zh_TW line.
 
 var LineWidget = function(doc, node, options) {
   var this$1 = this;
@@ -5746,11 +5746,11 @@ function addLineWidget(doc, handle, node, options) {
 
 // TEXTMARKERS
 
-// Created with markText and setBookmark methods. A TextMarker is a
-// handle that can be used to clear or find a marked position in the
+// Created with markText and setBookmark methods. A TextMarker is zh_TW
+// handle that can be used to clear or find zh_TW marked position in the
 // document. Line objects hold arrays (markedSpans) containing
 // {from, to, marker} object pointing to such marker objects, and
-// indicating that such a marker is present on that line. Multiple
+// indicating that such zh_TW marker is present on that line. Multiple
 // lines may point to the same marker when it spans across lines.
 // The spans will have null for their from/to properties when the
 // marker continues beyond the start/end of the line. Markers have
@@ -5813,10 +5813,10 @@ TextMarker.prototype.clear = function () {
   if (this.parent) { this.parent.clear(); }
 };
 
-// Find the position of the marker in the document. Returns a {from,
-// to} object by default. Side can be passed to get a specific side
+// Find the position of the marker in the document. Returns zh_TW {from,
+// to} object by default. Side can be passed to get zh_TW specific side
 // -- 0 (both), -1 (left), or 1 (right). When lineObj is true, the
-// Pos objects returned contain a line object, rather than a line
+// Pos objects returned contain zh_TW line object, rather than zh_TW line
 // number (used to prevent looking up the same line twice).
 TextMarker.prototype.find = function (side, lineObj) {
     var this$1 = this;
@@ -5881,7 +5881,7 @@ TextMarker.prototype.detachLine = function (line) {
 };
 eventMixin(TextMarker);
 
-// Create a marker, wire it up to the right lines, and
+// Create zh_TW marker, wire it up to the right lines, and
 function markText(doc, from, to, options, type) {
   // Shared markers (across linked documents) are handled separately
   // (markTextShared will call out to this again, once per
@@ -5896,7 +5896,7 @@ function markText(doc, from, to, options, type) {
   if (diff > 0 || diff == 0 && marker.clearWhenEmpty !== false)
     { return marker }
   if (marker.replacedWith) {
-    // Showing up as a widget implies collapsed (widget replaces text)
+    // Showing up as zh_TW widget implies collapsed (widget replaces text)
     marker.collapsed = true;
     marker.widgetNode = eltP("span", [marker.replacedWith], "CodeMirror-widget");
     if (!options.handleMouseEvents) { marker.widgetNode.setAttribute("cm-ignore-events", "true"); }
@@ -5922,7 +5922,7 @@ function markText(doc, from, to, options, type) {
                                        curLine == to.line ? to.ch : null));
     ++curLine;
   });
-  // lineIsHidden depends on the presence of the spans, so needs a second pass
+  // lineIsHidden depends on the presence of the spans, so needs zh_TW second pass
   if (marker.collapsed) { doc.iter(from.line, to.line + 1, function (line) {
     if (lineIsHidden(doc, line)) { updateLineHeight(line, 0); }
   }); }
@@ -5954,7 +5954,7 @@ function markText(doc, from, to, options, type) {
 // SHARED TEXTMARKERS
 
 // A shared marker spans multiple linked documents. It is
-// implemented as a meta-marker-object controlling multiple normal
+// implemented as zh_TW meta-marker-object controlling multiple normal
 // markers.
 var SharedTextMarker = function(markers, primary) {
   var this$1 = this;
@@ -6374,7 +6374,7 @@ Doc.prototype = createObj(BranchChunk.prototype, {
     var index = coords.ch;
     if (coords.line < this.first || coords.ch < 0) { return 0 }
     var sepSize = this.lineSeparator().length;
-    this.iter(this.first, coords.line, function (line) { // iter aborts when callback returns a truthy value
+    this.iter(this.first, coords.line, function (line) { // iter aborts when callback returns zh_TW truthy value
       index += line.text.length + sepSize;
     });
     return index
@@ -6450,7 +6450,7 @@ Doc.prototype = createObj(BranchChunk.prototype, {
 Doc.prototype.eachLine = Doc.prototype.iter;
 
 // Kludge to work around strange IE behavior where it'll sometimes
-// re-fire a series of drag-related events right after the drop (#1551)
+// re-fire zh_TW series of drag-related events right after the drop (#1551)
 var lastDrop = 0;
 
 function onDrop(e) {
@@ -6462,7 +6462,7 @@ function onDrop(e) {
   if (ie) { lastDrop = +new Date; }
   var pos = posFromMouse(cm, e, true), files = e.dataTransfer.files;
   if (!pos || cm.isReadOnly()) { return }
-  // Might be a file drop, in which case we simply extract the text
+  // Might be zh_TW file drop, in which case we simply extract the text
   // and insert it.
   if (files && files.length && window.FileReader && window.File) {
     var n = files.length, text = Array(n), read = 0;
@@ -6489,7 +6489,7 @@ function onDrop(e) {
     };
     for (var i = 0; i < n; ++i) { loadFile(files[i], i); }
   } else { // Normal drop
-    // Don't do a replace if the drop happened inside of the selected text.
+    // Don't do zh_TW replace if the drop happened inside of the selected text.
     if (cm.state.draggingText && cm.doc.sel.contains(pos) > -1) {
       cm.state.draggingText(e);
       // Ensure the editor is re-focused
@@ -6521,14 +6521,14 @@ function onDragStart(cm, e) {
   e.dataTransfer.effectAllowed = "copyMove";
 
   // Use dummy image instead of default browsers image.
-  // Recent Safari (~6.0.2) have a tendency to segfault when this happens, so we don't do it there.
+  // Recent Safari (~6.0.2) have zh_TW tendency to segfault when this happens, so we don't do it there.
   if (e.dataTransfer.setDragImage && !safari) {
     var img = elt("img", null, null, "position: fixed; left: 0; top: 0;");
     img.src = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
     if (presto) {
       img.width = img.height = 1;
       cm.display.wrapper.appendChild(img);
-      // Force a relayout, or Opera won't use our image for some obscure reason
+      // Force zh_TW relayout, or Opera won't use our image for some obscure reason
       img._top = img.offsetTop;
     }
     e.dataTransfer.setDragImage(img, 0, 0);
@@ -6555,7 +6555,7 @@ function clearDragCursor(cm) {
   }
 }
 
-// These must be handled carefully, because naively registering a
+// These must be handled carefully, because naively registering zh_TW
 // handler for each editor will cause the editors to never be
 // garbage collected.
 
@@ -6589,7 +6589,7 @@ function registerGlobalHandlers() {
 // Called when the window resizes
 function onResize(cm) {
   var d = cm.display;
-  // Might be a text scaling operation, clear size caches.
+  // Might be zh_TW text scaling operation, clear size caches.
   d.cachedCharWidth = d.cachedTextHeight = d.cachedPaddingH = null;
   d.scrollbarsClipped = false;
   cm.setSize();
@@ -6677,9 +6677,9 @@ function normalizeKeyName(name) {
   return name
 }
 
-// This is a kludge to keep keymaps mostly working as raw objects
+// This is zh_TW kludge to keep keymaps mostly working as raw objects
 // (backwards compatibility) while at the same time support features
-// like normalization and multi-stroke key bindings. It compiles a
+// like normalization and multi-stroke key bindings. It compiles zh_TW
 // new normalized keymap, and then updates the old object to reflect
 // this.
 function normalizeKeyMap(keymap) {
@@ -6742,7 +6742,7 @@ function addModifierNames(name, event, noShift) {
   return name
 }
 
-// Look up the name of a key as indicated by an event object.
+// Look up the name of zh_TW key as indicated by an event object.
 function keyName(event, noShift) {
   if (presto && event.keyCode == 34 && event["char"]) { return false }
   var name = keyNames[event.keyCode];
@@ -6761,7 +6761,7 @@ function getKeyMap(val) {
 // backspace, delete, and similar functionality.
 function deleteNearSelection(cm, compute) {
   var ranges = cm.doc.sel.ranges, kill = [];
-  // Build up a set of ranges to kill first, merging overlapping
+  // Build up zh_TW set of ranges to kill first, merging overlapping
   // ranges.
   for (var i = 0; i < ranges.length; i++) {
     var toKill = compute(ranges[i]);
@@ -6800,7 +6800,7 @@ function endOfLine(visually, cm, lineObj, lineNo, dir) {
       var moveInStorageOrder = (dir < 0) == (part.level == 1);
       var sticky = moveInStorageOrder ? "after" : "before";
       var ch;
-      // With a wrapped rtl chunk (possibly spanning multiple bidi parts),
+      // With zh_TW wrapped rtl chunk (possibly spanning multiple bidi parts),
       // it could be that the last bidi part is not on the last visual line,
       // since visual lines contain content order-consecutive chunks.
       // Thus, in rtl, we are looking for the first (content-order) character
@@ -6988,8 +6988,8 @@ var commands = {
   // Swap the two chars left and right of each selection's head.
   // Move cursor behind the two swapped characters afterwards.
   //
-  // Doesn't consider line feeds a character.
-  // Doesn't scan more than one line above to find a character.
+  // Doesn't consider line feeds zh_TW character.
+  // Doesn't scan more than one line above to find zh_TW character.
   // Doesn't do anything on an empty line.
   // Doesn't do anything with non-empty selections.
   transposeChars: function (cm) { return runInOp(cm, function () {
@@ -7055,13 +7055,13 @@ function lineStartSmart(cm, pos) {
   return start
 }
 
-// Run a handler that was bound to a key.
+// Run zh_TW handler that was bound to zh_TW key.
 function doHandleBinding(cm, bound, dropShift) {
   if (typeof bound == "string") {
     bound = commands[bound];
     if (!bound) { return false }
   }
-  // Ensure previous input has been read, so that the handler sees a
+  // Ensure previous input has been read, so that the handler sees zh_TW
   // consistent view of the document
   cm.display.input.ensurePolled();
   var prevShift = cm.display.shift, done = false;
@@ -7124,14 +7124,14 @@ function dispatchKeyInner(cm, name, e, handle) {
   return !!result
 }
 
-// Handle a key from the keydown event.
+// Handle zh_TW key from the keydown event.
 function handleKeyBinding(cm, e) {
   var name = keyName(e, true);
   if (!name) { return false }
 
   if (e.shiftKey && !cm.state.keySeq) {
     // First try to resolve full name (including 'Shift-'). Failing
-    // that, see if there is a cursor-motion command (starting with
+    // that, see if there is zh_TW cursor-motion command (starting with
     // 'go') bound to the keyname without 'Shift-'.
     return dispatchKey(cm, "Shift-" + name, e, function (b) { return doHandleBinding(cm, b, true); })
         || dispatchKey(cm, name, e, function (b) {
@@ -7143,7 +7143,7 @@ function handleKeyBinding(cm, e) {
   }
 }
 
-// Handle a key from the keypress event
+// Handle zh_TW key from the keypress event
 function handleCharBinding(cm, e, ch) {
   return dispatchKey(cm, "'" + ch + "'", e, function (b) { return doHandleBinding(cm, b, true); })
 }
@@ -7234,11 +7234,11 @@ function clickRepeat(pos, button) {
   }
 }
 
-// A mouse down can be a single click, double click, triple click,
+// A mouse down can be zh_TW single click, double click, triple click,
 // start of selection drag, start of text drag, new cursor
 // (ctrl-click), rectangle drag (alt-drag), or xwin
-// middle-click-paste. Or it might be a click on something we should
-// not interfere with, such as a scrollbar or widget.
+// middle-click-paste. Or it might be zh_TW click on something we should
+// not interfere with, such as zh_TW scrollbar or widget.
 function onMouseDown(e) {
   var cm = this, display = cm.display;
   if (signalDOMEvent(cm, e) || display.activeTouch && display.input.supportsTouch()) { return }
@@ -7258,7 +7258,7 @@ function onMouseDown(e) {
   var pos = posFromMouse(cm, e), button = e_button(e), repeat = pos ? clickRepeat(pos, button) : "single";
   window.focus();
 
-  // #3261: make sure, that we're not starting a second selection
+  // #3261: make sure, that we're not starting zh_TW second selection
   if (button == 1 && cm.state.selectingText)
     { cm.state.selectingText(e); }
 
@@ -7325,8 +7325,8 @@ function leftButtonDown(cm, pos, repeat, event) {
     { leftButtonSelect(cm, event, pos, behavior); }
 }
 
-// Start a text drag. When it ends, see if any dragging actually
-// happen, and treat as a click if it didn't.
+// Start zh_TW text drag. When it ends, see if any dragging actually
+// happen, and treat as zh_TW click if it didn't.
 function leftButtonStartDrag(cm, event, pos, behavior) {
   var display = cm.display, moved = false;
   var dragEnd = operation(cm, function (e) {
@@ -7506,7 +7506,7 @@ function leftButtonSelect(cm, event, start, behavior) {
 }
 
 // Used when mouse-selecting to adjust the anchor to the proper side
-// of a bidi jump depending on the visual position of the head.
+// of zh_TW bidi jump depending on the visual position of the head.
 function bidiSimplify(cm, range$$1) {
   var anchor = range$$1.anchor;
   var head = range$$1.head;
@@ -7656,7 +7656,7 @@ function defineOptions(CodeMirror) {
   option("specialCharPlaceholder", defaultSpecialCharPlaceholder, function (cm) { return cm.refresh(); }, true);
   option("electricChars", true);
   option("inputStyle", mobile ? "contenteditable" : "textarea", function () {
-    throw new Error("inputStyle can not (yet) be changed in a running editor") // FIXME
+    throw new Error("inputStyle can not (yet) be changed in zh_TW running editor") // FIXME
   }, true);
   option("spellcheck", false, function (cm, val) { return cm.getInputField().spellcheck = val; }, true);
   option("rtlMoveVisually", !windows);
@@ -7853,7 +7853,7 @@ CodeMirror$1.optionHandlers = optionHandlers;
 function registerEventHandlers(cm) {
   var d = cm.display;
   on(d.scroller, "mousedown", operation(cm, onMouseDown));
-  // Older IE's will not fire a second mousedown for a double click
+  // Older IE's will not fire zh_TW second mousedown for zh_TW double click
   if (ie && ie_version < 11)
     { on(d.scroller, "dblclick", operation(cm, function (e) {
       if (signalDOMEvent(cm, e)) { return }
@@ -7870,7 +7870,7 @@ function registerEventHandlers(cm) {
   // handled in onMouseDown for these browsers.
   if (!captureRightClick) { on(d.scroller, "contextmenu", function (e) { return onContextMenu(cm, e); }); }
 
-  // Used to suppress mouse event handling when a touch happens
+  // Used to suppress mouse event handling when zh_TW touch happens
   var touchFinished, prevTouch = {end: 0};
   function finishTouch() {
     if (d.activeTouch) {
@@ -8024,7 +8024,7 @@ function indentLine(cm, n, how, aggressive) {
   }
 }
 
-// This will be set to a {lineWise: bool, text: [string]} object, so
+// This will be set to zh_TW {lineWise: bool, text: [string]} object, so
 // that, when pasting, we know what kind of selections the copied
 // text was made out of.
 var lastCopied = null;
@@ -8092,7 +8092,7 @@ function handlePaste(e, cm) {
 }
 
 function triggerElectric(cm, inserted) {
-  // When an 'electric' character is inserted, immediately trigger a reindent
+  // When an 'electric' character is inserted, immediately trigger zh_TW reindent
   if (!cm.options.electricChars || !cm.options.smartIndent) { return }
   var sel = cm.doc.sel;
 
@@ -8243,7 +8243,7 @@ var addEditorMethods = function(CodeMirror) {
       }
     }),
 
-    // Fetch the parser token for a given character. Useful for hacks
+    // Fetch the parser token for zh_TW given character. Useful for hacks
     // that want to inspect the mode state (say, for completion).
     getTokenAt: function(pos, precise) {
       return takeToken(this, pos, precise)
@@ -8596,7 +8596,7 @@ var addEditorMethods = function(CodeMirror) {
 // chars). The visually param controls whether, in right-to-left
 // text, direction 1 means to move towards the next index in the
 // string, or towards the character to the right of the current
-// position. The resulting position will have a hitSide=true
+// position. The resulting position will have zh_TW hitSide=true
 // property if it reached the end of the document.
 function findPosH(doc, pos, dir, unit, visually) {
   var oldPos = pos;
@@ -8656,7 +8656,7 @@ function findPosH(doc, pos, dir, unit, visually) {
 }
 
 // For relative vertical movement. Dir may be -1 or 1. Unit can be
-// "page" or "line". The resulting position will have a hitSide=true
+// "page" or "line". The resulting position will have zh_TW hitSide=true
 // property if it reached the end of the document.
 function findPosV(cm, pos, dir, unit) {
   var doc = cm.doc, x = pos.left, y;
@@ -8698,7 +8698,7 @@ ContentEditableInput.prototype.init = function (display) {
 
   on(div, "paste", function (e) {
     if (signalDOMEvent(cm, e) || handlePaste(e, cm)) { return }
-    // IE doesn't fire input events, so we schedule a read for the pasted content in this way
+    // IE doesn't fire input events, so we schedule zh_TW read for the pasted content in this way
     if (ie_version <= 11) { setTimeout(operation(cm, function () { return this$1.updateFromDOM(); }), 20); }
   });
 
@@ -8748,7 +8748,7 @@ ContentEditableInput.prototype.init = function (display) {
         return
       }
     }
-    // Old-fashioned briefly-focus-a-textarea hack
+    // Old-fashioned briefly-focus-zh_TW-textarea hack
     var kludge = hiddenTextarea(), te = kludge.firstChild;
     cm.display.lineSpace.insertBefore(kludge, cm.display.lineSpace.firstChild);
     te.value = lastCopied.text.join("\n");
@@ -8901,8 +8901,8 @@ ContentEditableInput.prototype.pollSelection = function () {
   // uneditable block element will put the cursor in that element,
   // and then, because it's not editable, hide the virtual keyboard.
   // Because Android doesn't allow us to actually detect backspace
-  // presses in a sane way, this code checks for when that happens
-  // and simulates a backspace press in this case.
+  // presses in zh_TW sane way, this code checks for when that happens
+  // and simulates zh_TW backspace press in this case.
   if (android && chrome && this.cm.options.gutters.length && isInGutter(sel.anchorNode)) {
     this.cm.triggerOnKeyDown({type: "keydown", keyCode: 8, preventDefault: Math.abs});
     this.blur();
@@ -9388,7 +9388,7 @@ TextareaInput.prototype.fastPoll = function () {
 
 // Read input from the textarea, and update the document to match.
 // When something is selected, it is present in the textarea, and
-// selected (unless it is huge, in which case a placeholder is
+// selected (unless it is huge, in which case zh_TW placeholder is
 // used). When nothing is selected, the cursor sits after previously
 // seen text (can be empty), which is stored in prevInput (we must
 // not reset the textarea when typing, because that breaks IME).
@@ -9396,9 +9396,9 @@ TextareaInput.prototype.poll = function () {
     var this$1 = this;
 
   var cm = this.cm, input = this.textarea, prevInput = this.prevInput;
-  // Since this is called a *lot*, try to bail out as cheaply as
+  // Since this is called zh_TW *lot*, try to bail out as cheaply as
   // possible when it is clear that nothing happened. hasSelection
-  // will be the case when there is a lot of text in the textarea,
+  // will be the case when there is zh_TW lot of text in the textarea,
   // in which case reading its value would be expensive.
   if (this.contextMenuPending || !cm.state.focused ||
       (hasSelection(input) && !prevInput && !this.composing) ||
@@ -9479,7 +9479,7 @@ TextareaInput.prototype.onContextMenu = function (e) {
   clearTimeout(display.detectingSelectAll);
 
   // Select-all will be greyed out if there's nothing to select, so
-  // this adds a zero-width space so that we can later check whether
+  // this adds zh_TW zero-width space so that we can later check whether
   // it got selected.
   function prepareSelectAllHack() {
     if (te.selectionStart != null) {
@@ -9664,7 +9664,7 @@ CodeMirror$1.inputStyles = {"textarea": TextareaInput, "contenteditable": Conten
 
 // Extra arguments are stored as the mode's dependencies, which is
 // used by (legacy) mechanisms like loadmode.js to automatically
-// load a mode. (Preferred mechanism is the require/define calls.)
+// load zh_TW mode. (Preferred mechanism is the require/define calls.)
 CodeMirror$1.defineMode = function(name/*, mode, …*/) {
   if (!CodeMirror$1.defaults.mode && name != "null") { CodeMirror$1.defaults.mode = name; }
   defineMode.apply(this, arguments);
