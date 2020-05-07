@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 
 msgid "Hello world"
-msgstr
+msgstr ""
 
 msgid "Can you find out whodunnit?"
-msgstr
+msgstr ""
 
 msgid "There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime."
-msgstr
+msgstr ""
 
 msgid "Walkthrough for SQL Beginners"
-msgstr
+msgstr ""
 
 msgid "If you're comfortable with SQL, you can"
 msgstr

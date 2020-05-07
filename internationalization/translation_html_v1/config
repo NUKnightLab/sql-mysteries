@@ -4,22 +4,24 @@
 
 # installation of babel
 # dpkg is a package manager,it is brew on mac, ...
+# here we list the package, if nothing is found, please install
 dpkg -L python3-babel
 
-# Extracting strings from the source
-pybabel extract -o mvp.pot mvp.py
+pip install Babel
 
-# Creating the catalog hierarchy
+# installation of jinja2
+pip install Jinja2
+
+# Creating the catalog hierarchy, change "en" according to the language like here
 mkdir -p locale/en/LC_MESSAGES/
 mkdir -p locale/fr/LC_MESSAGES/
 mkdir -p locale/ch/LC_MESSAGES/
 
-# Initializing .po translation files
-cp mvp.pot locale/fr/LC_MESSAGES/fr.po
-cp locale/fr/LC_MESSAGES/fr.po locale/ch/LC_MESSAGES/ch.po
+# Initializing .po translation files, change "ch" according to the language and the directory of "en.po" according to the name and directory of your translation file (.po)
+cp locale/en/LC_MESSAGES/en.po locale/ch/LC_MESSAGES/ch.po
 
 # Generating the .mo files
 pybabel compile -D fr -l fr -d locale 2>&1
 
 # Translating
-python3 translation
+python3 translation.py
