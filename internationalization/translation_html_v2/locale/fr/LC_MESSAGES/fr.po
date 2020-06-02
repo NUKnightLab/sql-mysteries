@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+
+msgid "Hello world"
+msgstr "Bonjour tout le monde"
+
+msgid "Can you find out whodunnit?"
+msgstr "Peux tu trouver l'assassin ?"
+
+msgid "Walkthrough for SQL Beginners"
+msgstr "Procédure pas à pas pour les débutants SQL"
+
+msgid "If you're comfortable with SQL, you can"
+msgstr "Si vous êtes à l'aise avec SQL, vous pouvez"
+
+msgid "skip these explanations"
+msgstr "sauter ces explications"
