@@ -15,7 +15,6 @@ class GetFitNowMember(Base):
     id = Column('id', Integer, primary_key=True)
     membership_start_date = Column('membership_start_date', Integer)
     membership_status = Column('membership_status', Text)
-    membership_id = Column(Text)
 
     def __init__(self, membership_start_date, membership_status):
         self.membership_start_date = membership_start_date
