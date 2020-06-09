@@ -8,23 +8,24 @@ session = Session()
 
 
 class CrimeSceneReport(Base):
+    __abstract__ = True
     __tablename__ = 'crime_scene_reports'
-    date = Column(Integer)
-    type = Column(Text)
-    description = Column(Text)
-    city = Column(Text)
-    dummy_column = Column(Integer, primary_key=True)
-    # column existing just for the ORM, as this table doesn't have any primary key
+    #in order not to have an "id" column appearing in the database, we put all those columns as primary_keys
+    date = Column(Integer, primary_key=True)
+    type = Column(Text, primary_key=True)
+    description = Column(Text, primary_key=True)
+    city = Column(Text, primary_key=True)
 
-    def __init__(self, date, city, description):
+    def __init__(self, type_of_crime, date, city, description):
         self.date = date
-        self.type = type
+        self.type = type_of_crime
         self.description = description
         self.city = city
 
-    """ Randomly attributes a date between January 2017 and December 2019 """
-    def set_date(self):
-        year = random.randint(2017, 2019)
+    """ Randomly attributes a date between start_year and end_year
+    Attributes : start_year, end_year (integers) """
+    def set_date(self, start_year, end_year):
+        year = random.randint(start_year, end_year)
         month = random.randint(1, 12)
 
         if month in [1, 3, 5, 7, 8, 10, 12]:
@@ -103,14 +104,16 @@ class CrimeSceneReport(Base):
 
 
 class CrimeSceneReportFrench(CrimeSceneReport):
+    __tablename__ = 'rapports_scene_de_crime'
 
     def __init__(self):
+        self.city = Column('ville', Text)
+
         types = ["incendie criminel", "agression", "chantage", "corruption", "fraude", "meurtre", "braquage",
                  "contrebande", "vol"]
 
-        CrimeSceneReport.__init__(self, self.city, self.description, self.date)
-        self.__tablename__ = 'rapports_scene_crime'
-        self.set_date()
+        CrimeSceneReport.__init__(self, self.type, self.city, self.description, self.date)
+        self.set_date(2017, 2019)
         self.set_description("../model_txt/noise_text.txt", 77, 369)
         self.set_type(types)
         self.set_city("../model_txt/cities_list.txt")
