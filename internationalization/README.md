@@ -49,13 +49,7 @@ You can help translating in your language all the string of characters, they all
 To generate the html, open « config », install python3 if needed. Then install packages needed and create .po and .mo following the instruction.
 Then, in « translation.py », please modify all the « fr » according to your language.
 Finally run the file. A « fr.hmtl » file is generated in « translation_html ».
-
-##v1
-This first version has to be translated a string of characters after another, but those ones are broken by html tags so sentences can be incomprehensible to the translator.
-
-##v2
-A v2 is coming to help anyone translate those sentences, keeping the html tags in strings of characters
-
+You have to translate sentence after sentence. Unfortunately, some sentences are cut for gettext to work properly.
 --------------------------------------------------------------------------------
 
 ### Licence :

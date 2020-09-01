@@ -20,7 +20,7 @@ mkdir -p locale/ch/LC_MESSAGES/
 # Initializing .po translation files, change "ch" according to the language and the directory of "en.po" according to the name and directory of your translation file (.po)
 cp locale/en/LC_MESSAGES/en.po locale/ch/LC_MESSAGES/ch.po
 
-# Generating the .mo files
+# Generating the .mo files, change "fr" according to the language
 pybabel compile -D fr -l fr -d locale 2>&1
 
 # Translating

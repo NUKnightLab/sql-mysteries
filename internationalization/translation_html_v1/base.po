@@ -7,259 +7,334 @@ msgstr ""
 msgid "Can you find out whodunnit?"
 msgstr ""
 
-msgid "There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime."
+msgid "There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to"
+msgstr ""
+
+msgid "learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime."
 msgstr ""
 
 msgid "Walkthrough for SQL Beginners"
 msgstr ""
 
 msgid "If you're comfortable with SQL, you can"
-msgstr
+msgstr ""
 
 msgid "skip these explanations"
-msgstr
+msgstr ""
 
 msgid "and put your skills to the test! Below we introduce some basic SQL concepts, and just enough detail to solve the murder. If you'd like a more complete introduction to SQL, try"
-msgstr
+msgstr ""
 
 msgid "Select Star SQL."
-msgstr
+msgstr ""
 
-msgid " A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a"
-msgstr
+msgid "A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a"
+msgstr ""
 
-msgid "​murder​"
-msgstr
+msgid "murder"
+msgstr ""
 
 msgid "that occurred sometime on"
-msgstr
+msgstr ""
 
 msgid "Jan.15, 2018​"
-msgstr
+msgstr ""
 
 msgid "and that it took place in"
-msgstr
+msgstr ""
 
 msgid "SQL City"
-msgstr
+msgstr ""
 
-msgid ". Start by retrieving the corresponding crime scene report from the police department’s database."
-msgstr
+msgid "Start by retrieving the corresponding crime scene report from the police department’s database."
+msgstr ""
 
-msgid "All the clues to this mystery are buried in a huge database, and you need to use SQL to navigate through this vast network of information. Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s database. Below well explain from a high level the commands you need to know; whenever you are ready, you can start adapting the examples to create your own SQL commands in search of clues -- you can run any SQL in any of the code boxes, no matter what was in the box when you started."
-msgstr
+msgid "All the clues to this mystery are buried in a huge database, and you need to use SQL to navigate through this vast network of information."
+msgstr ""
+
+msgid "Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s database."
+msgstr ""
+
+msgid "Below we'll explain from a high level the commands you need to know;"
+msgstr ""
+
+msgid "whenever you are ready, you can start adapting the examples to create your own SQL commands in search of clues --"
+msgstr ""
+
+msgid "you can run any SQL in any of the code boxes, no matter what was in the box when you started."
+msgstr ""
 
 msgid "Some Definitions"
-msgstr
+msgstr ""
 
 msgid "What is SQL?"
-msgstr
+msgstr ""
 
 msgid "SQL, which stands for Structured Query Language, is a way to interact with relational databases and tables in a way that allows us humans to glean specific, meaningful information."
-msgstr
+msgstr ""
 
 msgid "Wait, what is a relational database?"
-msgstr
+msgstr ""
 
-msgid "There's no single definition for the word "
-msgstr
+msgid "There's no single definition for the word"
+msgstr ""
 
 msgid "database"
-msgstr
+msgstr ""
 
-msgid ". In general, databases are systems for managing information. Databases can have varying amounts of structure imposed on the data. When the data is more structured, it can help people and computers work with the data more efficiently."
-msgstr
+msgid "In general, databases are systems for managing information."
+msgstr ""
+
+msgid "Databases can have varying amounts of structure imposed on the data."
+msgstr ""
+
+msgid "When the data is more structured, it can help people and computers work with the data more efficiently."
+msgstr ""
 
 msgid "Relational databases are probably the best known kind of database. At their heart, relational databases are made up of "
-msgstr
+msgstr ""
 
 msgid "tables"
-msgstr
+msgstr ""
 
-msgid ", which are a lot like spreadsheets. Each column in the table has a name and a data type (text, number, etc.), and each row in the table is a specific instance of whatever the table is \"about.\" The \"relational\" part comes with specific rules about how to connect data between different tables."
-msgstr
+msgid ", which are a lot like spreadsheets. Each column in the table has a name and a data type (text, number, etc.), and each row in the table is a specific instance of whatever the table is 'about'."
+msgstr ""
 
-msgid "What is an ERD?"
-msgstr
+msgid "The 'relational' part comes with specific rules about how to connect data between different tables."
+msgstr ""
 
-msgid "ERD, which stands for Entity Relationship Diagram, is a visual representation of the relationships among all relevant tables within a database. You can find the ERD for our SQL Murder Mystery database below. The diagram shows that each table has a name (top of the box, in bold), a list of column names (on the left) and their corresponding data types (on the right, in all caps). There are also some gold key icons, blue arrow icons and gray arrows on the ERD. A gold key indicates that the column is the ​primary key​ of the corresponding table, and a blue arrow indicates that the column is the foreign key​ of the corresponding table."
-msgstr
+msgid "What is an ERD ?"
+msgstr ""
+
+msgid "ERD, which stands for Entity Relationship Diagram, is a visual representation of the relationships among all relevant tables within a database."
+msgstr ""
+
+msgid "You can find the ERD for our SQL Murder Mystery database below."
+msgstr ""
+
+msgid "The diagram shows that each table has a name (top of the box, in bold), a list of column names (on the left) and their corresponding data types (on the right, in all caps)."
+msgstr ""
+
+msgid "There are also some gold key icons, blue arrow icons and gray arrows on the ERD."
+msgstr ""
+
+msgid "A gold key indicates that the column is the ​primary key​ of the corresponding table, and a blue arrow indicates that the column is the foreign key​ of the corresponding table."
+msgstr ""
 
 msgid "Primary Key​:"
-msgstr
+msgstr ""
 
 msgid "a unique identifier for each row in a table."
-msgstr
+msgstr ""
 
 msgid "Foreign Key​:"
-msgstr
+msgstr ""
 
 msgid "used to reference data in one table to those in another table."
-msgstr
+msgstr ""
 
 msgid "If two tables are related, the matching columns, i.e. the common identifiers of the two tables, are connected by a gray arrow in the diagram."
-msgstr
+msgstr ""
 
 msgid "Here is the ERD for our database:"
-msgstr
+msgstr ""
 
 msgid "What is a query?"
-msgstr
+msgstr ""
 
-msgid "If you were to look at the data in this database, you would see that the tables are huge! There are so many data points; it simply isn’t possible to go through the tables row by row to find the information we need. What are we supposed to do?"
-msgstr
+msgid "If you were to look at the data in this database, you would see that the tables are huge!"
+msgstr ""
 
-msgid "This is where queries come in. Queries are statements we construct to get data from the database. Queries read like natural English (for the most part). Let's try a few queries against our database. For each of the boxes below, click the "run" to "execute" the query in the box. You can edit the queries right here on the page to explore further. (Note that SQL commands are not case-sensitive, but it's conventional to capitalize them for readability. You can also use new lines and white space as you like to format the command for readability. Most database systems require you to end a query with a semicolon (';') although the system for running them in this web page is more forgiving.)"
-msgstr
+msgid "There are so many data points; it simply isn’t possible to go through the tables row by row to find the information we need. What are we supposed to do?"
+msgstr ""
 
-msgid "What elements does a SQL query have?"
-msgstr
+msgid "This is where queries come in. Queries are statements we construct to get data from the database. Queries read like natural English (for the most part)."
+msgstr ""
 
-msgid "A SQL query can contain:"
-msgstr
+msgid "Let's try a few queries against our database. For each of the boxes below, click the "run" to "execute" the query in the box."
+msgstr ""
+
+msgid "You can edit the queries right here on the page to explore further. (Note that SQL commands are not case-sensitive, but it's conventional to capitalize them for readability."
+msgstr ""
+
+msgid "You can also use new lines and white space as you like to format the command for readability."
+msgstr ""
+
+msgid "Most database systems require you to end a query with a semicolon (';') although the system for running them in this web page is more forgiving.)"
+msgstr ""
+
+msgid "What elements does a SQL query have ?"
+msgstr ""
+
+msgid "A SQL query can contain :"
+msgstr ""
 
 msgid "SQL keywords (like the ​SELECT​ and ​FROM​ above)"
-msgstr
+msgstr ""
 
 msgid "Column names (like the ​name​ column above)"
-msgstr
+msgstr ""
 
 msgid "Table names (like the ​person​ table above)"
-msgstr
+msgstr ""
 
 msgid "Wildcard characters (such as "
-msgstr
+msgstr ""
 
 msgid "Functions"
-msgstr
+msgstr ""
 
 msgid "Specific filtering criteria"
-msgstr
-
-msgid "Etc"
-msgstr
+msgstr ""
 
 msgid "SQL Keywords"
-msgstr
+msgstr ""
 
-msgid "SQL keywords are used to specify actions in your queries. SQL keywords are not case sensitive, but we suggest using all caps for SQL keywords so that you can easily set them apart from the rest of the query. Some frequently used keywords are:"
-msgstr
+msgid "SQL keywords are used to specify actions in your queries."
+msgstr ""
 
-msgid "SELECT​ allows us to grab data for specific columns from the database:"
-msgstr
+msgid "SQL keywords are not case sensitive, but we suggest using all caps for SQL keywords so that you can easily set them apart from the rest of the query."
+msgstr ""
 
-msgid "*​ (asterisk): it is used after ​SELECT​ to grab all columns from the table;"
-msgstr
+msgid "Some frequently used keywords are :"
+msgstr ""
+
+msgid "SELECT allows us to grab data for specific columns from the database:"
+msgstr ""
+
+msgid "* (asterisk): it is used after ​SELECT​ to grab all columns from the table;"
+msgstr ""
 
 msgid "column_name(s): to select specific columns, put the names of the columns after SELECT​ and use commas to separate them."
-msgstr
+msgstr ""
 
-msgid "FROM​ allows us to specify which table(s) we care about; to select multiple tables, list the table names and use commas to separate them. (But until you learn the JOIN keyword, you may be surprised at what happens. That will come later.)"
-msgstr
+msgid "FROM allows us to specify which table(s) we care about; to select multiple tables, list the table names and use commas to separate them."
+msgstr ""
+
+msgid "(But until you learn the JOIN keyword, you may be surprised at what happens. That will come later.)"
+msgstr ""
 
 msgid "The ​WHERE​ clause in a query is used to filter results by specific criteria."
-msgstr
+msgstr ""
 
 msgid "Let's try some of these things."
-msgstr
+msgstr ""
 
-msgid "The ​AND​ keyword is used to string together multiple filtering criteria so that the filtered results meet each and every one of the criteria. (There's also an OR keyword, which returns rows that match any of the criteria.)"
-msgstr
+msgid "The ​AND​ keyword is used to string together multiple filtering criteria so that the filtered results meet each and every one of the criteria."
+msgstr ""
+
+msgid "(There's also an OR keyword, which returns rows that match any of the criteria.)"
+msgstr ""
 
 msgid "If you haven't found the right crime scene report yet, click \"show solution\" above, and replace the contents of the box with just the revealed command. (Leave out the initial "
-msgstr
+msgstr ""
 
-msgid " If you figured out the query that shows the single crime scene report instead of a few for the same city and type, then congratulations and disregard the word \"incorrect\". You'll know if you got it!"
-msgstr
+msgid "If you figured out the query that shows the single crime scene report instead of a few for the same city and type, then congratulations and disregard the word \"incorrect\". You'll know if you got it!"
+msgstr ""
 
 msgid "Wildcards and other functions for partial matches"
-msgstr
+msgstr ""
 
-msgid "Sometimes you only know part of the information you need. SQL can handle that. Special symbols that represent unknown characters are called \"wildcards,\" and SQL supports two. The most common is the"
-msgstr
+msgid "Sometimes you only know part of the information you need."
+msgstr ""
+
+msgid "SQL can handle that. Special symbols that represent unknown characters are called \"wildcards,\" and SQL supports two. The most common is the"
+msgstr ""
 
 msgid "wildcard."
-msgstr
+msgstr ""
 
 msgid "When you place a"
-msgstr
+msgstr ""
 
 msgid "wildcard in a query string, the SQL system will return results that match the rest of the string exactly, and have anything (or nothing) where the wildcard is. For example,"
-msgstr
+msgstr ""
 
 msgid "matches"
-msgstr
+msgstr ""
 
 msgid "and"
-msgstr
+msgstr ""
 
 msgid "California"
-msgstr
+msgstr ""
 
 msgid "The other, less commonly used wildcard, is"
-msgstr
+msgstr ""
 
 msgid "This one means 'match the rest of the text, as long as there's exactly one character in exactly the position of the"
-msgstr
+msgstr ""
 
 msgid "no matter what it is. So,"
-msgstr
+msgstr ""
 
 msgid "would match"
-msgstr
+msgstr ""
 
 msgid " but not"
-msgstr
+msgstr ""
 
 msgid "or"
-msgstr
+msgstr ""
 
 msgid "Important:"
-msgstr
+msgstr ""
 
 msgid "When using wildcards, you don't use the"
-msgstr
+msgstr ""
 
 msgid "symbol; instead, you use"
-msgstr
+msgstr ""
 
 msgid "SQL also supports numeric comparisons like"
-msgstr
+msgstr ""
 
 msgid "(less than) and"
-msgstr
+msgstr ""
 
 msgid "(greater than). You can also use the keywords"
-msgstr
+msgstr ""
 
 msgid "and all of those work with words as well as numbers."
-msgstr
+msgstr ""
 
 msgid "We've mentioned that SQL commands are not case-sensitive, but"
-msgstr
+msgstr ""
 
 msgid "querie values for"
-msgstr
+msgstr ""
 
 msgid "are. Sometimes you don't know how the text is stored in the database. SQL provides a couple of functions which can smooth that out for you. They're called"
-msgstr
+msgstr ""
 
 msgid "and you can probably figure out what they do, especially if you explore in the box below."
-msgstr
+msgstr ""
 
-msgid "Sometimes the questions you want to ask aren’t as simple as finding the row of data that fits a set of criteria. You may want to ask more complex questions such as “Who is the oldest person?” or “Who is the shortest person?”""
-msgstr
+msgid "SQL Aggregate Functions"
+msgstr ""
+
+msgid "Sometimes the questions you want to ask aren’t as simple as finding the row of data that fits a set of criteria."
+msgstr ""
+
+msgid "You may want to ask more complex questions such as “Who is the oldest person?” or “Who is the shortest person?”"
+msgstr ""
 
 msgid "Aggregate functions"
-msgstr
+msgstr ""
 
 msgid "can help you answer these questions. In fact, you learned an aggregate function above,"
-msgstr
+msgstr ""
 
 msgid "How old is the oldest person with a drivers license? With a small amount of data, you might be able to just eyeball it, but there thousands of records in the "
-msgstr
+msgstr ""
+
+msgid "table."
+msgstr ""
 
 msgid "drivers_license"
+msgstr ""
+
+msgid "Try"
 msgstr ""
 
 msgid "if you want to know just how many!) You can't just look over that list to find the answer."
@@ -283,10 +358,19 @@ msgstr ""
 msgid "counts the number of specified column values"
 msgstr ""
 
-msgid "There's another way to find minimum and maximum values, while also seeing more of the data. You can control the sort order of results you get. It's really quite intuitive: just use"
+msgid "There's another way to find minimum and maximum values, while also seeing more of the data."
 msgstr ""
 
-msgid "followed by a column name. It can be challenging when there's a lot of data! (When people get serious about working with SQL, they use better tools than this web-based system!) By default, ORDER BY goes in \"ascending\" (smallest to largest, or A to Z) order, but you can be specific with"
+msgid "You can control the sort order of results you get. It's really quite intuitive: just use"
+msgstr ""
+
+msgid "followed by a column name. It can be challenging when there's a lot of data!"
+msgstr ""
+
+msgid "(When people get serious about working with SQL, they use better tools than this web-based system!)"
+msgstr ""
+
+msgid "By default, ORDER BY goes in \"ascending\" (smallest to largest, or A to Z) order, but you can be specific with"
 msgstr ""
 
 msgid "for ascending, or you can reverse it with"
@@ -301,13 +385,34 @@ msgstr ""
 msgid "Joining tables"
 msgstr ""
 
-msgid "Until now, we’ve been asking questions that can be answered by considering data from only a single table. But what if we need to ask more complex questions that simultaneously require data from two different tables? That’s where ​JOIN​ comes in."
+msgid "Until now, we’ve been asking questions that can be answered by considering data from only a single table."
 msgstr ""
 
-msgid "More experienced SQL folks use a few different kinds of JOIN -- you may hear about INNER, OUTER, LEFT and RIGHT joins. Here, we'll just talk about the most common kind of JOIN, the INNER JOIN. Since it's common, you can leave out INNER in your SQL commands."
+msgid "But what if we need to ask more complex questions that simultaneously require data from two different tables?"
 msgstr ""
 
-msgid "The most common way to join tables is using primary key and foreign key columns. Refer back to the Entity Relationship Diagram (ERD) above if you don't remember what those are, or to see the key relationships between tables in our database. You can do joins on any columns, but the key columns are optimized for fast results. It is probably easier to show how joins work with our interactive SQL system than to write them."
+msgid "That’s where ​JOIN​ comes in."
+msgstr ""
+
+msgid "More experienced SQL folks use a few different kinds of JOIN -- you may hear about INNER, OUTER, LEFT and RIGHT joins."
+msgstr ""
+
+msgid "Here, we'll just talk about the most common kind of JOIN, the INNER JOIN."
+msgstr ""
+
+msgid "Since it's common, you can leave out INNER in your SQL commands."
+msgstr ""
+
+msgid "The most common way to join tables is using primary key and foreign key columns."
+msgstr ""
+
+msgid "Refer back to the Entity Relationship Diagram (ERD) above if you don't remember what those are, or to see the key relationships between tables in our database."
+msgstr ""
+
+msgid "You can do joins on any columns, but the key columns are optimized for fast results."
+msgstr ""
+
+msgid "It is probably easier to show how joins work with our interactive SQL system than to write them."
 msgstr ""
 
 msgid "Sometimes you want to connect more than one table. SQL lets you join as many tables in a query as you like."
@@ -359,9 +464,6 @@ msgid "Select Star SQL."
 msgstr ""
 
 msgid "Detective illustration courtesy of"
-msgstr ""
-
-msgid "Vectors by Vecteezy"
 msgstr ""
 
 

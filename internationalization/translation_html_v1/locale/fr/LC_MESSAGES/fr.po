@@ -2,10 +2,16 @@ msgid ""
 msgstr ""
 
 msgid "Hello world"
-msgstr "Bonjour tout le monde"
+msgstr "Bonjour le monde"
 
 msgid "Can you find out whodunnit?"
-msgstr "Peux tu trouver l'assassin ?"
+msgstr "Trouvez le meurtrier !"
+
+msgid "There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to"
+msgstr "Il y a eu un meurtre à SQL City! Le mystère de SQL Murder Mystery est conçu pour être à la fois une leçon autodirigée pour"
+
+msgid "learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime."
+msgstr "apprendre les concepts et les commandes SQL et un jeu amusant pour les utilisateurs SQL expérimentés pour résoudre un crime intrigant."
 
 msgid "Walkthrough for SQL Beginners"
 msgstr "Procédure pas à pas pour les débutants SQL"
@@ -15,3 +21,449 @@ msgstr "Si vous êtes à l'aise avec SQL, vous pouvez"
 
 msgid "skip these explanations"
 msgstr "sauter ces explications"
+
+msgid "and put your skills to the test! Below we introduce some basic SQL concepts, and just enough detail to solve the murder. If you'd like a more complete introduction to SQL, try"
+msgstr "et mettre vos compétences à l'épreuve! Ci-dessous, nous présentons quelques concepts SQL de base et juste assez de détails pour résoudre le meurtre. Si vous souhaitez une introduction plus complète à SQL, essayez de"
+
+msgid "Select Star SQL."
+msgstr "sélectionnez Star SQL."
+
+msgid "A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a"
+msgstr "Un crime a eu lieu et le détective a besoin de votre aide. Le détective vous a donné le rapport sur la scène du crime, mais vous l'avez perdu. Vous vous souvenez vaguement que le crime était un"
+
+msgid "murder"
+msgstr "meurtre"
+
+msgid "that occurred sometime on"
+msgstr "qui s'est produit le"
+
+msgid "Jan.15, 2018​"
+msgstr "15 Janvier 2018"
+
+msgid "and that it took place in"
+msgstr "et qu'il a eu lieu à"
+
+msgid "SQL City"
+msgstr "SQL City"
+
+msgid "Start by retrieving the corresponding crime scene report from the police department’s database."
+msgstr "Commencez par récupérer le rapport de la scène de crime correspondant dans la base de données du service de police."
+
+msgid "All the clues to this mystery are buried in a huge database, and you need to use SQL to navigate through this vast network of information."
+msgstr "Tous les indices de ce mystère sont enfouis dans une énorme base de données et vous devez utiliser SQL pour naviguer dans ce vaste réseau d'informations."
+
+msgid "Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s database."
+msgstr "La première étape pour résoudre le mystère consiste à récupérer le rapport de scène de crime correspondant dans la base de données du service de police."
+
+msgid "Below we'll explain from a high level the commands you need to know;"
+msgstr "Ci-dessous, nou expliquons d'un point de vu haut niveau les commandes que vous devez connaître ;"
+
+msgid "whenever you are ready, you can start adapting the examples to create your own SQL commands in search of clues --"
+msgstr "dès que vous êtes prêt, vous pouvez commencer à adapter les exemples pour créer vos propres commandes SQL à la recherche d'indices,"
+
+msgid "you can run any SQL in any of the code boxes, no matter what was in the box when you started."
+msgstr "vous pouvez exécuter n'importe quelle commande SQL dans n'importe laquelle des fenêtres de code, peu importe ce qui se trouvait dans la boîte lorsque vous avez commencé."
+
+msgid "Some Definitions"
+msgstr "Quelques définitions"
+
+msgid "What is SQL?"
+msgstr "Qu'est-ce que le SQL?"
+
+msgid "SQL, which stands for Structured Query Language, is a way to interact with relational databases and tables in a way that allows us humans to glean specific, meaningful information."
+msgstr "SQL, qui signifie Structured Query Language, est un moyen d'interagir avec les bases de données relationnelles et les tables d'une manière qui permet à nous, humains, de glaner des informations spécifiques et significatives."
+
+msgid "Wait, what is a relational database?"
+msgstr "Attendez, qu'est-ce qu'une base de données relationnelle ?"
+
+msgid "There's no single definition for the word"
+msgstr "Il n'y a pas de définition unique pour le mot"
+
+msgid "database"
+msgstr "base de données"
+
+msgid "In general, databases are systems for managing information."
+msgstr "En général, les bases de données sont des systèmes de gestion de l'information."
+
+msgid "Databases can have varying amounts of structure imposed on the data."
+msgstr "Les bases de données peuvent avoir des quantités variables de structure imposées aux données."
+
+msgid "When the data is more structured, it can help people and computers work with the data more efficiently."
+msgstr "Lorsque les données sont plus structurées, cela peut aider les gens et les ordinateurs à travailler avec les données plus efficacement."
+
+msgid "Relational databases are probably the best known kind of database. At their heart, relational databases are made up of "
+msgstr "Les bases de données relationnelles sont probablement le type de base de données le plus connu. Au fond, les bases de données relationnelles sont constituées de"
+
+msgid "tables"
+msgstr "tables"
+
+msgid ", which are a lot like spreadsheets. Each column in the table has a name and a data type (text, number, etc.), and each row in the table is a specific instance of whatever the table is 'about'."
+msgstr ", qui ressemblent beaucoup à des feuilles de calcul. Chaque colonne du tableau a un nom et un type de données (texte, nombre, etc.), et chaque ligne du tableau est une instance spécifique de ce dont la table parle."
+
+msgid "The 'relational' part comes with specific rules about how to connect data between different tables."
+msgstr "La partie 'relationnelle' est accompagnée de règles spécifiques sur la manière de connecter des données entre différentes tables."
+
+msgid "What is an ERD ?"
+msgstr "Qu'est-ce qu'un ERD ?"
+
+msgid "ERD, which stands for Entity Relationship Diagram, is a visual representation of the relationships among all relevant tables within a database."
+msgstr "ERD, qui signifie Entity Relationship Diagram, est une représentation visuelle des relations entre toutes les tables pertinentes d'une base de données."
+
+msgid "You can find the ERD for our SQL Murder Mystery database below."
+msgstr "Vous pouvez trouver l'ERD pour notre base de données SQL Murder Mystery ci-dessous."
+
+msgid "The diagram shows that each table has a name (top of the box, in bold), a list of column names (on the left) and their corresponding data types (on the right, in all caps)."
+msgstr "Le diagramme montre que chaque table a un nom (en haut de la boîte, en gras), une liste de noms de colonnes (à gauche) et leurs types de données correspondants (à droite, en majuscules)."
+
+msgid "There are also some gold key icons, blue arrow icons and gray arrows on the ERD."
+msgstr "Il existe également des icônes de clés dorées, des icônes de flèche bleue et des flèches grises sur l'ERD."
+
+msgid "A gold key indicates that the column is the ​primary key​ of the corresponding table, and a blue arrow indicates that the column is the foreign key​ of the corresponding table."
+msgstr "Une clé dorée indique que la colonne est la clé primaire de la table correspondante et une flèche bleue indique que la colonne est la clé étrangère de la table correspondante."
+
+msgid "Primary Key​:"
+msgstr "Clef primaire :"
+
+msgid "a unique identifier for each row in a table."
+msgstr "un identifiant unique pour chaque ligne d'une table."
+
+msgid "Foreign Key​:"
+msgstr "Clef étrangère :"
+
+msgid "used to reference data in one table to those in another table."
+msgstr "utilisée pour référencer les données d'une table à celles d'une autre table."
+
+msgid "If two tables are related, the matching columns, i.e. the common identifiers of the two tables, are connected by a gray arrow in the diagram."
+msgstr "Si deux tables sont liées, les colonnes correspondantes, c'est-à-dire les identifiants communs des deux tables, sont reliées par une flèche grise dans le diagramme."
+
+msgid "Here is the ERD for our database:"
+msgstr "Voici l'ERD de notre base de données :"
+
+msgid "What is a query?"
+msgstr "Qu'est-ce qu'une requête ?"
+
+msgid "If you were to look at the data in this database, you would see that the tables are huge!"
+msgstr "Si vous regardiez les données de cette base de données, vous verriez que les tables sont énormes!"
+
+msgid "There are so many data points; it simply isn’t possible to go through the tables row by row to find the information we need. What are we supposed to do?"
+msgstr "Il y a tellement de points de données qu'il n’est tout simplement pas possible de parcourir les tableaux ligne par ligne pour trouver les informations dont nous avons besoin. Que sommes nous sensés faire?"
+
+msgid "This is where queries come in. Queries are statements we construct to get data from the database. Queries read like natural English (for the most part)."
+msgstr "C'est là qu'interviennent les requêtes. Les requêtes sont des instructions que nous construisons pour obtenir des données de la base de données. Les requêtes se lisent comme de l'anglais naturel (pour la plupart)."
+
+msgid "Let's try a few queries against our database. For each of the boxes below, click the "run" to "execute" the query in the box."
+msgstr "Essayons quelques requêtes sur notre base de données. Pour chacune des cases ci-dessous, cliquez sur «run» pour «exécuter» la requête dans la case."
+
+msgid "You can edit the queries right here on the page to explore further. (Note that SQL commands are not case-sensitive, but it's conventional to capitalize them for readability."
+msgstr "Vous pouvez modifier les requêtes ici même sur la page pour explorer davantage. (Notez que les commandes SQL ne sont pas sensibles à la casse, mais il est conventionnel de les mettre en majuscule pour plus de lisibilité."
+
+msgid "You can also use new lines and white space as you like to format the command for readability."
+msgstr "Vous pouvez également utiliser de nouvelles lignes et un espace blanc comme vous le souhaitez pour formater la commande pour plus de lisibilité."
+
+msgid "Most database systems require you to end a query with a semicolon (';') although the system for running them in this web page is more forgiving.)"
+msgstr "La plupart des systèmes de base de données exigent que vous terminiez une requête par un point-virgule (';') bien que le système pour les exécuter dans cette page Web soit plus indulgent.)"
+
+msgid "What elements does a SQL query have ?"
+msgstr "Quels éléments contient une requête SQL ?"
+
+msgid "A SQL query can contain :"
+msgstr "Une requête SQL peut contenir :"
+
+msgid "SQL keywords (like the ​SELECT​ and ​FROM​ above)"
+msgstr "Mots clés SQL (comme ​SELECT​ et ​FROM​ ci-dessus)"
+
+msgid "Column names (like the ​name​ column above)"
+msgstr "Noms de colonne (comme le ​nom​ de la colonne ci-dessus)"
+
+msgid "Table names (like the ​person​ table above)"
+msgstr "Noms de table (comme le tableau des ​personnes​ ci-dessus)"
+
+msgid "Wildcard characters (such as "
+msgstr "Caractères génériques (tels que "
+
+msgid "Functions"
+msgstr "fonctions"
+
+msgid "Specific filtering criteria"
+msgstr "Critères de filtrage spécifiques"
+
+msgid "SQL Keywords"
+msgstr "Mots clés SQL"
+
+msgid "SQL keywords are used to specify actions in your queries."
+msgstr "Les mots clés SQL sont utilisés pour spécifier des actions dans vos requêtes."
+
+msgid "SQL keywords are not case sensitive, but we suggest using all caps for SQL keywords so that you can easily set them apart from the rest of the query."
+msgstr "Les mots clés SQL ne sont pas sensibles à la casse, mais nous vous suggérons d'utiliser toutes les majuscules pour les mots clés SQL afin que vous puissiez facilement les distinguer du reste de la requête."
+
+msgid "Some frequently used keywords are :"
+msgstr "Certains mots clés fréquemment utilisés sont :"
+
+msgid "SELECT allows us to grab data for specific columns from the database:"
+msgstr "SELECT nous permet de récupérer des données pour des colonnes spécifiques de la base de données :"
+
+msgid "* (asterisk): it is used after ​SELECT​ to grab all columns from the table;"
+msgstr "* (astérisque) : il est utilisé après SELECT pour récupérer toutes les colonnes de la table ;"
+
+msgid "column_name(s): to select specific columns, put the names of the columns after SELECT​ and use commas to separate them."
+msgstr "nom_colonne(s) : pour sélectionner des colonnes spécifiques, mettez les noms des colonnes après SELECT et utilisez des virgules pour les séparer."
+
+msgid "FROM allows us to specify which table(s) we care about; to select multiple tables, list the table names and use commas to separate them."
+msgstr "FROM nous permet de spécifier la ou les tables qui nous intéressent; pour sélectionner plusieurs tables, listez les noms de tables et utilisez des virgules pour les séparer."
+
+msgid "(But until you learn the JOIN keyword, you may be surprised at what happens. That will come later.)"
+msgstr "(Mais tant que vous n'aurez pas appris le mot clé JOIN, vous serez peut-être surpris de ce qui se passe. Cela viendra plus tard."
+
+msgid "The ​WHERE​ clause in a query is used to filter results by specific criteria."
+msgstr "La clause WHERE dans une requête est utilisée pour filtrer les résultats selon des critères spécifiques."
+
+msgid "Let's try some of these things."
+msgstr "Essayons certaines de ces choses."
+
+msgid "The ​AND​ keyword is used to string together multiple filtering criteria so that the filtered results meet each and every one of the criteria."
+msgstr "Le mot clé AND est utilisé pour enchaîner plusieurs critères de filtrage afin que les résultats filtrés répondent à chacun des critères."
+
+msgid "(There's also an OR keyword, which returns rows that match any of the criteria.)"
+msgstr "(Il existe également un mot clé OR, qui renvoie les lignes qui correspondent à l'un des critères.)"
+
+msgid "If you haven't found the right crime scene report yet, click \"show solution\" above, and replace the contents of the box with just the revealed command. (Leave out the initial "
+msgstr "Si vous n'avez pas encore trouvé le bon rapport de scène de crime, cliquez sur \"Afficher la solution \" ci-dessus et remplacez le contenu de la boîte par la commande révélée. (Oubliez l'initiale"
+
+msgid "If you figured out the query that shows the single crime scene report instead of a few for the same city and type, then congratulations and disregard the word \"incorrect\". You'll know if you got it!"
+msgstr "Si vous avez trouvé la requête qui montre le rapport de scène de crime unique au lieu de quelques-uns pour la même ville et le même type, félicitations et ne tenez pas compte du mot «incorrect». Vous saurez si vous l'avez!"
+
+msgid "Wildcards and other functions for partial matches"
+msgstr "Caractères génériques et autres fonctions pour les correspondances partielles"
+
+msgid "Sometimes you only know part of the information you need."
+msgstr "Parfois, vous ne connaissez qu'une partie des informations dont vous avez besoin."
+
+msgid "SQL can handle that. Special symbols that represent unknown characters are called \"wildcards,\" and SQL supports two. The most common is the"
+msgstr "SQL peut gérer cela. Les symboles spéciaux qui représentent des caractères inconnus sont appelés «caractères génériques» et SQL en prend en charge deux. Le plus courant est le"
+
+msgid "wildcard."
+msgstr "joker."
+
+msgid "When you place a"
+msgstr "Lorsque vous placez un"
+
+msgid "wildcard in a query string, the SQL system will return results that match the rest of the string exactly, and have anything (or nothing) where the wildcard is. For example,"
+msgstr "caractère générique dans une chaîne de requête, le système SQL retournera des résultats qui correspondent exactement au reste de la chaîne et contiendra n'importe quoi (ou rien) là où se trouve le caractère générique. Par exemple,"
+
+msgid "matches"
+msgstr "correspondent"
+
+msgid "and"
+msgstr "et"
+
+msgid "California"
+msgstr "Californie"
+
+msgid "The other, less commonly used wildcard, is"
+msgstr "L'autre caractère générique, moins couramment utilisé, est"
+
+msgid "This one means 'match the rest of the text, as long as there's exactly one character in exactly the position of the"
+msgstr "Celui-ci signifie `correspondre au reste du texte, tant qu'il y a exactement un caractère exactement à la position du"
+
+msgid "no matter what it is. So,"
+msgstr "peu importe ce que c'est. Alors,"
+
+msgid "would match"
+msgstr "correspondrait"
+
+msgid " but not"
+msgstr " mais pas"
+
+msgid "or"
+msgstr "ou"
+
+msgid "Important:"
+msgstr "Important :"
+
+msgid "When using wildcards, you don't use the"
+msgstr "Lorsque vous utilisez des caractères génériques, vous n'utilisez pas le"
+
+msgid "symbol; instead, you use"
+msgstr "symbole; à la place, vous utilisez"
+
+msgid "SQL also supports numeric comparisons like"
+msgstr "SQL prend également en charge les comparaisons numériques comme"
+
+msgid "(less than) and"
+msgstr "(inférieur à) et"
+
+msgid "(greater than). You can also use the keywords"
+msgstr "(plus grand que). Vous pouvez également utiliser les mots-clés"
+
+msgid "and all of those work with words as well as numbers."
+msgstr "et tout cela fonctionne avec des mots aussi bien qu'avec des nombres."
+
+msgid "We've mentioned that SQL commands are not case-sensitive, but"
+msgstr "Nous avons mentionné que les commandes SQL ne sont pas sensibles à la casse, mais les valeurs de requête"
+
+msgid "querie values for"
+msgstr "pour"
+
+msgid "are. Sometimes you don't know how the text is stored in the database. SQL provides a couple of functions which can smooth that out for you. They're called"
+msgstr "le sont. Parfois, vous ne savez pas comment le texte est stocké dans la base de données. SQL fournit quelques fonctions qui peuvent vous faciliter la tâche. Ils s'appellent"
+
+msgid "and you can probably figure out what they do, especially if you explore in the box below."
+msgstr "et vous pouvez probablement comprendre ce qu'ils font, surtout si vous vous baladez dans l'encadré ci-dessous."
+
+msgid "SQL Aggregate Functions"
+msgstr "Les fonctions d'agrégation SQL"
+
+msgid "Sometimes the questions you want to ask aren’t as simple as finding the row of data that fits a set of criteria."
+msgstr "Parfois, les questions que vous souhaitez poser ne sont pas aussi simples que de trouver la ligne de données correspondant à un ensemble de critères."
+
+msgid "You may want to ask more complex questions such as “Who is the oldest person?” or “Who is the shortest person?”"
+msgstr "Vous voudrez peut-être poser des questions plus complexes telles que "Qui est la personne la plus âgée?" ou "Qui est la personne la plus petite?""
+
+msgid "Aggregate functions"
+msgstr "Fonctions d'agrégation"
+
+msgid "can help you answer these questions. In fact, you learned an aggregate function above,"
+msgstr "peut vous aider à répondre à ces questions. En fait, vous avez déjà appris une fonction d'agrégation ci-dessus,"
+
+msgid "How old is the oldest person with a drivers license? With a small amount of data, you might be able to just eyeball it, but there thousands of records in the "
+msgstr "Quel âge a la personne la plus âgée avec un permis de conduire? Avec une petite quantité de données, vous pourrez peut-être simplement les observer, mais il existe des milliers d'enregistrements dans la table"
+
+msgid "table."
+msgstr "."
+
+msgid "drivers_license"
+msgstr "permis_de_conduire"
+
+msgid "Try"
+msgstr "Essayez"
+
+msgid "if you want to know just how many!) You can't just look over that list to find the answer."
+msgstr "si vous voulez savoir combien!) Vous ne pouvez pas simplement parcourir cette liste pour trouver la réponse."
+
+msgid "Here are a few useful aggregate functions SQL provides:"
+msgstr "Voici quelques fonctions d'agrégation utiles fournies par SQL :"
+
+msgid "finds the maximum value"
+msgstr "trouve la valeur maximale"
+
+msgid "finds the minimum value"
+msgstr "trouve la valeur minimale"
+
+msgid "calculates the sum of the specified column values"
+msgstr "calcule la somme des valeurs de colonnes spécifiées"
+
+msgid "calculates the average of the specified column values"
+msgstr "calcule la moyenne des valeurs de colonnes spécifiées"
+
+msgid "counts the number of specified column values"
+msgstr "compte le nombre de valeurs de colonnes spécifiées"
+
+msgid "There's another way to find minimum and maximum values, while also seeing more of the data."
+msgstr "Il existe une autre façon de trouver les valeurs minimales et maximales, tout en affichant davantage de données."
+
+msgid "You can control the sort order of results you get. It's really quite intuitive: just use"
+msgstr "Vous pouvez contrôler l'ordre de tri des résultats que vous obtenez. C'est vraiment assez intuitif: il suffit d'utiliser"
+
+msgid "followed by a column name. It can be challenging when there's a lot of data!"
+msgstr "suivi d'un nom de colonne. Cela peut être difficile quand il y a beaucoup de données!"
+
+msgid "(When people get serious about working with SQL, they use better tools than this web-based system!)"
+msgstr "(Lorsque les gens prennent au sérieux le travail avec SQL, ils utilisent de meilleurs outils que ce système Web!)"
+
+msgid "By default, ORDER BY goes in \"ascending\" (smallest to largest, or A to Z) order, but you can be specific with"
+msgstr "Par défaut, ORDER BY passe dans l'ordre \"croissant \" (du plus petit au plus grand, ou de A à Z), mais vous pouvez être précis avec"
+
+msgid "for ascending, or you can reverse it with"
+msgstr "pour monter, ou vous pouvez l'inverser avec"
+
+msgid "By now, you know enough SQL to identify the two witnesses. Give it a try!"
+msgstr "A présent, vous connaissez suffisamment SQL pour identifier les deux témoins. Essaiez donc !"
+
+msgid "Making connections"
+msgstr "Faire des connexions"
+
+msgid "Joining tables"
+msgstr "Joindre des tables"
+
+msgid "Until now, we’ve been asking questions that can be answered by considering data from only a single table."
+msgstr "Jusqu'à présent, nous avons posé des questions auxquelles il est possible de répondre en considérant les données d'un seul tableau."
+
+msgid "But what if we need to ask more complex questions that simultaneously require data from two different tables?"
+msgstr "Mais que se passe-t-il si nous devons poser des questions plus complexes qui nécessitent simultanément des données provenant de deux tables différentes?"
+
+msgid "That’s where ​JOIN​ comes in."
+msgstr "C’est là que JOIN entre en jeu."
+
+msgid "More experienced SQL folks use a few different kinds of JOIN -- you may hear about INNER, OUTER, LEFT and RIGHT joins."
+msgstr "Les utilisateurs SQL plus expérimentés utilisent différents types de JOIN, vous pouvez entendre parler de jointures INTERNE, EXTERNE, GAUCHE et DROITE."
+
+msgid "Here, we'll just talk about the most common kind of JOIN, the INNER JOIN."
+msgstr "Ici, nous allons simplement parler du type le plus courant de JOIN, le JOINT INTERNE."
+
+msgid "Since it's common, you can leave out INNER in your SQL commands."
+msgstr "Comme c'est courant, vous pouvez omettre INTERNE dans vos commandes SQL."
+
+msgid "The most common way to join tables is using primary key and foreign key columns."
+msgstr "Le moyen le plus courant de joindre des tables consiste à utiliser des colonnes de clés primaires et de clés étrangères."
+
+msgid "Refer back to the Entity Relationship Diagram (ERD) above if you don't remember what those are, or to see the key relationships between tables in our database."
+msgstr "Reportez-vous au diagramme de relation d'entité (ERD) ci-dessus si vous ne vous souvenez pas de ce que sont ces derniers, ou pour voir les relations clés entre les tables de notre base de données."
+
+msgid "You can do joins on any columns, but the key columns are optimized for fast results."
+msgstr "Vous pouvez effectuer des jointures sur toutes les colonnes, mais les colonnes clés sont optimisées pour des résultats rapides."
+
+msgid "It is probably easier to show how joins work with our interactive SQL system than to write them."
+msgstr "Il est probablement plus facile de montrer comment les jointures fonctionnent avec notre système SQL interactif que de les écrire."
+
+msgid "Sometimes you want to connect more than one table. SQL lets you join as many tables in a query as you like."
+msgstr "Parfois, vous souhaitez connecter plus d'une table. SQL vous permet de joindre autant de tables que vous le souhaitez dans une requête."
+
+msgid "Now that you know how to join tables, you should be able to find the interview transcripts for the two witnesses you identified before. Give it a try!"
+msgstr "Maintenant que vous savez comment joindre des tables, vous devriez être en mesure de trouver les transcriptions des entrevues des deux témoins que vous avez identifiés auparavant. Essaiez donc !"
+
+msgid "Go Get 'em!"
+msgstr "Allez les chercher!"
+
+msgid "Now you know enough SQL to solve the mystery. You'll need to read the ERD and make some reasonable assumptions, but there's no other syntax that you need!"
+msgstr "Vous connaissez maintenant suffisamment SQL pour résoudre le mystère. Vous devrez lire l'ERD et faire des hypothèses raisonnables, mais il n'y a pas d'autre syntaxe dont vous avez besoin!"
+
+msgid "Check your solution"
+msgstr "Vérifiez votre solution"
+
+msgid "Credits"
+msgstr "Crédits"
+
+msgid "The SQL Murder Mystery was created by"
+msgstr "SQL Murder Mystery a été créé par"
+
+msgid "while they were Knight Lab fellows. See the"
+msgstr "alors qu'ils étaient membres de Knight Lab. Voir le"
+
+msgid "GitHub repository"
+msgstr "repository GitHub"
+
+msgid "for more information."
+msgstr "pour plus d'informations."
+
+msgid "Adapted and produced for the web by"
+msgstr "Adapté et réalisé pour le web par"
+
+msgid "This mystery was inspired by"
+msgstr "Cette intrigue a été inspirée par"
+
+msgid "a crime in the neighboring Terminal City."
+msgstr "un crime dans la 'Terminal City' voisine."
+
+msgid "Web-based SQL is made possible by"
+msgstr "Le SQL basé sur le Web est rendu possible par"
+
+msgid "SQL query custom web components created and released to the public domain by Zi Chong Kao, creator of"
+msgstr "Composants Web personnalisés de requête SQL créés et publiés dans le domaine public par Zi Chong Kao, créateur de"
+
+msgid "Select Star SQL."
+msgstr "Star SQL."
+
+msgid "Detective illustration courtesy of"
+msgstr "Illustration du détective gracieuse de"
+
+

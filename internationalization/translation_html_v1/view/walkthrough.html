@@ -126,8 +126,8 @@
         <img src="174092-clue-illustration.png" class="img-rounded"
           alt="A decorative illustration of a detective looking at an evidence board.">
         <p>
-          {{ _("There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to
-          learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime.") }}
+          {{ _("There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to") }}
+          {{ _("learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime.") }}
         </p>
 
       </div>
@@ -137,10 +137,9 @@
       <div class="grid-item">
         <h2>{{ _("Walkthrough for SQL Beginners") }}</h2>
         <p>
-          {{ _("If you're comfortable with SQL, you can") }} <a href="index.html#experienced">{{ _("skip these explanations") }}</a> {{ _("and put
-          your skills to the test! Below we introduce some basic SQL concepts, and just enough detail to solve the
-          murder. If you'd like a more complete introduction to SQL, try") }} <a href="https://selectstarsql.com/">{{ _("Select
-            Star SQL.") }}</a>
+          {{ _("If you're comfortable with SQL, you can") }} <a href="index.html#experienced">{{ _("skip these explanations") }}</a>
+          {{ _("and put your skills to the test! Below we introduce some basic SQL concepts, and just enough detail to solve the murder. If you'd like a more complete introduction to SQL, try") }}
+          <a href="https://selectstarsql.com/">{{ _("Select Star SQL.") }}</a>
         </p>
       </div>
     </div>
@@ -148,18 +147,17 @@
     <div class="grid">
       <div class="grid-item">
         <p>
-          {{ _("A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but
-          you somehow lost it. You vaguely remember that the crime was a") }} <strong>{{ _("murder") }}​</strong> {{ _("that occurred
-          sometime on ") }}​ <strong>{{ _("Jan.15, 2018") }}​</strong> {{ _("and that it took place in ") }}​<strong>{{ _("SQL City") }}​</strong>. {{ _("Start by
-          retrieving the corresponding crime scene report from the police department’s database.") }}
+          {{ _("A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a") }}
+          <strong>{{ _("murder") }}​</strong> {{ _("that occurred sometime on") }}​ <strong>{{ _("Jan.15, 2018​") }}​</strong>
+          {{ _("and that it took place in") }} ​<strong>{{ _("SQL City") }}​</strong>.
+          {{ _("Start by retrieving the corresponding crime scene report from the police department’s database.") }}
         </p>
         <p>
-          {{ _("All the clues to this mystery are buried in a huge database, and you need to use SQL to navigate through this
-          vast network of information. Your first step to solving the mystery is to retrieve the corresponding crime
-          scene report from the police department’s database. Below we'll explain from a high level the commands you
-          need to know; whenever you are ready, you can start adapting the examples to create your own SQL commands in
-          search of clues -- you can run any SQL in any of the code boxes, no matter what was in the box when you
-          started.") }}
+          {{ _("All the clues to this mystery are buried in a huge database, and you need to use SQL to navigate through this vast network of information.") }}
+          {{ _("Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s database.") }}
+          {{ _("Below we'll explain from a high level the commands you need to know;") }}
+          {{ _("whenever you are ready, you can start adapting the examples to create your own SQL commands in search of clues --") }}
+          {{ _("you can run any SQL in any of the code boxes, no matter what was in the box when you started.") }}
         </p>
       </div>
     </div>
@@ -170,31 +168,28 @@
         <h2>{{ _("Some Definitions") }}</h2>
         <h3>{{ _("What is SQL?") }}</h3>
         <p>
-          {{ _("SQL, which stands for Structured Query Language, is a way to interact with relational databases and tables in
-          a way that allows us humans to glean specific, meaningful information.") }}
+          {{ _("SQL, which stands for Structured Query Language, is a way to interact with relational databases and tables in a way that allows us humans to glean specific, meaningful information.") }}
         </p>
 
         <h3>{{ _("Wait, what is a relational database?") }}</h3>
-        <p>{{ _("There's no single definition for the word ") }}<em>{{ _("database") }}</em>{{ _(". In general, databases are systems for managing
-          information.
-          Databases can have varying amounts of structure imposed on the data. When the data is more structured, it can
-          help people and computers work with the data more efficiently.") }}
+        <p>{{ _("There's no single definition for the word") }}<em> {{ _("database") }}.</em>
+          {{ _("In general, databases are systems for managing information.") }}
+          {{ _("Databases can have varying amounts of structure imposed on the data.") }}
+          {{ _("When the data is more structured, it can help people and computers work with the data more efficiently.") }}
         </p>
-        <p>{{ _("Relational databases are probably the best known kind of database. At their heart, relational databases are
-          made up of ") }} <em>{{ _("tables") }}</em>{{ _(", which are a lot like spreadsheets. Each column in the table has a name and a data
-          type (text, number, etc.), and each row in the table is a specific instance of whatever the table is \"about.\"
-          The \"relational\" part comes with specific rules about how to connect data between different tables.") }}
+        <p>{{ _("Relational databases are probably the best known kind of database. At their heart, relational databases are made up of ") }}
+          <em>{{ _("tables") }}</em>
+          {{ _(", which are a lot like spreadsheets. Each column in the table has a name and a data type (text, number, etc.), and each row in the table is a specific instance of whatever the table is 'about'.") }}
+          {{ _("The 'relational' part comes with specific rules about how to connect data between different tables.") }}
         </p>
 
-        <h3>{{ _("What is an ERD?") }}</h3>
+        <h3>{{ _("What is an ERD ?") }}</h3>
         <p>
-          {{ _("ERD, which stands for Entity Relationship Diagram, is a visual representation of the relationships among all
-          relevant tables within a database. You can find the ERD for our SQL Murder Mystery database below. The diagram
-          shows that each table has a name (top of the box, in bold), a list of column names (on the left) and their
-          corresponding data types (on the right, in all caps).
-          There are also some gold key icons, blue arrow icons and gray arrows on the ERD. A gold key indicates that the
-          column is the ​primary key​ of the corresponding table, and a blue arrow indicates that the column is the
-          ​foreign key​ of the corresponding table.") }}
+          {{ _("ERD, which stands for Entity Relationship Diagram, is a visual representation of the relationships among all relevant tables within a database.") }}
+          {{ _("You can find the ERD for our SQL Murder Mystery database below.") }}
+          {{ _("The diagram shows that each table has a name (top of the box, in bold), a list of column names (on the left) and their corresponding data types (on the right, in all caps).") }}
+          {{ _("There are also some gold key icons, blue arrow icons and gray arrows on the ERD.") }}
+          {{ _("A gold key indicates that the column is the ​primary key​ of the corresponding table, and a blue arrow indicates that the column is the foreign key​ of the corresponding table.") }}
           <dl>
             <dt>
               {{ _("Primary Key​:") }}
@@ -209,8 +204,7 @@
               {{ _("used to reference data in one table to those in another table.") }}
             </dd>
           </dl>
-        {{ _("If two tables are related, the matching columns, i.e. the common identifiers of the two tables, are connected
-          by a gray arrow in the diagram.") }}
+        {{ _("If two tables are related, the matching columns, i.e. the common identifiers of the two tables, are connected by a gray arrow in the diagram.") }}
         </p>
         <p>{{ _("Here is the ERD for our database:") }}
         </p>
@@ -223,17 +217,16 @@
         <h2>
           {{ _("What is a query?") }}
         </h2>
-        <p>{{ _("If you were to look at the data in this database, you would see that the tables are huge! There are so many
-          data points; it simply isn’t possible to go through the tables row by row to find the information we need.
-          What are we supposed to do?") }}</p>
         <p>
-          {{ _("This is where queries come in. Queries are statements we construct to get data from the database. Queries read
-          like natural English (for the most part).
-          Let's try a few queries against our database. For each of the boxes below, click the \"run\" to \"execute\" the
-          query in the box. You can edit the queries right here on the page to explore further. (Note that SQL commands
-          are not case-sensitive, but it's conventional to capitalize them for readability. You can also use new lines
-          and white space as you like to format the command for readability. Most database systems require you to end a
-          query with a semicolon (';') although the system for running them in this web page is more forgiving.)") }}
+          {{ _("If you were to look at the data in this database, you would see that the tables are huge!") }}
+          {{ _("There are so many data points; it simply isn’t possible to go through the tables row by row to find the information we need. What are we supposed to do?") }}
+        </p>
+        <p>
+          {{ _("This is where queries come in. Queries are statements we construct to get data from the database. Queries read like natural English (for the most part).") }}
+          {{ _("Let's try a few queries against our database. For each of the boxes below, click the \"run\" to \"execute\" the query in the box.") }}
+          {{ _("You can edit the queries right here on the page to explore further. (Note that SQL commands are not case-sensitive, but it's conventional to capitalize them for readability.") }}
+          {{ _("You can also use new lines and white space as you like to format the command for readability.") }}
+          {{ _("Most database systems require you to end a query with a semicolon (';') although the system for running them in this web page is more forgiving.)") }}
         </p>
         <sql-exercise data-question="Just how many people are in this database?"
           data-comment="Don't worry about exactly what this means, but know that you can change 'person' to any other table from the ERD to learn how many rows that table has.  Try it!"
@@ -255,8 +248,8 @@ FROM person;"></sql-exercise>
 
     <div class="grid">
       <div class="grid-item">
-        <h3>{{ _("What elements does a SQL query have?") }}</h3>
-        <p>{{ _("A SQL query can contain:") }}
+        <h3>{{ _("What elements does a SQL query have ?") }}</h3>
+        <p>{{ _("A SQL query can contain :") }}
           <ul>
             <li>{{ _("SQL keywords (like the ​SELECT​ and ​FROM​ above)") }}</li>
             <li>{{ _("Column names (like the ​name​ column above)") }}</li>
@@ -270,25 +263,23 @@ FROM person;"></sql-exercise>
 
         <h4 id="sql-keywords">{{ _("SQL Keywords") }}</h4>
         <p>
-          {{ _("SQL keywords are used to specify actions in your queries. SQL keywords are not case sensitive, but we suggest
-          using all caps for SQL keywords so that you can easily set them apart from the rest of the query. Some
-          frequently used keywords are:") }}
+          {{ _("SQL keywords are used to specify actions in your queries.") }}
+          {{ _("SQL keywords are not case sensitive, but we suggest using all caps for SQL keywords so that you can easily set them apart from the rest of the query.") }}
+          {{ _("Some frequently used keywords are :") }}
         </p>
         <h5>{{ _("SELECT") }}</h5>
-        <p>{{ _("SELECT​ allows us to grab data for specific columns from the database:") }}</p>
+        <p>{{ _("SELECT allows us to grab data for specific columns from the database:") }}</p>
         <ul>
           <li>
-            {{ _("*​ (asterisk): it is used after ​SELECT​ to grab all columns from the table;") }}
+            {{ _("* (asterisk): it is used after ​SELECT​ to grab all columns from the table;") }}
           </li>
           <li>
-            {{ _("column_name(s): to select specific columns, put the names of the columns after SELECT​ and use commas to
-            separate them.") }}
+            {{ _("column_name(s): to select specific columns, put the names of the columns after SELECT​ and use commas to separate them.") }}
           </li>
         </ul>
         <h5>FROM</h5>
-        <p>{{ _("FROM​ allows us to specify which table(s) we care about; to select multiple tables, list the table names and
-          use commas to separate them. (But until you learn the JOIN keyword, you may be surprised at what happens. That
-          will come later.)") }}</p>
+        <p>{{ _("FROM allows us to specify which table(s) we care about; to select multiple tables, list the table names and use commas to separate them.") }}
+          {{ _("(But until you learn the JOIN keyword, you may be surprised at what happens. That will come later.)") }}</p>
 
         <h5>WHERE</h5>
         <p>{{ _("The ​WHERE​ clause in a query is used to filter results by specific criteria.") }}</p>
@@ -298,9 +289,8 @@ FROM person;"></sql-exercise>
           data-comment="Note that you need to use single straight quotes (') around literal text so the database can tell it apart from table and column names. After you run it, try again with Yessenia Fossen, Ted Denfip or Davina Gangwer."
           data-default-text="SELECT * FROM person WHERE name = 'Kinsey Erickson'"></sql-exercise>
 
-        <p>{{ _("The ​AND​ keyword is used to string together multiple filtering criteria so that the filtered results meet
-          each and every one of the criteria. (There's also an OR keyword, which returns rows that match any of the
-          criteria.)") }}</p>
+        <p>{{ _("The ​AND​ keyword is used to string together multiple filtering criteria so that the filtered results meet each and every one of the criteria.") }}
+          {{ _("(There's also an OR keyword, which returns rows that match any of the criteria.)") }}</p>
 
         <sql-exercise data-question="This query only returns reports about a specific type of crime in a specific city."
           data-comment=" Notice that when querying for text values, you must match the data as it is in the database. Try changing 'Chicago' to 'chicago' and running the statement. Then, see if you can edit this SQL statement to find the first clue based on the prompt above."
@@ -310,22 +300,23 @@ AND city = 'Chicago';" data-solution="SELECT * FROM crime_scene_report
 WHERE type = 'murder' 
 AND city = 'SQL City';"></sql-exercise>
 
-        <p>{{ _("If you haven't found the right crime scene report yet, click \"show solution\" above, and replace the contents
-          of the box with just the revealed command. (Leave out the initial ") }}<code>/*</code>) {{ _(" If you figured out the
-          query that shows the single crime scene report instead of a few for the same city and type, then
-          congratulations and disregard the word \"incorrect\". You'll know if you got it!") }}
+        <p>{{ _("If you haven't found the right crime scene report yet, click \"show solution\" above, and replace the contents of the box with just the revealed command. (Leave out the initial ") }}
+          <code>/*</code>)
+          {{ _("If you figured out the query that shows the single crime scene report instead of a few for the same city and type, then congratulations and disregard the word \"incorrect\". You'll know if you got it!") }}
         </p>
 
         <h4 id='wildcards'>{{ _("Wildcards and other functions for partial matches") }}</h4>
 
-        <p>{{ _("Sometimes you only know part of the information you need. SQL can handle that. Special symbols that represent
-          unknown characters are called \"wildcards,\" and SQL supports two. The most common is the") }} <code>%</code>
+        <p>{{ _("Sometimes you only know part of the information you need.") }}
+          {{ _("SQL can handle that. Special symbols that represent unknown characters are called \"wildcards,\" and SQL supports two. The most common is the") }}
+          <code>%</code>
           {{ _("wildcard.") }}</p>
-        <p>{{ _("When you place a") }} <code>%</code> {{ _("wildcard in a query string, the SQL system will return results that match the
-          rest of the string exactly, and have anything (or nothing) where the wildcard is. For example,") }}
+        <p>{{ _("When you place a") }} <code>%</code>
+          {{ _("wildcard in a query string, the SQL system will return results that match the rest of the string exactly, and have anything (or nothing) where the wildcard is. For example,") }}
           <code>'Ca%a'</code> {{ _("matches") }} <code>Canada</code> {{ _("and") }} <code>{{ _("California") }}</code>.</p>
-        <p>{{ _("The other, less commonly used wildcard, is") }} <code>_</code>. {{ _("This one means 'match the rest of the text, as
-          long as there's exactly one character in exactly the position of the") }} <code>_</code>, {{ _("no matter what it is. So,") }}
+        <p>{{ _("The other, less commonly used wildcard, is") }} <code>_</code>.
+          {{ _("This one means 'match the rest of the text, as long as there's exactly one character in exactly the position of the") }}
+          <code>_</code>, {{ _("no matter what it is. So,") }}
           <code>'B_b'</code> {{ _("would match") }}<code>'Bob'</code> {{ _("and") }} <code>'Bub'</code>{{ _(" but not") }} <code>'Babe'</code>{{ _("or") }}
           <code>'Bb'</code>.</p>
         <p><strong>{{ _("Important:") }}</strong> {{ _("When using wildcards, you don't use the") }} <code>=</code> {{ _("symbol; instead, you use") }}
@@ -338,10 +329,9 @@ AND city = 'SQL City';"></sql-exercise>
 FROM crime_scene_report 
 WHERE city LIKE 'I%';"></sql-exercise>
 
-        <p>{{ _("SQL also supports numeric comparisons like") }} <code>&lt;</code> {{ _("(less than) and") }} <code>&gt;</code> {{ _("(greater
-          than). You can also use the keywords") }} <code>BETWEEN</code> {{ _("and") }} <code>AND</code> --{{ _("and all of those work with
-          words as well as numbers.") }}
-
+        <p>{{ _("SQL also supports numeric comparisons like") }} <code>&lt;</code> {{ _("(less than) and") }} <code>&gt;</code>
+          {{ _("(greater than). You can also use the keywords") }} <code>BETWEEN</code> {{ _("and") }} <code>AND</code>
+          {{ _("and all of those work with words as well as numbers.") }}
         </p>
 
 
@@ -350,8 +340,9 @@ FROM crime_scene_report
 WHERE city BETWEEN 'W%' AND 'Z%';"></sql-exercise>
 
         <p>{{ _("We've mentioned that SQL commands are not case-sensitive, but") }} <code>WHERE</code> {{ _("querie values for") }}
-          <code>=</code> {{ _("and") }} <code>LIKE</code> {{ _("are. Sometimes you don't know how the text is stored in the database. SQL
-          provides a couple of functions which can smooth that out for you. They're called") }} <code>UPPER()</code> {{ _("and") }}
+          <code>=</code> {{ _("and") }} <code>LIKE</code>
+          {{ _("are. Sometimes you don't know how the text is stored in the database. SQL provides a couple of functions which can smooth that out for you. They're called") }}
+          <code>UPPER()</code> {{ _("and") }}
           <code>LOWER()</code>, {{ _("and you can probably figure out what they do, especially if you explore in the box below.") }}
           </p>
 
@@ -369,14 +360,14 @@ WHERE LOWER(city) ='sql city';"></sql-exercise>
 
         <h3>{{ _("SQL Aggregate Functions") }}</h3>
         <p>
-          {{ _("Sometimes the questions you want to ask aren’t as simple as finding the row of data that fits a set of
-          criteria. You may want to ask more complex questions such as “Who is the oldest person?” or “Who is the
-          shortest person?”") }} <em>{{ _("Aggregate functions") }}</em> {{ _("can help you answer these questions. In fact, you learned an
-          aggregate function above,") }} <code>COUNT</code>.
+          {{ _("Sometimes the questions you want to ask aren’t as simple as finding the row of data that fits a set of criteria.") }}
+          {{ _("You may want to ask more complex questions such as “Who is the oldest person?” or “Who is the shortest person?”") }}
+          <em>{{ _("Aggregate functions") }}</em>
+          {{ _("can help you answer these questions. In fact, you learned an aggregate function above,") }} <code>COUNT</code>.
         </p>
         <p>
-          {{ _("How old is the oldest person with a drivers license? With a small amount of data, you might be able to just
-          eyeball it, but there thousands of records in the ") }}<code>{{ _("drivers_license") }}</code> table. (Try <code>COUNT</code>
+          {{ _("How old is the oldest person with a drivers license? With a small amount of data, you might be able to just eyeball it, but there thousands of records in the ") }}
+          <code>{{ _("drivers_license") }}</code> {{ _("table.") }} ( {{ _("Try") }} <code>COUNT</code>
           {{ _("if you want to know just how many!) You can't just look over that list to find the answer.") }}
         </p>
         <p>{{ _("Here are a few useful aggregate functions SQL provides:") }}
@@ -417,12 +408,13 @@ WHERE LOWER(city) ='sql city';"></sql-exercise>
         <sql-exercise data-question="Run this query, then try some of the other aggregate functions." data-comment=""
           data-default-text="SELECT max(age) FROM drivers_license;"></sql-exercise>
 
-        <p>{{ _("There's another way to find minimum and maximum values, while also seeing more of the data. You can control
-          the sort order of results you get. It's really quite intuitive: just use") }} <code>ORDER BY</code> {{ _("followed by a
-          column name. It can be challenging when there's a lot of data! (When people get serious about working with
-          SQL, they use better tools than this web-based system!) By default, ORDER BY goes in \"ascending\" (smallest to
-          largest, or A to Z) order, but you can be specific with") }} <code>ASC</code> {{ _("for ascending, or you can reverse it
-          with") }} <code>DESC</code>.
+        <p>{{ _("There's another way to find minimum and maximum values, while also seeing more of the data.") }}
+          {{ _("You can control the sort order of results you get. It's really quite intuitive: just use") }}
+          <code>ORDER BY</code>
+          {{ _("followed by a column name. It can be challenging when there's a lot of data!") }}
+          {{ _("(When people get serious about working with SQL, they use better tools than this web-based system!)") }}
+          {{ _("By default, ORDER BY goes in \"ascending\" (smallest to largest, or A to Z) order, but you can be specific with") }}
+          <code>ASC</code> {{ _("for ascending, or you can reverse it with") }} <code>DESC</code>.
         </p>
         <sql-exercise data-question="Run this query to see how to control sort order."
           data-comment="After you've run it, change ASC to DESC, or take that part out completely to see how the results differ. Try sorting on other columns."
@@ -455,19 +447,19 @@ AND address_street_name = 'Franklin Ave';"></sql-exercise>
         <h2>{{ _("Making connections") }}</h2>
 
         <h3>{{ _("Joining tables") }}</h3>
-        <p>{{ _("Until now, we’ve been asking questions that can be answered by considering data from only a single table. But
-          what if we need to ask more complex questions that simultaneously require data from two different tables?
-          That’s where ​JOIN​ comes in.") }}</p>
+        <p>{{ _("Until now, we’ve been asking questions that can be answered by considering data from only a single table.") }}
+          {{ _("But what if we need to ask more complex questions that simultaneously require data from two different tables?") }}
+          {{ _("That’s where ​JOIN​ comes in.") }}</p>
 
-        <p>{{ _("More experienced SQL folks use a few different kinds of JOIN -- you may hear about INNER, OUTER, LEFT and
-          RIGHT joins. Here, we'll just talk about the most common kind of JOIN, the INNER JOIN. Since it's common, you
-          can leave out INNER in your SQL commands.") }}</p>
+        <p>{{ _("More experienced SQL folks use a few different kinds of JOIN -- you may hear about INNER, OUTER, LEFT and RIGHT joins.") }}
+          {{ _("Here, we'll just talk about the most common kind of JOIN, the INNER JOIN.") }}
+          {{ _("Since it's common, you can leave out INNER in your SQL commands.") }}</p>
 
         <p>
-          {{ _("The most common way to join tables is using primary key and foreign key columns. Refer back to the Entity
-          Relationship Diagram (ERD) above if you don't remember what those are, or to see the key relationships between
-          tables in our database. You can do joins on any columns, but the key columns are optimized for fast results.
-          It is probably easier to show how joins work with our interactive SQL system than to write them.") }}
+          {{ _("The most common way to join tables is using primary key and foreign key columns.") }}
+          {{ _("Refer back to the Entity Relationship Diagram (ERD) above if you don't remember what those are, or to see the key relationships between tables in our database.") }}
+          {{ _("You can do joins on any columns, but the key columns are optimized for fast results.") }}
+          {{ _("It is probably easier to show how joins work with our interactive SQL system than to write them.") }}
         </p>
 
         <sql-exercise
@@ -494,8 +486,9 @@ JOIN drivers_license dl
 WHERE annual_income > 450000"></sql-exercise>
 
 
-        <p>{{ _("Now that you know how to join tables, you should be able to find the interview transcripts for the two
-          witnesses you identified before. Give it a try!") }}</p>
+        <p>
+          {{ _("Now that you know how to join tables, you should be able to find the interview transcripts for the two witnesses you identified before. Give it a try!") }}
+        </p>
 
         <sql-exercise data-question="Write a query that shows the interview transcripts for our two subjects."
           data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'. The official solution does it in one query, but you don't have to. Technically you don't even need to use a JOIN to get the transcripts, but give it a try."
@@ -515,8 +508,7 @@ WHERE person.id = 14887 OR person.id = 16371;"></sql-exercise>
       <div class="grid-item">
         <h3>{{ _("Go Get 'em!") }}</h3>
         <p>
-          {{ _("Now you know enough SQL to solve the mystery. You'll need to read the ERD and make some reasonable
-          assumptions, but there's no other syntax that you need!") }}
+          {{ _("Now you know enough SQL to solve the mystery. You'll need to read the ERD and make some reasonable assumptions, but there's no other syntax that you need!") }}
         </p>
         <sql-exercise data-question="Find the murderer!"
           data-comment="It will take more than one query to find the killer, but you can just keep editing this box, keeping notes on your results along the way. When you think you know the answer, go to the next section."
@@ -545,8 +537,8 @@ SELECT value FROM solution;"></sql-exercise>
             href="https://twitter.com/Cathy_MeiyingHe">Cathy He</a> {{ _("while they were Knight Lab fellows. See the") }} <a
             href="https://github.com/NUKnightLab/sql-mysteries">{{ _("GitHub repository") }}</a> {{ _("for more information.") }}</p>
         <p>{{ _("Adapted and produced for the web by") }} <a href="https://twitter.com/joegermuska">Joe Germuska</a>.</p>
-        <p>{{ _("This mystery was inspired by") }} <a href="https://github.com/veltman/clmystery">{{ _("a crime in the neighboring
-            Terminal City.") }}</a></p>
+        <p>{{ _("This mystery was inspired by") }} <a href="https://github.com/veltman/clmystery">
+          {{ _("a crime in the neighboring Terminal City.") }}</a></p>
         <p>{{ _("Web-based SQL is made possible by") }} <a href="https://github.com/kripken/sql.js/">SQL.js</a></p>
         <p>{{ _("SQL query custom web components created and released to the public domain by Zi Chong Kao, creator of") }} <a
             href="https://selectstarsql.com/">{{ _("Select Star SQL.") }}</a></p>
