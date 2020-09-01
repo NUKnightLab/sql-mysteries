@@ -151,7 +151,7 @@ msgstr "Il y a tellement de points de données qu'il n’est tout simplement pas
 msgid "This is where queries come in. Queries are statements we construct to get data from the database. Queries read like natural English (for the most part)."
 msgstr "C'est là qu'interviennent les requêtes. Les requêtes sont des instructions que nous construisons pour obtenir des données de la base de données. Les requêtes se lisent comme de l'anglais naturel (pour la plupart)."
 
-msgid "Let's try a few queries against our database. For each of the boxes below, click the "run" to "execute" the query in the box."
+msgid "Let's try a few queries against our database. For each of the boxes below, click the «run» to «execute» the query in the box."
 msgstr "Essayons quelques requêtes sur notre base de données. Pour chacune des cases ci-dessous, cliquez sur «run» pour «exécuter» la requête dans la case."
 
 msgid "You can edit the queries right here on the page to explore further. (Note that SQL commands are not case-sensitive, but it's conventional to capitalize them for readability."
@@ -317,7 +317,7 @@ msgid "Sometimes the questions you want to ask aren’t as simple as finding the
 msgstr "Parfois, les questions que vous souhaitez poser ne sont pas aussi simples que de trouver la ligne de données correspondant à un ensemble de critères."
 
 msgid "You may want to ask more complex questions such as “Who is the oldest person?” or “Who is the shortest person?”"
-msgstr "Vous voudrez peut-être poser des questions plus complexes telles que "Qui est la personne la plus âgée?" ou "Qui est la personne la plus petite?""
+msgstr "Vous voudrez peut-être poser des questions plus complexes telles que «Qui est la personne la plus âgée?» ou «Qui est la personne la plus petite?»"
 
 msgid "Aggregate functions"
 msgstr "Fonctions d'agrégation"

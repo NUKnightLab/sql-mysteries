@@ -151,7 +151,7 @@ msgstr ""
 msgid "This is where queries come in. Queries are statements we construct to get data from the database. Queries read like natural English (for the most part)."
 msgstr ""
 
-msgid "Let's try a few queries against our database. For each of the boxes below, click the "run" to "execute" the query in the box."
+msgid "Let's try a few queries against our database. For each of the boxes below, click the «run» to «execute» the query in the box."
 msgstr ""
 
 msgid "You can edit the queries right here on the page to explore further. (Note that SQL commands are not case-sensitive, but it's conventional to capitalize them for readability."
