@@ -1,0 +1,27 @@
+#We'll use the =pybabel-python3= utility to manage GNU Gettext compatible catalog files.
+# On Debian, it is in =/usr/bin/pybabel-python3=
+# On MacOS, it is pybabel
+
+# installation of babel
+# dpkg is a package manager,it is brew on mac, ...
+# here we list the package, if nothing is found, please install
+dpkg -L python3-babel
+
+pip install Babel
+
+# installation of jinja2
+pip install Jinja2
+
+# Creating the catalog hierarchy, change "en" according to the language like here
+mkdir -p locale/en/LC_MESSAGES/
+mkdir -p locale/fr/LC_MESSAGES/
+mkdir -p locale/ch/LC_MESSAGES/
+
+# Initializing .po translation files, change "ch" according to the language and the directory of "en.po" according to the name and directory of your translation file (.po)
+cp locale/en/LC_MESSAGES/en.po locale/ch/LC_MESSAGES/ch.po
+
+# Generating the .mo files, change "fr" according to the language
+pybabel compile -D fr -l fr -d locale 2>&1
+
+# Translating
+python3 translation.py
