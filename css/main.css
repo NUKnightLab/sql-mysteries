@@ -1,12 +1,14 @@
-
 /* datatable */
+
 .datatable {
     border: solid 1px grey;
     border-collapse: collapse;
-    font-size: 12px;
+    font-size: 16px;
 }
-.datatable thead, td {
-    padding: 5px;
+
+.datatable thead,
+td {
+    padding: 3px;
     border: solid 1px grey;
 }
 
@@ -17,6 +19,7 @@
 
 
 /* sql quiz component */
+
 sql-quiz .sqlQuizHomeDiv {
     margin: 1em 0em;
     background: #f9f9f9;
@@ -29,21 +32,21 @@ sql-quiz .sqlQuizTitle {
     font-weight: 700;
 }
 
-sql-quiz .sqlQuizDescription {
-}
+sql-quiz .sqlQuizDescription {}
 
 sql-quiz .sqlQuizInputArea {
     line-height: 130%;
     min-width: 100%;
 }
+
 sql-quiz .sqlQuizInputArea .sqlOption {
     min-width: 100%;
     margin: 0.5em 0em;
 }
 
 sql-quiz input[type=checkbox] {
-  transform: scale(1.5);
-  float: left;
+    transform: scale(1.5);
+    float: left;
 }
 
 sql-quiz .sqlOption .optionText {
@@ -69,8 +72,10 @@ sql-quiz .sqlQuizOutputArea .returnOkay {
     margin-top: 0.5em;
 }
 
+
 /* sql exercise component */
-sql-exercise .sqlExHomeDiv{
+
+sql-exercise .sqlExHomeDiv {
     margin: 1em 0em;
     font-family: Roboto, sans-serif;
     background: #f9f9f9;
