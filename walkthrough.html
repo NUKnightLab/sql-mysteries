@@ -295,7 +295,7 @@ WHERE city LIKE 'I%';"></sql-exercise>
 FROM crime_scene_report 
 WHERE city BETWEEN 'W%' AND 'Z%';"></sql-exercise>
 
-                <p>We've mentioned that SQL commands are not case-sensitive, but <code>WHERE</code> querie values for
+                <p>We've mentioned that SQL commands are not case-sensitive, but <code>WHERE</code> query values for
                     <code>=</code> and <code>LIKE</code> are. Sometimes you don't know how the text is stored in the database. SQL provides a couple of functions which can smooth that out for you. They're called <code>UPPER()</code> and
                     <code>LOWER()</code>, and you can probably figure out what they do, especially if you explore in the box below.
                 </p>
@@ -358,7 +358,7 @@ WHERE LOWER(city) ='sql city';"></sql-exercise>
                 <sql-exercise data-question="Run this query, then try some of the other aggregate functions." data-comment="" data-default-text="SELECT max(age) FROM drivers_license;"></sql-exercise>
 
                 <p>There's another way to find minimum and maximum values, while also seeing more of the data. You can control the sort order of results you get. It's really quite intuitive: just use <code>ORDER BY</code> followed by a column name. It can
-                    be challenging when there's a lot of data! (When people get serious about working with SQL, they use better tools than this web-based system!) By default, ORDER BY goes in "ascending" (smallest to largest, or A to Z) order, but you
+                    be challenging when there's a lot of data! (When people get serious about working with SQL, they use better tools than this web-based system.) By default, ORDER BY goes in "ascending" (smallest to largest, or A to Z) order, but you
                     can be specific with <code>ASC</code> for ascending, or you can reverse it with <code>DESC</code>.
                 </p>
                 <sql-exercise data-question="Run this query to see how to control sort order." data-comment="After you've run it, change ASC to DESC, or take that part out completely to see how the results differ. Try sorting on other columns." data-default-text="SELECT * FROM drivers_license ORDER BY age ASC LIMIT 10"></sql-exercise>
