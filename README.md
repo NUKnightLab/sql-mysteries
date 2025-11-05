@@ -1,51 +1,51 @@
-# SQL Murder Mystery
+# SQL殺人事件ミステリー
 
-![Illustration of a detective looking at evidence](174092-clue-illustration.png)
+![証拠を調べる探偵のイラスト](174092-clue-illustration.png)
 
-There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime.
+SQL市で殺人事件が発生しました！SQL殺人事件ミステリーは、SQLの概念とコマンドを学ぶための自習教材であり、同時に経験豊富なSQLユーザーが魅力的な事件を解決する楽しいゲームでもあります。
 
-If you just want to solve the mystery, go to [mystery.knightlab.com](https://mystery.knightlab.com). If you're new to SQL, you may want to start at [our walkthrough](https://mystery.knightlab.com/walkthrough.html). It won't teach you everything about SQL, but it should teach you all that you need to solve the mystery.  
+ミステリーを解決したい場合は、[mystery.knightlab.com](https://mystery.knightlab.com)にアクセスしてください。SQLが初めての場合は、[ウォークスルー](https://mystery.knightlab.com/walkthrough.html)から始めることをお勧めします。SQLのすべてを教えるわけではありませんが、ミステリーを解決するために必要なすべてのことを教えます。  
 
-## What Else is Here?
+## 他に何がありますか？
 
-Before we built the web-based version, we designed this for people to download and solve on their own computer. If you're interested in that, read on.
+ウェブベースのバージョンを構築する前に、これは人々が自分のコンピューターにダウンロードして解決できるように設計されていました。それに興味がある場合は、読み進めてください。
 
-## What you need to solve on your own computer
+## 自分のコンピューターで解決するために必要なもの
 
-* **sql-murder-mystery.db**: This SQLite database file contains all the data that you will be working with.
-* **prompt**: Depending on your experience level with SQL, find the prompt in either the [prompt_experienced](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_experienced.pdf) file or the [prompt_beginner](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_beginner.pdf) file.
-* **[reference](https://github.com/NUKnightLab/sql-mysteries/blob/master/reference.pdf)**: This is a crash course on SQL concepts and commands.
-* **a SQLite environment of your choice**: For beginners, we recommend using [SQLiteStudio](https://sqlitestudio.pl/), which is a good graphical interface to use to inspect your data and write queries.
+* **sql-murder-mystery.db**: このSQLiteデータベースファイルには、作業するすべてのデータが含まれています。
+* **プロンプト**: SQLの経験レベルに応じて、[prompt_experienced](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_experienced.pdf)ファイルまたは[prompt_beginner](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_beginner.pdf)ファイルのいずれかでプロンプトを見つけてください。
+* **[リファレンス](https://github.com/NUKnightLab/sql-mysteries/blob/master/reference.pdf)**: これはSQLの概念とコマンドに関する速習コースです。
+* **お好みのSQLite環境**: 初心者には、データを検査してクエリを記述するための優れたグラフィカルインターフェースである[SQLiteStudio](https://sqlitestudio.pl/)の使用をお勧めします。
 
-## Getting Started
-* **For SQL beginners**: start with the reference, read the [prompt_beginner](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_beginner.pdf) file, then get started by [installing SQLiteStudio and loading the db file](https://github.com/NUKnightLab/sql-mysteries/blob/master/sqlite_studio.pdf). If you get stuck at any point, feel free to refer back to the reference, or file a [GitHub issue](https://github.com/NUKnightLab/sql-mysteries/issues) so we can know where our instructions need to be improved.
+## 始め方
+* **SQL初心者の方**: リファレンスから始めて、[prompt_beginner](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_beginner.pdf)ファイルを読み、次に[SQLiteStudioをインストールしてdbファイルを読み込む](https://github.com/NUKnightLab/sql-mysteries/blob/master/sqlite_studio.pdf)ことで始めます。途中で行き詰まった場合は、遠慮なくリファレンスを参照するか、[GitHub issue](https://github.com/NUKnightLab/sql-mysteries/issues)を提出して、どこで手順を改善する必要があるかをお知らせください。
 
-* **For experienced SQL users**: read the [prompt_experienced](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_experienced.pdf) file, then download the sql-murder-mystery.db file and use a SQL environment of your choice to solve the mystery. You can use the reference to refresh your memory of SQL. Try to complete the activity all within your SQL environment (without writing down notes)!
+* **SQL経験者の方**: [prompt_experienced](https://github.com/NUKnightLab/sql-mysteries/blob/master/prompt_experienced.pdf)ファイルを読み、次にsql-murder-mystery.dbファイルをダウンロードして、お好みのSQL環境を使用してミステリーを解決してください。SQLの記憶をリフレッシュするためにリファレンスを使用できます。SQL環境内ですべてのアクティビティを完了してみてください（メモを書き留めずに）！
 
 
-## Checking the Solution
-Write the following queries in your SQL environment to check whether you've found the right murderer:
+## 解答の確認
+正しい犯人を見つけたかどうかを確認するために、SQL環境で次のクエリを記述してください：
 
 ```SQL
-INSERT INTO solution VALUES (1, "Insert the name of the person you found here");
+INSERT INTO solution VALUES (1, "ここに見つけた人物の名前を入力してください");
 
 SELECT value FROM solution;
 ```
 
 
-## Authors
+## 作者
 
 * [Joon Park](https://twitter.com/JoonParkMusic)
 * [Cathy He](https://twitter.com/Cathy_MeiyingHe)
 
-## Inspiration
-This murder mystery was inspired by [a crime in the neighboring Terminal City](https://github.com/veltman/clmystery "command-line murder mystery").
+## インスピレーション
+この殺人ミステリーは、[隣接するターミナル市での事件](https://github.com/veltman/clmystery "コマンドライン殺人ミステリー")に触発されました。
 
-## Copyright and License
-Original code for this project is released under [the MIT License](https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE). 
+## 著作権とライセンス
+このプロジェクトのオリジナルコードは[MITライセンス](https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE)の下でリリースされています。
 
-Original text and other content is released under [Creative Commons CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 
+オリジナルテキストおよびその他のコンテンツは[Creative Commons CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)の下でリリースされています。
 
-SQL query custom web components used here were adapted from code created and released to the public domain by Zi Chong Kao, creator of [Select Star SQL](https://selectstarsql.com/).
+ここで使用されているSQLクエリカスタムウェブコンポーネントは、[Select Star SQL](https://selectstarsql.com/)の作成者であるZi Chong Kaoによって作成され、パブリックドメインにリリースされたコードを適応したものです。
 
-[Detective image by rambleron](https://www.vecteezy.com/vector-art/174092-clue-illustration) used under Vecteezy's free license.
+[rambleronによる探偵画像](https://www.vecteezy.com/vector-art/174092-clue-illustration)は、Vecteezyの無料ライセンスの下で使用されています。

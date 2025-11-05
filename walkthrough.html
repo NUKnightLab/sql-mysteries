@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
@@ -21,16 +21,16 @@
     <meta name="theme-color" content="#ffffff">
     <!-- /FAVICONS -->
 
-    <title>The SQL Murder Mystery: Detailed Walkthrough</title>
+    <title>SQL殺人事件ミステリー：詳細ウォークスルー</title>
     <!-- Meta -->
-    <meta name="keywords" content="SQL, databases, game, fun">
-    <meta name="description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths.">
+    <meta name="keywords" content="SQL, データベース, ゲーム, 学習">
+    <meta name="description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。">
     <!-- /Meta -->
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="SQL Murder Mystery" />
-    <meta property="og:description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths." />
+    <meta property="og:title" content="SQL殺人事件ミステリー" />
+    <meta property="og:description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。" />
     <meta property="og:image" content="http://mystery.knightlab.com/174092-clue-illustration.png" />
     <meta property="og:url" content="http://mystery.knightlab.com/walkthrough.html" />
     <meta property="og:site_name" content="Knight Lab's SQL Murder Mystery" />
@@ -39,8 +39,8 @@
     <!-- /Open Graph -->
 
     <!-- Twitter Card -->
-    <meta name="twitter:title" content="Knight Lab's SQL Murder Mystery">
-    <meta name="twitter:description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths.">
+    <meta name="twitter:title" content="Knight Lab's SQL殺人事件ミステリー">
+    <meta name="twitter:description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。">
     <meta name="twitter:image" content="http://mystery.knightlab.com/174092-clue-illustration.png">
     <meta name="twitter:site" content="@knightlab">
     <!-- /Twitter Card -->
@@ -104,18 +104,18 @@
 
     <header class="header-product">
         <h1 class="product-logo product-logo-large">
-            SQL Murder Mystery
+            SQL殺人事件ミステリー
         </h1>
-        <h2 class="product-tagline">Can you find out whodunnit?</h2>
+        <h2 class="product-tagline">犯人を見つけられますか？</h2>
     </header>
 
     <div class="container">
 
         <div id="intro" class="grid">
             <div class="grid-item">
-                <img src="174092-clue-illustration.png" class="img-rounded" alt="A decorative illustration of a detective looking at an evidence board.">
+                <img src="174092-clue-illustration.png" class="img-rounded" alt="証拠ボードを見つめる探偵のイラスト">
                 <p>
-                    There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime.
+                    SQL市で殺人事件が発生しました！SQL殺人事件ミステリーは、SQLの概念とコマンドを学ぶための自習教材であり、同時に経験豊富なSQLユーザーが魅力的な事件を解決する楽しいゲームでもあります。
                 </p>
 
             </div>
@@ -123,11 +123,9 @@
 
         <div class="grid">
             <div class="grid-item">
-                <h2>Walkthrough for SQL Beginners</h2>
+                <h2>SQL初心者向けウォークスルー</h2>
                 <p>
-                    If you're comfortable with SQL, you can <a href="index.html#experienced">skip these explanations</a> and put your skills to the test! Below we introduce some basic SQL concepts, and just enough detail to solve the murder. If you'd
-                    like a more complete introduction to SQL, try <a href="https://selectstarsql.com/">Select
-            Star SQL.</a>
+                    SQLに慣れている場合は、<a href="index.html#experienced">この説明をスキップ</a>してスキルを試してください！以下では、いくつかの基本的なSQL概念と、殺人事件を解決するのに十分な詳細を紹介します。SQLについてより完全な入門が必要な場合は、<a href="https://selectstarsql.com/">Select Star SQL</a>をお試しください。
                 </p>
             </div>
         </div>
@@ -135,12 +133,10 @@
         <div class="grid">
             <div class="grid-item">
                 <p>
-                    A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a <strong>​murder​</strong> that occurred sometime on ​<strong>Jan.15, 2018​</strong>                    and that it took place in ​<strong>SQL City​</strong>. Start by retrieving the corresponding crime scene report from the police department’s database.
+                    事件が発生し、探偵があなたの助けを必要としています。探偵は犯行現場のレポートをあなたに渡しましたが、どういうわけかあなたはそれを失くしてしまいました。あなたは、その事件が<strong>殺人</strong>で、<strong>2018年1月15日</strong>頃に発生し、<strong>SQL市</strong>で起きたことをぼんやりと覚えています。警察のデータベースから対応する犯行現場レポートを取得することから始めましょう。
                 </p>
                 <p>
-                    All the clues to this mystery are buried in a huge database, and you need to use SQL to navigate through this vast network of information. Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s
-                    database. Below we'll explain from a high level the commands you need to know; whenever you are ready, you can start adapting the examples to create your own SQL commands in search of clues -- you can run any SQL in any of the code
-                    boxes, no matter what was in the box when you started.
+                    このミステリーのすべての手がかりは巨大なデータベースに埋もれており、この膨大な情報ネットワークをナビゲートするにはSQLを使用する必要があります。ミステリーを解決するための最初のステップは、警察のデータベースから対応する犯行現場レポートを取得することです。以下では、知っておく必要のあるコマンドを高いレベルから説明します。準備ができたら、例を適応させて手がかりを探すための独自のSQLコマンドを作成できます。どのコードボックスでも、最初に何が入っていたかに関係なく、任意のSQLを実行できます。
                 </p>
             </div>
         </div>
@@ -148,21 +144,19 @@
 
         <div class="grid">
             <div class="grid-item">
-                <h2>Some Definitions</h2>
-                <h3>What is SQL?</h3>
+                <h2>いくつかの定義</h2>
+                <h3>SQLとは何ですか？</h3>
                 <p>
-                    SQL, which stands for Structured Query Language, is a way to interact with relational databases and tables in a way that allows us humans to glean specific, meaningful information.
+                    SQLは、Structured Query Language（構造化クエリ言語）の略で、リレーショナルデータベースやテーブルと対話する方法であり、私たち人間が特定の意味のある情報を収集できるようにします。
                 </p>
 
-                <h3>Wait, what is a relational database?</h3>
-                <p>There's no single definition for the word <em>database</em>. In general, databases are systems for managing information. Databases can have varying amounts of structure imposed on the data. When the data is more structured, it can help
-                    people and computers work with the data more efficiently.
+                <h3>リレーショナルデータベースとは何ですか？</h3>
+                <p><em>データベース</em>という言葉に単一の定義はありません。一般的に、データベースは情報を管理するためのシステムです。データベースは、データに課される構造の量が異なる場合があります。データがより構造化されている場合、人やコンピューターがデータをより効率的に操作できるようになります。
                 </p>
-                <p>Relational databases are probably the best known kind of database. At their heart, relational databases are made up of <em>tables</em>, which are a lot like spreadsheets. Each column in the table has a name and a data type (text, number,
-                    etc.), and each row in the table is a specific instance of whatever the table is "about." The "relational" part comes with specific rules about how to connect data between different tables.
+                <p>リレーショナルデータベースは、おそらく最もよく知られているタイプのデータベースです。その中核として、リレーショナルデータベースは<em>テーブル</em>で構成されており、これはスプレッドシートによく似ています。テーブルの各列には名前とデータ型（テキスト、数値など）があり、テーブルの各行は、テーブルが「何について」であるかの特定のインスタンスです。「リレーショナル」の部分は、異なるテーブル間でデータを接続する方法に関する特定のルールが付属しています。
                 </p>
 
-                <h3>What is an ERD?</h3>
+                <h3>ERDとは何ですか？</h3>
                 <p>
                     ERD, which stands for Entity Relationship Diagram, is a visual representation of the relationships among all relevant tables within a database. You can find the ERD for our SQL Murder Mystery database below. The diagram shows that each table has a name
                     (top of the box, in bold), a list of column names (on the left) and their corresponding data types (on the right, in all caps). There are also some gold key icons, blue arrow icons and gray arrows on the ERD. A gold key indicates that
@@ -192,7 +186,7 @@
         <div class="grid">
             <div class="grid-item">
                 <h2>
-                    What is a query?
+                    クエリとは何ですか？
                 </h2>
                 <p>If you were to look at the data in this database, you would see that the tables are huge! There are so many data points; it simply isn’t possible to go through the tables row by row to find the information we need. What are we supposed
                     to do?</p>
@@ -217,7 +211,7 @@ FROM person;"></sql-exercise>
 
         <div class="grid">
             <div class="grid-item">
-                <h3>What elements does a SQL query have?</h3>
+                <h3>SQLクエリにはどのような要素がありますか？</h3>
                 <p>A SQL query can contain:
                     <ul>
                         <li>SQL keywords (like the ​SELECT​ and ​FROM​ above)</li>
@@ -230,7 +224,7 @@ FROM person;"></sql-exercise>
                     </ul>
                 </p>
 
-                <h4 id="sql-keywords">SQL Keywords</h4>
+                <h4 id="sql-keywords">SQLキーワード</h4>
                 <p>
                     SQL keywords are used to specify actions in your queries. SQL keywords are not case sensitive, but we suggest using all caps for SQL keywords so that you can easily set them apart from the rest of the query. Some frequently used keywords are:
                 </p>
@@ -267,7 +261,7 @@ AND city = 'SQL City';"></sql-exercise>
                     single crime scene report instead of a few for the same city and type, then congratulations and disregard the word "incorrect". You'll know if you got it!
                 </p>
 
-                <h4 id='wildcards'>Wildcards and other functions for partial matches</h4>
+                <h4 id='wildcards'>ワイルドカードと部分一致のための他の関数</h4>
 
                 <p>Sometimes you only know part of the information you need. SQL can handle that. Special symbols that represent unknown characters are called "wildcards," and SQL supports two. The most common is the <code>%</code> wildcard.
                 </p>
@@ -308,9 +302,9 @@ WHERE LOWER(city) ='sql city';"></sql-exercise>
 
         <div id="credits" class="grid">
             <div class="grid-item">
-                <h2>Digging deeper</h2>
+                <h2>さらに深く掘り下げる</h2>
 
-                <h3>SQL Aggregate Functions</h3>
+                <h3>SQL集計関数</h3>
                 <p>
                     Sometimes the questions you want to ask aren’t as simple as finding the row of data that fits a set of criteria. You may want to ask more complex questions such as “Who is the oldest person?” or “Who is the shortest person?” <em>Aggregate functions</em>                    can help you answer these questions. In fact, you learned an aggregate function above, <code>COUNT</code>.
                 </p>
@@ -381,9 +375,9 @@ AND address_street_name = 'Franklin Ave';"></sql-exercise>
 
         <div id="joins" class="grid">
             <div class="grid-item">
-                <h2>Making connections</h2>
+                <h2>接続を作成する</h2>
 
-                <h3>Joining tables</h3>
+                <h3>テーブルの結合</h3>
                 <p>Until now, we’ve been asking questions that can be answered by considering data from only a single table. But what if we need to ask more complex questions that simultaneously require data from two different tables? That’s where ​JOIN​
                     comes in.</p>
 
@@ -433,7 +427,7 @@ WHERE person.id = 14887 OR person.id = 16371;"></sql-exercise>
 
         <div id="go-get-em" class="grid">
             <div class="grid-item">
-                <h3>Go Get 'em!</h3>
+                <h3>頑張ってください！</h3>
                 <p>
                     Now you know enough SQL to solve the mystery. You'll need to read the ERD and make some reasonable assumptions, but there's no other syntax that you need!
                 </p>
@@ -448,8 +442,8 @@ WHERE person.id = 14887 OR person.id = 16371;"></sql-exercise>
 
         <div class="grid">
             <div class="grid-item">
-                <h3>Check your solution</h3>
-                <sql-exercise data-question="Did you find the killer?" data-comment="" data-default-text="INSERT INTO solution VALUES (1, 'Insert the name of the person you found here');
+                <h3>答えを確認しましょう</h3>
+                <sql-exercise data-question="犯人を見つけましたか？" data-comment="" data-default-text="INSERT INTO solution VALUES (1, 'ここに見つけた人物の名前を入力してください');
 
 SELECT value FROM solution;"></sql-exercise>
 
@@ -458,16 +452,15 @@ SELECT value FROM solution;"></sql-exercise>
 
         <div id="credits" class="grid">
             <div class="grid-item">
-                <h3>Credits</h3>
-                <p>The SQL Murder Mystery was created by <a href="https://twitter.com/joonparkmusic">Joon Park</a> and <a href="https://twitter.com/Cathy_MeiyingHe">Cathy He</a> while they were Knight Lab fellows. See the <a href="https://github.com/NUKnightLab/sql-mysteries">GitHub repository</a>                    for more information.</p>
-                <p>Adapted and produced for the web by <a href="https://twitter.com/joegermuska">Joe Germuska</a>.</p>
-                <p>This mystery was inspired by <a href="https://github.com/veltman/clmystery">a crime in the neighboring
-            Terminal City.</a></p>
-                <p>Web-based SQL is made possible by <a href="https://github.com/sql-js/sql.js/">SQL.js</a></p>
-                <p>SQL query custom web components created and released to the public domain by Zi Chong Kao, creator of <a href="https://selectstarsql.com/">Select Star SQL.</a></p>
-                <p>Detective illustration courtesy of <a href="https://www.vecteezy.com/">Vectors by Vecteezy</a></p>
-                <p>Original code for this project is released under the <a href="https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE">MIT License</a></p>
-                <p>Original text and other content for this project is released under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC BY-SA 4.0</a></p>
+                <h3>クレジット</h3>
+                <p>SQL殺人事件ミステリーは、<a href="https://twitter.com/joonparkmusic">Joon Park</a>と<a href="https://twitter.com/Cathy_MeiyingHe">Cathy He</a>がKnight Labフェローだった時に作成しました。詳細については、<a href="https://github.com/NUKnightLab/sql-mysteries">GitHubリポジトリ</a>を参照してください。</p>
+                <p>ウェブ用に<a href="https://twitter.com/joegermuska">Joe Germuska</a>によって適応・制作されました。</p>
+                <p>このミステリーは、<a href="https://github.com/veltman/clmystery">隣接するターミナル市での事件</a>に触発されました。</p>
+                <p>ウェブベースのSQLは<a href="https://github.com/sql-js/sql.js/">SQL.js</a>によって実現されています</p>
+                <p>SQLクエリカスタムウェブコンポーネントは、<a href="https://selectstarsql.com/">Select Star SQL</a>の作成者であるZi Chong Kaoによって作成され、パブリックドメインにリリースされました</p>
+                <p>探偵イラストは<a href="https://www.vecteezy.com/">Vectors by Vecteezy</a>の提供です</p>
+                <p>このプロジェクトのオリジナルコードは<a href="https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE">MITライセンス</a>の下でリリースされています</p>
+                <p>このプロジェクトのオリジナルテキストおよびその他のコンテンツは<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC BY-SA 4.0</a>の下でリリースされています</p>
             </div>
         </div>
     </div>
