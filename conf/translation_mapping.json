@@ -1,0 +1,48 @@
+{
+  "comment": "SQL Murder Mystery データベース翻訳マッピング",
+  "version": "1.0",
+
+  "crime_types": {
+    "arson": "放火",
+    "assault": "暴行",
+    "blackmail": "恐喝",
+    "bribery": "贈収賄",
+    "fraud": "詐欺",
+    "murder": "殺人",
+    "robbery": "強盗",
+    "smuggling": "密輸",
+    "theft": "窃盗"
+  },
+
+  "gender": {
+    "male": "男性",
+    "female": "女性"
+  },
+
+  "eye_color": {
+    "amber": "琥珀色",
+    "black": "黒",
+    "blue": "青",
+    "brown": "茶",
+    "green": "緑"
+  },
+
+  "hair_color": {
+    "black": "黒",
+    "blonde": "金髪",
+    "blue": "青",
+    "brown": "茶",
+    "green": "緑",
+    "grey": "灰色",
+    "red": "赤",
+    "white": "白"
+  },
+
+  "membership_status": {
+    "gold": "ゴールド",
+    "regular": "レギュラー",
+    "silver": "シルバー"
+  },
+
+  "note": "テキストデータ（description, transcript, event_name）は別途翻訳が必要です"
+}
