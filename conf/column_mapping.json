@@ -1,0 +1,75 @@
+{
+  "comment": "COLUMN_TRANSLATION_ISSUE.md に基づく列名の日本語マッピング",
+  "version": "1.0",
+
+  "table_names": {
+    "crime_scene_report": "犯罪現場レポート",
+    "drivers_license": "運転免許証",
+    "facebook_event_checkin": "Facebookイベント参加記録",
+    "get_fit_now_check_in": "ジムチェックイン記録",
+    "get_fit_now_member": "ジム会員情報",
+    "income": "年収",
+    "interview": "証言",
+    "person": "人物情報",
+    "solution": "解答"
+  },
+
+  "column_names": {
+    "crime_scene_report": {
+      "date": "発生日",
+      "type": "犯罪種別",
+      "description": "事件内容",
+      "city": "発生場所"
+    },
+    "drivers_license": {
+      "id": "id",
+      "age": "年齢",
+      "height": "身長",
+      "eye_color": "目の色",
+      "hair_color": "髪の色",
+      "gender": "性別",
+      "plate_number": "自動車ナンバー",
+      "car_make": "自動車メーカー",
+      "car_model": "自動車モデル"
+    },
+    "facebook_event_checkin": {
+      "person_id": "person_id",
+      "event_id": "event_id",
+      "event_name": "イベント名",
+      "date": "参加日"
+    },
+    "get_fit_now_check_in": {
+      "membership_id": "membership_id",
+      "check_in_date": "チェックイン日",
+      "check_in_time": "チェックイン時刻",
+      "check_out_time": "チェックアウト時刻"
+    },
+    "get_fit_now_member": {
+      "id": "id",
+      "person_id": "person_id",
+      "name": "name",
+      "membership_start_date": "会員開始日",
+      "membership_status": "会員ランク"
+    },
+    "income": {
+      "ssn": "ssn",
+      "annual_income": "年収額"
+    },
+    "interview": {
+      "person_id": "person_id",
+      "transcript": "証言内容"
+    },
+    "person": {
+      "id": "id",
+      "name": "name",
+      "license_id": "license_id",
+      "address_number": "番地",
+      "address_street_name": "通り名",
+      "ssn": "ssn"
+    },
+    "solution": {
+      "user": "プレーヤー番号",
+      "value": "犯人の名前"
+    }
+  }
+}
