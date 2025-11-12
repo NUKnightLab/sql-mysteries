@@ -13,7 +13,15 @@ SQL Murder Mystery データベース翻訳スクリプト
 import csv
 import json
 import os
+import re
 from pathlib import Path
+
+def clean_text(text):
+    """改行を削除し、半角スペースに置き換える"""
+    text = text.replace('\n', ' ').replace('\r', ' ')
+    text = text.replace('\t', ' ')
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
 
 def load_translation_mapping():
     """翻訳マッピングをJSONファイルから読み込む"""
@@ -23,6 +31,12 @@ def load_translation_mapping():
 def load_text_translations(filename):
     """テキスト翻訳CSVを読み込む（存在する場合）"""
     translations = {}
+
+    # クリーンアップ版が存在すればそちらを優先
+    cleaned_filename = filename.replace('.csv', '_cleaned.csv')
+    if os.path.exists(cleaned_filename):
+        filename = cleaned_filename
+
     if os.path.exists(filename):
         with open(filename, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
@@ -48,8 +62,10 @@ def translate_crime_scene_report(mapping, text_translations):
                 row['type'] = mapping['crime_types'][row['type']]
 
             # description を翻訳（翻訳がある場合）
-            if row['description'] in text_translations:
-                row['description'] = text_translations[row['description']]
+            # 元のテキストをクリーンアップしてから比較
+            cleaned_original = clean_text(row['description'])
+            if cleaned_original in text_translations:
+                row['description'] = text_translations[cleaned_original]
 
             rows.append(row)
 
@@ -110,8 +126,10 @@ def translate_interview(text_translations):
 
         for row in reader:
             # transcript を翻訳（翻訳がある場合）
-            if row['transcript'] in text_translations:
-                row['transcript'] = text_translations[row['transcript']]
+            # 元のテキストをクリーンアップしてから比較
+            cleaned_original = clean_text(row['transcript'])
+            if cleaned_original in text_translations:
+                row['transcript'] = text_translations[cleaned_original]
 
             rows.append(row)
 
@@ -137,8 +155,10 @@ def translate_facebook_event_checkin(text_translations):
 
         for row in reader:
             # event_name を翻訳（翻訳がある場合）
-            if row['event_name'] in text_translations:
-                row['event_name'] = text_translations[row['event_name']]
+            # 元のテキストをクリーンアップしてから比較
+            cleaned_original = clean_text(row['event_name'])
+            if cleaned_original in text_translations:
+                row['event_name'] = text_translations[cleaned_original]
 
             rows.append(row)
 
