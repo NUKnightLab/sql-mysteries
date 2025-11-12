@@ -190,15 +190,15 @@
                 <p>
                     ここでクエリが登場します。クエリは、データベースからデータを取得するために構築するステートメントです。クエリは（ほとんどの場合）自然な英語のように読めます。データベースに対していくつかのクエリを試してみましょう。以下の各ボックスで、「run」をクリックして、ボックス内のクエリを「実行」します。このページでクエリを直接編集して、さらに探索することができます。（SQLコマンドは大文字と小文字を区別しませんが、可読性のために大文字にするのが慣例です。また、読みやすさのために、改行や空白を好きなように使用できます。ほとんどのデータベースシステムでは、クエリをセミコロン（';'）で終了する必要がありますが、このWebページで実行するシステムはより寛容です。）
                 </p>
-                <sql-exercise data-question="Just how many people are in this database?" data-comment="Don't worry about exactly what this means, but know that you can change 'person' to any other table from the ERD to learn how many rows that table has.  Try it!" data-default-text="SELECT count(*)
+                <sql-exercise data-question="このデータベースには何人の人がいますか？" data-comment="これが正確に何を意味するのか心配する必要はありませんが、'person'をERDの他のテーブルに変更して、そのテーブルに何行あるかを知ることができます。試してみてください！" data-default-text="SELECT count(*)
 FROM person;"></sql-exercise>
 
 
-                <sql-exercise data-question="What do we know about those people?" data-comment="If you want all the data for each row in a table, use '*' after 'SELECT'.  As you just learned, there are thousands of people, so rather than see all of them, we'll limit the results to just the first 10.  Run this, then change the table name or limit number and see what happens."
+                <sql-exercise data-question="これらの人について何がわかりますか？" data-comment="テーブルの各行のすべてのデータが必要な場合は、'SELECT'の後に'*'を使用します。今学んだように、何千人もの人がいるので、すべてを見るのではなく、結果を最初の10件に制限します。これを実行してから、テーブル名または制限数を変更して何が起こるかを見てください。"
                     data-default-text="SELECT * FROM person LIMIT 10;"></sql-exercise>
 
 
-                <sql-exercise data-question="What are possible values for a column?" data-comment='When working with data, always see if you can find documentation that explains the database structure (like the ERD) and valid values. But sometimes that’s not available. Here we show how the DISTINCT keyword can give you a quick look at which values are in the database. After you run it, delete the word DISTINCT and run it again. See the difference? (After you try that, you may want to click the "reset" button and run one more time before you continue.)'
+                <sql-exercise data-question="列に使用可能な値は何ですか？" data-comment='データを扱う場合は、データベース構造（ERDなど）と有効な値を説明するドキュメントを見つけられるかどうか常に確認してください。しかし、時にはそれが利用できない場合もあります。ここでは、DISTINCTキーワードがデータベース内にどの値があるかをすばやく確認する方法を示します。実行後、DISTINCTという単語を削除して再度実行してください。違いがわかりますか？（これを試した後、続行する前に「reset」ボタンをクリックしてもう一度実行することをお勧めします。）'
                     data-default-text="SELECT DISTINCT type FROM crime_scene_report;"></sql-exercise>
 
             </div>
@@ -239,13 +239,13 @@ FROM person;"></sql-exercise>
                 <h5>WHERE</h5>
                 <p>クエリの​WHERE​句は、特定の条件で結果をフィルタリングするために使用されます。</p>
                 <p>これらのいくつかを試してみましょう。</p>
-                <sql-exercise data-question="Here's a simple query to get everything about a specific person. (Don't worry&mdash;all of the SSNs are made up.) " data-comment="Note that you need to use single straight quotes (') around literal text so the database can tell it apart from table and column names. After you run it, try again with Yessenia Fossen, Ted Denfip or Davina Gangwer."
+                <sql-exercise data-question="特定の人物に関するすべての情報を取得する簡単なクエリです。（心配しないでください&mdash;すべてのSSNは架空のものです。）" data-comment="リテラルテキストの周りにはシングルストレートクォート（'）を使用する必要があることに注意してください。これにより、データベースはそれをテーブル名や列名と区別できます。実行後、Yessenia Fossen、Ted Denfip、またはDavina Gangwerで再試行してください。"
                     data-default-text="SELECT * FROM person WHERE name = 'Kinsey Erickson'"></sql-exercise>
 
                 <p>​AND​キーワードは、複数のフィルタリング条件を連結して、フィルタリングされた結果がすべての条件を満たすようにするために使用されます。（ORキーワードもあり、いずれかの条件に一致する行を返します。）
                 </p>
 
-                <sql-exercise data-question="This query only returns reports about a specific type of crime in a specific city." data-comment=" Notice that when querying for text values, you must match the data as it is in the database. Try changing 'Chicago' to 'chicago' and running the statement. Then, see if you can edit this SQL statement to find the first clue based on the prompt above."
+                <sql-exercise data-question="このクエリは、特定の都市の特定の種類の犯罪に関するレポートのみを返します。" data-comment="テキスト値を検索する場合、データベースに保存されているとおりにデータと一致させる必要があることに注意してください。'Chicago'を'chicago'に変更してステートメントを実行してみてください。次に、上記のプロンプトに基づいて最初の手がかりを見つけるためにこのSQLステートメントを編集できるかどうかを確認してください。"
                     data-default-text="SELECT * FROM crime_scene_report
 WHERE type = 'theft'
 AND city = 'Chicago';" data-solution="SELECT * FROM crime_scene_report
@@ -267,8 +267,8 @@ AND city = 'SQL City';"></sql-exercise>
                 <p><strong>重要：</strong>ワイルドカードを使用する場合、<code>=</code>記号は使用しません。代わりに<code>LIKE</code>を使用します。
                 </p>
 
-                <sql-exercise data-question="Try out some wildcards." data-comment="Once you run this command, try variations like 'Irvin_' and 'I%e' -- and then explore some more." data-default-text="SELECT DISTINCT city 
-FROM crime_scene_report 
+                <sql-exercise data-question="ワイルドカードを試してみてください。" data-comment="このコマンドを実行したら、'Irvin_'や'I%e'などのバリエーションを試してください。そして、さらに探索してみてください。" data-default-text="SELECT DISTINCT city
+FROM crime_scene_report
 WHERE city LIKE 'I%';"></sql-exercise>
 
                 <p>SQLは、<code>&lt;</code>（より小さい）や<code>&gt;</code>（より大きい）などの数値比較もサポートしています。<code>BETWEEN</code>と<code>AND</code>のキーワードも使用できます。これらはすべて、数値だけでなく単語でも機能します。
@@ -276,7 +276,7 @@ WHERE city LIKE 'I%';"></sql-exercise>
                 </p>
 
 
-                <sql-exercise data-question="Try out some comparison operators." data-comment="" data-default-text="SELECT DISTINCT city
+                <sql-exercise data-question="比較演算子を試してみてください。" data-comment="" data-default-text="SELECT DISTINCT city
 FROM crime_scene_report
 WHERE city BETWEEN 'W%' AND 'Z%';"></sql-exercise>
 
@@ -284,8 +284,8 @@ WHERE city BETWEEN 'W%' AND 'Z%';"></sql-exercise>
                     <code>LOWER()</code>と呼ばれ、特に以下のボックスで探索すれば、それらが何をするのかがわかるでしょう。
                 </p>
 
-                <sql-exercise data-question="Try out UPPER() and LOWER()." data-comment="" data-default-text="SELECT DISTINCT city 
-FROM crime_scene_report 
+                <sql-exercise data-question="UPPER()とLOWER()を試してみてください。" data-comment="" data-default-text="SELECT DISTINCT city
+FROM crime_scene_report
 WHERE LOWER(city) ='sql city';"></sql-exercise>
 
 
@@ -338,25 +338,25 @@ WHERE LOWER(city) ='sql city';"></sql-exercise>
                         </dd>
                     </dl>
                 </p>
-                <sql-exercise data-question="Run this query, then try some of the other aggregate functions." data-comment="" data-default-text="SELECT max(age) FROM drivers_license;"></sql-exercise>
+                <sql-exercise data-question="このクエリを実行してから、他の集計関数も試してみてください。" data-comment="" data-default-text="SELECT max(age) FROM drivers_license;"></sql-exercise>
 
                 <p>最小値と最大値を見つける別の方法があり、同時により多くのデータを見ることもできます。取得する結果の並べ替え順序を制御できます。これは本当に直感的です。列名の後に<code>ORDER BY</code>を使用するだけです。データが多い場合は困難な場合があります！（SQLを本格的に扱う人は、このWebベースのシステムよりも優れたツールを使用します。）デフォルトでは、ORDER BYは「昇順」（最小から最大、またはAからZ）の順序で実行されますが、
                     昇順には<code>ASC</code>を明示的に指定することもでき、<code>DESC</code>で逆にすることもできます。
                 </p>
-                <sql-exercise data-question="Run this query to see how to control sort order." data-comment="After you've run it, change ASC to DESC, or take that part out completely to see how the results differ. Try sorting on other columns." data-default-text="SELECT * FROM drivers_license ORDER BY age ASC LIMIT 10"></sql-exercise>
+                <sql-exercise data-question="このクエリを実行して、並べ替え順序を制御する方法を確認してください。" data-comment="実行後、ASCをDESCに変更するか、その部分を完全に削除して、結果がどのように異なるかを確認してください。他の列で並べ替えを試してください。" data-default-text="SELECT * FROM drivers_license ORDER BY age ASC LIMIT 10"></sql-exercise>
 
                 <p>これで、2人の目撃者を特定するのに十分なSQLの知識が身につきました。試してみましょう！</p>
-                <sql-exercise data-question="Write a query that identifies the first witness." data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'" data-default-text="
+                <sql-exercise data-question="最初の目撃者を特定するクエリを書いてください。" data-comment="これを行う方法は複数あるので、結果が「Incorrect」と表示されても答えがわかるかもしれません。" data-default-text="
 
 
-" data-solution="SELECT * FROM person 
-WHERE address_street_name = 'Northwestern Dr' 
+" data-solution="SELECT * FROM person
+WHERE address_street_name = 'Northwestern Dr'
 ORDER BY address_number DESC LIMIT 1;"></sql-exercise>
 
-                <sql-exercise data-question="Write a query that identifies the second witness." data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'" data-default-text="
+                <sql-exercise data-question="2番目の目撃者を特定するクエリを書いてください。" data-comment="これを行う方法は複数あるので、結果が「Incorrect」と表示されても答えがわかるかもしれません。" data-default-text="
 
 
-" data-solution="SELECT * FROM person 
+" data-solution="SELECT * FROM person
 WHERE name like '%Annabel%'
 AND address_street_name = 'Franklin Ave';"></sql-exercise>
 
@@ -377,17 +377,17 @@ AND address_street_name = 'Franklin Ave';"></sql-exercise>
                     テーブルを結合する最も一般的な方法は、主キー列と外部キー列を使用することです。これらが何であるか覚えていない場合、またはデータベース内のテーブル間の主要な関係を確認する場合は、上記のエンティティ関係図（ERD）を参照してください。任意の列で結合を行うことができますが、キー列は高速な結果のために最適化されています。インタラクティブなSQLシステムで結合がどのように機能するかを示す方が、書いて説明するよりも簡単でしょう。
                 </p>
 
-                <sql-exercise data-question="Run this query to identify the biggest annual earners in our database. (Again, trust us, the SSNs are all made up.)" data-comment="Try editing the query to return more data, or to find people with different incomes. Try joining other tables together. You can use * in between SELECT and FROM here like with any other query, so try that too."
-                    data-default-text="SELECT person.name, income.annual_income 
-FROM income 
-JOIN person 
-  ON income.ssn = person.ssn 
+                <sql-exercise data-question="このクエリを実行して、データベース内で最も年収の高い人を特定してください。（繰り返しますが、SSNはすべて架空のものです。）" data-comment="クエリを編集してより多くのデータを返すか、異なる収入の人を見つけてください。他のテーブルを結合してみてください。他のクエリと同様に、SELECTとFROMの間に*を使用できるので、それも試してください。"
+                    data-default-text="SELECT person.name, income.annual_income
+FROM income
+JOIN person
+  ON income.ssn = person.ssn
 WHERE annual_income > 450000"></sql-exercise>
 
                 <p>複数のテーブルを接続したい場合があります。SQLでは、クエリで好きなだけ多くのテーブルを結合できます。
                 </p>
 
-                <sql-exercise data-question="Let's see if big earners have other characteristics in common." data-comment="This example shows how to join more than one table. It also, incidentally, shows how you can use 'aliases' for the various tables in your query so that you don't have to type as much. Finally, it shows how you can change how a column name shows up in the results, which can be handy."
+                <sql-exercise data-question="高収入者が他にも共通の特徴を持っているかどうかを見てみましょう。" data-comment="この例は、複数のテーブルを結合する方法を示しています。また、ちなみに、クエリ内のさまざまなテーブルに「エイリアス」を使用して、入力量を減らす方法も示しています。最後に、結果に列名がどのように表示されるかを変更する方法を示しており、これは便利です。"
                     data-default-text="SELECT name, annual_income as income,
 gender, eye_color as eyes, hair_color as hair
 FROM income i
@@ -400,7 +400,7 @@ WHERE annual_income > 450000"></sql-exercise>
 
                 <p>テーブルを結合する方法がわかったので、以前に特定した2人の目撃者のインタビューのトランスクリプトを見つけることができるはずです。試してみてください！</p>
 
-                <sql-exercise data-question="Write a query that shows the interview transcripts for our two subjects." data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'. The official solution does it in one query, but you don't have to. Technically you don't even need to use a JOIN to get the transcripts, but give it a try."
+                <sql-exercise data-question="2人の対象者のインタビュートランスクリプトを表示するクエリを書いてください。" data-comment="これを行う方法は複数あるので、結果が「Incorrect」と表示されても答えがわかるかもしれません。公式の解決策では1つのクエリで行いますが、そうする必要はありません。技術的には、トランスクリプトを取得するためにJOINを使用する必要すらありませんが、試してみてください。"
                     data-default-text="
 
 
@@ -419,7 +419,7 @@ WHERE person.id = 14887 OR person.id = 16371;"></sql-exercise>
                 <p>
                     これで、謎を解くのに十分なSQLの知識が身につきました。ERDを読んで、いくつかの合理的な仮定を立てる必要がありますが、他に必要な構文はありません！
                 </p>
-                <sql-exercise data-question="Find the murderer!" data-comment="It will take more than one query to find the killer, but you can just keep editing this box, keeping notes on your results along the way. When you think you know the answer, go to the next section."
+                <sql-exercise data-question="殺人犯を見つけてください！" data-comment="犯人を見つけるには複数のクエリが必要ですが、このボックスを編集し続けて、途中で結果をメモしておくことができます。答えがわかったと思ったら、次のセクションに進んでください。"
                     data-default-text="
 
 
