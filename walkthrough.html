@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
@@ -21,16 +21,16 @@
     <meta name="theme-color" content="#ffffff">
     <!-- /FAVICONS -->
 
-    <title>The SQL Murder Mystery: Detailed Walkthrough</title>
+    <title>SQL殺人事件ミステリー：詳細ウォークスルー</title>
     <!-- Meta -->
-    <meta name="keywords" content="SQL, databases, game, fun">
-    <meta name="description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths.">
+    <meta name="keywords" content="SQL, データベース, ゲーム, 学習">
+    <meta name="description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。">
     <!-- /Meta -->
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="SQL Murder Mystery" />
-    <meta property="og:description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths." />
+    <meta property="og:title" content="SQL殺人事件ミステリー" />
+    <meta property="og:description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。" />
     <meta property="og:image" content="http://mystery.knightlab.com/174092-clue-illustration.png" />
     <meta property="og:url" content="http://mystery.knightlab.com/walkthrough.html" />
     <meta property="og:site_name" content="Knight Lab's SQL Murder Mystery" />
@@ -39,8 +39,8 @@
     <!-- /Open Graph -->
 
     <!-- Twitter Card -->
-    <meta name="twitter:title" content="Knight Lab's SQL Murder Mystery">
-    <meta name="twitter:description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths.">
+    <meta name="twitter:title" content="Knight Lab's SQL殺人事件ミステリー">
+    <meta name="twitter:description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。">
     <meta name="twitter:image" content="http://mystery.knightlab.com/174092-clue-illustration.png">
     <meta name="twitter:site" content="@knightlab">
     <!-- /Twitter Card -->
@@ -104,18 +104,18 @@
 
     <header class="header-product">
         <h1 class="product-logo product-logo-large">
-            SQL Murder Mystery
+            SQL殺人事件ミステリー
         </h1>
-        <h2 class="product-tagline">Can you find out whodunnit?</h2>
+        <h2 class="product-tagline">犯人を見つけられますか？</h2>
     </header>
 
     <div class="container">
 
         <div id="intro" class="grid">
             <div class="grid-item">
-                <img src="174092-clue-illustration.png" class="img-rounded" alt="A decorative illustration of a detective looking at an evidence board.">
+                <img src="174092-clue-illustration.png" class="img-rounded" alt="証拠ボードを見つめる探偵のイラスト">
                 <p>
-                    There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime.
+                    SQL市で殺人事件が発生しました！SQL殺人事件ミステリーは、SQLの概念とコマンドを学ぶための自習教材であり、同時に経験豊富なSQLユーザーが魅力的な事件を解決する楽しいゲームでもあります。
                 </p>
 
             </div>
@@ -123,11 +123,9 @@
 
         <div class="grid">
             <div class="grid-item">
-                <h2>Walkthrough for SQL Beginners</h2>
+                <h2>SQL初心者向けウォークスルー</h2>
                 <p>
-                    If you're comfortable with SQL, you can <a href="index.html#experienced">skip these explanations</a> and put your skills to the test! Below we introduce some basic SQL concepts, and just enough detail to solve the murder. If you'd
-                    like a more complete introduction to SQL, try <a href="https://selectstarsql.com/">Select
-            Star SQL.</a>
+                    SQLに慣れている場合は、<a href="index.html#experienced">この説明をスキップ</a>してスキルを試してください！以下では、いくつかの基本的なSQL概念と、殺人事件を解決するのに十分な詳細を紹介します。SQLについてより完全な入門が必要な場合は、<a href="https://selectstarsql.com/">Select Star SQL</a>をお試しください。
                 </p>
             </div>
         </div>
@@ -135,12 +133,10 @@
         <div class="grid">
             <div class="grid-item">
                 <p>
-                    A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a <strong>​murder​</strong> that occurred sometime on ​<strong>Jan.15, 2018​</strong>                    and that it took place in ​<strong>SQL City​</strong>. Start by retrieving the corresponding crime scene report from the police department’s database.
+                    事件が発生し、探偵があなたの助けを必要としています。探偵は犯行現場のレポートをあなたに渡しましたが、どういうわけかあなたはそれを失くしてしまいました。あなたは、その事件が<strong>殺人</strong>で、<strong>2018年1月15日</strong>頃に発生し、<strong>SQL市</strong>で起きたことをぼんやりと覚えています。警察のデータベースから対応する犯行現場レポートを取得することから始めましょう。
                 </p>
                 <p>
-                    All the clues to this mystery are buried in a huge database, and you need to use SQL to navigate through this vast network of information. Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s
-                    database. Below we'll explain from a high level the commands you need to know; whenever you are ready, you can start adapting the examples to create your own SQL commands in search of clues -- you can run any SQL in any of the code
-                    boxes, no matter what was in the box when you started.
+                    このミステリーのすべての手がかりは巨大なデータベースに埋もれており、この膨大な情報ネットワークをナビゲートするにはSQLを使用する必要があります。ミステリーを解決するための最初のステップは、警察のデータベースから対応する犯行現場レポートを取得することです。以下では、知っておく必要のあるコマンドを高いレベルから説明します。準備ができたら、例を適応させて手がかりを探すための独自のSQLコマンドを作成できます。どのコードボックスでも、最初に何が入っていたかに関係なく、任意のSQLを実行できます。
                 </p>
             </div>
         </div>
@@ -148,42 +144,38 @@
 
         <div class="grid">
             <div class="grid-item">
-                <h2>Some Definitions</h2>
-                <h3>What is SQL?</h3>
+                <h2>いくつかの定義</h2>
+                <h3>SQLとは何ですか？</h3>
                 <p>
-                    SQL, which stands for Structured Query Language, is a way to interact with relational databases and tables in a way that allows us humans to glean specific, meaningful information.
+                    SQLは、Structured Query Language（構造化クエリ言語）の略で、リレーショナルデータベースやテーブルと対話する方法であり、私たち人間が特定の意味のある情報を収集できるようにします。
                 </p>
 
-                <h3>Wait, what is a relational database?</h3>
-                <p>There's no single definition for the word <em>database</em>. In general, databases are systems for managing information. Databases can have varying amounts of structure imposed on the data. When the data is more structured, it can help
-                    people and computers work with the data more efficiently.
+                <h3>リレーショナルデータベースとは何ですか？</h3>
+                <p><em>データベース</em>という言葉に単一の定義はありません。一般的に、データベースは情報を管理するためのシステムです。データベースは、データに課される構造の量が異なる場合があります。データがより構造化されている場合、人やコンピューターがデータをより効率的に操作できるようになります。
                 </p>
-                <p>Relational databases are probably the best known kind of database. At their heart, relational databases are made up of <em>tables</em>, which are a lot like spreadsheets. Each column in the table has a name and a data type (text, number,
-                    etc.), and each row in the table is a specific instance of whatever the table is "about." The "relational" part comes with specific rules about how to connect data between different tables.
+                <p>リレーショナルデータベースは、おそらく最もよく知られているタイプのデータベースです。その中核として、リレーショナルデータベースは<em>テーブル</em>で構成されており、これはスプレッドシートによく似ています。テーブルの各列には名前とデータ型（テキスト、数値など）があり、テーブルの各行は、テーブルが「何について」であるかの特定のインスタンスです。「リレーショナル」の部分は、異なるテーブル間でデータを接続する方法に関する特定のルールが付属しています。
                 </p>
 
-                <h3>What is an ERD?</h3>
+                <h3>ERDとは何ですか？</h3>
                 <p>
-                    ERD, which stands for Entity Relationship Diagram, is a visual representation of the relationships among all relevant tables within a database. You can find the ERD for our SQL Murder Mystery database below. The diagram shows that each table has a name
-                    (top of the box, in bold), a list of column names (on the left) and their corresponding data types (on the right, in all caps). There are also some gold key icons, blue arrow icons and gray arrows on the ERD. A gold key indicates that
-                    the column is the ​primary key​ of the corresponding table, and a blue arrow indicates that the column is the ​foreign key​ of the corresponding table.
+                    ERDはEntity Relationship Diagram（エンティティ関係図）の略で、データベース内のすべての関連テーブル間の関係を視覚的に表現したものです。以下に、SQL殺人事件ミステリーデータベースのERDがあります。この図は、各テーブルに名前（ボックスの上部、太字）、列名のリスト（左側）、およびそれに対応するデータ型（右側、すべて大文字）があることを示しています。ERDには金色のキーアイコン、青い矢印アイコン、灰色の矢印もあります。金色のキーは、その列が対応するテーブルの​主キー​であることを示し、青い矢印は、その列が対応するテーブルの​外部キー​であることを示します。
                     <dl>
                         <dt>
-              Primary Key​:
+              主キー​:
             </dt>
                         <dd>
-                            a unique identifier for each row in a table.
+                            テーブルの各行を一意に識別する識別子。
                         </dd>
                         <dt>
-              Foreign Key​:
+              外部キー​:
             </dt>
                         <dd>
-                            used to reference data in one table to those in another table.
+                            あるテーブルのデータを別のテーブルのデータと参照するために使用される。
                         </dd>
                     </dl>
-                    If two tables are related, the matching columns, i.e. the common identifiers of the two tables, are connected by a gray arrow in the diagram.
+                    2つのテーブルが関連している場合、一致する列、つまり2つのテーブルの共通識別子が、図の中で灰色の矢印で接続されています。
                 </p>
-                <p>Here is the ERD for our database:
+                <p>これがデータベースのERDです：
                 </p>
                 <img src="schema.png" width='1002' height='491'>
             </div>
@@ -192,14 +184,11 @@
         <div class="grid">
             <div class="grid-item">
                 <h2>
-                    What is a query?
+                    クエリとは何ですか？
                 </h2>
-                <p>If you were to look at the data in this database, you would see that the tables are huge! There are so many data points; it simply isn’t possible to go through the tables row by row to find the information we need. What are we supposed
-                    to do?</p>
+                <p>このデータベースのデータを見ると、テーブルが非常に大きいことがわかります！非常に多くのデータポイントがあり、必要な情報を見つけるために行ごとにテーブルを調べることは単純に不可能です。どうすればよいのでしょうか？</p>
                 <p>
-                    This is where queries come in. Queries are statements we construct to get data from the database. Queries read like natural English (for the most part). Let's try a few queries against our database. For each of the boxes below, click the "run" to "execute"
-                    the query in the box. You can edit the queries right here on the page to explore further. (Note that SQL commands are not case-sensitive, but it's conventional to capitalize them for readability. You can also use new lines and white
-                    space as you like to format the command for readability. Most database systems require you to end a query with a semicolon (';') although the system for running them in this web page is more forgiving.)
+                    ここでクエリが登場します。クエリは、データベースからデータを取得するために構築するステートメントです。クエリは（ほとんどの場合）自然な英語のように読めます。データベースに対していくつかのクエリを試してみましょう。以下の各ボックスで、「run」をクリックして、ボックス内のクエリを「実行」します。このページでクエリを直接編集して、さらに探索することができます。（SQLコマンドは大文字と小文字を区別しませんが、可読性のために大文字にするのが慣例です。また、読みやすさのために、改行や空白を好きなように使用できます。ほとんどのデータベースシステムでは、クエリをセミコロン（';'）で終了する必要がありますが、このWebページで実行するシステムはより寛容です。）
                 </p>
                 <sql-exercise data-question="Just how many people are in this database?" data-comment="Don't worry about exactly what this means, but know that you can change 'person' to any other table from the ERD to learn how many rows that table has.  Try it!" data-default-text="SELECT count(*)
 FROM person;"></sql-exercise>
@@ -217,85 +206,82 @@ FROM person;"></sql-exercise>
 
         <div class="grid">
             <div class="grid-item">
-                <h3>What elements does a SQL query have?</h3>
-                <p>A SQL query can contain:
+                <h3>SQLクエリにはどのような要素がありますか？</h3>
+                <p>SQLクエリには以下を含めることができます：
                     <ul>
-                        <li>SQL keywords (like the ​SELECT​ and ​FROM​ above)</li>
-                        <li>Column names (like the ​name​ column above)</li>
-                        <li>Table names (like the ​person​ table above)</li>
-                        <li>Wildcard characters (such as ​<code>%</code>)</li>
-                        <li>Functions</li>
-                        <li>Specific filtering criteria</li>
-                        <li>Etc</li>
+                        <li>SQLキーワード（上記の​SELECT​や​FROM​など）</li>
+                        <li>列名（上記の​name​列など）</li>
+                        <li>テーブル名（上記の​person​テーブルなど）</li>
+                        <li>ワイルドカード文字（​<code>%</code>など）</li>
+                        <li>関数</li>
+                        <li>特定のフィルタリング条件</li>
+                        <li>その他</li>
                     </ul>
                 </p>
 
-                <h4 id="sql-keywords">SQL Keywords</h4>
+                <h4 id="sql-keywords">SQLキーワード</h4>
                 <p>
-                    SQL keywords are used to specify actions in your queries. SQL keywords are not case sensitive, but we suggest using all caps for SQL keywords so that you can easily set them apart from the rest of the query. Some frequently used keywords are:
+                    SQLキーワードは、クエリでアクションを指定するために使用されます。SQLキーワードは大文字と小文字を区別しませんが、クエリの他の部分と簡単に区別できるように、SQLキーワードにはすべて大文字を使用することをお勧めします。頻繁に使用されるキーワードには次のものがあります：
                 </p>
                 <h5>SELECT</h5>
-                <p>SELECT​ allows us to grab data for specific columns from the database:</p>
+                <p>SELECT​は、データベースから特定の列のデータを取得することができます：</p>
                 <ul>
                     <li>
-                        *​ (asterisk): it is used after ​SELECT​ to grab all columns from the table;
+                        *​（アスタリスク）：​SELECT​の後に使用して、テーブルのすべての列を取得します。
                     </li>
                     <li>
-                        column_name(s): to select specific columns, put the names of the columns after SELECT​ and use commas to separate them.
+                        column_name(s)：特定の列を選択するには、SELECT​の後に列の名前を配置し、カンマで区切ります。
                     </li>
                 </ul>
                 <h5>FROM</h5>
-                <p>FROM​ allows us to specify which table(s) we care about; to select multiple tables, list the table names and use commas to separate them. (But until you learn the JOIN keyword, you may be surprised at what happens. That will come later.)</p>
+                <p>FROM​は、どのテーブルについて知りたいかを指定することができます。複数のテーブルを選択するには、テーブル名をリストし、カンマで区切ります。（ただし、JOINキーワードを学ぶまでは、何が起こるかに驚くかもしれません。それは後で説明します。）</p>
 
                 <h5>WHERE</h5>
-                <p>The ​WHERE​ clause in a query is used to filter results by specific criteria.</p>
-                <p>Let's try some of these things.</p>
+                <p>クエリの​WHERE​句は、特定の条件で結果をフィルタリングするために使用されます。</p>
+                <p>これらのいくつかを試してみましょう。</p>
                 <sql-exercise data-question="Here's a simple query to get everything about a specific person. (Don't worry&mdash;all of the SSNs are made up.) " data-comment="Note that you need to use single straight quotes (') around literal text so the database can tell it apart from table and column names. After you run it, try again with Yessenia Fossen, Ted Denfip or Davina Gangwer."
                     data-default-text="SELECT * FROM person WHERE name = 'Kinsey Erickson'"></sql-exercise>
 
-                <p>The ​AND​ keyword is used to string together multiple filtering criteria so that the filtered results meet each and every one of the criteria. (There's also an OR keyword, which returns rows that match any of the criteria.)
+                <p>​AND​キーワードは、複数のフィルタリング条件を連結して、フィルタリングされた結果がすべての条件を満たすようにするために使用されます。（ORキーワードもあり、いずれかの条件に一致する行を返します。）
                 </p>
 
                 <sql-exercise data-question="This query only returns reports about a specific type of crime in a specific city." data-comment=" Notice that when querying for text values, you must match the data as it is in the database. Try changing 'Chicago' to 'chicago' and running the statement. Then, see if you can edit this SQL statement to find the first clue based on the prompt above."
-                    data-default-text="SELECT * FROM crime_scene_report 
-WHERE type = 'theft' 
-AND city = 'Chicago';" data-solution="SELECT * FROM crime_scene_report 
-WHERE type = 'murder' 
+                    data-default-text="SELECT * FROM crime_scene_report
+WHERE type = 'theft'
+AND city = 'Chicago';" data-solution="SELECT * FROM crime_scene_report
+WHERE type = 'murder'
 AND city = 'SQL City';"></sql-exercise>
 
-                <p>If you haven't found the right crime scene report yet, click "show solution" above, and replace the contents of the box with just the revealed command. (Leave out the initial <code>/*</code>) If you figured out the query that shows the
-                    single crime scene report instead of a few for the same city and type, then congratulations and disregard the word "incorrect". You'll know if you got it!
+                <p>まだ正しい犯行現場レポートが見つかっていない場合は、上の「show solution」をクリックし、ボックスの内容を表示されたコマンドだけに置き換えてください。（最初の<code>/*</code>は削除してください）同じ市と種類に対していくつかではなく、単一の犯行現場レポートを表示するクエリを見つけ出した場合は、おめでとうございます。「incorrect」という言葉は無視してください。成功したかどうかはわかります！
                 </p>
 
-                <h4 id='wildcards'>Wildcards and other functions for partial matches</h4>
+                <h4 id='wildcards'>ワイルドカードと部分一致のための他の関数</h4>
 
-                <p>Sometimes you only know part of the information you need. SQL can handle that. Special symbols that represent unknown characters are called "wildcards," and SQL supports two. The most common is the <code>%</code> wildcard.
+                <p>必要な情報の一部しかわからない場合があります。SQLはそれに対応できます。未知の文字を表す特別なシンボルは「ワイルドカード」と呼ばれ、SQLは2つをサポートしています。最も一般的なのは<code>%</code>ワイルドカードです。
                 </p>
-                <p>When you place a <code>%</code> wildcard in a query string, the SQL system will return results that match the rest of the string exactly, and have anything (or nothing) where the wildcard is. For example,
-                    <code>'Ca%a'</code> matches <code>Canada</code> and <code>California</code>.</p>
-                <p>The other, less commonly used wildcard, is <code>_</code>. This one means 'match the rest of the text, as long as there's exactly one character in exactly the position of the <code>_</code>, no matter what it is. So,
-                    <code>'B_b'</code> would match <code>'Bob'</code> and <code>'Bub'</code> but not <code>'Babe'</code> or
-                    <code>'Bb'</code>.</p>
-                <p><strong>Important:</strong> When using wildcards, you don't use the <code>=</code> symbol; instead, you use
-                    <code>LIKE</code>.
+                <p>クエリ文字列に<code>%</code>ワイルドカードを配置すると、SQLシステムは文字列の残りの部分に正確に一致し、ワイルドカードの位置に何か（または何もない）があるような結果を返します。たとえば、
+                    <code>'Ca%a'</code>は<code>Canada</code>と<code>California</code>に一致します。</p>
+                <p>もう1つの、あまり一般的でないワイルドカードは<code>_</code>です。これは、<code>_</code>の位置に何であれ正確に1文字がある限り、テキストの残りの部分に一致することを意味します。したがって、
+                    <code>'B_b'</code>は<code>'Bob'</code>や<code>'Bub'</code>に一致しますが、<code>'Babe'</code>や
+                    <code>'Bb'</code>には一致しません。</p>
+                <p><strong>重要：</strong>ワイルドカードを使用する場合、<code>=</code>記号は使用しません。代わりに<code>LIKE</code>を使用します。
                 </p>
 
                 <sql-exercise data-question="Try out some wildcards." data-comment="Once you run this command, try variations like 'Irvin_' and 'I%e' -- and then explore some more." data-default-text="SELECT DISTINCT city 
 FROM crime_scene_report 
 WHERE city LIKE 'I%';"></sql-exercise>
 
-                <p>SQL also supports numeric comparisons like <code>&lt;</code> (less than) and <code>&gt;</code> (greater than). You can also use the keywords <code>BETWEEN</code> and <code>AND</code> -- and all of those work with words as well as numbers.
+                <p>SQLは、<code>&lt;</code>（より小さい）や<code>&gt;</code>（より大きい）などの数値比較もサポートしています。<code>BETWEEN</code>と<code>AND</code>のキーワードも使用できます。これらはすべて、数値だけでなく単語でも機能します。
 
                 </p>
 
 
-                <sql-exercise data-question="Try out some comparison operators." data-comment="" data-default-text="SELECT DISTINCT city 
-FROM crime_scene_report 
+                <sql-exercise data-question="Try out some comparison operators." data-comment="" data-default-text="SELECT DISTINCT city
+FROM crime_scene_report
 WHERE city BETWEEN 'W%' AND 'Z%';"></sql-exercise>
 
-                <p>We've mentioned that SQL commands are not case-sensitive, but <code>WHERE</code> query values for
-                    <code>=</code> and <code>LIKE</code> are. Sometimes you don't know how the text is stored in the database. SQL provides a couple of functions which can smooth that out for you. They're called <code>UPPER()</code> and
-                    <code>LOWER()</code>, and you can probably figure out what they do, especially if you explore in the box below.
+                <p>SQLコマンドは大文字と小文字を区別しないと述べましたが、<code>=</code>や<code>LIKE</code>の<code>WHERE</code>クエリ値は区別します。データベースにテキストがどのように保存されているかわからない場合があります。SQLは、これをスムーズにするためのいくつかの関数を提供しています。それらは<code>UPPER()</code>と
+                    <code>LOWER()</code>と呼ばれ、特に以下のボックスで探索すれば、それらが何をするのかがわかるでしょう。
                 </p>
 
                 <sql-exercise data-question="Try out UPPER() and LOWER()." data-comment="" data-default-text="SELECT DISTINCT city 
@@ -308,60 +294,58 @@ WHERE LOWER(city) ='sql city';"></sql-exercise>
 
         <div id="credits" class="grid">
             <div class="grid-item">
-                <h2>Digging deeper</h2>
+                <h2>さらに深く掘り下げる</h2>
 
-                <h3>SQL Aggregate Functions</h3>
+                <h3>SQL集計関数</h3>
                 <p>
-                    Sometimes the questions you want to ask aren’t as simple as finding the row of data that fits a set of criteria. You may want to ask more complex questions such as “Who is the oldest person?” or “Who is the shortest person?” <em>Aggregate functions</em>                    can help you answer these questions. In fact, you learned an aggregate function above, <code>COUNT</code>.
+                    尋ねたい質問が、一連の基準に適合するデータの行を見つけることと同じくらい単純ではない場合があります。「最も年上の人は誰ですか？」や「最も背の低い人は誰ですか？」などのより複雑な質問をしたい場合があります。<em>集計関数</em>は、これらの質問に答えるのに役立ちます。実際、上で<code>COUNT</code>という集計関数をすでに学びました。
                 </p>
                 <p>
-                    How old is the oldest person with a drivers license? With a small amount of data, you might be able to just eyeball it, but there thousands of records in the <code>drivers_license</code> table. (Try <code>COUNT</code> if you want to
-                    know just how many!) You can't just look over that list to find the answer.
+                    運転免許証を持っている最も年上の人は何歳ですか？少量のデータであれば、ざっと見るだけで済むかもしれませんが、<code>drivers_license</code>テーブルには何千ものレコードがあります。（正確な数を知りたい場合は<code>COUNT</code>を試してください！）そのリストをざっと見て答えを見つけることはできません。
                 </p>
-                <p>Here are a few useful aggregate functions SQL provides:
+                <p>SQLが提供するいくつかの便利な集計関数は次のとおりです：
 
                     <dl>
                         <dt>
               MAX
             </dt>
                         <dd>
-                            finds the maximum value
+                            最大値を見つける
                         </dd>
                         <dt>
               MIN
             </dt>
                         <dd>
-                            finds the minimum value
+                            最小値を見つける
                         </dd>
                         <dt>
               SUM
             </dt>
                         <dd>
-                            calculates the sum of the specified column values
+                            指定された列の値の合計を計算する
                         </dd>
                         <dt>
               AVG
             </dt>
                         <dd>
-                            calculates the average of the specified column values
+                            指定された列の値の平均を計算する
                         </dd>
                         <dt>
               COUNT​
             </dt>
                         <dd>
-                            counts the number of specified column values
+                            指定された列の値の数をカウントする
                         </dd>
                     </dl>
                 </p>
                 <sql-exercise data-question="Run this query, then try some of the other aggregate functions." data-comment="" data-default-text="SELECT max(age) FROM drivers_license;"></sql-exercise>
 
-                <p>There's another way to find minimum and maximum values, while also seeing more of the data. You can control the sort order of results you get. It's really quite intuitive: just use <code>ORDER BY</code> followed by a column name. It can
-                    be challenging when there's a lot of data! (When people get serious about working with SQL, they use better tools than this web-based system.) By default, ORDER BY goes in "ascending" (smallest to largest, or A to Z) order, but you
-                    can be specific with <code>ASC</code> for ascending, or you can reverse it with <code>DESC</code>.
+                <p>最小値と最大値を見つける別の方法があり、同時により多くのデータを見ることもできます。取得する結果の並べ替え順序を制御できます。これは本当に直感的です。列名の後に<code>ORDER BY</code>を使用するだけです。データが多い場合は困難な場合があります！（SQLを本格的に扱う人は、このWebベースのシステムよりも優れたツールを使用します。）デフォルトでは、ORDER BYは「昇順」（最小から最大、またはAからZ）の順序で実行されますが、
+                    昇順には<code>ASC</code>を明示的に指定することもでき、<code>DESC</code>で逆にすることもできます。
                 </p>
                 <sql-exercise data-question="Run this query to see how to control sort order." data-comment="After you've run it, change ASC to DESC, or take that part out completely to see how the results differ. Try sorting on other columns." data-default-text="SELECT * FROM drivers_license ORDER BY age ASC LIMIT 10"></sql-exercise>
 
-                <p>By now, you know enough SQL to identify the two witnesses. Give it a try!</p>
+                <p>これで、2人の目撃者を特定するのに十分なSQLの知識が身につきました。試してみましょう！</p>
                 <sql-exercise data-question="Write a query that identifies the first witness." data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'" data-default-text="
 
 
@@ -381,17 +365,16 @@ AND address_street_name = 'Franklin Ave';"></sql-exercise>
 
         <div id="joins" class="grid">
             <div class="grid-item">
-                <h2>Making connections</h2>
+                <h2>接続を作成する</h2>
 
-                <h3>Joining tables</h3>
-                <p>Until now, we’ve been asking questions that can be answered by considering data from only a single table. But what if we need to ask more complex questions that simultaneously require data from two different tables? That’s where ​JOIN​ comes in.</p>
+                <h3>テーブルの結合</h3>
+                <p>これまで、単一のテーブルからのデータのみを考慮することで答えられる質問をしてきました。しかし、2つの異なるテーブルからのデータを同時に必要とするより複雑な質問をする必要がある場合はどうでしょうか？そこで​JOIN​
+                    が登場します。</p>
 
-                <p>More experienced SQL folks use a few different kinds of JOIN -- you may hear about INNER, OUTER, LEFT and RIGHT joins. Here, we'll just talk about the most common kind of JOIN, the INNER JOIN. Since it's common, you can leave out INNER
-                    in your SQL commands.</p>
+                <p>より経験豊富なSQLユーザーは、いくつかの異なる種類のJOINを使用します。INNER、OUTER、LEFT、RIGHTジョインについて聞いたことがあるかもしれません。ここでは、最も一般的な種類のJOIN、つまりINNER JOINについてのみ説明します。一般的なので、SQLコマンドでINNERを省略できます。</p>
 
                 <p>
-                    The most common way to join tables is using primary key and foreign key columns. Refer back to the Entity Relationship Diagram (ERD) above if you don't remember what those are, or to see the key relationships between tables in our database. You can do
-                    joins on any columns, but the key columns are optimized for fast results. It is probably easier to show how joins work with our interactive SQL system than to write them.
+                    テーブルを結合する最も一般的な方法は、主キー列と外部キー列を使用することです。これらが何であるか覚えていない場合、またはデータベース内のテーブル間の主要な関係を確認する場合は、上記のエンティティ関係図（ERD）を参照してください。任意の列で結合を行うことができますが、キー列は高速な結果のために最適化されています。インタラクティブなSQLシステムで結合がどのように機能するかを示す方が、書いて説明するよりも簡単でしょう。
                 </p>
 
                 <sql-exercise data-question="Run this query to identify the biggest annual earners in our database. (Again, trust us, the SSNs are all made up.)" data-comment="Try editing the query to return more data, or to find people with different incomes. Try joining other tables together. You can use * in between SELECT and FROM here like with any other query, so try that too."
@@ -401,21 +384,21 @@ JOIN person
   ON income.ssn = person.ssn 
 WHERE annual_income > 450000"></sql-exercise>
 
-                <p>Sometimes you want to connect more than one table. SQL lets you join as many tables in a query as you like.
+                <p>複数のテーブルを接続したい場合があります。SQLでは、クエリで好きなだけ多くのテーブルを結合できます。
                 </p>
 
                 <sql-exercise data-question="Let's see if big earners have other characteristics in common." data-comment="This example shows how to join more than one table. It also, incidentally, shows how you can use 'aliases' for the various tables in your query so that you don't have to type as much. Finally, it shows how you can change how a column name shows up in the results, which can be handy."
-                    data-default-text="SELECT name, annual_income as income, 
+                    data-default-text="SELECT name, annual_income as income,
 gender, eye_color as eyes, hair_color as hair
 FROM income i
 JOIN person p
-  ON i.ssn = p.ssn 
+  ON i.ssn = p.ssn
 JOIN drivers_license dl
   ON p.license_id = dl.id
 WHERE annual_income > 450000"></sql-exercise>
 
 
-                <p>Now that you know how to join tables, you should be able to find the interview transcripts for the two witnesses you identified before. Give it a try!</p>
+                <p>テーブルを結合する方法がわかったので、以前に特定した2人の目撃者のインタビューのトランスクリプトを見つけることができるはずです。試してみてください！</p>
 
                 <sql-exercise data-question="Write a query that shows the interview transcripts for our two subjects." data-comment="There's more than one way to do it, so you may learn the answer even if the results say 'Incorrect'. The official solution does it in one query, but you don't have to. Technically you don't even need to use a JOIN to get the transcripts, but give it a try."
                     data-default-text="
@@ -432,9 +415,9 @@ WHERE person.id = 14887 OR person.id = 16371;"></sql-exercise>
 
         <div id="go-get-em" class="grid">
             <div class="grid-item">
-                <h3>Go Get 'em!</h3>
+                <h3>頑張ってください！</h3>
                 <p>
-                    Now you know enough SQL to solve the mystery. You'll need to read the ERD and make some reasonable assumptions, but there's no other syntax that you need!
+                    これで、謎を解くのに十分なSQLの知識が身につきました。ERDを読んで、いくつかの合理的な仮定を立てる必要がありますが、他に必要な構文はありません！
                 </p>
                 <sql-exercise data-question="Find the murderer!" data-comment="It will take more than one query to find the killer, but you can just keep editing this box, keeping notes on your results along the way. When you think you know the answer, go to the next section."
                     data-default-text="
@@ -447,8 +430,8 @@ WHERE person.id = 14887 OR person.id = 16371;"></sql-exercise>
 
         <div class="grid">
             <div class="grid-item">
-                <h3>Check your solution</h3>
-                <sql-exercise data-question="Did you find the killer?" data-comment="" data-default-text="INSERT INTO solution VALUES (1, 'Insert the name of the person you found here');
+                <h3>答えを確認しましょう</h3>
+                <sql-exercise data-question="犯人を見つけましたか？" data-comment="" data-default-text="INSERT INTO solution VALUES (1, 'ここに見つけた人物の名前を入力してください');
 
 SELECT value FROM solution;"></sql-exercise>
 
@@ -457,16 +440,15 @@ SELECT value FROM solution;"></sql-exercise>
 
         <div id="credits" class="grid">
             <div class="grid-item">
-                <h3>Credits</h3>
-                <p>The SQL Murder Mystery was created by <a href="https://twitter.com/joonparkmusic">Joon Park</a> and <a href="https://twitter.com/Cathy_MeiyingHe">Cathy He</a> while they were Knight Lab fellows. See the <a href="https://github.com/NUKnightLab/sql-mysteries">GitHub repository</a>                    for more information.</p>
-                <p>Adapted and produced for the web by <a href="https://twitter.com/joegermuska">Joe Germuska</a>.</p>
-                <p>This mystery was inspired by <a href="https://github.com/veltman/clmystery">a crime in the neighboring
-            Terminal City.</a></p>
-                <p>Web-based SQL is made possible by <a href="https://github.com/sql-js/sql.js/">SQL.js</a></p>
-                <p>SQL query custom web components created and released to the public domain by Zi Chong Kao, creator of <a href="https://selectstarsql.com/">Select Star SQL.</a></p>
-                <p>Detective illustration courtesy of <a href="https://www.vecteezy.com/">Vectors by Vecteezy</a></p>
-                <p>Original code for this project is released under the <a href="https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE">MIT License</a></p>
-                <p>Original text and other content for this project is released under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC BY-SA 4.0</a></p>
+                <h3>クレジット</h3>
+                <p>SQL殺人事件ミステリーは、<a href="https://twitter.com/joonparkmusic">Joon Park</a>と<a href="https://twitter.com/Cathy_MeiyingHe">Cathy He</a>がKnight Labフェローだった時に作成しました。詳細については、<a href="https://github.com/NUKnightLab/sql-mysteries">GitHubリポジトリ</a>を参照してください。</p>
+                <p>ウェブ用に<a href="https://twitter.com/joegermuska">Joe Germuska</a>によって適応・制作されました。</p>
+                <p>このミステリーは、<a href="https://github.com/veltman/clmystery">隣接するターミナル市での事件</a>に触発されました。</p>
+                <p>ウェブベースのSQLは<a href="https://github.com/sql-js/sql.js/">SQL.js</a>によって実現されています</p>
+                <p>SQLクエリカスタムウェブコンポーネントは、<a href="https://selectstarsql.com/">Select Star SQL</a>の作成者であるZi Chong Kaoによって作成され、パブリックドメインにリリースされました</p>
+                <p>探偵イラストは<a href="https://www.vecteezy.com/">Vectors by Vecteezy</a>の提供です</p>
+                <p>このプロジェクトのオリジナルコードは<a href="https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE">MITライセンス</a>の下でリリースされています</p>
+                <p>このプロジェクトのオリジナルテキストおよびその他のコンテンツは<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC BY-SA 4.0</a>の下でリリースされています</p>
             </div>
         </div>
     </div>
@@ -486,8 +468,7 @@ SELECT value FROM solution;"></sql-exercise>
                 </div>
                 <div class='column-4 column-5-tablet column-6-phone footer-description'>
                     <p>
-                        The <a title="Northwestern University" href="http://www.northwestern.edu/" target="_blank">Northwestern
-              University</a> Knight Lab is a team of technologists and journalists working at advancing news media innovation through exploration and experimentation.
+                        <a title="Northwestern University" href="http://www.northwestern.edu/" target="_blank">ノースウェスタン大学</a>のKnight Labは、探索と実験を通じてニュースメディアの革新を推進する技術者とジャーナリストのチームです。
                     </p>
                     <div class="grid-size-2 grid-size-2-phone">
                         <div class="grid-item">

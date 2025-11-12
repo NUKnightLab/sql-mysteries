@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
@@ -21,16 +21,16 @@
     <meta name="theme-color" content="#ffffff">
     <!-- /FAVICONS -->
 
-    <title>The SQL Murder Mystery</title>
+    <title>SQL殺人事件ミステリー</title>
     <!-- Meta -->
-    <meta name="keywords" content="SQL, databases, game, fun">
-    <meta name="description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths.">
+    <meta name="keywords" content="SQL, データベース, ゲーム, 学習">
+    <meta name="description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。">
     <!-- /Meta -->
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="SQL Murder Mystery" />
-    <meta property="og:description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths." />
+    <meta property="og:title" content="SQL殺人事件ミステリー" />
+    <meta property="og:description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。" />
     <meta property="og:image" content="http://mystery.knightlab.com/174092-clue-illustration.png" />
     <meta property="og:url" content="http://mystery.knightlab.com" />
     <meta property="og:site_name" content="Knight Lab's SQL Murder Mystery" />
@@ -38,8 +38,8 @@
     <!-- /Open Graph -->
 
     <!-- Twitter Card -->
-    <meta name="twitter:title" content="Knight Lab's SQL Murder Mystery">
-    <meta name="twitter:description" content="Use SQL queries to solve the murder mystery. Suitable for beginners or experienced SQL sleuths.">
+    <meta name="twitter:title" content="Knight Lab's SQL殺人事件ミステリー">
+    <meta name="twitter:description" content="SQLクエリを使って殺人事件の謎を解きましょう。初心者から経験豊富なSQL探偵まで楽しめます。">
     <meta name="twitter:image" content="http://mystery.knightlab.com/174092-clue-illustration.png">
     <meta name="twitter:site" content="@knightlab">
     <!-- /Twitter Card -->
@@ -104,50 +104,48 @@
 
     <header class="header-product">
         <h1 class="product-logo product-logo-large">
-            SQL Murder Mystery
+            SQL殺人事件ミステリー
         </h1>
-        <h2 class="product-tagline">Can you find out whodunnit?</h2>
+        <h2 class="product-tagline">犯人を見つけられますか？</h2>
     </header>
 
     <div class="container">
 
         <div id="intro" class="grid">
             <div class="grid-item">
-                <img src="174092-clue-illustration.png" class="img-rounded" alt="A decorative illustration of a detective looking at an evidence board.">
+                <img src="174092-clue-illustration.png" class="img-rounded" alt="証拠ボードを見つめる探偵のイラスト">
                 <p>
-                    There's been a Murder in SQL City! The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime.
+                    SQL市で殺人事件が発生しました！SQL殺人事件ミステリーは、SQLの概念とコマンドを学ぶための自習教材であり、同時に経験豊富なSQLユーザーが魅力的な事件を解決する楽しいゲームでもあります。
                 </p>
             </div>
         </div>
 
         <div class="grid">
             <div class="grid-item">
-                <h2>New to SQL?</h2>
+                <h2>SQLは初めてですか？</h2>
                 <p>
-                    This exercise is meant more as a way to practice SQL skills than a full tutorial. If you've never used SQL at all, <a href="walkthrough.html">try the walkthrough</a>. If you really want to learn a lot about SQL, you may prefer a complete
-                    tutorial like <a href="https://selectstarsql.com/">Select Star SQL.</a>
+                    この演習は、完全なチュートリアルというよりも、SQLスキルを実践する方法として設計されています。SQLをまったく使ったことがない場合は、<a href="walkthrough.html">ウォークスルーをお試しください</a>。SQLについて本格的に学びたい場合は、<a href="https://selectstarsql.com/">Select Star SQL</a>のような完全なチュートリアルをお勧めします。
 
                 </p>
-                <p>If you're comfortable with SQL, you can <a href="#experienced">dive in below</a>!</p>
+                <p>SQLに慣れている方は、<a href="#experienced">下のセクションから始めましょう</a>！</p>
             </div>
         </div>
 
 
         <div class="grid">
             <div class="grid-item">
-                <h2 id="experienced">Experienced SQL sleuths start here</h2>
+                <h2 id="experienced">SQL経験者の方はここからスタート</h2>
                 <p>
-                    A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a <strong>​murder​</strong> that occurred sometime on ​<strong>Jan.15, 2018​</strong>                    and that it took place in ​<strong>SQL City​</strong>. Start by retrieving the corresponding crime scene report from the police department’s database.
+                    事件が発生し、探偵があなたの助けを必要としています。探偵は犯行現場のレポートをあなたに渡しましたが、どういうわけかあなたはそれを失くしてしまいました。あなたは、その事件が<strong>殺人</strong>で、<strong>2018年1月15日</strong>頃に発生し、<strong>SQL市</strong>で起きたことをぼんやりと覚えています。警察のデータベースから対応する犯行現場レポートを取得することから始めましょう。
                 </p>
 
-                <h3>Exploring the Database Structure</h3>
+                <h3>データベース構造の探索</h3>
 
                 <p>
-                    Experienced SQL users can often use database queries to infer the structure of a database. But each database system has different ways of managing this information. The SQL Murder Mystery is built using SQLite. Use this SQL command to find the tables
-                    in the Murder Mystery database.
+                    経験豊富なSQLユーザーは、データベースクエリを使用してデータベースの構造を推測できることがよくあります。ただし、各データベースシステムには、この情報を管理する方法が異なります。SQL殺人事件ミステリーはSQLiteを使用して構築されています。このSQLコマンドを使用して、殺人事件ミステリーデータベース内のテーブルを見つけます。
                 </p>
 
-                <sql-exercise data-question="Run this query to find the names of the tables in this database." data-comment="This command is specific to SQLite. For other databases, you'll have to learn their specific syntax." data-default-text="SELECT name 
+                <sql-exercise data-question="このクエリを実行して、データベース内のテーブル名を見つけましょう。" data-comment="このコマンドはSQLite固有のものです。他のデータベースでは、それぞれ固有の構文を学ぶ必要があります。" data-default-text="SELECT name
   FROM sqlite_master
  where type = 'table'"></sql-exercise>
 
@@ -157,10 +155,10 @@
         <div class="grid">
             <div class="grid-item">
                 <p>
-                    Besides knowing the table names, you need to know how each table is structured. The way this works is also dependent upon which database technology you use. Here's how you do it with SQLite.
+                    テーブル名を知るだけでなく、各テーブルがどのように構成されているかを知る必要があります。これがどのように機能するかは、使用するデータベース技術によっても異なります。SQLiteでの方法は次のとおりです。
                 </p>
 
-                <sql-exercise data-question="Run this query to find the structure of the `crime_scene_report` table" data-comment="Change the value of 'name' to see the structure of the other tables you learned about with the previous query." data-default-text="SELECT sql 
+                <sql-exercise data-question="`crime_scene_report`テーブルの構造を見つけるために、このクエリを実行しましょう" data-comment="'name'の値を変更して、前のクエリで学習した他のテーブルの構造を確認してください。" data-default-text="SELECT sql
   FROM sqlite_master
  where name = 'crime_scene_report'"></sql-exercise>
 
@@ -170,19 +168,19 @@
 
         <div class="grid">
             <div class="grid-item">
-                <h3>The rest is up to you!</h3>
+                <h3>あとはあなた次第！</h3>
                 <p>
-                    If you're really comfortable with SQL, you can probably get it from here.
+                    SQLに本当に慣れている場合は、ここから解決できるはずです。
                 </p>
                 <p>
-                    But <a id="show-schema">click here</a> to show the schema diagram.
+                    しかし、スキーマ図を表示するには<a id="show-schema">ここをクリック</a>してください。
                     <img id="experienced-schema" src="schema.png" width='1002' height='491'>
                 </p>
                 <p>
-                    And you can always go to the <a href="walkthrough.html">walkthrough</a>.
+                    いつでも<a href="walkthrough.html">ウォークスルー</a>に移動できます。
                 </p>
 
-                <sql-exercise data-question="Use your knowledge of the database schema and SQL commands to find out who committed the murder." data-comment="When you think you know the answer, go to the next section." data-default-text="
+                <sql-exercise data-question="データベーススキーマとSQLコマンドの知識を使用して、殺人を犯した犯人を見つけましょう。" data-comment="答えがわかったと思ったら、次のセクションに進んでください。" data-default-text="
               
               
 
@@ -195,25 +193,24 @@
 
         <div id="check-solution" class="grid">
             <div class="grid-item">
-                <h3>Check your solution</h3>
-                <sql-exercise data-question="Did you find the killer?" data-comment="" data-default-text="INSERT INTO solution VALUES (1, 'Insert the name of the person you found here');
-        
+                <h3>答えを確認しましょう</h3>
+                <sql-exercise data-question="犯人を見つけましたか？" data-comment="" data-default-text="INSERT INTO solution VALUES (1, 'ここに見つけた人物の名前を入力してください');
+
         SELECT value FROM solution;"></sql-exercise>
             </div>
         </div>
 
         <div id="credits" class="grid">
             <div class="grid-item">
-                <h3>Credits</h3>
-                <p>The SQL Murder Mystery was created by <a href="https://twitter.com/joonparkmusic">Joon Park</a> and <a href="https://twitter.com/Cathy_MeiyingHe">Cathy He</a> while they were Knight Lab fellows. See the <a href="https://github.com/NUKnightLab/sql-mysteries">GitHub repository</a>                    for more information.</p>
-                <p>Adapted and produced for the web by <a href="https://twitter.com/joegermuska">Joe Germuska</a>.</p>
-                <p>This mystery was inspired by <a href="https://github.com/veltman/clmystery">a crime in the neighboring
-            Terminal City.</a></p>
-                <p>Web-based SQL is made possible by <a href="https://github.com/sql-js/sql.js/">SQL.js</a></p>
-                <p>SQL query custom web components created and released to the public domain by Zi Chong Kao, creator of <a href="https://selectstarsql.com/">Select Star SQL.</a></p>
-                <p>Detective illustration courtesy of <a href="https://www.vecteezy.com/">Vectors by Vecteezy</a></p>
-                <p>Original code for this project is released under the <a href="https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE">MIT License</a></p>
-                <p>Original text and other content for this project is released under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC BY-SA 4.0</a></p>
+                <h3>クレジット</h3>
+                <p>SQL殺人事件ミステリーは、<a href="https://twitter.com/joonparkmusic">Joon Park</a>と<a href="https://twitter.com/Cathy_MeiyingHe">Cathy He</a>がKnight Labフェローだった時に作成しました。詳細については、<a href="https://github.com/NUKnightLab/sql-mysteries">GitHubリポジトリ</a>を参照してください。</p>
+                <p>ウェブ用に<a href="https://twitter.com/joegermuska">Joe Germuska</a>によって適応・制作されました。</p>
+                <p>このミステリーは、<a href="https://github.com/veltman/clmystery">隣接するターミナル市での事件</a>に触発されました。</p>
+                <p>ウェブベースのSQLは<a href="https://github.com/sql-js/sql.js/">SQL.js</a>によって実現されています</p>
+                <p>SQLクエリカスタムウェブコンポーネントは、<a href="https://selectstarsql.com/">Select Star SQL</a>の作成者であるZi Chong Kaoによって作成され、パブリックドメインにリリースされました</p>
+                <p>探偵イラストは<a href="https://www.vecteezy.com/">Vectors by Vecteezy</a>の提供です</p>
+                <p>このプロジェクトのオリジナルコードは<a href="https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE">MITライセンス</a>の下でリリースされています</p>
+                <p>このプロジェクトのオリジナルテキストおよびその他のコンテンツは<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC BY-SA 4.0</a>の下でリリースされています</p>
             </div>
         </div>
     </div>
