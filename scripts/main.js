@@ -82,7 +82,7 @@ function datatable (data) {
 // SQL Quiz Component
 //////////////////////////
 
-function setdiff(a, b) { // https://stackoverflow.com/a/36504668
+function setdiff(a, b) {
   var seta = new Set(a);
   var setb = new Set(b);
   var res = new Set([...seta].filter(x => !setb.has(x)));
@@ -273,7 +273,6 @@ class sqlExercise extends HTMLElement {
                 solution_u.sort();
             }
             var verdict = arraysEqual(submission_u, solution_u) ? "Correct" : "Incorrect";
-            // http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html
             verdict_div.innerText = verdict;
           });
         }
@@ -345,24 +344,56 @@ customElements.define('sql-exercise', sqlExercise);
 //////////////////////////
 
 function arraysEqual(a,b) {
-  /*
-  https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
-  Array-aware equality checker:
-  Returns whether arguments a and b are == to each other;
-  however if they are equal-lengthed arrays, returns whether their
-  elements are pairwise == to each other recursively under this
-  definition.
-  */
   if (a instanceof Array && b instanceof Array) {
-    if (a.length != b.length) { // assert same length
+    if (a.length != b.length) {
       return false;
     }
-    for (var i=0; i<a.length; i++) { // assert each element equal
+    for (var i=0; i<a.length; i++) {
       if (!arraysEqual(a[i],b[i]))
         return false;
     }
     return true;
   } else {
-    return a == b;  // if not both arrays, should be the same
+    return a == b;
   }
 }
+
+
+
+/* ---------------------------------------------------------
+   HINT FEATURE (ADDED BY YOU)
+   This connects your Hint button with rotating hints.
+--------------------------------------------------------- */
+(function () {
+  const hintBox = document.getElementById("hint-box");
+  const btnShow = document.getElementById("showHint");
+  const btnReset = document.getElementById("resetHint");
+
+  if (!hintBox || !btnShow || !btnReset) return;
+
+  const hints = [
+    "Start by checking the crime_scene_report table.",
+    "Look for witnesses near the crime location.",
+    "Witness testimony often points to inconsistencies.",
+    "Try joining person, interview, and event tables."
+  ];
+
+  let index = 0;
+
+  btnShow.addEventListener("click", () => {
+    if (index < hints.length) {
+      hintBox.style.display = "block";
+      hintBox.innerText = hints[index];
+      index++;
+    } else {
+      hintBox.style.display = "block";
+      hintBox.innerText = "No more hints!";
+    }
+  });
+
+  btnReset.addEventListener("click", () => {
+    index = 0;
+    hintBox.style.display = "none";
+    hintBox.innerText = "";
+  });
+})();
