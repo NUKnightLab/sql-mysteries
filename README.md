@@ -61,3 +61,12 @@ Start by:
 - Gradually adding WHERE, JOIN, and GROUP BY clauses
 
 This approach makes the learning experience more effective and enjoyable.
+## Notes for New Contributors
+
+If you are new to this project:
+- Fork the repository before making changes
+- Create a feature branch for your contribution
+- Open an issue before submitting a Pull Request
+- Reference the issue number in your PR description
+
+This helps maintainers review contributions efficiently.
