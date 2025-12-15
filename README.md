@@ -49,3 +49,15 @@ Original text and other content is released under [Creative Commons CC BY-SA 4.0
 SQL query custom web components used here were adapted from code created and released to the public domain by Zi Chong Kao, creator of [Select Star SQL](https://selectstarsql.com/).
 
 [Detective image by rambleron](https://www.vecteezy.com/vector-art/174092-clue-illustration) used under Vecteezy's free license.
+## Beginner Tip
+
+If you are new to SQL, try solving each mystery step by step.
+Avoid jumping directly to complex queries.
+
+Start by:
+- Reading the story carefully
+- Identifying tables and columns
+- Writing simple SELECT queries first
+- Gradually adding WHERE, JOIN, and GROUP BY clauses
+
+This approach makes the learning experience more effective and enjoyable.
